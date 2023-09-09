@@ -1,0 +1,1353 @@
+2023-08-18 08:55:59,130 - INFO - Starting cross-domain ALL experiments for model: vinai/bertweet-base and learning rate: 3e-05
+2023-08-18 08:55:59,130 - INFO - Training Params - NO_OF_EPOCHS: 4 CROSSDOMAIN_CV: 3 MAX_LENGTH: 50 LR: 3e-05 SEED: 2023
+
+2023-08-18 08:55:59,130 - INFO - ********************************************************************************************************************************************
+2023-08-18 08:55:59,130 - INFO - TEST DOMAIN: food
+2023-08-18 08:55:59,173 - INFO - TEST data count: 127
+2023-08-18 08:56:00,366 - INFO - **********************************************************************
+2023-08-18 08:56:00,366 - INFO - Training data comprises all domains except: food
+2023-08-18 08:56:00,408 - INFO - Overall data count for train and dev: 3322
+2023-08-18 08:56:00,409 - INFO - ***********************************
+2023-08-18 08:56:00,410 - INFO - Iteration number: 0 for TRAIN DOMAIN: all and TEST DOMAIN: food
+2023-08-18 08:56:00,410 - INFO - Tokenizing the data...
+2023-08-18 08:56:02,877 - INFO - TRAIN data count: 2214 and DEV data count: 1108
+2023-08-18 08:56:02,877 - INFO - Finetune and perform evaluation...
+2023-08-18 08:56:02,877 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 3e-05
+2023-08-18 08:56:02,877 - INFO - Setting up training args and starting training...
+2023-08-18 08:57:45,590 - INFO - Training complete...
+2023-08-18 08:57:45,591 - INFO - TrainOutput(global_step=1108, training_loss=0.19654591935636334, metrics={'train_runtime': 101.621, 'train_samples_per_second': 87.147, 'train_steps_per_second': 10.903, 'total_flos': 227549951784000.0, 'train_loss': 0.19654591935636334, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 08:57:45,591 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 08:57:46,463 - INFO - Report evaluation results...
+2023-08-18 08:57:46,463 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Eval metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	food	0	3e-05	0.45727798342704773	0.8808664259927798	0.9397163120567376	0.6973684210526315	0.8006042296072508	0.8370083863504915	0.7345368937824142	1.9184	577.561	72.456	2.25e-05	1.0	277
+vinai/bertweet-base	all	food	0	3e-05	0.2991233766078949	0.9151624548736462	0.8864864864864865	0.8631578947368421	0.8746666666666667	0.9027327935222672	0.8107284905842391	1.9246	575.695	72.222	1.5e-05	2.0	554
+vinai/bertweet-base	all	food	0	3e-05	0.41948166489601135	0.9088447653429603	0.8974358974358975	0.8289473684210527	0.8618331053351573	0.8897484094852515	0.795372071501906	1.9378	571.769	71.729	7.5e-06	3.0	831
+vinai/bertweet-base	all	food	0	3e-05	0.48216012120246887	0.9016245487364621	0.8345679012345679	0.8894736842105263	0.8611464968152867	0.8987203585887796	0.7860509931204683	1.9195	577.226	72.414	0.0	4.0	1108
+--*--*--
+***** Train metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	train_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	food	0	3e-05	101.621	87.147	10.903	227549951784000.0	0.19654591935636334	0.0	4.0	1108
+
+2023-08-18 08:57:46,463 - INFO - Loading the finetuned mode
+2023-08-18 08:57:47,459 - INFO - **TRACE** Running predictions with test data
+2023-08-18 08:57:47,940 - INFO - Metrics from the Predictions...
+2023-08-18 08:57:47,940 - INFO - {'test_loss': 0.6851714849472046, 'test_accuracy': 0.8267716535433071, 'test_precision': 1.0, 'test_recall': 0.7608695652173914, 'test_f1': 0.8641975308641976, 'test_roc_auc': 0.8804347826086957, 'test_matthews_correlation': 0.6835207460064436, 'test_runtime': 0.2355, 'test_samples_per_second': 539.337, 'test_steps_per_second': 67.948}
+2023-08-18 08:57:47,940 - INFO - {'confusion_matrix': array([[35,  0],
+       [22, 70]])}
+2023-08-18 08:57:47,940 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Test(predict) metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	test_loss	test_accuracy	test_precision	test_recall	test_f1	test_roc_auc	test_matthews_correlation	test_runtime	test_samples_per_second	test_steps_per_second
+vinai/bertweet-base	all	food	0	3e-05	0.6851714849472046	0.8267716535433071	1.0	0.7608695652173914	0.8641975308641976	0.8804347826086957	0.6835207460064436	0.2355	539.337	67.948
+***** Confusion Matrix(predict) *****
+model	train_domain	test_domain	iter.	hp_set_lr	confusion_matrix
+vinai/bertweet-base	all	food	0	3e-05	[[35  0]
+ [22 70]]
+
+2023-08-18 08:57:47,940 - INFO - ***********************************
+2023-08-18 08:57:47,940 - INFO - Iteration number: 1 for TRAIN DOMAIN: all and TEST DOMAIN: food
+2023-08-18 08:57:47,940 - INFO - Tokenizing the data...
+2023-08-18 08:57:50,344 - INFO - TRAIN data count: 2215 and DEV data count: 1107
+2023-08-18 08:57:50,344 - INFO - Finetune and perform evaluation...
+2023-08-18 08:57:50,344 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 3e-05
+2023-08-18 08:57:50,344 - INFO - Setting up training args and starting training...
+2023-08-18 08:59:35,844 - INFO - Training complete...
+2023-08-18 08:59:35,846 - INFO - TrainOutput(global_step=1108, training_loss=0.1812761126872865, metrics={'train_runtime': 103.8555, 'train_samples_per_second': 85.311, 'train_steps_per_second': 10.669, 'total_flos': 227652729540000.0, 'train_loss': 0.1812761126872865, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 08:59:35,847 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 08:59:36,704 - INFO - Report evaluation results...
+2023-08-18 08:59:36,705 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Eval metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	food	1	3e-05	0.3796194791793823	0.8925022583559169	0.8144578313253013	0.8894736842105263	0.850314465408805	0.8917794830956345	0.7685172016543697	1.9158	577.824	72.554	2.25e-05	1.0	277
+vinai/bertweet-base	all	food	1	3e-05	0.40007442235946655	0.90063233965673	0.8792134831460674	0.8236842105263158	0.8505434782608695	0.8822685151668718	0.7771637971846345	1.9763	560.126	70.332	1.5e-05	2.0	554
+vinai/bertweet-base	all	food	1	3e-05	0.44797009229660034	0.907859078590786	0.8341346153846154	0.9131578947368421	0.8718592964824121	0.90912365163252	0.8021542658101749	1.9415	570.168	71.593	7.5e-06	3.0	831
+vinai/bertweet-base	all	food	1	3e-05	0.4674813151359558	0.9096657633242999	0.8431372549019608	0.9052631578947369	0.8730964467005077	0.9086150727575474	0.8043308245404628	1.9311	573.237	71.978	0.0	4.0	1108
+--*--*--
+***** Train metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	train_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	food	1	3e-05	103.8555	85.311	10.669	227652729540000.0	0.1812761126872865	0.0	4.0	1108
+
+2023-08-18 08:59:36,705 - INFO - Loading the finetuned mode
+2023-08-18 08:59:38,412 - INFO - **TRACE** Running predictions with test data
+2023-08-18 08:59:43,953 - INFO - Metrics from the Predictions...
+2023-08-18 08:59:43,953 - INFO - {'test_loss': 0.6777647137641907, 'test_accuracy': 0.8346456692913385, 'test_precision': 0.961038961038961, 'test_recall': 0.8043478260869565, 'test_f1': 0.8757396449704141, 'test_roc_auc': 0.8593167701863353, 'test_matthews_correlation': 0.6572113484057776, 'test_runtime': 0.2403, 'test_samples_per_second': 528.44, 'test_steps_per_second': 66.575}
+2023-08-18 08:59:43,953 - INFO - {'confusion_matrix': array([[32,  3],
+       [18, 74]])}
+2023-08-18 08:59:43,953 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Test(predict) metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	test_loss	test_accuracy	test_precision	test_recall	test_f1	test_roc_auc	test_matthews_correlation	test_runtime	test_samples_per_second	test_steps_per_second
+vinai/bertweet-base	all	food	1	3e-05	0.6777647137641907	0.8346456692913385	0.961038961038961	0.8043478260869565	0.8757396449704141	0.8593167701863353	0.6572113484057776	0.2403	528.44	66.575
+***** Confusion Matrix(predict) *****
+model	train_domain	test_domain	iter.	hp_set_lr	confusion_matrix
+vinai/bertweet-base	all	food	1	3e-05	[[32  3]
+ [18 74]]
+
+2023-08-18 08:59:43,953 - INFO - ***********************************
+2023-08-18 08:59:43,953 - INFO - Iteration number: 2 for TRAIN DOMAIN: all and TEST DOMAIN: food
+2023-08-18 08:59:43,953 - INFO - Tokenizing the data...
+2023-08-18 08:59:46,296 - INFO - TRAIN data count: 2215 and DEV data count: 1107
+2023-08-18 08:59:46,296 - INFO - Finetune and perform evaluation...
+2023-08-18 08:59:46,296 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 3e-05
+2023-08-18 08:59:46,296 - INFO - Setting up training args and starting training...
+2023-08-18 09:01:30,802 - INFO - Training complete...
+2023-08-18 09:01:30,805 - INFO - TrainOutput(global_step=1108, training_loss=0.21311420697167463, metrics={'train_runtime': 102.7262, 'train_samples_per_second': 86.249, 'train_steps_per_second': 10.786, 'total_flos': 227652729540000.0, 'train_loss': 0.21311420697167463, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 09:01:30,805 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 09:01:31,732 - INFO - Report evaluation results...
+2023-08-18 09:01:31,732 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Eval metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	food	2	3e-05	0.2509615123271942	0.907859078590786	0.8492462311557789	0.8894736842105263	0.8688946015424165	0.9034713675523056	0.798430403456271	1.9278	574.218	72.101	2.25e-05	1.0	277
+vinai/bertweet-base	all	food	2	3e-05	0.2601640820503235	0.9177958446251129	0.8980716253443526	0.8578947368421053	0.8775235531628532	0.9035003257800623	0.8161934567642265	1.9191	576.826	72.429	1.5e-05	2.0	554
+vinai/bertweet-base	all	food	2	3e-05	0.31067582964897156	0.919602529358627	0.8921832884097035	0.8710526315789474	0.8814913448735021	0.9080159994208357	0.8208056376877036	1.9108	579.349	72.746	7.5e-06	3.0	831
+vinai/bertweet-base	all	food	2	3e-05	0.3238407373428345	0.928635953026197	0.8810126582278481	0.9157894736842105	0.8980645161290323	0.9255701151089553	0.8435708762492956	1.9207	576.351	72.369	0.0	4.0	1108
+--*--*--
+***** Train metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	train_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	food	2	3e-05	102.7262	86.249	10.786	227652729540000.0	0.21311420697167463	0.0	4.0	1108
+
+2023-08-18 09:01:31,732 - INFO - Loading the finetuned mode
+2023-08-18 09:01:32,712 - INFO - **TRACE** Running predictions with test data
+2023-08-18 09:01:33,224 - INFO - Metrics from the Predictions...
+2023-08-18 09:01:33,224 - INFO - {'test_loss': 0.5506341457366943, 'test_accuracy': 0.8267716535433071, 'test_precision': 0.9861111111111112, 'test_recall': 0.7717391304347826, 'test_f1': 0.8658536585365854, 'test_roc_auc': 0.8715838509316771, 'test_matthews_correlation': 0.6701425128395456, 'test_runtime': 0.2668, 'test_samples_per_second': 476.081, 'test_steps_per_second': 59.979}
+2023-08-18 09:01:33,224 - INFO - {'confusion_matrix': array([[34,  1],
+       [21, 71]])}
+2023-08-18 09:01:33,224 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Test(predict) metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	test_loss	test_accuracy	test_precision	test_recall	test_f1	test_roc_auc	test_matthews_correlation	test_runtime	test_samples_per_second	test_steps_per_second
+vinai/bertweet-base	all	food	2	3e-05	0.5506341457366943	0.8267716535433071	0.9861111111111112	0.7717391304347826	0.8658536585365854	0.8715838509316771	0.6701425128395456	0.2668	476.081	59.979
+***** Confusion Matrix(predict) *****
+model	train_domain	test_domain	iter.	hp_set_lr	confusion_matrix
+vinai/bertweet-base	all	food	2	3e-05	[[34  1]
+ [21 71]]
+
+2023-08-18 09:01:33,224 - INFO - ----------------------------------------------------------------------
+2023-08-18 09:01:33,224 - INFO - All finetuning runs are complete for TRAIN DOMAIN: all and TEST DOMAIN: food
+2023-08-18 09:01:33,224 - INFO - Calculating mean of test metrics
+2023-08-18 09:01:33,224 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Mean Test(predict) metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	mean_test_loss	mean_test_accuracy	mean_test_precision	mean_test_recall	mean_test_f1	mean_test_roc_auc	mean_test_matthews_correlation	mean_test_runtime	mean_test_samples_per_second	mean_test_steps_per_second
+vinai/bertweet-base	all	food	2	3e-05	0.6378567814826965	0.8293963254593176	0.9823833573833575	0.7789855072463768	0.868596944790399	0.8704451345755695	0.670291535750589	0.2475333333333333	514.6193333333334	64.834
+***** Mean Confusion Matrix(predict) *****
+model	train_domain	test_domain	iter.	hp_set_lr	mean_true_negative	mean_false_positive	mean_false_negative	mean_true_positive
+vinai/bertweet-base	all	food	2	3e-05	33.666666666666664	1.3333333333333333	20.333333333333332	71.66666666666667
+
+2023-08-18 09:01:33,225 - INFO - Attempting to delete checkpoints from /notebooks/train_trainer
+2023-08-18 09:01:33,391 - INFO - Completed deleting checkpoints from /notebooks/train_trainer
+2023-08-18 09:01:33,391 - INFO - Attempting to delete checkpoints from /notebooks/test_trainer
+2023-08-18 09:01:33,392 - INFO - The path /notebooks/test_trainer does not exist.
+2023-08-18 09:01:33,392 - INFO - All testing completed for TEST domain: food
+2023-08-18 09:01:33,392 - INFO - ********************************************************************************************************************************************
+2023-08-18 09:01:33,392 - INFO - TEST DOMAIN: apparel
+2023-08-18 09:01:33,510 - INFO - TEST data count: 262
+2023-08-18 09:01:34,654 - INFO - **********************************************************************
+2023-08-18 09:01:34,654 - INFO - Training data comprises all domains except: apparel
+2023-08-18 09:01:34,692 - INFO - Overall data count for train and dev: 3187
+2023-08-18 09:01:34,693 - INFO - ***********************************
+2023-08-18 09:01:34,693 - INFO - Iteration number: 0 for TRAIN DOMAIN: all and TEST DOMAIN: apparel
+2023-08-18 09:01:34,693 - INFO - Tokenizing the data...
+2023-08-18 09:01:37,126 - INFO - TRAIN data count: 2124 and DEV data count: 1063
+2023-08-18 09:01:37,126 - INFO - Finetune and perform evaluation...
+2023-08-18 09:01:37,126 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 3e-05
+2023-08-18 09:01:37,126 - INFO - Setting up training args and starting training...
+2023-08-18 09:03:16,727 - INFO - Training complete...
+2023-08-18 09:03:16,727 - INFO - TrainOutput(global_step=1064, training_loss=0.1877095645531676, metrics={'train_runtime': 98.0274, 'train_samples_per_second': 86.67, 'train_steps_per_second': 10.854, 'total_flos': 218299953744000.0, 'train_loss': 0.1877095645531676, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 09:03:16,727 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 09:03:17,771 - INFO - Report evaluation results...
+2023-08-18 09:03:17,772 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Eval metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	apparel	0	3e-05	0.32613512873649597	0.878645343367827	0.76	0.9421487603305785	0.8413284132841328	0.8939315230224322	0.756164995680438	1.8305	580.702	72.656	2.25e-05	1.0	266
+vinai/bertweet-base	all	apparel	0	3e-05	0.36372262239456177	0.90310442144873	0.8611111111111112	0.8539944903581267	0.8575380359612725	0.8912829594647776	0.7841413389173986	1.8386	578.163	72.338	1.5e-05	2.0	532
+vinai/bertweet-base	all	apparel	0	3e-05	0.4552607834339142	0.9049858889934148	0.8291457286432161	0.9090909090909091	0.8672798948751643	0.905974025974026	0.795569670226346	1.8589	571.837	71.547	7.5e-06	3.0	798
+vinai/bertweet-base	all	apparel	0	3e-05	0.4737761616706848	0.9059266227657573	0.8469656992084432	0.8842975206611571	0.8652291105121294	0.9007201889020071	0.7934615672431704	1.8672	569.309	71.231	0.0	4.0	1064
+--*--*--
+***** Train metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	train_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	apparel	0	3e-05	98.0274	86.67	10.854	218299953744000.0	0.1877095645531676	0.0	4.0	1064
+
+2023-08-18 09:03:17,772 - INFO - Loading the finetuned mode
+2023-08-18 09:03:18,810 - INFO - **TRACE** Running predictions with test data
+2023-08-18 09:03:19,761 - INFO - Metrics from the Predictions...
+2023-08-18 09:03:19,761 - INFO - {'test_loss': 0.3825780153274536, 'test_accuracy': 0.8587786259541985, 'test_precision': 0.8461538461538461, 'test_recall': 0.9103448275862069, 'test_f1': 0.8770764119601329, 'test_roc_auc': 0.8526083112290009, 'test_matthews_correlation': 0.7143059053432871, 'test_runtime': 0.4858, 'test_samples_per_second': 539.293, 'test_steps_per_second': 67.926}
+2023-08-18 09:03:19,761 - INFO - {'confusion_matrix': array([[ 93,  24],
+       [ 13, 132]])}
+2023-08-18 09:03:19,761 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Test(predict) metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	test_loss	test_accuracy	test_precision	test_recall	test_f1	test_roc_auc	test_matthews_correlation	test_runtime	test_samples_per_second	test_steps_per_second
+vinai/bertweet-base	all	apparel	0	3e-05	0.3825780153274536	0.8587786259541985	0.8461538461538461	0.9103448275862069	0.8770764119601329	0.8526083112290009	0.7143059053432871	0.4858	539.293	67.926
+***** Confusion Matrix(predict) *****
+model	train_domain	test_domain	iter.	hp_set_lr	confusion_matrix
+vinai/bertweet-base	all	apparel	0	3e-05	[[ 93  24]
+ [ 13 132]]
+
+2023-08-18 09:03:19,761 - INFO - ***********************************
+2023-08-18 09:03:19,761 - INFO - Iteration number: 1 for TRAIN DOMAIN: all and TEST DOMAIN: apparel
+2023-08-18 09:03:19,761 - INFO - Tokenizing the data...
+2023-08-18 09:03:22,066 - INFO - TRAIN data count: 2125 and DEV data count: 1062
+2023-08-18 09:03:22,066 - INFO - Finetune and perform evaluation...
+2023-08-18 09:03:22,067 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 3e-05
+2023-08-18 09:03:22,067 - INFO - Setting up training args and starting training...
+2023-08-18 09:05:02,322 - INFO - Training complete...
+2023-08-18 09:05:02,331 - INFO - TrainOutput(global_step=1064, training_loss=0.2049743636210162, metrics={'train_runtime': 99.1446, 'train_samples_per_second': 85.733, 'train_steps_per_second': 10.732, 'total_flos': 218402731500000.0, 'train_loss': 0.2049743636210162, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 09:05:02,331 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 09:05:03,172 - INFO - Report evaluation results...
+2023-08-18 09:05:03,172 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Eval metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	apparel	1	3e-05	0.4107617139816284	0.8804143126177024	0.8683385579937304	0.7651933701657458	0.8135095447870778	0.8525966850828729	0.7291582224157561	1.8484	574.538	71.953	2.25e-05	1.0	266
+vinai/bertweet-base	all	apparel	1	3e-05	0.407997190952301	0.8945386064030132	0.8360215053763441	0.8591160220994475	0.8474114441416895	0.8859865824782951	0.7670249548558784	1.8585	571.442	71.565	1.5e-05	2.0	532
+vinai/bertweet-base	all	apparel	1	3e-05	0.4545234143733978	0.8926553672316384	0.8463687150837989	0.8370165745856354	0.8416666666666667	0.8792225730071035	0.760500735858088	1.8574	571.781	71.607	7.5e-06	3.0	798
+vinai/bertweet-base	all	apparel	1	3e-05	0.47270458936691284	0.8954802259887006	0.8226221079691517	0.8839779005524862	0.8521970705725699	0.8927032359905288	0.7727080703808549	1.8636	569.859	71.366	0.0	4.0	1064
+--*--*--
+***** Train metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	train_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	apparel	1	3e-05	99.1446	85.733	10.732	218402731500000.0	0.2049743636210162	0.0	4.0	1064
+
+2023-08-18 09:05:03,172 - INFO - Loading the finetuned mode
+2023-08-18 09:05:04,780 - INFO - **TRACE** Running predictions with test data
+2023-08-18 09:05:05,522 - INFO - Metrics from the Predictions...
+2023-08-18 09:05:05,522 - INFO - {'test_loss': 0.5843080878257751, 'test_accuracy': 0.8473282442748091, 'test_precision': 0.8832116788321168, 'test_recall': 0.8344827586206897, 'test_f1': 0.8581560283687943, 'test_roc_auc': 0.8488653109342765, 'test_matthews_correlation': 0.6944635012110711, 'test_runtime': 0.4767, 'test_samples_per_second': 549.626, 'test_steps_per_second': 69.228}
+2023-08-18 09:05:05,522 - INFO - {'confusion_matrix': array([[101,  16],
+       [ 24, 121]])}
+2023-08-18 09:05:05,523 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Test(predict) metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	test_loss	test_accuracy	test_precision	test_recall	test_f1	test_roc_auc	test_matthews_correlation	test_runtime	test_samples_per_second	test_steps_per_second
+vinai/bertweet-base	all	apparel	1	3e-05	0.5843080878257751	0.8473282442748091	0.8832116788321168	0.8344827586206897	0.8581560283687943	0.8488653109342765	0.6944635012110711	0.4767	549.626	69.228
+***** Confusion Matrix(predict) *****
+model	train_domain	test_domain	iter.	hp_set_lr	confusion_matrix
+vinai/bertweet-base	all	apparel	1	3e-05	[[101  16]
+ [ 24 121]]
+
+2023-08-18 09:05:05,523 - INFO - ***********************************
+2023-08-18 09:05:05,523 - INFO - Iteration number: 2 for TRAIN DOMAIN: all and TEST DOMAIN: apparel
+2023-08-18 09:05:05,523 - INFO - Tokenizing the data...
+2023-08-18 09:05:07,809 - INFO - TRAIN data count: 2125 and DEV data count: 1062
+2023-08-18 09:05:07,809 - INFO - Finetune and perform evaluation...
+2023-08-18 09:05:07,809 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 3e-05
+2023-08-18 09:05:07,809 - INFO - Setting up training args and starting training...
+2023-08-18 09:06:48,898 - INFO - Training complete...
+2023-08-18 09:06:48,898 - INFO - TrainOutput(global_step=1064, training_loss=0.22040186699171713, metrics={'train_runtime': 99.995, 'train_samples_per_second': 85.004, 'train_steps_per_second': 10.641, 'total_flos': 218402731500000.0, 'train_loss': 0.22040186699171713, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 09:06:48,898 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 09:06:49,741 - INFO - Report evaluation results...
+2023-08-18 09:06:49,742 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Eval metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	apparel	2	3e-05	0.27046793699264526	0.896421845574388	0.794392523364486	0.9392265193370166	0.8607594936708861	0.9067561168113655	0.7861417842350493	1.8326	579.517	72.576	2.25e-05	1.0	266
+vinai/bertweet-base	all	apparel	2	3e-05	0.27627435326576233	0.9011299435028248	0.8009367681498829	0.9447513812154696	0.8669201520912548	0.911661404893449	0.795925928296658	1.8584	571.452	71.566	1.5e-05	2.0	532
+vinai/bertweet-base	all	apparel	2	3e-05	0.32155534625053406	0.9227871939736346	0.8571428571428571	0.9281767955801105	0.8912466843501327	0.9240883977900552	0.8331232552961402	1.8494	574.228	71.914	7.5e-06	3.0	798
+vinai/bertweet-base	all	apparel	2	3e-05	0.36296677589416504	0.9190207156308852	0.8538461538461538	0.919889502762431	0.8856382978723404	0.9192304656669298	0.8244592527902894	1.8363	578.326	72.427	0.0	4.0	1064
+--*--*--
+***** Train metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	train_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	apparel	2	3e-05	99.995	85.004	10.641	218402731500000.0	0.22040186699171713	0.0	4.0	1064
+
+2023-08-18 09:06:49,742 - INFO - Loading the finetuned mode
+2023-08-18 09:06:50,682 - INFO - **TRACE** Running predictions with test data
+2023-08-18 09:06:51,406 - INFO - Metrics from the Predictions...
+2023-08-18 09:06:51,406 - INFO - {'test_loss': 0.37897178530693054, 'test_accuracy': 0.8664122137404581, 'test_precision': 0.8985507246376812, 'test_recall': 0.8551724137931035, 'test_f1': 0.8763250883392227, 'test_roc_auc': 0.8677571470674919, 'test_matthews_correlation': 0.7323482759756248, 'test_runtime': 0.464, 'test_samples_per_second': 564.691, 'test_steps_per_second': 71.125}
+2023-08-18 09:06:51,406 - INFO - {'confusion_matrix': array([[103,  14],
+       [ 21, 124]])}
+2023-08-18 09:06:51,407 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Test(predict) metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	test_loss	test_accuracy	test_precision	test_recall	test_f1	test_roc_auc	test_matthews_correlation	test_runtime	test_samples_per_second	test_steps_per_second
+vinai/bertweet-base	all	apparel	2	3e-05	0.37897178530693054	0.8664122137404581	0.8985507246376812	0.8551724137931035	0.8763250883392227	0.8677571470674919	0.7323482759756248	0.464	564.691	71.125
+***** Confusion Matrix(predict) *****
+model	train_domain	test_domain	iter.	hp_set_lr	confusion_matrix
+vinai/bertweet-base	all	apparel	2	3e-05	[[103  14]
+ [ 21 124]]
+
+2023-08-18 09:06:51,407 - INFO - ----------------------------------------------------------------------
+2023-08-18 09:06:51,407 - INFO - All finetuning runs are complete for TRAIN DOMAIN: all and TEST DOMAIN: apparel
+2023-08-18 09:06:51,407 - INFO - Calculating mean of test metrics
+2023-08-18 09:06:51,407 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Mean Test(predict) metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	mean_test_loss	mean_test_accuracy	mean_test_precision	mean_test_recall	mean_test_f1	mean_test_roc_auc	mean_test_matthews_correlation	mean_test_runtime	mean_test_samples_per_second	mean_test_steps_per_second
+vinai/bertweet-base	all	apparel	2	3e-05	0.4486192961533864	0.8575063613231553	0.8759720832078814	0.8666666666666667	0.8705191762227167	0.8564102564102564	0.7137058941766611	0.47550000000000003	551.2033333333333	69.42633333333333
+***** Mean Confusion Matrix(predict) *****
+model	train_domain	test_domain	iter.	hp_set_lr	mean_true_negative	mean_false_positive	mean_false_negative	mean_true_positive
+vinai/bertweet-base	all	apparel	2	3e-05	99.0	18.0	19.333333333333332	125.66666666666667
+
+2023-08-18 09:06:51,411 - INFO - Attempting to delete checkpoints from /notebooks/train_trainer
+2023-08-18 09:06:51,541 - INFO - Completed deleting checkpoints from /notebooks/train_trainer
+2023-08-18 09:06:51,541 - INFO - Attempting to delete checkpoints from /notebooks/test_trainer
+2023-08-18 09:06:51,541 - INFO - The path /notebooks/test_trainer does not exist.
+2023-08-18 09:06:51,541 - INFO - All testing completed for TEST domain: apparel
+2023-08-18 09:06:51,541 - INFO - ********************************************************************************************************************************************
+2023-08-18 09:06:51,541 - INFO - TEST DOMAIN: cars
+2023-08-18 09:06:51,653 - INFO - TEST data count: 93
+2023-08-18 09:06:52,796 - INFO - **********************************************************************
+2023-08-18 09:06:52,796 - INFO - Training data comprises all domains except: cars
+2023-08-18 09:06:52,840 - INFO - Overall data count for train and dev: 3356
+2023-08-18 09:06:52,841 - INFO - ***********************************
+2023-08-18 09:06:52,842 - INFO - Iteration number: 0 for TRAIN DOMAIN: all and TEST DOMAIN: cars
+2023-08-18 09:06:52,842 - INFO - Tokenizing the data...
+2023-08-18 09:06:55,185 - INFO - TRAIN data count: 2237 and DEV data count: 1119
+2023-08-18 09:06:55,185 - INFO - Finetune and perform evaluation...
+2023-08-18 09:06:55,185 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 3e-05
+2023-08-18 09:06:55,185 - INFO - Setting up training args and starting training...
+2023-08-18 09:08:38,111 - INFO - Training complete...
+2023-08-18 09:08:38,111 - INFO - TrainOutput(global_step=1120, training_loss=0.21913346265043532, metrics={'train_runtime': 101.8411, 'train_samples_per_second': 87.862, 'train_steps_per_second': 10.998, 'total_flos': 229913840172000.0, 'train_loss': 0.21913346265043532, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 09:08:38,111 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 09:08:39,018 - INFO - Report evaluation results...
+2023-08-18 09:08:39,019 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Eval metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	cars	0	3e-05	0.32258397340774536	0.8945487042001787	0.8879310344827587	0.7963917525773195	0.8396739130434782	0.8715200896949524	0.7639589776228836	1.934	578.584	72.388	2.25e-05	1.0	280
+vinai/bertweet-base	all	cars	0	3e-05	0.2911781668663025	0.9079535299374442	0.8701298701298701	0.8634020618556701	0.8667529107373868	0.8975013045256462	0.7964613590263707	1.9265	580.835	72.669	1.5e-05	2.0	560
+vinai/bertweet-base	all	cars	0	3e-05	0.35347095131874084	0.9142091152815014	0.8613861386138614	0.8969072164948454	0.8787878787878788	0.9101499146769712	0.8128370088575725	1.9519	573.283	71.724	7.5e-06	3.0	840
+vinai/bertweet-base	all	cars	0	3e-05	0.37287068367004395	0.9168900804289544	0.8734177215189873	0.8891752577319587	0.8812260536398467	0.9103879024637906	0.8173936622871504	1.9678	568.646	71.144	0.0	4.0	1120
+--*--*--
+***** Train metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	train_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	cars	0	3e-05	101.8411	87.862	10.998	229913840172000.0	0.21913346265043532	0.0	4.0	1120
+
+2023-08-18 09:08:39,019 - INFO - Loading the finetuned mode
+2023-08-18 09:08:40,929 - INFO - **TRACE** Running predictions with test data
+2023-08-18 09:08:46,414 - INFO - Metrics from the Predictions...
+2023-08-18 09:08:46,414 - INFO - {'test_loss': 0.3810223937034607, 'test_accuracy': 0.8709677419354839, 'test_precision': 0.9242424242424242, 'test_recall': 0.8970588235294118, 'test_f1': 0.9104477611940298, 'test_roc_auc': 0.8485294117647059, 'test_matthews_correlation': 0.6808321251601086, 'test_runtime': 0.1983, 'test_samples_per_second': 468.927, 'test_steps_per_second': 60.507}
+2023-08-18 09:08:46,414 - INFO - {'confusion_matrix': array([[20,  5],
+       [ 7, 61]])}
+2023-08-18 09:08:46,414 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Test(predict) metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	test_loss	test_accuracy	test_precision	test_recall	test_f1	test_roc_auc	test_matthews_correlation	test_runtime	test_samples_per_second	test_steps_per_second
+vinai/bertweet-base	all	cars	0	3e-05	0.3810223937034607	0.8709677419354839	0.9242424242424242	0.8970588235294118	0.9104477611940298	0.8485294117647059	0.6808321251601086	0.1983	468.927	60.507
+***** Confusion Matrix(predict) *****
+model	train_domain	test_domain	iter.	hp_set_lr	confusion_matrix
+vinai/bertweet-base	all	cars	0	3e-05	[[20  5]
+ [ 7 61]]
+
+2023-08-18 09:08:46,414 - INFO - ***********************************
+2023-08-18 09:08:46,414 - INFO - Iteration number: 1 for TRAIN DOMAIN: all and TEST DOMAIN: cars
+2023-08-18 09:08:46,415 - INFO - Tokenizing the data...
+2023-08-18 09:08:53,847 - INFO - TRAIN data count: 2237 and DEV data count: 1119
+2023-08-18 09:08:53,847 - INFO - Finetune and perform evaluation...
+2023-08-18 09:08:53,847 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 3e-05
+2023-08-18 09:08:53,847 - INFO - Setting up training args and starting training...
+2023-08-18 09:10:39,180 - INFO - Training complete...
+2023-08-18 09:10:39,180 - INFO - TrainOutput(global_step=1120, training_loss=0.20963715144566128, metrics={'train_runtime': 104.2273, 'train_samples_per_second': 85.851, 'train_steps_per_second': 10.746, 'total_flos': 229913840172000.0, 'train_loss': 0.20963715144566128, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 09:10:39,181 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 09:10:40,108 - INFO - Report evaluation results...
+2023-08-18 09:10:40,109 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Eval metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	cars	1	3e-05	0.3113574683666229	0.8945487042001787	0.8835227272727273	0.8015463917525774	0.8405405405405406	0.8727294202264938	0.7640630662631345	1.9235	581.748	72.783	2.25e-05	1.0	280
+vinai/bertweet-base	all	cars	1	3e-05	0.3530243933200836	0.903485254691689	0.8482587064676617	0.8788659793814433	0.8632911392405063	0.8977093234800513	0.7890376284890195	1.9733	567.063	70.946	1.5e-05	2.0	560
+vinai/bertweet-base	all	cars	1	3e-05	0.42300570011138916	0.9016979445933869	0.8390243902439024	0.8865979381443299	0.862155388471178	0.8981553302212757	0.7865784342546	1.9479	574.451	71.871	7.5e-06	3.0	840
+vinai/bertweet-base	all	cars	1	3e-05	0.4562414586544037	0.90437890974084	0.8503740648379052	0.8788659793814433	0.8643852978453739	0.8983933180080951	0.7908282670773611	1.9638	569.813	71.29	0.0	4.0	1120
+--*--*--
+***** Train metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	train_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	cars	1	3e-05	104.2273	85.851	10.746	229913840172000.0	0.20963715144566128	0.0	4.0	1120
+
+2023-08-18 09:10:40,109 - INFO - Loading the finetuned mode
+2023-08-18 09:10:41,727 - INFO - **TRACE** Running predictions with test data
+2023-08-18 09:10:42,155 - INFO - Metrics from the Predictions...
+2023-08-18 09:10:42,155 - INFO - {'test_loss': 0.42109689116477966, 'test_accuracy': 0.8494623655913979, 'test_precision': 0.9090909090909091, 'test_recall': 0.8823529411764706, 'test_f1': 0.8955223880597014, 'test_roc_auc': 0.8211764705882353, 'test_matthews_correlation': 0.6273997305272899, 'test_runtime': 0.1849, 'test_samples_per_second': 503.031, 'test_steps_per_second': 64.907}
+2023-08-18 09:10:42,155 - INFO - {'confusion_matrix': array([[19,  6],
+       [ 8, 60]])}
+2023-08-18 09:10:42,156 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Test(predict) metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	test_loss	test_accuracy	test_precision	test_recall	test_f1	test_roc_auc	test_matthews_correlation	test_runtime	test_samples_per_second	test_steps_per_second
+vinai/bertweet-base	all	cars	1	3e-05	0.42109689116477966	0.8494623655913979	0.9090909090909091	0.8823529411764706	0.8955223880597014	0.8211764705882353	0.6273997305272899	0.1849	503.031	64.907
+***** Confusion Matrix(predict) *****
+model	train_domain	test_domain	iter.	hp_set_lr	confusion_matrix
+vinai/bertweet-base	all	cars	1	3e-05	[[19  6]
+ [ 8 60]]
+
+2023-08-18 09:10:42,156 - INFO - ***********************************
+2023-08-18 09:10:42,156 - INFO - Iteration number: 2 for TRAIN DOMAIN: all and TEST DOMAIN: cars
+2023-08-18 09:10:42,156 - INFO - Tokenizing the data...
+2023-08-18 09:10:44,539 - INFO - TRAIN data count: 2238 and DEV data count: 1118
+2023-08-18 09:10:44,539 - INFO - Finetune and perform evaluation...
+2023-08-18 09:10:44,539 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 3e-05
+2023-08-18 09:10:44,539 - INFO - Setting up training args and starting training...
+2023-08-18 09:12:30,078 - INFO - Training complete...
+2023-08-18 09:12:30,099 - INFO - TrainOutput(global_step=1120, training_loss=0.2053679040500096, metrics={'train_runtime': 104.2515, 'train_samples_per_second': 85.869, 'train_steps_per_second': 10.743, 'total_flos': 230016617928000.0, 'train_loss': 0.2053679040500096, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 09:12:30,099 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 09:12:31,035 - INFO - Report evaluation results...
+2023-08-18 09:12:31,036 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Eval metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	cars	2	3e-05	0.30541756749153137	0.8989266547406082	0.8608923884514436	0.845360824742268	0.8530559167750325	0.8863790425081204	0.7761123936217768	1.9317	578.761	72.475	2.25e-05	1.0	280
+vinai/bertweet-base	all	cars	2	3e-05	0.3243902027606964	0.90608228980322	0.8834688346883469	0.8402061855670103	0.8612945838837517	0.8906510379889846	0.7909375224985771	1.9531	572.434	71.682	1.5e-05	2.0	560
+vinai/bertweet-base	all	cars	2	3e-05	0.4012097120285034	0.907871198568873	0.8501228501228502	0.8917525773195877	0.8704402515723271	0.9040954667419855	0.7995751016882205	1.9534	572.323	71.668	7.5e-06	3.0	840
+vinai/bertweet-base	all	cars	2	3e-05	0.4211609959602356	0.9123434704830053	0.8661616161616161	0.884020618556701	0.8749999999999999	0.9057089394153368	0.8076174124040356	1.9366	577.291	72.29	0.0	4.0	1120
+--*--*--
+***** Train metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	train_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	cars	2	3e-05	104.2515	85.869	10.743	230016617928000.0	0.2053679040500096	0.0	4.0	1120
+
+2023-08-18 09:12:31,036 - INFO - Loading the finetuned mode
+2023-08-18 09:12:31,992 - INFO - **TRACE** Running predictions with test data
+2023-08-18 09:12:32,425 - INFO - Metrics from the Predictions...
+2023-08-18 09:12:32,425 - INFO - {'test_loss': 0.38834232091903687, 'test_accuracy': 0.8602150537634409, 'test_precision': 0.9230769230769231, 'test_recall': 0.8823529411764706, 'test_f1': 0.9022556390977443, 'test_roc_auc': 0.8411764705882353, 'test_matthews_correlation': 0.6594742377078788, 'test_runtime': 0.1791, 'test_samples_per_second': 519.293, 'test_steps_per_second': 67.006}
+2023-08-18 09:12:32,425 - INFO - {'confusion_matrix': array([[20,  5],
+       [ 8, 60]])}
+2023-08-18 09:12:32,426 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Test(predict) metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	test_loss	test_accuracy	test_precision	test_recall	test_f1	test_roc_auc	test_matthews_correlation	test_runtime	test_samples_per_second	test_steps_per_second
+vinai/bertweet-base	all	cars	2	3e-05	0.38834232091903687	0.8602150537634409	0.9230769230769231	0.8823529411764706	0.9022556390977443	0.8411764705882353	0.6594742377078788	0.1791	519.293	67.006
+***** Confusion Matrix(predict) *****
+model	train_domain	test_domain	iter.	hp_set_lr	confusion_matrix
+vinai/bertweet-base	all	cars	2	3e-05	[[20  5]
+ [ 8 60]]
+
+2023-08-18 09:12:32,426 - INFO - ----------------------------------------------------------------------
+2023-08-18 09:12:32,426 - INFO - All finetuning runs are complete for TRAIN DOMAIN: all and TEST DOMAIN: cars
+2023-08-18 09:12:32,426 - INFO - Calculating mean of test metrics
+2023-08-18 09:12:32,426 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Mean Test(predict) metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	mean_test_loss	mean_test_accuracy	mean_test_precision	mean_test_recall	mean_test_f1	mean_test_roc_auc	mean_test_matthews_correlation	mean_test_runtime	mean_test_samples_per_second	mean_test_steps_per_second
+vinai/bertweet-base	all	cars	2	3e-05	0.3968205352624257	0.8602150537634409	0.9188034188034188	0.8872549019607843	0.9027419294504918	0.8369607843137254	0.655902031131759	0.18743333333333334	497.0836666666667	64.14
+***** Mean Confusion Matrix(predict) *****
+model	train_domain	test_domain	iter.	hp_set_lr	mean_true_negative	mean_false_positive	mean_false_negative	mean_true_positive
+vinai/bertweet-base	all	cars	2	3e-05	19.666666666666668	5.333333333333333	7.666666666666667	60.333333333333336
+
+2023-08-18 09:12:32,428 - INFO - Attempting to delete checkpoints from /notebooks/train_trainer
+2023-08-18 09:12:32,516 - INFO - Completed deleting checkpoints from /notebooks/train_trainer
+2023-08-18 09:12:32,516 - INFO - Attempting to delete checkpoints from /notebooks/test_trainer
+2023-08-18 09:12:32,516 - INFO - The path /notebooks/test_trainer does not exist.
+2023-08-18 09:12:32,516 - INFO - All testing completed for TEST domain: cars
+2023-08-18 09:12:32,517 - INFO - ********************************************************************************************************************************************
+2023-08-18 09:12:32,517 - INFO - TEST DOMAIN: retail
+2023-08-18 09:12:32,650 - INFO - TEST data count: 197
+2023-08-18 09:12:38,777 - INFO - **********************************************************************
+2023-08-18 09:12:38,778 - INFO - Training data comprises all domains except: retail
+2023-08-18 09:12:38,823 - INFO - Overall data count for train and dev: 3252
+2023-08-18 09:12:38,824 - INFO - ***********************************
+2023-08-18 09:12:38,824 - INFO - Iteration number: 0 for TRAIN DOMAIN: all and TEST DOMAIN: retail
+2023-08-18 09:12:38,824 - INFO - Tokenizing the data...
+2023-08-18 09:12:46,153 - INFO - TRAIN data count: 2168 and DEV data count: 1084
+2023-08-18 09:12:46,153 - INFO - Finetune and perform evaluation...
+2023-08-18 09:12:46,153 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 3e-05
+2023-08-18 09:12:46,153 - INFO - Setting up training args and starting training...
+2023-08-18 09:14:27,955 - INFO - Training complete...
+2023-08-18 09:14:27,966 - INFO - TrainOutput(global_step=1084, training_loss=0.2129716490467536, metrics={'train_runtime': 100.0934, 'train_samples_per_second': 86.639, 'train_steps_per_second': 10.83, 'total_flos': 222822175008000.0, 'train_loss': 0.2129716490467536, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 09:14:27,966 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 09:14:28,866 - INFO - Report evaluation results...
+2023-08-18 09:14:28,866 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Eval metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	retail	0	3e-05	0.32765960693359375	0.8819188191881919	0.7563559322033898	0.9648648648648649	0.8479809976247031	0.9019002195472785	0.7686904696190461	1.8907	573.347	71.933	2.25e-05	1.0	271
+vinai/bertweet-base	all	retail	0	3e-05	0.2679327726364136	0.9197416974169742	0.8834688346883469	0.8810810810810811	0.8822733423545331	0.9104284957226133	0.8213935069631775	1.89	573.544	71.958	1.5e-05	2.0	542
+vinai/bertweet-base	all	retail	0	3e-05	0.31933367252349854	0.9280442804428044	0.9269005847953217	0.8567567567567568	0.8904494382022472	0.910871375577258	0.8384377888667031	1.8919	572.956	71.884	7.5e-06	3.0	813
+vinai/bertweet-base	all	retail	0	3e-05	0.35408249497413635	0.9206642066420664	0.8641025641025641	0.9108108108108108	0.8868421052631579	0.9182905594670301	0.8265059564884631	1.9172	565.41	70.937	0.0	4.0	1084
+--*--*--
+***** Train metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	train_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	retail	0	3e-05	100.0934	86.639	10.83	222822175008000.0	0.2129716490467536	0.0	4.0	1084
+
+2023-08-18 09:14:28,866 - INFO - Loading the finetuned mode
+2023-08-18 09:14:29,844 - INFO - **TRACE** Running predictions with test data
+2023-08-18 09:14:30,446 - INFO - Metrics from the Predictions...
+2023-08-18 09:14:30,446 - INFO - {'test_loss': 0.4751562774181366, 'test_accuracy': 0.8781725888324873, 'test_precision': 0.9622641509433962, 'test_recall': 0.8360655737704918, 'test_f1': 0.8947368421052632, 'test_roc_auc': 0.8913661202185792, 'test_matthews_correlation': 0.762342515492834, 'test_runtime': 0.3637, 'test_samples_per_second': 541.607, 'test_steps_per_second': 68.732}
+2023-08-18 09:14:30,446 - INFO - {'confusion_matrix': array([[ 71,   4],
+       [ 20, 102]])}
+2023-08-18 09:14:30,446 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Test(predict) metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	test_loss	test_accuracy	test_precision	test_recall	test_f1	test_roc_auc	test_matthews_correlation	test_runtime	test_samples_per_second	test_steps_per_second
+vinai/bertweet-base	all	retail	0	3e-05	0.4751562774181366	0.8781725888324873	0.9622641509433962	0.8360655737704918	0.8947368421052632	0.8913661202185792	0.762342515492834	0.3637	541.607	68.732
+***** Confusion Matrix(predict) *****
+model	train_domain	test_domain	iter.	hp_set_lr	confusion_matrix
+vinai/bertweet-base	all	retail	0	3e-05	[[ 71   4]
+ [ 20 102]]
+
+2023-08-18 09:14:30,446 - INFO - ***********************************
+2023-08-18 09:14:30,446 - INFO - Iteration number: 1 for TRAIN DOMAIN: all and TEST DOMAIN: retail
+2023-08-18 09:14:30,446 - INFO - Tokenizing the data...
+2023-08-18 09:14:33,825 - INFO - TRAIN data count: 2168 and DEV data count: 1084
+2023-08-18 09:14:33,825 - INFO - Finetune and perform evaluation...
+2023-08-18 09:14:33,826 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 3e-05
+2023-08-18 09:14:33,826 - INFO - Setting up training args and starting training...
+2023-08-18 09:16:16,188 - INFO - Training complete...
+2023-08-18 09:16:16,188 - INFO - TrainOutput(global_step=1084, training_loss=0.1866440027402336, metrics={'train_runtime': 100.715, 'train_samples_per_second': 86.104, 'train_steps_per_second': 10.763, 'total_flos': 222822175008000.0, 'train_loss': 0.1866440027402336, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 09:16:16,188 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 09:16:17,032 - INFO - Report evaluation results...
+2023-08-18 09:16:17,033 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Eval metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	retail	1	3e-05	0.3413344621658325	0.8976014760147601	0.8381201044386423	0.8675675675675676	0.8525896414342629	0.890366416837005	0.7744511267017236	1.8778	577.28	72.426	2.25e-05	1.0	271
+vinai/bertweet-base	all	retail	1	3e-05	0.38630911707878113	0.8976014760147601	0.8471849865951743	0.8540540540540541	0.8506056527590848	0.8871110606404725	0.7727274275847841	1.8821	575.947	72.259	1.5e-05	2.0	542
+vinai/bertweet-base	all	retail	1	3e-05	0.45424026250839233	0.9031365313653137	0.8590785907859079	0.8567567567567568	0.857916102841678	0.8919638125520479	0.7844400034357685	1.8977	571.231	71.667	7.5e-06	3.0	813
+vinai/bertweet-base	all	retail	1	3e-05	0.4731563627719879	0.9040590405904059	0.85	0.8729729729729729	0.8613333333333333	0.8965705200999319	0.7881742870521579	1.8915	573.086	71.9	0.0	4.0	1084
+--*--*--
+***** Train metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	train_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	retail	1	3e-05	100.715	86.104	10.763	222822175008000.0	0.1866440027402336	0.0	4.0	1084
+
+2023-08-18 09:16:17,033 - INFO - Loading the finetuned mode
+2023-08-18 09:16:18,644 - INFO - **TRACE** Running predictions with test data
+2023-08-18 09:16:19,288 - INFO - Metrics from the Predictions...
+2023-08-18 09:16:19,288 - INFO - {'test_loss': 0.5169992446899414, 'test_accuracy': 0.8375634517766497, 'test_precision': 0.9090909090909091, 'test_recall': 0.819672131147541, 'test_f1': 0.8620689655172413, 'test_roc_auc': 0.8431693989071039, 'test_matthews_correlation': 0.6711091001252883, 'test_runtime': 0.3661, 'test_samples_per_second': 538.144, 'test_steps_per_second': 68.292}
+2023-08-18 09:16:19,289 - INFO - {'confusion_matrix': array([[ 65,  10],
+       [ 22, 100]])}
+2023-08-18 09:16:19,289 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Test(predict) metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	test_loss	test_accuracy	test_precision	test_recall	test_f1	test_roc_auc	test_matthews_correlation	test_runtime	test_samples_per_second	test_steps_per_second
+vinai/bertweet-base	all	retail	1	3e-05	0.5169992446899414	0.8375634517766497	0.9090909090909091	0.819672131147541	0.8620689655172413	0.8431693989071039	0.6711091001252883	0.3661	538.144	68.292
+***** Confusion Matrix(predict) *****
+model	train_domain	test_domain	iter.	hp_set_lr	confusion_matrix
+vinai/bertweet-base	all	retail	1	3e-05	[[ 65  10]
+ [ 22 100]]
+
+2023-08-18 09:16:19,289 - INFO - ***********************************
+2023-08-18 09:16:19,289 - INFO - Iteration number: 2 for TRAIN DOMAIN: all and TEST DOMAIN: retail
+2023-08-18 09:16:19,289 - INFO - Tokenizing the data...
+2023-08-18 09:16:21,562 - INFO - TRAIN data count: 2168 and DEV data count: 1084
+2023-08-18 09:16:21,562 - INFO - Finetune and perform evaluation...
+2023-08-18 09:16:21,562 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 3e-05
+2023-08-18 09:16:21,562 - INFO - Setting up training args and starting training...
+2023-08-18 09:18:05,537 - INFO - Training complete...
+2023-08-18 09:18:05,537 - INFO - TrainOutput(global_step=1084, training_loss=0.20602564222258396, metrics={'train_runtime': 102.2063, 'train_samples_per_second': 84.848, 'train_steps_per_second': 10.606, 'total_flos': 222822175008000.0, 'train_loss': 0.20602564222258396, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 09:18:05,537 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 09:18:06,396 - INFO - Report evaluation results...
+2023-08-18 09:18:06,397 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Eval metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	retail	2	3e-05	0.3237040340900421	0.8976014760147601	0.9137380191693291	0.772972972972973	0.8374816983894582	0.8675789234612764	0.7691857100089975	1.8783	577.12	72.406	2.25e-05	1.0	271
+vinai/bertweet-base	all	retail	2	3e-05	0.31566640734672546	0.9077490774907749	0.8515625	0.8837837837837837	0.8673740053050397	0.9019759255053373	0.7970129449521733	1.9126	566.757	71.106	1.5e-05	2.0	542
+vinai/bertweet-base	all	retail	2	3e-05	0.3979036808013916	0.9049815498154982	0.8329177057356608	0.9027027027027027	0.8664072632944229	0.9044325838443485	0.7944079166995465	1.9079	568.166	71.283	7.5e-06	3.0	813
+vinai/bertweet-base	all	retail	2	3e-05	0.38690319657325745	0.9197416974169742	0.8713910761154856	0.8972972972972973	0.8841544607190414	0.9143349231584527	0.8229839272189727	1.8907	573.318	71.929	0.0	4.0	1084
+--*--*--
+***** Train metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	train_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	retail	2	3e-05	102.2063	84.848	10.606	222822175008000.0	0.20602564222258396	0.0	4.0	1084
+
+2023-08-18 09:18:06,397 - INFO - Loading the finetuned mode
+2023-08-18 09:18:08,008 - INFO - **TRACE** Running predictions with test data
+2023-08-18 09:18:08,745 - INFO - Metrics from the Predictions...
+2023-08-18 09:18:08,745 - INFO - {'test_loss': 0.37577977776527405, 'test_accuracy': 0.8934010152284264, 'test_precision': 0.954954954954955, 'test_recall': 0.8688524590163934, 'test_f1': 0.9098712446351932, 'test_roc_auc': 0.9010928961748633, 'test_matthews_correlation': 0.7853708861771634, 'test_runtime': 0.481, 'test_samples_per_second': 409.569, 'test_steps_per_second': 51.976}
+2023-08-18 09:18:08,745 - INFO - {'confusion_matrix': array([[ 70,   5],
+       [ 16, 106]])}
+2023-08-18 09:18:08,745 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Test(predict) metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	test_loss	test_accuracy	test_precision	test_recall	test_f1	test_roc_auc	test_matthews_correlation	test_runtime	test_samples_per_second	test_steps_per_second
+vinai/bertweet-base	all	retail	2	3e-05	0.37577977776527405	0.8934010152284264	0.954954954954955	0.8688524590163934	0.9098712446351932	0.9010928961748633	0.7853708861771634	0.481	409.569	51.976
+***** Confusion Matrix(predict) *****
+model	train_domain	test_domain	iter.	hp_set_lr	confusion_matrix
+vinai/bertweet-base	all	retail	2	3e-05	[[ 70   5]
+ [ 16 106]]
+
+2023-08-18 09:18:08,745 - INFO - ----------------------------------------------------------------------
+2023-08-18 09:18:08,745 - INFO - All finetuning runs are complete for TRAIN DOMAIN: all and TEST DOMAIN: retail
+2023-08-18 09:18:08,745 - INFO - Calculating mean of test metrics
+2023-08-18 09:18:08,745 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Mean Test(predict) metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	mean_test_loss	mean_test_accuracy	mean_test_precision	mean_test_recall	mean_test_f1	mean_test_roc_auc	mean_test_matthews_correlation	mean_test_runtime	mean_test_samples_per_second	mean_test_steps_per_second
+vinai/bertweet-base	all	retail	2	3e-05	0.45597843329111737	0.8697123519458545	0.9421033383297535	0.8415300546448088	0.8888923507525659	0.8785428051001821	0.7396075005984287	0.40359999999999996	496.44	63.0
+***** Mean Confusion Matrix(predict) *****
+model	train_domain	test_domain	iter.	hp_set_lr	mean_true_negative	mean_false_positive	mean_false_negative	mean_true_positive
+vinai/bertweet-base	all	retail	2	3e-05	68.66666666666667	6.333333333333333	19.333333333333332	102.66666666666667
+
+2023-08-18 09:18:08,749 - INFO - Attempting to delete checkpoints from /notebooks/train_trainer
+2023-08-18 09:18:08,916 - INFO - Completed deleting checkpoints from /notebooks/train_trainer
+2023-08-18 09:18:08,916 - INFO - Attempting to delete checkpoints from /notebooks/test_trainer
+2023-08-18 09:18:08,917 - INFO - The path /notebooks/test_trainer does not exist.
+2023-08-18 09:18:08,917 - INFO - All testing completed for TEST domain: retail
+2023-08-18 09:18:08,917 - INFO - ********************************************************************************************************************************************
+2023-08-18 09:18:08,917 - INFO - TEST DOMAIN: services
+2023-08-18 09:18:09,017 - INFO - TEST data count: 335
+2023-08-18 09:18:10,233 - INFO - **********************************************************************
+2023-08-18 09:18:10,233 - INFO - Training data comprises all domains except: services
+2023-08-18 09:18:10,281 - INFO - Overall data count for train and dev: 3114
+2023-08-18 09:18:10,282 - INFO - ***********************************
+2023-08-18 09:18:10,282 - INFO - Iteration number: 0 for TRAIN DOMAIN: all and TEST DOMAIN: services
+2023-08-18 09:18:10,282 - INFO - Tokenizing the data...
+2023-08-18 09:18:12,690 - INFO - TRAIN data count: 2076 and DEV data count: 1038
+2023-08-18 09:18:12,690 - INFO - Finetune and perform evaluation...
+2023-08-18 09:18:12,690 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 3e-05
+2023-08-18 09:18:12,690 - INFO - Setting up training args and starting training...
+2023-08-18 09:19:50,014 - INFO - Training complete...
+2023-08-18 09:19:50,014 - INFO - TrainOutput(global_step=1040, training_loss=0.1960398547924482, metrics={'train_runtime': 95.594, 'train_samples_per_second': 86.867, 'train_steps_per_second': 10.879, 'total_flos': 213366621456000.0, 'train_loss': 0.1960398547924482, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 09:19:50,015 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 09:19:50,926 - INFO - Report evaluation results...
+2023-08-18 09:19:50,926 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Eval metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	services	0	3e-05	0.4436417520046234	0.861271676300578	0.896	0.6549707602339181	0.7567567567567568	0.8088072191974188	0.6788940462076182	1.8036	575.522	72.079	2.25e-05	1.0	260
+vinai/bertweet-base	all	services	0	3e-05	0.3517323434352875	0.9084778420038536	0.8708708708708709	0.847953216374269	0.8592592592592593	0.8930858035894333	0.7916229067945948	1.8182	570.883	71.498	1.5e-05	2.0	520
+vinai/bertweet-base	all	services	0	3e-05	0.45188042521476746	0.9026974951830443	0.8825396825396825	0.8128654970760234	0.8462709284627092	0.8798522887678969	0.776672611496139	1.8155	571.755	71.607	7.5e-06	3.0	780
+vinai/bertweet-base	all	services	0	3e-05	0.45876768231391907	0.9065510597302505	0.8450704225352113	0.8771929824561403	0.860832137733142	0.8990849969751966	0.7908398435975086	1.8218	569.774	71.359	0.0	4.0	1040
+--*--*--
+***** Train metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	train_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	services	0	3e-05	95.594	86.867	10.879	213366621456000.0	0.1960398547924482	0.0	4.0	1040
+
+2023-08-18 09:19:50,926 - INFO - Loading the finetuned mode
+2023-08-18 09:19:51,909 - INFO - **TRACE** Running predictions with test data
+2023-08-18 09:19:52,767 - INFO - Metrics from the Predictions...
+2023-08-18 09:19:52,767 - INFO - {'test_loss': 0.5310430526733398, 'test_accuracy': 0.8656716417910447, 'test_precision': 0.8878048780487805, 'test_recall': 0.8921568627450981, 'test_f1': 0.8899755501222494, 'test_roc_auc': 0.8582921718305643, 'test_matthews_correlation': 0.7175785365653261, 'test_runtime': 0.5879, 'test_samples_per_second': 569.853, 'test_steps_per_second': 71.444}
+2023-08-18 09:19:52,767 - INFO - {'confusion_matrix': array([[108,  23],
+       [ 22, 182]])}
+2023-08-18 09:19:52,767 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Test(predict) metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	test_loss	test_accuracy	test_precision	test_recall	test_f1	test_roc_auc	test_matthews_correlation	test_runtime	test_samples_per_second	test_steps_per_second
+vinai/bertweet-base	all	services	0	3e-05	0.5310430526733398	0.8656716417910447	0.8878048780487805	0.8921568627450981	0.8899755501222494	0.8582921718305643	0.7175785365653261	0.5879	569.853	71.444
+***** Confusion Matrix(predict) *****
+model	train_domain	test_domain	iter.	hp_set_lr	confusion_matrix
+vinai/bertweet-base	all	services	0	3e-05	[[108  23]
+ [ 22 182]]
+
+2023-08-18 09:19:52,767 - INFO - ***********************************
+2023-08-18 09:19:52,767 - INFO - Iteration number: 1 for TRAIN DOMAIN: all and TEST DOMAIN: services
+2023-08-18 09:19:52,767 - INFO - Tokenizing the data...
+2023-08-18 09:19:55,019 - INFO - TRAIN data count: 2076 and DEV data count: 1038
+2023-08-18 09:19:55,019 - INFO - Finetune and perform evaluation...
+2023-08-18 09:19:55,019 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 3e-05
+2023-08-18 09:19:55,019 - INFO - Setting up training args and starting training...
+2023-08-18 09:21:35,042 - INFO - Training complete...
+2023-08-18 09:21:35,044 - INFO - TrainOutput(global_step=1040, training_loss=0.18393946868868974, metrics={'train_runtime': 98.3324, 'train_samples_per_second': 84.448, 'train_steps_per_second': 10.576, 'total_flos': 213366621456000.0, 'train_loss': 0.18393946868868974, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 09:21:35,044 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 09:21:35,884 - INFO - Report evaluation results...
+2023-08-18 09:21:35,884 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Eval metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	services	1	3e-05	0.37637242674827576	0.8892100192678227	0.9014084507042254	0.7463556851311953	0.8165869218500796	0.8530339576735112	0.7449739665365417	1.8133	572.439	71.693	2.25e-05	1.0	260
+vinai/bertweet-base	all	services	1	3e-05	0.4238879978656769	0.9075144508670521	0.8559077809798271	0.8658892128279884	0.8608695652173913	0.8969733833924114	0.7916388253126181	1.79	579.902	72.627	1.5e-05	2.0	520
+vinai/bertweet-base	all	services	1	3e-05	0.5045387744903564	0.8901734104046243	0.7759036144578313	0.9387755102040817	0.8496042216358839	0.902481280281897	0.7729422946038547	1.8253	568.665	71.22	7.5e-06	3.0	780
+vinai/bertweet-base	all	services	1	3e-05	0.4425472915172577	0.9046242774566474	0.8370165745856354	0.8833819241982507	0.8595744680851064	0.8992449189336578	0.7880998093723326	1.8358	565.436	70.816	0.0	4.0	1040
+--*--*--
+***** Train metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	train_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	services	1	3e-05	98.3324	84.448	10.576	213366621456000.0	0.18393946868868974	0.0	4.0	1040
+
+2023-08-18 09:21:35,884 - INFO - Loading the finetuned mode
+2023-08-18 09:21:37,248 - INFO - **TRACE** Running predictions with test data
+2023-08-18 09:21:38,130 - INFO - Metrics from the Predictions...
+2023-08-18 09:21:38,130 - INFO - {'test_loss': 0.5411261916160583, 'test_accuracy': 0.8328358208955224, 'test_precision': 0.9204545454545454, 'test_recall': 0.7941176470588235, 'test_f1': 0.8526315789473684, 'test_roc_auc': 0.8436237090255949, 'test_matthews_correlation': 0.6715973168292704, 'test_runtime': 0.6078, 'test_samples_per_second': 551.132, 'test_steps_per_second': 69.097}
+2023-08-18 09:21:38,130 - INFO - {'confusion_matrix': array([[117,  14],
+       [ 42, 162]])}
+2023-08-18 09:21:38,131 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Test(predict) metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	test_loss	test_accuracy	test_precision	test_recall	test_f1	test_roc_auc	test_matthews_correlation	test_runtime	test_samples_per_second	test_steps_per_second
+vinai/bertweet-base	all	services	1	3e-05	0.5411261916160583	0.8328358208955224	0.9204545454545454	0.7941176470588235	0.8526315789473684	0.8436237090255949	0.6715973168292704	0.6078	551.132	69.097
+***** Confusion Matrix(predict) *****
+model	train_domain	test_domain	iter.	hp_set_lr	confusion_matrix
+vinai/bertweet-base	all	services	1	3e-05	[[117  14]
+ [ 42 162]]
+
+2023-08-18 09:21:38,131 - INFO - ***********************************
+2023-08-18 09:21:38,131 - INFO - Iteration number: 2 for TRAIN DOMAIN: all and TEST DOMAIN: services
+2023-08-18 09:21:38,131 - INFO - Tokenizing the data...
+2023-08-18 09:21:40,595 - INFO - TRAIN data count: 2076 and DEV data count: 1038
+2023-08-18 09:21:40,596 - INFO - Finetune and perform evaluation...
+2023-08-18 09:21:40,596 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 3e-05
+2023-08-18 09:21:40,596 - INFO - Setting up training args and starting training...
+2023-08-18 09:23:21,125 - INFO - Training complete...
+2023-08-18 09:23:21,125 - INFO - TrainOutput(global_step=1040, training_loss=0.19993913288299853, metrics={'train_runtime': 99.0731, 'train_samples_per_second': 83.817, 'train_steps_per_second': 10.497, 'total_flos': 213366621456000.0, 'train_loss': 0.19993913288299853, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 09:23:21,125 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 09:23:21,963 - INFO - Report evaluation results...
+2023-08-18 09:23:21,964 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Eval metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	services	2	3e-05	0.25084707140922546	0.9200385356454721	0.9037267080745341	0.8483965014577259	0.875187969924812	0.9018960924554817	0.8173325495225745	1.7755	584.622	73.219	2.25e-05	1.0	260
+vinai/bertweet-base	all	services	2	3e-05	0.2879618704319	0.9267822736030829	0.8914956011730205	0.8862973760932945	0.8888888888888888	0.916529983010676	0.8342998164806986	1.7987	577.094	72.276	1.5e-05	2.0	520
+vinai/bertweet-base	all	services	2	3e-05	0.3027154803276062	0.9258188824662813	0.9030303030303031	0.8688046647230321	0.8855869242199109	0.9113807496277031	0.8310742463258073	1.7922	579.191	72.538	7.5e-06	3.0	780
+vinai/bertweet-base	all	services	2	3e-05	0.34319743514060974	0.9277456647398844	0.8806818181818182	0.9037900874635568	0.8920863309352518	0.9216792163936488	0.837950307260769	1.8243	568.973	71.259	0.0	4.0	1040
+--*--*--
+***** Train metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	train_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	services	2	3e-05	99.0731	83.817	10.497	213366621456000.0	0.19993913288299853	0.0	4.0	1040
+
+2023-08-18 09:23:21,964 - INFO - Loading the finetuned mode
+2023-08-18 09:23:22,980 - INFO - **TRACE** Running predictions with test data
+2023-08-18 09:23:24,867 - INFO - Metrics from the Predictions...
+2023-08-18 09:23:24,867 - INFO - {'test_loss': 0.4356299638748169, 'test_accuracy': 0.8537313432835821, 'test_precision': 0.8894472361809045, 'test_recall': 0.8676470588235294, 'test_f1': 0.8784119106699751, 'test_roc_auc': 0.8498540637629096, 'test_matthews_correlation': 0.6952990847084953, 'test_runtime': 0.588, 'test_samples_per_second': 569.775, 'test_steps_per_second': 71.434}
+2023-08-18 09:23:24,867 - INFO - {'confusion_matrix': array([[109,  22],
+       [ 27, 177]])}
+2023-08-18 09:23:24,868 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Test(predict) metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	test_loss	test_accuracy	test_precision	test_recall	test_f1	test_roc_auc	test_matthews_correlation	test_runtime	test_samples_per_second	test_steps_per_second
+vinai/bertweet-base	all	services	2	3e-05	0.4356299638748169	0.8537313432835821	0.8894472361809045	0.8676470588235294	0.8784119106699751	0.8498540637629096	0.6952990847084953	0.588	569.775	71.434
+***** Confusion Matrix(predict) *****
+model	train_domain	test_domain	iter.	hp_set_lr	confusion_matrix
+vinai/bertweet-base	all	services	2	3e-05	[[109  22]
+ [ 27 177]]
+
+2023-08-18 09:23:24,868 - INFO - ----------------------------------------------------------------------
+2023-08-18 09:23:24,868 - INFO - All finetuning runs are complete for TRAIN DOMAIN: all and TEST DOMAIN: services
+2023-08-18 09:23:24,868 - INFO - Calculating mean of test metrics
+2023-08-18 09:23:24,868 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Mean Test(predict) metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	mean_test_loss	mean_test_accuracy	mean_test_precision	mean_test_recall	mean_test_f1	mean_test_roc_auc	mean_test_matthews_correlation	mean_test_runtime	mean_test_samples_per_second	mean_test_steps_per_second
+vinai/bertweet-base	all	services	2	3e-05	0.5025997360547384	0.8507462686567164	0.8992355532280767	0.8513071895424836	0.873673013246531	0.8505899815396897	0.6948249793676973	0.5945666666666667	563.5866666666666	70.65833333333333
+***** Mean Confusion Matrix(predict) *****
+model	train_domain	test_domain	iter.	hp_set_lr	mean_true_negative	mean_false_positive	mean_false_negative	mean_true_positive
+vinai/bertweet-base	all	services	2	3e-05	111.33333333333333	19.666666666666668	30.333333333333332	173.66666666666666
+
+2023-08-18 09:23:24,874 - INFO - Attempting to delete checkpoints from /notebooks/train_trainer
+2023-08-18 09:23:25,084 - INFO - Completed deleting checkpoints from /notebooks/train_trainer
+2023-08-18 09:23:25,084 - INFO - Attempting to delete checkpoints from /notebooks/test_trainer
+2023-08-18 09:23:25,084 - INFO - The path /notebooks/test_trainer does not exist.
+2023-08-18 09:23:25,084 - INFO - All testing completed for TEST domain: services
+2023-08-18 09:23:25,084 - INFO - ********************************************************************************************************************************************
+2023-08-18 09:23:25,084 - INFO - TEST DOMAIN: software
+2023-08-18 09:23:25,200 - INFO - TEST data count: 295
+2023-08-18 09:23:26,388 - INFO - **********************************************************************
+2023-08-18 09:23:26,388 - INFO - Training data comprises all domains except: software
+2023-08-18 09:23:26,676 - INFO - Overall data count for train and dev: 3154
+2023-08-18 09:23:26,677 - INFO - ***********************************
+2023-08-18 09:23:26,677 - INFO - Iteration number: 0 for TRAIN DOMAIN: all and TEST DOMAIN: software
+2023-08-18 09:23:26,677 - INFO - Tokenizing the data...
+2023-08-18 09:23:29,335 - INFO - TRAIN data count: 2102 and DEV data count: 1052
+2023-08-18 09:23:29,335 - INFO - Finetune and perform evaluation...
+2023-08-18 09:23:29,335 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 3e-05
+2023-08-18 09:23:29,335 - INFO - Setting up training args and starting training...
+2023-08-18 09:25:08,475 - INFO - Training complete...
+2023-08-18 09:25:08,477 - INFO - TrainOutput(global_step=1052, training_loss=0.19045849399421605, metrics={'train_runtime': 97.4546, 'train_samples_per_second': 86.276, 'train_steps_per_second': 10.795, 'total_flos': 216038843112000.0, 'train_loss': 0.19045849399421605, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 09:25:08,477 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 09:25:09,353 - INFO - Report evaluation results...
+2023-08-18 09:25:09,353 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Eval metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	software	0	3e-05	0.37445253133773804	0.8887832699619772	0.7933673469387755	0.8962536023054755	0.8416779431664412	0.8906799926420994	0.7597933027923379	1.8203	577.937	72.517	2.25e-05	1.0	263
+vinai/bertweet-base	all	software	0	3e-05	0.4087359607219696	0.8944866920152091	0.8511904761904762	0.8242074927953891	0.8374816983894583	0.8766427534898932	0.7596136457686684	1.8304	574.747	72.117	1.5e-05	2.0	526
+vinai/bertweet-base	all	software	0	3e-05	0.44217419624328613	0.9001901140684411	0.8342541436464088	0.8703170028818443	0.8519040902679831	0.8926053099515605	0.7770816077059042	1.8374	572.549	71.841	7.5e-06	3.0	789
+vinai/bertweet-base	all	software	0	3e-05	0.4814123511314392	0.903041825095057	0.8266666666666667	0.8933717579250721	0.8587257617728532	0.9005865881823941	0.7864583506945052	1.8296	574.984	72.146	0.0	4.0	1052
+--*--*--
+***** Train metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	train_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	software	0	3e-05	97.4546	86.276	10.795	216038843112000.0	0.19045849399421605	0.0	4.0	1052
+
+2023-08-18 09:25:09,353 - INFO - Loading the finetuned mode
+2023-08-18 09:25:10,326 - INFO - **TRACE** Running predictions with test data
+2023-08-18 09:25:16,120 - INFO - Metrics from the Predictions...
+2023-08-18 09:25:16,120 - INFO - {'test_loss': 0.370625376701355, 'test_accuracy': 0.8813559322033898, 'test_precision': 0.9243243243243243, 'test_recall': 0.890625, 'test_f1': 0.907161803713528, 'test_roc_auc': 0.8773513349514565, 'test_matthews_correlation': 0.7439828188916358, 'test_runtime': 0.5281, 'test_samples_per_second': 558.598, 'test_steps_per_second': 70.061}
+2023-08-18 09:25:16,120 - INFO - {'confusion_matrix': array([[ 89,  14],
+       [ 21, 171]])}
+2023-08-18 09:25:16,120 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Test(predict) metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	test_loss	test_accuracy	test_precision	test_recall	test_f1	test_roc_auc	test_matthews_correlation	test_runtime	test_samples_per_second	test_steps_per_second
+vinai/bertweet-base	all	software	0	3e-05	0.370625376701355	0.8813559322033898	0.9243243243243243	0.890625	0.907161803713528	0.8773513349514565	0.7439828188916358	0.5281	558.598	70.061
+***** Confusion Matrix(predict) *****
+model	train_domain	test_domain	iter.	hp_set_lr	confusion_matrix
+vinai/bertweet-base	all	software	0	3e-05	[[ 89  14]
+ [ 21 171]]
+
+2023-08-18 09:25:16,120 - INFO - ***********************************
+2023-08-18 09:25:16,120 - INFO - Iteration number: 1 for TRAIN DOMAIN: all and TEST DOMAIN: software
+2023-08-18 09:25:16,120 - INFO - Tokenizing the data...
+2023-08-18 09:25:18,388 - INFO - TRAIN data count: 2103 and DEV data count: 1051
+2023-08-18 09:25:18,388 - INFO - Finetune and perform evaluation...
+2023-08-18 09:25:18,388 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 3e-05
+2023-08-18 09:25:18,388 - INFO - Setting up training args and starting training...
+2023-08-18 09:26:59,331 - INFO - Training complete...
+2023-08-18 09:26:59,331 - INFO - TrainOutput(global_step=1052, training_loss=0.20250828116565603, metrics={'train_runtime': 99.8489, 'train_samples_per_second': 84.247, 'train_steps_per_second': 10.536, 'total_flos': 216141620868000.0, 'train_loss': 0.20250828116565603, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 09:26:59,332 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 09:27:00,201 - INFO - Report evaluation results...
+2023-08-18 09:27:00,201 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Eval metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	software	1	3e-05	0.2706678509712219	0.9029495718363464	0.8986928104575164	0.7947976878612717	0.843558282208589	0.8754130283277991	0.7766638552752148	1.8236	576.331	72.384	2.25e-05	1.0	263
+vinai/bertweet-base	all	software	1	3e-05	0.2613523006439209	0.9191246431969553	0.8372093023255814	0.9364161849710982	0.8840381991814461	0.9235272414217193	0.8252859107282833	1.8131	579.659	72.802	1.5e-05	2.0	526
+vinai/bertweet-base	all	software	1	3e-05	0.3667779266834259	0.9162702188392008	0.8290816326530612	0.9393063583815029	0.8807588075880759	0.9221354486942975	0.8204057322834507	1.8302	574.263	72.124	7.5e-06	3.0	789
+vinai/bertweet-base	all	software	1	3e-05	0.3694886267185211	0.9238820171265462	0.8715083798882681	0.9017341040462428	0.8863636363636364	0.9182429385479441	0.8294363992528088	1.8343	572.962	71.961	0.0	4.0	1052
+--*--*--
+***** Train metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	train_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	software	1	3e-05	99.8489	84.247	10.536	216141620868000.0	0.20250828116565603	0.0	4.0	1052
+
+2023-08-18 09:27:00,202 - INFO - Loading the finetuned mode
+2023-08-18 09:27:01,421 - INFO - **TRACE** Running predictions with test data
+2023-08-18 09:27:02,229 - INFO - Metrics from the Predictions...
+2023-08-18 09:27:02,229 - INFO - {'test_loss': 0.42439231276512146, 'test_accuracy': 0.8847457627118644, 'test_precision': 0.9293478260869565, 'test_recall': 0.890625, 'test_f1': 0.9095744680851064, 'test_roc_auc': 0.8822057038834953, 'test_matthews_correlation': 0.7521872809360173, 'test_runtime': 0.5332, 'test_samples_per_second': 553.266, 'test_steps_per_second': 69.393}
+2023-08-18 09:27:02,229 - INFO - {'confusion_matrix': array([[ 90,  13],
+       [ 21, 171]])}
+2023-08-18 09:27:02,229 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Test(predict) metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	test_loss	test_accuracy	test_precision	test_recall	test_f1	test_roc_auc	test_matthews_correlation	test_runtime	test_samples_per_second	test_steps_per_second
+vinai/bertweet-base	all	software	1	3e-05	0.42439231276512146	0.8847457627118644	0.9293478260869565	0.890625	0.9095744680851064	0.8822057038834953	0.7521872809360173	0.5332	553.266	69.393
+***** Confusion Matrix(predict) *****
+model	train_domain	test_domain	iter.	hp_set_lr	confusion_matrix
+vinai/bertweet-base	all	software	1	3e-05	[[ 90  13]
+ [ 21 171]]
+
+2023-08-18 09:27:02,229 - INFO - ***********************************
+2023-08-18 09:27:02,229 - INFO - Iteration number: 2 for TRAIN DOMAIN: all and TEST DOMAIN: software
+2023-08-18 09:27:02,230 - INFO - Tokenizing the data...
+2023-08-18 09:27:04,626 - INFO - TRAIN data count: 2103 and DEV data count: 1051
+2023-08-18 09:27:04,627 - INFO - Finetune and perform evaluation...
+2023-08-18 09:27:04,627 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 3e-05
+2023-08-18 09:27:04,627 - INFO - Setting up training args and starting training...
+2023-08-18 09:28:47,760 - INFO - Training complete...
+2023-08-18 09:28:47,760 - INFO - TrainOutput(global_step=1052, training_loss=0.19679225012376733, metrics={'train_runtime': 99.3751, 'train_samples_per_second': 84.649, 'train_steps_per_second': 10.586, 'total_flos': 216141620868000.0, 'train_loss': 0.19679225012376733, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 09:28:47,760 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 09:28:48,584 - INFO - Report evaluation results...
+2023-08-18 09:28:48,585 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Eval metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	software	2	3e-05	0.2953108847141266	0.9096098953377736	0.875	0.8472622478386167	0.8609077598828696	0.8938015784647628	0.794210922766513	1.8201	577.439	72.523	2.25e-05	1.0	263
+vinai/bertweet-base	all	software	2	3e-05	0.376163512468338	0.9048525214081827	0.9273356401384083	0.7723342939481268	0.8427672955974842	0.8712523742467907	0.782030867354684	1.8413	570.78	71.687	1.5e-05	2.0	526
+vinai/bertweet-base	all	software	2	3e-05	0.3714660406112671	0.9124643196955281	0.8805970149253731	0.8501440922190202	0.8651026392961876	0.8966629552004192	0.8006151262126707	1.8303	574.227	72.12	7.5e-06	3.0	789
+vinai/bertweet-base	all	software	2	3e-05	0.4137992560863495	0.9162702188392008	0.8888888888888888	0.8530259365994236	0.8705882352941177	0.9002345592088027	0.8091169698773614	1.8466	569.155	71.483	0.0	4.0	1052
+--*--*--
+***** Train metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	train_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	software	2	3e-05	99.3751	84.649	10.586	216141620868000.0	0.19679225012376733	0.0	4.0	1052
+
+2023-08-18 09:28:48,585 - INFO - Loading the finetuned mode
+2023-08-18 09:28:49,920 - INFO - **TRACE** Running predictions with test data
+2023-08-18 09:28:50,737 - INFO - Metrics from the Predictions...
+2023-08-18 09:28:50,737 - INFO - {'test_loss': 0.39908459782600403, 'test_accuracy': 0.8745762711864407, 'test_precision': 0.9585798816568047, 'test_recall': 0.84375, 'test_f1': 0.8975069252077563, 'test_roc_auc': 0.8878944174757282, 'test_matthews_correlation': 0.7476255361001541, 'test_runtime': 0.5261, 'test_samples_per_second': 560.683, 'test_steps_per_second': 70.323}
+2023-08-18 09:28:50,737 - INFO - {'confusion_matrix': array([[ 96,   7],
+       [ 30, 162]])}
+2023-08-18 09:28:50,738 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Test(predict) metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	test_loss	test_accuracy	test_precision	test_recall	test_f1	test_roc_auc	test_matthews_correlation	test_runtime	test_samples_per_second	test_steps_per_second
+vinai/bertweet-base	all	software	2	3e-05	0.39908459782600403	0.8745762711864407	0.9585798816568047	0.84375	0.8975069252077563	0.8878944174757282	0.7476255361001541	0.5261	560.683	70.323
+***** Confusion Matrix(predict) *****
+model	train_domain	test_domain	iter.	hp_set_lr	confusion_matrix
+vinai/bertweet-base	all	software	2	3e-05	[[ 96   7]
+ [ 30 162]]
+
+2023-08-18 09:28:50,738 - INFO - ----------------------------------------------------------------------
+2023-08-18 09:28:50,738 - INFO - All finetuning runs are complete for TRAIN DOMAIN: all and TEST DOMAIN: software
+2023-08-18 09:28:50,738 - INFO - Calculating mean of test metrics
+2023-08-18 09:28:50,738 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Mean Test(predict) metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	mean_test_loss	mean_test_accuracy	mean_test_precision	mean_test_recall	mean_test_f1	mean_test_roc_auc	mean_test_matthews_correlation	mean_test_runtime	mean_test_samples_per_second	mean_test_steps_per_second
+vinai/bertweet-base	all	software	2	3e-05	0.39803409576416016	0.8802259887005649	0.9374173440226952	0.875	0.9047477323354635	0.8824838187702267	0.7479318786426025	0.5291333333333333	557.5156666666667	69.92566666666666
+***** Mean Confusion Matrix(predict) *****
+model	train_domain	test_domain	iter.	hp_set_lr	mean_true_negative	mean_false_positive	mean_false_negative	mean_true_positive
+vinai/bertweet-base	all	software	2	3e-05	91.66666666666667	11.333333333333334	24.0	168.0
+
+2023-08-18 09:28:50,741 - INFO - Attempting to delete checkpoints from /notebooks/train_trainer
+2023-08-18 09:28:51,038 - INFO - Completed deleting checkpoints from /notebooks/train_trainer
+2023-08-18 09:28:51,038 - INFO - Attempting to delete checkpoints from /notebooks/test_trainer
+2023-08-18 09:28:51,038 - INFO - The path /notebooks/test_trainer does not exist.
+2023-08-18 09:28:51,038 - INFO - All testing completed for TEST domain: software
+2023-08-18 09:28:51,038 - INFO - ********************************************************************************************************************************************
+2023-08-18 09:28:51,038 - INFO - TEST DOMAIN: transport
+2023-08-18 09:28:51,222 - INFO - TEST data count: 247
+2023-08-18 09:28:52,792 - INFO - **********************************************************************
+2023-08-18 09:28:52,792 - INFO - Training data comprises all domains except: transport
+2023-08-18 09:28:52,841 - INFO - Overall data count for train and dev: 3202
+2023-08-18 09:28:52,842 - INFO - ***********************************
+2023-08-18 09:28:52,842 - INFO - Iteration number: 0 for TRAIN DOMAIN: all and TEST DOMAIN: transport
+2023-08-18 09:28:52,842 - INFO - Tokenizing the data...
+2023-08-18 09:28:55,442 - INFO - TRAIN data count: 2134 and DEV data count: 1068
+2023-08-18 09:28:55,442 - INFO - Finetune and perform evaluation...
+2023-08-18 09:28:55,442 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 3e-05
+2023-08-18 09:28:55,442 - INFO - Setting up training args and starting training...
+2023-08-18 09:30:35,216 - INFO - Training complete...
+2023-08-18 09:30:35,216 - INFO - TrainOutput(global_step=1068, training_loss=0.2032566816172796, metrics={'train_runtime': 98.2971, 'train_samples_per_second': 86.839, 'train_steps_per_second': 10.865, 'total_flos': 219327731304000.0, 'train_loss': 0.2032566816172796, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 09:30:35,216 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 09:30:36,097 - INFO - Report evaluation results...
+2023-08-18 09:30:36,098 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Eval metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	transport	0	3e-05	0.2824276089668274	0.9063670411985019	0.8885630498533724	0.8301369863013699	0.8583569405099151	0.888041466123658	0.7895648976076055	1.9104	559.04	70.142	2.25e-05	1.0	267
+vinai/bertweet-base	all	transport	0	3e-05	0.341082900762558	0.9119850187265918	0.8774373259052924	0.863013698630137	0.8701657458563536	0.9002123969679845	0.8036635764413581	1.8561	575.404	72.195	1.5e-05	2.0	534
+vinai/bertweet-base	all	transport	0	3e-05	0.4912974536418915	0.8867041198501873	0.7837209302325582	0.9232876712328767	0.8477987421383647	0.8954987431555563	0.764988014650998	1.8659	572.383	71.816	7.5e-06	3.0	801
+vinai/bertweet-base	all	transport	0	3e-05	0.41417378187179565	0.9138576779026217	0.8545454545454545	0.9013698630136986	0.8773333333333333	0.9108556285196516	0.8117132117737139	1.8468	578.284	72.556	0.0	4.0	1068
+--*--*--
+***** Train metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	train_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	transport	0	3e-05	98.2971	86.839	10.865	219327731304000.0	0.2032566816172796	0.0	4.0	1068
+
+2023-08-18 09:30:36,098 - INFO - Loading the finetuned mode
+2023-08-18 09:30:36,979 - INFO - **TRACE** Running predictions with test data
+2023-08-18 09:30:37,666 - INFO - Metrics from the Predictions...
+2023-08-18 09:30:37,666 - INFO - {'test_loss': 0.6015312671661377, 'test_accuracy': 0.7894736842105263, 'test_precision': 0.8909090909090909, 'test_recall': 0.7101449275362319, 'test_f1': 0.7903225806451614, 'test_roc_auc': 0.8000265922084829, 'test_matthews_correlation': 0.5994954770282049, 'test_runtime': 0.4357, 'test_samples_per_second': 566.902, 'test_steps_per_second': 71.15}
+2023-08-18 09:30:37,666 - INFO - {'confusion_matrix': array([[97, 12],
+       [40, 98]])}
+2023-08-18 09:30:37,667 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Test(predict) metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	test_loss	test_accuracy	test_precision	test_recall	test_f1	test_roc_auc	test_matthews_correlation	test_runtime	test_samples_per_second	test_steps_per_second
+vinai/bertweet-base	all	transport	0	3e-05	0.6015312671661377	0.7894736842105263	0.8909090909090909	0.7101449275362319	0.7903225806451614	0.8000265922084829	0.5994954770282049	0.4357	566.902	71.15
+***** Confusion Matrix(predict) *****
+model	train_domain	test_domain	iter.	hp_set_lr	confusion_matrix
+vinai/bertweet-base	all	transport	0	3e-05	[[97 12]
+ [40 98]]
+
+2023-08-18 09:30:37,667 - INFO - ***********************************
+2023-08-18 09:30:37,667 - INFO - Iteration number: 1 for TRAIN DOMAIN: all and TEST DOMAIN: transport
+2023-08-18 09:30:37,667 - INFO - Tokenizing the data...
+2023-08-18 09:30:39,916 - INFO - TRAIN data count: 2135 and DEV data count: 1067
+2023-08-18 09:30:39,917 - INFO - Finetune and perform evaluation...
+2023-08-18 09:30:39,917 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 3e-05
+2023-08-18 09:30:39,917 - INFO - Setting up training args and starting training...
+2023-08-18 09:32:19,754 - INFO - Training complete...
+2023-08-18 09:32:19,754 - INFO - TrainOutput(global_step=1068, training_loss=0.19011825881200783, metrics={'train_runtime': 98.8112, 'train_samples_per_second': 86.427, 'train_steps_per_second': 10.808, 'total_flos': 219430509060000.0, 'train_loss': 0.19011825881200783, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 09:32:19,754 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 09:32:20,692 - INFO - Report evaluation results...
+2023-08-18 09:32:20,693 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Eval metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	transport	1	3e-05	0.31864961981773376	0.887535145267104	0.8096446700507615	0.8763736263736264	0.841688654353562	0.8848439966861018	0.7561142503555764	1.8312	582.677	73.176	2.25e-05	1.0	267
+vinai/bertweet-base	all	transport	1	3e-05	0.34147724509239197	0.9044048734770385	0.8540540540540541	0.8681318681318682	0.8610354223433242	0.895659106185422	0.7882468873719307	1.93	552.84	69.429	1.5e-05	2.0	534
+vinai/bertweet-base	all	transport	1	3e-05	0.4145742952823639	0.9053420805998126	0.8704225352112676	0.8489010989010989	0.8595271210013908	0.89173362199678	0.7883063496661954	1.8532	575.776	72.309	7.5e-06	3.0	801
+vinai/bertweet-base	all	transport	1	3e-05	0.45504945516586304	0.9044048734770385	0.8721590909090909	0.8434065934065934	0.8575418994413408	0.88969760680287	0.7858899519118323	1.8622	572.981	71.958	0.0	4.0	1068
+--*--*--
+***** Train metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	train_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	transport	1	3e-05	98.8112	86.427	10.808	219430509060000.0	0.19011825881200783	0.0	4.0	1068
+
+2023-08-18 09:32:20,693 - INFO - Loading the finetuned mode
+2023-08-18 09:32:21,726 - INFO - **TRACE** Running predictions with test data
+2023-08-18 09:32:22,447 - INFO - Metrics from the Predictions...
+2023-08-18 09:32:22,447 - INFO - {'test_loss': 0.3997436463832855, 'test_accuracy': 0.8461538461538461, 'test_precision': 0.8333333333333334, 'test_recall': 0.9057971014492754, 'test_f1': 0.8680555555555555, 'test_roc_auc': 0.8382196516420689, 'test_matthews_correlation': 0.6877809284657754, 'test_runtime': 0.444, 'test_samples_per_second': 556.3, 'test_steps_per_second': 69.819}
+2023-08-18 09:32:22,447 - INFO - {'confusion_matrix': array([[ 84,  25],
+       [ 13, 125]])}
+2023-08-18 09:32:22,448 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Test(predict) metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	test_loss	test_accuracy	test_precision	test_recall	test_f1	test_roc_auc	test_matthews_correlation	test_runtime	test_samples_per_second	test_steps_per_second
+vinai/bertweet-base	all	transport	1	3e-05	0.3997436463832855	0.8461538461538461	0.8333333333333334	0.9057971014492754	0.8680555555555555	0.8382196516420689	0.6877809284657754	0.444	556.3	69.819
+***** Confusion Matrix(predict) *****
+model	train_domain	test_domain	iter.	hp_set_lr	confusion_matrix
+vinai/bertweet-base	all	transport	1	3e-05	[[ 84  25]
+ [ 13 125]]
+
+2023-08-18 09:32:22,448 - INFO - ***********************************
+2023-08-18 09:32:22,448 - INFO - Iteration number: 2 for TRAIN DOMAIN: all and TEST DOMAIN: transport
+2023-08-18 09:32:22,448 - INFO - Tokenizing the data...
+2023-08-18 09:32:24,931 - INFO - TRAIN data count: 2135 and DEV data count: 1067
+2023-08-18 09:32:24,931 - INFO - Finetune and perform evaluation...
+2023-08-18 09:32:24,931 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 3e-05
+2023-08-18 09:32:24,931 - INFO - Setting up training args and starting training...
+2023-08-18 09:34:05,979 - INFO - Training complete...
+2023-08-18 09:34:05,981 - INFO - TrainOutput(global_step=1068, training_loss=0.21145374855298674, metrics={'train_runtime': 99.8622, 'train_samples_per_second': 85.518, 'train_steps_per_second': 10.695, 'total_flos': 219430509060000.0, 'train_loss': 0.21145374855298674, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 09:34:05,981 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 09:34:06,834 - INFO - Report evaluation results...
+2023-08-18 09:34:06,834 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Eval metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	transport	2	3e-05	0.3212850093841553	0.9100281162136832	0.8746518105849582	0.8602739726027397	0.8674033149171272	0.8980857042500878	0.7993881621010767	1.843	578.955	72.709	2.25e-05	1.0	267
+vinai/bertweet-base	all	transport	2	3e-05	0.35403040051460266	0.9137769447047798	0.8353808353808354	0.9315068493150684	0.8808290155440415	0.9180326269367364	0.8165560310287433	1.8392	580.143	72.858	1.5e-05	2.0	534
+vinai/bertweet-base	all	transport	2	3e-05	0.33908113837242126	0.9231490159325211	0.8773333333333333	0.9013698630136986	0.8891891891891891	0.9179213987433166	0.8305598090127361	1.8564	574.773	72.183	7.5e-06	3.0	801
+vinai/bertweet-base	all	transport	2	3e-05	0.3900918662548065	0.9109653233364574	0.835820895522388	0.9205479452054794	0.8761408083441982	0.9132654255941928	0.8091894423953705	1.8944	563.241	70.735	0.0	4.0	1068
+--*--*--
+***** Train metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	train_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	transport	2	3e-05	99.8622	85.518	10.695	219430509060000.0	0.21145374855298674	0.0	4.0	1068
+
+2023-08-18 09:34:06,835 - INFO - Loading the finetuned mode
+2023-08-18 09:34:07,785 - INFO - **TRACE** Running predictions with test data
+2023-08-18 09:34:08,502 - INFO - Metrics from the Predictions...
+2023-08-18 09:34:08,503 - INFO - {'test_loss': 0.6473561525344849, 'test_accuracy': 0.8259109311740891, 'test_precision': 0.9130434782608695, 'test_recall': 0.7608695652173914, 'test_f1': 0.8300395256916996, 'test_roc_auc': 0.8345632229756681, 'test_matthews_correlation': 0.6660780180428624, 'test_runtime': 0.4525, 'test_samples_per_second': 545.91, 'test_steps_per_second': 68.515}
+2023-08-18 09:34:08,503 - INFO - {'confusion_matrix': array([[ 99,  10],
+       [ 33, 105]])}
+2023-08-18 09:34:08,503 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Test(predict) metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	test_loss	test_accuracy	test_precision	test_recall	test_f1	test_roc_auc	test_matthews_correlation	test_runtime	test_samples_per_second	test_steps_per_second
+vinai/bertweet-base	all	transport	2	3e-05	0.6473561525344849	0.8259109311740891	0.9130434782608695	0.7608695652173914	0.8300395256916996	0.8345632229756681	0.6660780180428624	0.4525	545.91	68.515
+***** Confusion Matrix(predict) *****
+model	train_domain	test_domain	iter.	hp_set_lr	confusion_matrix
+vinai/bertweet-base	all	transport	2	3e-05	[[ 99  10]
+ [ 33 105]]
+
+2023-08-18 09:34:08,503 - INFO - ----------------------------------------------------------------------
+2023-08-18 09:34:08,503 - INFO - All finetuning runs are complete for TRAIN DOMAIN: all and TEST DOMAIN: transport
+2023-08-18 09:34:08,503 - INFO - Calculating mean of test metrics
+2023-08-18 09:34:08,503 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Mean Test(predict) metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	mean_test_loss	mean_test_accuracy	mean_test_precision	mean_test_recall	mean_test_f1	mean_test_roc_auc	mean_test_matthews_correlation	mean_test_runtime	mean_test_samples_per_second	mean_test_steps_per_second
+vinai/bertweet-base	all	transport	2	3e-05	0.549543688694636	0.8205128205128206	0.8790953008344312	0.7922705314009661	0.8294725539641389	0.8242698222754067	0.6511181411789476	0.4440666666666666	556.3706666666667	69.82799999999999
+***** Mean Confusion Matrix(predict) *****
+model	train_domain	test_domain	iter.	hp_set_lr	mean_true_negative	mean_false_positive	mean_false_negative	mean_true_positive
+vinai/bertweet-base	all	transport	2	3e-05	93.33333333333333	15.666666666666666	28.666666666666668	109.33333333333333
+
+2023-08-18 09:34:08,520 - INFO - Attempting to delete checkpoints from /notebooks/train_trainer
+2023-08-18 09:34:08,611 - INFO - Completed deleting checkpoints from /notebooks/train_trainer
+2023-08-18 09:34:08,611 - INFO - Attempting to delete checkpoints from /notebooks/test_trainer
+2023-08-18 09:34:08,611 - INFO - The path /notebooks/test_trainer does not exist.
+2023-08-18 09:34:08,611 - INFO - All testing completed for TEST domain: transport
+2023-08-18 09:34:08,611 - INFO - ********************************************************************************************************************************************
+2023-08-18 09:34:08,611 - INFO - TEST DOMAIN: electronics
+2023-08-18 09:34:08,763 - INFO - TEST data count: 290
+2023-08-18 09:34:14,978 - INFO - **********************************************************************
+2023-08-18 09:34:14,978 - INFO - Training data comprises all domains except: electronics
+2023-08-18 09:34:15,021 - INFO - Overall data count for train and dev: 3159
+2023-08-18 09:34:15,022 - INFO - ***********************************
+2023-08-18 09:34:15,022 - INFO - Iteration number: 0 for TRAIN DOMAIN: all and TEST DOMAIN: electronics
+2023-08-18 09:34:15,022 - INFO - Tokenizing the data...
+2023-08-18 09:34:17,636 - INFO - TRAIN data count: 2106 and DEV data count: 1053
+2023-08-18 09:34:17,636 - INFO - Finetune and perform evaluation...
+2023-08-18 09:34:17,636 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 3e-05
+2023-08-18 09:34:17,636 - INFO - Setting up training args and starting training...
+2023-08-18 09:35:54,847 - INFO - Training complete...
+2023-08-18 09:35:54,849 - INFO - TrainOutput(global_step=1056, training_loss=0.19576012298013223, metrics={'train_runtime': 96.149, 'train_samples_per_second': 87.614, 'train_steps_per_second': 10.983, 'total_flos': 216449954136000.0, 'train_loss': 0.19576012298013223, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 09:35:54,849 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 09:35:55,692 - INFO - Report evaluation results...
+2023-08-18 09:35:55,693 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Eval metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	electronics	0	3e-05	0.3368861675262451	0.8784425451092118	0.8612903225806452	0.7585227272727273	0.8066465256797583	0.8485908928803008	0.7216076345198207	1.8205	578.426	72.509	2.25e-05	1.0	264
+vinai/bertweet-base	all	electronics	0	3e-05	0.4713490307331085	0.8831908831908832	0.7706855791962175	0.9261363636363636	0.8412903225806451	0.8938813059265984	0.7580279987148951	1.8407	572.075	71.713	1.5e-05	2.0	528
+vinai/bertweet-base	all	electronics	0	3e-05	0.42854058742523193	0.8983855650522318	0.8888888888888888	0.7954545454545454	0.8395802098950524	0.8727629360653612	0.7680855633904403	1.8368	573.289	71.865	7.5e-06	3.0	792
+vinai/bertweet-base	all	electronics	0	3e-05	0.4682391285896301	0.899335232668566	0.8435754189944135	0.8579545454545454	0.8507042253521128	0.8890343340682141	0.7748441388784781	1.8095	581.919	72.947	0.0	4.0	1056
+--*--*--
+***** Train metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	train_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	electronics	0	3e-05	96.149	87.614	10.983	216449954136000.0	0.19576012298013223	0.0	4.0	1056
+
+2023-08-18 09:35:55,693 - INFO - Loading the finetuned mode
+2023-08-18 09:35:56,649 - INFO - **TRACE** Running predictions with test data
+2023-08-18 09:35:57,406 - INFO - Metrics from the Predictions...
+2023-08-18 09:35:57,406 - INFO - {'test_loss': 0.5133731961250305, 'test_accuracy': 0.8241379310344827, 'test_precision': 0.9432624113475178, 'test_recall': 0.7556818181818182, 'test_f1': 0.8391167192429022, 'test_roc_auc': 0.8427531897926636, 'test_matthews_correlation': 0.6699117109388196, 'test_runtime': 0.5186, 'test_samples_per_second': 559.247, 'test_steps_per_second': 71.352}
+2023-08-18 09:35:57,406 - INFO - {'confusion_matrix': array([[106,   8],
+       [ 43, 133]])}
+2023-08-18 09:35:57,406 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Test(predict) metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	test_loss	test_accuracy	test_precision	test_recall	test_f1	test_roc_auc	test_matthews_correlation	test_runtime	test_samples_per_second	test_steps_per_second
+vinai/bertweet-base	all	electronics	0	3e-05	0.5133731961250305	0.8241379310344827	0.9432624113475178	0.7556818181818182	0.8391167192429022	0.8427531897926636	0.6699117109388196	0.5186	559.247	71.352
+***** Confusion Matrix(predict) *****
+model	train_domain	test_domain	iter.	hp_set_lr	confusion_matrix
+vinai/bertweet-base	all	electronics	0	3e-05	[[106   8]
+ [ 43 133]]
+
+2023-08-18 09:35:57,407 - INFO - ***********************************
+2023-08-18 09:35:57,407 - INFO - Iteration number: 1 for TRAIN DOMAIN: all and TEST DOMAIN: electronics
+2023-08-18 09:35:57,407 - INFO - Tokenizing the data...
+2023-08-18 09:35:59,669 - INFO - TRAIN data count: 2106 and DEV data count: 1053
+2023-08-18 09:35:59,669 - INFO - Finetune and perform evaluation...
+2023-08-18 09:35:59,669 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 3e-05
+2023-08-18 09:35:59,669 - INFO - Setting up training args and starting training...
+2023-08-18 09:37:39,762 - INFO - Training complete...
+2023-08-18 09:37:39,767 - INFO - TrainOutput(global_step=1056, training_loss=0.20113614291855783, metrics={'train_runtime': 98.9931, 'train_samples_per_second': 85.097, 'train_steps_per_second': 10.667, 'total_flos': 216449954136000.0, 'train_loss': 0.20113614291855783, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 09:37:39,768 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 09:37:40,599 - INFO - Report evaluation results...
+2023-08-18 09:37:40,600 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Eval metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	electronics	1	3e-05	0.2717401683330536	0.9202279202279202	0.8722222222222222	0.8920454545454546	0.8820224719101124	0.9132124562313578	0.8218941201163479	1.7987	585.407	73.384	2.25e-05	1.0	264
+vinai/bertweet-base	all	electronics	1	3e-05	0.2897114157676697	0.9183285849952516	0.9290322580645162	0.8181818181818182	0.8700906344410877	0.8933990403319934	0.814363647227628	1.8188	578.944	72.574	1.5e-05	2.0	528
+vinai/bertweet-base	all	electronics	1	3e-05	0.35196784138679504	0.9240265906932573	0.9276729559748428	0.8380681818181818	0.8805970149253731	0.902628955388406	0.8273858916732653	1.8356	573.642	71.91	7.5e-06	3.0	792
+vinai/bertweet-base	all	electronics	1	3e-05	0.3356989324092865	0.929724596391263	0.8926553672316384	0.8977272727272727	0.895184135977337	0.9217594994164181	0.8423352795078046	1.8237	577.392	72.38	0.0	4.0	1056
+--*--*--
+***** Train metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	train_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	electronics	1	3e-05	98.9931	85.097	10.667	216449954136000.0	0.20113614291855783	0.0	4.0	1056
+
+2023-08-18 09:37:40,600 - INFO - Loading the finetuned mode
+2023-08-18 09:37:41,536 - INFO - **TRACE** Running predictions with test data
+2023-08-18 09:37:42,339 - INFO - Metrics from the Predictions...
+2023-08-18 09:37:42,339 - INFO - {'test_loss': 0.4772355556488037, 'test_accuracy': 0.8482758620689655, 'test_precision': 0.8586956521739131, 'test_recall': 0.8977272727272727, 'test_f1': 0.8777777777777778, 'test_roc_auc': 0.8348285486443381, 'test_matthews_correlation': 0.6792026809030051, 'test_runtime': 0.536, 'test_samples_per_second': 540.998, 'test_steps_per_second': 69.024}
+2023-08-18 09:37:42,340 - INFO - {'confusion_matrix': array([[ 88,  26],
+       [ 18, 158]])}
+2023-08-18 09:37:42,340 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Test(predict) metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	test_loss	test_accuracy	test_precision	test_recall	test_f1	test_roc_auc	test_matthews_correlation	test_runtime	test_samples_per_second	test_steps_per_second
+vinai/bertweet-base	all	electronics	1	3e-05	0.4772355556488037	0.8482758620689655	0.8586956521739131	0.8977272727272727	0.8777777777777778	0.8348285486443381	0.6792026809030051	0.536	540.998	69.024
+***** Confusion Matrix(predict) *****
+model	train_domain	test_domain	iter.	hp_set_lr	confusion_matrix
+vinai/bertweet-base	all	electronics	1	3e-05	[[ 88  26]
+ [ 18 158]]
+
+2023-08-18 09:37:42,340 - INFO - ***********************************
+2023-08-18 09:37:42,340 - INFO - Iteration number: 2 for TRAIN DOMAIN: all and TEST DOMAIN: electronics
+2023-08-18 09:37:42,340 - INFO - Tokenizing the data...
+2023-08-18 09:37:46,001 - INFO - TRAIN data count: 2106 and DEV data count: 1053
+2023-08-18 09:37:46,001 - INFO - Finetune and perform evaluation...
+2023-08-18 09:37:46,001 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 3e-05
+2023-08-18 09:37:46,001 - INFO - Setting up training args and starting training...
+2023-08-18 09:39:25,694 - INFO - Training complete...
+2023-08-18 09:39:25,694 - INFO - TrainOutput(global_step=1056, training_loss=0.19820783896879715, metrics={'train_runtime': 97.9619, 'train_samples_per_second': 85.993, 'train_steps_per_second': 10.78, 'total_flos': 216449954136000.0, 'train_loss': 0.19820783896879715, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 09:39:25,694 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 09:39:26,622 - INFO - Report evaluation results...
+2023-08-18 09:39:26,622 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Eval metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	electronics	2	3e-05	0.31087982654571533	0.8945868945868946	0.9057239057239057	0.7642045454545454	0.8289676425269646	0.8621308033977435	0.7592532893606202	1.8056	583.184	73.106	2.25e-05	1.0	264
+vinai/bertweet-base	all	electronics	2	3e-05	0.3153141736984253	0.912630579297246	0.8757225433526011	0.8607954545454546	0.8681948424068768	0.8997272565166645	0.802927519095715	1.8153	580.062	72.714	1.5e-05	2.0	528
+vinai/bertweet-base	all	electronics	2	3e-05	0.35621076822280884	0.9192782526115859	0.8869565217391304	0.8693181818181818	0.8780487804878048	0.9068416872001036	0.8178235394172815	1.858	566.732	71.043	7.5e-06	3.0	792
+vinai/bertweet-base	all	electronics	2	3e-05	0.39369454979896545	0.9202279202279202	0.8764044943820225	0.8863636363636364	0.8813559322033898	0.9117980806639864	0.8213027300563207	1.8132	580.751	72.801	0.0	4.0	1056
+--*--*--
+***** Train metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	train_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	electronics	2	3e-05	97.9619	85.993	10.78	216449954136000.0	0.19820783896879715	0.0	4.0	1056
+
+2023-08-18 09:39:26,622 - INFO - Loading the finetuned mode
+2023-08-18 09:39:28,128 - INFO - **TRACE** Running predictions with test data
+2023-08-18 09:39:28,937 - INFO - Metrics from the Predictions...
+2023-08-18 09:39:28,937 - INFO - {'test_loss': 0.5169159173965454, 'test_accuracy': 0.8137931034482758, 'test_precision': 0.9485294117647058, 'test_recall': 0.7329545454545454, 'test_f1': 0.8269230769230769, 'test_roc_auc': 0.8357755183413078, 'test_matthews_correlation': 0.6572914284971465, 'test_runtime': 0.5517, 'test_samples_per_second': 525.668, 'test_steps_per_second': 67.068}
+2023-08-18 09:39:28,937 - INFO - {'confusion_matrix': array([[107,   7],
+       [ 47, 129]])}
+2023-08-18 09:39:28,937 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Test(predict) metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	test_loss	test_accuracy	test_precision	test_recall	test_f1	test_roc_auc	test_matthews_correlation	test_runtime	test_samples_per_second	test_steps_per_second
+vinai/bertweet-base	all	electronics	2	3e-05	0.5169159173965454	0.8137931034482758	0.9485294117647058	0.7329545454545454	0.8269230769230769	0.8357755183413078	0.6572914284971465	0.5517	525.668	67.068
+***** Confusion Matrix(predict) *****
+model	train_domain	test_domain	iter.	hp_set_lr	confusion_matrix
+vinai/bertweet-base	all	electronics	2	3e-05	[[107   7]
+ [ 47 129]]
+
+2023-08-18 09:39:28,937 - INFO - ----------------------------------------------------------------------
+2023-08-18 09:39:28,937 - INFO - All finetuning runs are complete for TRAIN DOMAIN: all and TEST DOMAIN: electronics
+2023-08-18 09:39:28,937 - INFO - Calculating mean of test metrics
+2023-08-18 09:39:28,937 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Mean Test(predict) metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	mean_test_loss	mean_test_accuracy	mean_test_precision	mean_test_recall	mean_test_f1	mean_test_roc_auc	mean_test_matthews_correlation	mean_test_runtime	mean_test_samples_per_second	mean_test_steps_per_second
+vinai/bertweet-base	all	electronics	2	3e-05	0.5025082230567932	0.828735632183908	0.9168291584287122	0.7954545454545454	0.8479391913145857	0.8377857522594366	0.6688019401129903	0.5354333333333333	541.971	69.14800000000001
+***** Mean Confusion Matrix(predict) *****
+model	train_domain	test_domain	iter.	hp_set_lr	mean_true_negative	mean_false_positive	mean_false_negative	mean_true_positive
+vinai/bertweet-base	all	electronics	2	3e-05	100.33333333333333	13.666666666666666	36.0	140.0
+
+2023-08-18 09:39:28,964 - INFO - Attempting to delete checkpoints from /notebooks/train_trainer
+2023-08-18 09:39:29,136 - INFO - Completed deleting checkpoints from /notebooks/train_trainer
+2023-08-18 09:39:29,137 - INFO - Attempting to delete checkpoints from /notebooks/test_trainer
+2023-08-18 09:39:29,137 - INFO - The path /notebooks/test_trainer does not exist.
+2023-08-18 09:39:29,137 - INFO - All testing completed for TEST domain: electronics
+2023-08-18 09:39:29,137 - INFO - ********************************************************************************************************************************************
+2023-08-18 09:39:29,137 - INFO - TEST DOMAIN: other
+2023-08-18 09:39:29,244 - INFO - TEST data count: 128
+2023-08-18 09:39:30,440 - INFO - **********************************************************************
+2023-08-18 09:39:30,440 - INFO - Training data comprises all domains except: other
+2023-08-18 09:39:30,486 - INFO - Overall data count for train and dev: 3321
+2023-08-18 09:39:30,487 - INFO - ***********************************
+2023-08-18 09:39:30,487 - INFO - Iteration number: 0 for TRAIN DOMAIN: all and TEST DOMAIN: other
+2023-08-18 09:39:30,487 - INFO - Tokenizing the data...
+2023-08-18 09:39:37,841 - INFO - TRAIN data count: 2214 and DEV data count: 1107
+2023-08-18 09:39:37,841 - INFO - Finetune and perform evaluation...
+2023-08-18 09:39:37,841 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 3e-05
+2023-08-18 09:39:37,841 - INFO - Setting up training args and starting training...
+2023-08-18 09:41:21,606 - INFO - Training complete...
+2023-08-18 09:41:21,606 - INFO - TrainOutput(global_step=1108, training_loss=0.19687478680042583, metrics={'train_runtime': 102.6312, 'train_samples_per_second': 86.29, 'train_steps_per_second': 10.796, 'total_flos': 227549951784000.0, 'train_loss': 0.19687478680042583, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 09:41:21,606 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 09:41:22,525 - INFO - Report evaluation results...
+2023-08-18 09:41:22,526 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Eval metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	other	0	3e-05	0.3026251792907715	0.8952122854561879	0.8662952646239555	0.820580474934037	0.8428184281842819	0.8773232044999856	0.7649460056645503	1.8885	586.188	73.604	2.25e-05	1.0	277
+vinai/bertweet-base	all	other	0	3e-05	0.3440925180912018	0.9150858175248419	0.8947368421052632	0.8522427440633246	0.8729729729729729	0.9000224709327612	0.8097979327412448	1.9171	577.434	72.505	1.5e-05	2.0	554
+vinai/bertweet-base	all	other	0	3e-05	0.3964861333370209	0.9141824751580849	0.865979381443299	0.8865435356200527	0.8761408083441982	0.9075574820957407	0.8106322036892667	1.9116	579.081	72.712	7.5e-06	3.0	831
+vinai/bertweet-base	all	other	0	3e-05	0.42162325978279114	0.9141824751580849	0.8776595744680851	0.8707124010554089	0.8741721854304635	0.9037627939342979	0.8090753621584406	1.919	576.863	72.434	0.0	4.0	1108
+--*--*--
+***** Train metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	train_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	other	0	3e-05	102.6312	86.29	10.796	227549951784000.0	0.19687478680042583	0.0	4.0	1108
+
+2023-08-18 09:41:22,526 - INFO - Loading the finetuned mode
+2023-08-18 09:41:24,053 - INFO - **TRACE** Running predictions with test data
+2023-08-18 09:41:24,572 - INFO - Metrics from the Predictions...
+2023-08-18 09:41:24,572 - INFO - {'test_loss': 0.2745121121406555, 'test_accuracy': 0.921875, 'test_precision': 0.956989247311828, 'test_recall': 0.9368421052631579, 'test_f1': 0.946808510638298, 'test_roc_auc': 0.9078149920255184, 'test_matthews_correlation': 0.8004541470576451, 'test_runtime': 0.244, 'test_samples_per_second': 524.53, 'test_steps_per_second': 65.566}
+2023-08-18 09:41:24,572 - INFO - {'confusion_matrix': array([[29,  4],
+       [ 6, 89]])}
+2023-08-18 09:41:24,572 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Test(predict) metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	test_loss	test_accuracy	test_precision	test_recall	test_f1	test_roc_auc	test_matthews_correlation	test_runtime	test_samples_per_second	test_steps_per_second
+vinai/bertweet-base	all	other	0	3e-05	0.2745121121406555	0.921875	0.956989247311828	0.9368421052631579	0.946808510638298	0.9078149920255184	0.8004541470576451	0.244	524.53	65.566
+***** Confusion Matrix(predict) *****
+model	train_domain	test_domain	iter.	hp_set_lr	confusion_matrix
+vinai/bertweet-base	all	other	0	3e-05	[[29  4]
+ [ 6 89]]
+
+2023-08-18 09:41:24,573 - INFO - ***********************************
+2023-08-18 09:41:24,573 - INFO - Iteration number: 1 for TRAIN DOMAIN: all and TEST DOMAIN: other
+2023-08-18 09:41:24,573 - INFO - Tokenizing the data...
+2023-08-18 09:41:28,053 - INFO - TRAIN data count: 2214 and DEV data count: 1107
+2023-08-18 09:41:28,053 - INFO - Finetune and perform evaluation...
+2023-08-18 09:41:28,053 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 3e-05
+2023-08-18 09:41:28,053 - INFO - Setting up training args and starting training...
+2023-08-18 09:43:12,537 - INFO - Training complete...
+2023-08-18 09:43:12,537 - INFO - TrainOutput(global_step=1108, training_loss=0.19677149733051066, metrics={'train_runtime': 102.6172, 'train_samples_per_second': 86.301, 'train_steps_per_second': 10.797, 'total_flos': 227549951784000.0, 'train_loss': 0.19677149733051066, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 09:43:12,538 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 09:43:13,427 - INFO - Report evaluation results...
+2023-08-18 09:43:13,428 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Eval metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	other	1	3e-05	0.3815746009349823	0.8861788617886179	0.7881548974943052	0.9129287598944591	0.845965770171149	0.8925907535736031	0.761613907101114	1.9081	580.157	72.847	2.25e-05	1.0	277
+vinai/bertweet-base	all	other	1	3e-05	0.3534013628959656	0.90063233965673	0.8164705882352942	0.9155672823218998	0.8631840796019901	0.9042122125895214	0.7887476327263363	1.9203	576.478	72.385	1.5e-05	2.0	554
+vinai/bertweet-base	all	other	1	3e-05	0.43670108914375305	0.9042457091237579	0.8823529411764706	0.8311345646437994	0.8559782608695653	0.8867211284757458	0.7851424356922692	1.9258	574.824	72.177	7.5e-06	3.0	831
+vinai/bertweet-base	all	other	1	3e-05	0.42075708508491516	0.9186991869918699	0.87146529562982	0.8944591029023746	0.8828125	0.9128888921105279	0.8207510873997985	1.9236	575.47	72.259	0.0	4.0	1108
+--*--*--
+***** Train metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	train_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	other	1	3e-05	102.6172	86.301	10.797	227549951784000.0	0.19677149733051066	0.0	4.0	1108
+
+2023-08-18 09:43:13,428 - INFO - Loading the finetuned mode
+2023-08-18 09:43:14,985 - INFO - **TRACE** Running predictions with test data
+2023-08-18 09:43:15,493 - INFO - Metrics from the Predictions...
+2023-08-18 09:43:15,494 - INFO - {'test_loss': 0.2558116614818573, 'test_accuracy': 0.921875, 'test_precision': 0.9381443298969072, 'test_recall': 0.9578947368421052, 'test_f1': 0.9479166666666666, 'test_roc_auc': 0.8880382775119616, 'test_matthews_correlation': 0.7924221787254262, 'test_runtime': 0.2499, 'test_samples_per_second': 512.237, 'test_steps_per_second': 64.03}
+2023-08-18 09:43:15,494 - INFO - {'confusion_matrix': array([[27,  6],
+       [ 4, 91]])}
+2023-08-18 09:43:15,494 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Test(predict) metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	test_loss	test_accuracy	test_precision	test_recall	test_f1	test_roc_auc	test_matthews_correlation	test_runtime	test_samples_per_second	test_steps_per_second
+vinai/bertweet-base	all	other	1	3e-05	0.2558116614818573	0.921875	0.9381443298969072	0.9578947368421052	0.9479166666666666	0.8880382775119616	0.7924221787254262	0.2499	512.237	64.03
+***** Confusion Matrix(predict) *****
+model	train_domain	test_domain	iter.	hp_set_lr	confusion_matrix
+vinai/bertweet-base	all	other	1	3e-05	[[27  6]
+ [ 4 91]]
+
+2023-08-18 09:43:15,494 - INFO - ***********************************
+2023-08-18 09:43:15,494 - INFO - Iteration number: 2 for TRAIN DOMAIN: all and TEST DOMAIN: other
+2023-08-18 09:43:15,494 - INFO - Tokenizing the data...
+2023-08-18 09:43:17,901 - INFO - TRAIN data count: 2214 and DEV data count: 1107
+2023-08-18 09:43:17,901 - INFO - Finetune and perform evaluation...
+2023-08-18 09:43:17,901 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 3e-05
+2023-08-18 09:43:17,901 - INFO - Setting up training args and starting training...
+2023-08-18 09:45:08,935 - INFO - Training complete...
+2023-08-18 09:45:08,938 - INFO - TrainOutput(global_step=1108, training_loss=0.19400700292001993, metrics={'train_runtime': 104.2549, 'train_samples_per_second': 84.946, 'train_steps_per_second': 10.628, 'total_flos': 227549951784000.0, 'train_loss': 0.19400700292001993, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 09:45:08,938 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 09:45:09,791 - INFO - Report evaluation results...
+2023-08-18 09:45:09,792 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Eval metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	other	2	3e-05	0.3620673716068268	0.8744354110207768	0.7575107296137339	0.9313984168865436	0.8355029585798817	0.8880893183333817	0.7459762600419911	1.9186	576.973	72.447	2.25e-05	1.0	277
+vinai/bertweet-base	all	other	2	3e-05	0.28211501240730286	0.9150858175248419	0.8682170542635659	0.8865435356200527	0.8772845953002611	0.9082442952825539	0.8124818803472544	1.92	576.565	72.396	1.5e-05	2.0	554
+vinai/bertweet-base	all	other	2	3e-05	0.4095095992088318	0.9096657633242999	0.8329355608591885	0.920844327176781	0.87468671679198	0.9123452405114675	0.806817009986647	1.9216	576.093	72.337	7.5e-06	3.0	831
+vinai/bertweet-base	all	other	2	3e-05	0.4132198095321655	0.9132791327913279	0.8476658476658476	0.9102902374670184	0.8778625954198472	0.9125627011510915	0.8120056059121217	1.9125	578.825	72.68	0.0	4.0	1108
+--*--*--
+***** Train metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	train_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	all	other	2	3e-05	104.2549	84.946	10.628	227549951784000.0	0.19400700292001993	0.0	4.0	1108
+
+2023-08-18 09:45:09,792 - INFO - Loading the finetuned mode
+2023-08-18 09:45:10,810 - INFO - **TRACE** Running predictions with test data
+2023-08-18 09:45:11,324 - INFO - Metrics from the Predictions...
+2023-08-18 09:45:11,324 - INFO - {'test_loss': 0.20876042544841766, 'test_accuracy': 0.9375, 'test_precision': 0.967741935483871, 'test_recall': 0.9473684210526315, 'test_f1': 0.9574468085106383, 'test_roc_auc': 0.9282296650717702, 'test_matthews_correlation': 0.8405238110480161, 'test_runtime': 0.2411, 'test_samples_per_second': 531.003, 'test_steps_per_second': 66.375}
+2023-08-18 09:45:11,324 - INFO - {'confusion_matrix': array([[30,  3],
+       [ 5, 90]])}
+2023-08-18 09:45:11,324 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Test(predict) metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	test_loss	test_accuracy	test_precision	test_recall	test_f1	test_roc_auc	test_matthews_correlation	test_runtime	test_samples_per_second	test_steps_per_second
+vinai/bertweet-base	all	other	2	3e-05	0.20876042544841766	0.9375	0.967741935483871	0.9473684210526315	0.9574468085106383	0.9282296650717702	0.8405238110480161	0.2411	531.003	66.375
+***** Confusion Matrix(predict) *****
+model	train_domain	test_domain	iter.	hp_set_lr	confusion_matrix
+vinai/bertweet-base	all	other	2	3e-05	[[30  3]
+ [ 5 90]]
+
+2023-08-18 09:45:11,325 - INFO - ----------------------------------------------------------------------
+2023-08-18 09:45:11,325 - INFO - All finetuning runs are complete for TRAIN DOMAIN: all and TEST DOMAIN: other
+2023-08-18 09:45:11,325 - INFO - Calculating mean of test metrics
+2023-08-18 09:45:11,325 - INFO - 
+
+Results as of 202308-18_08-5559 for vinai/bertweet-base
+***** Mean Test(predict) metrics *****
+model	train_domain	test_domain	iter.	hp_set_lr	mean_test_loss	mean_test_accuracy	mean_test_precision	mean_test_recall	mean_test_f1	mean_test_roc_auc	mean_test_matthews_correlation	mean_test_runtime	mean_test_samples_per_second	mean_test_steps_per_second
+vinai/bertweet-base	all	other	2	3e-05	0.24636139969031015	0.9270833333333334	0.9542918375642021	0.9473684210526315	0.9507239952718677	0.9080276448697501	0.8111333789436957	0.245	522.59	65.32366666666667
+***** Mean Confusion Matrix(predict) *****
+model	train_domain	test_domain	iter.	hp_set_lr	mean_true_negative	mean_false_positive	mean_false_negative	mean_true_positive
+vinai/bertweet-base	all	other	2	3e-05	28.666666666666668	4.333333333333333	5.0	90.0
+
+2023-08-18 09:45:11,330 - INFO - Attempting to delete checkpoints from /notebooks/train_trainer
+2023-08-18 09:45:11,460 - INFO - Completed deleting checkpoints from /notebooks/train_trainer
+2023-08-18 09:45:11,460 - INFO - Attempting to delete checkpoints from /notebooks/test_trainer
+2023-08-18 09:45:11,463 - INFO - The path /notebooks/test_trainer does not exist.
+2023-08-18 09:45:11,463 - INFO - All testing completed for TEST domain: other

@@ -1,0 +1,1040 @@
+2023-08-17 23:51:26,639 - INFO - Training Params - NO_OF_EPOCHS: 4 OUTER_CV_NO: 6 INNER_CV_NO: 4 MAX_LENGTH: 50 LR_SPACE: [1e-05, 5e-06, 5e-05, 3e-05] SEED: 2023
+
+2023-08-17 23:51:26,639 - INFO - Total no. of tweets: 3449
+2023-08-17 23:51:26,640 - INFO - ----------------------------------------------------------------------
+2023-08-17 23:51:26,640 - INFO - ----------------------------------------------------------------------
+2023-08-17 23:51:26,640 - INFO - **TRACE** Outer Fold:0
+2023-08-17 23:51:26,641 - INFO - Dataset sizes: Train - 2874 Test - 575
+2023-08-17 23:51:29,249 - INFO - -----------------------------------
+2023-08-17 23:51:29,249 - INFO - -----------------------------------
+2023-08-17 23:51:29,249 - INFO - **TRACE** Inner Fold: 0 for outer fold: 0
+2023-08-17 23:51:29,249 - INFO - **TRACE** Learning rate used: 1e-05
+2023-08-17 23:51:29,249 - INFO - **TRACE** Create dataset...
+2023-08-17 23:51:29,249 - INFO - Dataset sizes: Train - 2155 Dev - 719
+2023-08-17 23:51:29,253 - INFO - **TRACE** Tokenise data...
+2023-08-17 23:51:31,624 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 23:51:31,624 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 1e-05
+2023-08-17 23:51:31,624 - INFO - Setting up training args and starting training...
+2023-08-17 23:53:10,150 - INFO - Training complete...
+2023-08-17 23:53:10,150 - INFO - TrainOutput(global_step=1080, training_loss=0.2532400219528763, metrics={'train_runtime': 96.253, 'train_samples_per_second': 89.556, 'train_steps_per_second': 11.22, 'total_flos': 221486064180000.0, 'train_loss': 0.2532400219528763, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 23:53:10,150 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-17 23:53:11,017 - INFO - **TRACE** Report evaluation results...
+2023-08-17 23:53:11,017 - INFO - 
+
+Results as of 202308-17_23-5126 for vinai/bertweet-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	0	0	1e-05	0.2820131778717041	0.8998609179415855	0.8464052287581699	0.9119718309859155	0.8779661016949152	0.9019629269872106	0.7948479437756403	1.2308	584.186	73.125	7.500000000000001e-06	1.0	270
+vinai/bertweet-base	0	0	1e-05	0.32477131485939026	0.9109874826147427	0.89568345323741	0.8767605633802817	0.8861209964412812	0.9050469483568075	0.8132001798137762	1.1961	601.107	75.243	5e-06	2.0	540
+vinai/bertweet-base	0	0	1e-05	0.3615630865097046	0.9068150208623088	0.8653198653198653	0.9049295774647887	0.8846815834767642	0.9064877772381414	0.8071362175495104	1.1936	602.362	75.4	2.5e-06	3.0	810
+vinai/bertweet-base	0	0	1e-05	0.3718791902065277	0.9082058414464534	0.8682432432432432	0.9049295774647887	0.8862068965517241	0.9076372025254978	0.809825723080538	1.2586	571.266	71.508	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	0	0	1e-05	96.253	89.556	11.22	221486064180000.0	0.2532400219528763	0.0	4.0	1080
+
+2023-08-17 23:53:11,017 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 23:53:11,017 - INFO - **TRACE** Appending...0.2820131778717041
+2023-08-17 23:53:11,017 - INFO - **TRACE** Appending...0.32477131485939026
+2023-08-17 23:53:11,017 - INFO - **TRACE** Appending...0.3615630865097046
+2023-08-17 23:53:11,017 - INFO - **TRACE** Appending...0.3718791902065277
+2023-08-17 23:53:11,017 - INFO - **TRACE** Current innr cross fold(0) has lower loss, saving model...0.2820131778717041 < 1000 LR: 1e-05
+2023-08-17 23:53:11,823 - INFO - **TRACE** End of inner cv fold 0*----*-----*
+
+2023-08-17 23:53:11,823 - INFO - -----------------------------------
+2023-08-17 23:53:11,823 - INFO - -----------------------------------
+2023-08-17 23:53:11,823 - INFO - **TRACE** Inner Fold: 1 for outer fold: 0
+2023-08-17 23:53:11,823 - INFO - **TRACE** Learning rate used: 5e-06
+2023-08-17 23:53:11,824 - INFO - **TRACE** Create dataset...
+2023-08-17 23:53:11,824 - INFO - Dataset sizes: Train - 2155 Dev - 719
+2023-08-17 23:53:11,829 - INFO - **TRACE** Tokenise data...
+2023-08-17 23:53:16,354 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 23:53:16,355 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 5e-06
+2023-08-17 23:53:16,355 - INFO - Setting up training args and starting training...
+2023-08-17 23:54:53,791 - INFO - Training complete...
+2023-08-17 23:54:53,807 - INFO - TrainOutput(global_step=1080, training_loss=0.2874495806517424, metrics={'train_runtime': 96.293, 'train_samples_per_second': 89.518, 'train_steps_per_second': 11.216, 'total_flos': 221486064180000.0, 'train_loss': 0.2874495806517424, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 23:54:53,807 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-17 23:54:54,693 - INFO - **TRACE** Report evaluation results...
+2023-08-17 23:54:54,694 - INFO - 
+
+Results as of 202308-17_23-5126 for vinai/bertweet-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	0	1	5e-06	0.3130689263343811	0.8845618915159944	0.8107142857142857	0.8832684824902723	0.845437616387337	0.8842749338858288	0.7553501605106479	1.2021	598.123	74.869	3.7500000000000005e-06	1.0	270
+vinai/bertweet-base	0	1	5e-06	0.33536475896835327	0.8929068150208623	0.8383458646616542	0.867704280155642	0.8527724665391969	0.8873153435410245	0.7689397776069199	1.1935	602.405	75.405	2.5e-06	2.0	540
+vinai/bertweet-base	0	1	5e-06	0.35633012652397156	0.8998609179415855	0.8413284132841329	0.8871595330739299	0.8636363636363635	0.8970429700001684	0.7852924164938638	1.2218	588.465	73.66	1.25e-06	3.0	810
+vinai/bertweet-base	0	1	5e-06	0.35597363114356995	0.9054242002781642	0.8513011152416357	0.8910505836575876	0.8707224334600762	0.9022352485387505	0.7967375284877021	1.1973	600.523	75.17	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	0	1	5e-06	96.293	89.518	11.216	221486064180000.0	0.2874495806517424	0.0	4.0	1080
+
+2023-08-17 23:54:54,694 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 23:54:54,694 - INFO - **TRACE** Appending...0.3130689263343811
+2023-08-17 23:54:54,694 - INFO - **TRACE** Appending...0.33536475896835327
+2023-08-17 23:54:54,694 - INFO - **TRACE** Appending...0.35633012652397156
+2023-08-17 23:54:54,694 - INFO - **TRACE** Appending...0.35597363114356995
+2023-08-17 23:54:54,694 - INFO - **TRACE** Model not saved since current innr cross fold(1) has higher loss...0.3130689263343811 >= 0.2820131778717041 LR: 5e-06
+2023-08-17 23:54:54,694 - INFO - **TRACE** End of inner cv fold 1*----*-----*
+
+2023-08-17 23:54:54,694 - INFO - -----------------------------------
+2023-08-17 23:54:54,694 - INFO - -----------------------------------
+2023-08-17 23:54:54,694 - INFO - **TRACE** Inner Fold: 2 for outer fold: 0
+2023-08-17 23:54:54,694 - INFO - **TRACE** Learning rate used: 5e-05
+2023-08-17 23:54:54,694 - INFO - **TRACE** Create dataset...
+2023-08-17 23:54:54,695 - INFO - Dataset sizes: Train - 2156 Dev - 718
+2023-08-17 23:54:54,699 - INFO - **TRACE** Tokenise data...
+2023-08-17 23:54:57,228 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 23:54:57,229 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 5e-05
+2023-08-17 23:54:57,229 - INFO - Setting up training args and starting training...
+2023-08-17 23:56:35,429 - INFO - Training complete...
+2023-08-17 23:56:35,432 - INFO - TrainOutput(global_step=1080, training_loss=0.2087063952728554, metrics={'train_runtime': 97.1047, 'train_samples_per_second': 88.811, 'train_steps_per_second': 11.122, 'total_flos': 221588841936000.0, 'train_loss': 0.2087063952728554, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 23:56:35,432 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-17 23:56:36,403 - INFO - **TRACE** Report evaluation results...
+2023-08-17 23:56:36,404 - INFO - 
+
+Results as of 202308-17_23-5126 for vinai/bertweet-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	0	2	5e-05	0.32080215215682983	0.8913649025069638	0.8274647887323944	0.8901515151515151	0.8576642335766422	0.8911109998665064	0.7713578102580981	1.2017	597.511	74.897	3.7500000000000003e-05	1.0	270
+vinai/bertweet-base	0	2	5e-05	0.30964982509613037	0.9066852367688022	0.8661710037174721	0.8825757575757576	0.874296435272045	0.9016403016953678	0.8001987334670226	1.1921	602.312	75.499	2.5e-05	2.0	540
+vinai/bertweet-base	0	2	5e-05	0.4932231307029724	0.8969359331476323	0.841726618705036	0.8863636363636364	0.8634686346863468	0.8947236684020825	0.78145561785156	1.2062	595.282	74.618	1.25e-05	3.0	810
+vinai/bertweet-base	0	2	5e-05	0.5428449511528015	0.8983286908077994	0.8422939068100358	0.8901515151515151	0.8655616942909761	0.8966176077960218	0.784688909548905	1.1996	598.508	75.022	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	0	2	5e-05	97.1047	88.811	11.122	221588841936000.0	0.2087063952728554	0.0	4.0	1080
+
+2023-08-17 23:56:36,404 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 23:56:36,404 - INFO - **TRACE** Appending...0.32080215215682983
+2023-08-17 23:56:36,404 - INFO - **TRACE** Appending...0.30964982509613037
+2023-08-17 23:56:36,404 - INFO - **TRACE** Appending...0.4932231307029724
+2023-08-17 23:56:36,404 - INFO - **TRACE** Appending...0.5428449511528015
+2023-08-17 23:56:36,404 - INFO - **TRACE** Current innr cross fold(2) has lower loss, saving model...0.30964982509613037 < 0.3130689263343811 LR: 5e-05
+2023-08-17 23:56:37,215 - INFO - **TRACE** End of inner cv fold 2*----*-----*
+
+2023-08-17 23:56:37,215 - INFO - -----------------------------------
+2023-08-17 23:56:37,215 - INFO - -----------------------------------
+2023-08-17 23:56:37,216 - INFO - **TRACE** Inner Fold: 3 for outer fold: 0
+2023-08-17 23:56:37,216 - INFO - **TRACE** Learning rate used: 3e-05
+2023-08-17 23:56:37,216 - INFO - **TRACE** Create dataset...
+2023-08-17 23:56:37,216 - INFO - Dataset sizes: Train - 2156 Dev - 718
+2023-08-17 23:56:37,220 - INFO - **TRACE** Tokenise data...
+2023-08-17 23:56:39,589 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 23:56:39,589 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 3e-05
+2023-08-17 23:56:39,589 - INFO - Setting up training args and starting training...
+2023-08-17 23:58:18,545 - INFO - Training complete...
+2023-08-17 23:58:18,550 - INFO - TrainOutput(global_step=1080, training_loss=0.21376030489250467, metrics={'train_runtime': 97.2234, 'train_samples_per_second': 88.703, 'train_steps_per_second': 11.108, 'total_flos': 221588841936000.0, 'train_loss': 0.21376030489250467, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 23:58:18,550 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-17 23:58:19,620 - INFO - **TRACE** Report evaluation results...
+2023-08-17 23:58:19,620 - INFO - 
+
+Results as of 202308-17_23-5126 for vinai/bertweet-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	0	3	3e-05	0.3143365681171417	0.8913649025069638	0.8989169675090253	0.8327759197324415	0.8645833333333334	0.8829750720380585	0.7756823839773116	1.1819	607.498	76.149	2.25e-05	1.0	270
+vinai/bertweet-base	0	3	3e-05	0.37923428416252136	0.8997214484679665	0.8770764119601329	0.882943143812709	0.88	0.8973188272762829	0.7938902549129688	1.2044	596.171	74.729	1.5e-05	2.0	540
+vinai/bertweet-base	0	3	3e-05	0.4539121687412262	0.8871866295264624	0.8187134502923976	0.9364548494983278	0.8736349453978159	0.8942417445582331	0.7782663151557279	1.1941	601.283	75.37	7.5e-06	3.0	810
+vinai/bertweet-base	0	3	3e-05	0.452643483877182	0.9052924791086351	0.8996539792387543	0.8695652173913043	0.8843537414965986	0.9001764034450555	0.8045379055288044	1.2462	576.171	72.222	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	0	3	3e-05	97.2234	88.703	11.108	221588841936000.0	0.21376030489250467	0.0	4.0	1080
+
+2023-08-17 23:58:19,620 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 23:58:19,620 - INFO - **TRACE** Appending...0.3143365681171417
+2023-08-17 23:58:19,620 - INFO - **TRACE** Appending...0.37923428416252136
+2023-08-17 23:58:19,620 - INFO - **TRACE** Appending...0.4539121687412262
+2023-08-17 23:58:19,620 - INFO - **TRACE** Appending...0.452643483877182
+2023-08-17 23:58:19,620 - INFO - **TRACE** Model not saved since current innr cross fold(3) has higher loss...0.3143365681171417 >= 0.30964982509613037 LR: 3e-05
+2023-08-17 23:58:19,620 - INFO - **TRACE** End of inner cv fold 3*----*-----*
+
+2023-08-17 23:58:19,620 - INFO - -----------------------------------
+2023-08-17 23:58:19,620 - INFO - -----------------------------------
+2023-08-17 23:58:19,621 - INFO - **TRACE** All inner CVs complete for outer CV 0
+2023-08-17 23:58:19,621 - INFO - **TRACE** Best model selected from inner cv: 2 with loss: 0.30964982509613037 with learning rate: 3e-05
+2023-08-17 23:58:19,621 - INFO - **TRACE** Moving on to test predictions with the best model from inner cross fold
+2023-08-17 23:58:19,621 - INFO - **TRACE** Loading the best model from inner CV
+2023-08-17 23:58:20,596 - INFO - **TRACE** Running predictions with test data
+2023-08-17 23:58:21,833 - INFO - Metrics from the Predictions...
+2023-08-17 23:58:21,833 - INFO - {'test_loss': 0.2170063555240631, 'test_accuracy': 0.9321739130434783, 'test_precision': 0.915, 'test_recall': 0.8926829268292683, 'test_f1': 0.9037037037037038, 'test_roc_auc': 0.9233684904416611, 'test_matthews_correlation': 0.8515216387716864, 'test_runtime': 0.9806, 'test_samples_per_second': 586.395, 'test_steps_per_second': 73.427}
+2023-08-17 23:58:21,833 - INFO - {'confusion_matrix': array([[353,  17],
+       [ 22, 183]])}
+2023-08-17 23:58:21,833 - INFO - 
+
+Results as of 202308-17_23-5126 for vinai/bertweet-base
+***** Test(predict) metrics *****
+model	outer_cv	test_loss	test_accuracy	test_precision	test_recall	test_f1	test_roc_auc	test_matthews_correlation	test_runtime	test_samples_per_second	test_steps_per_second
+vinai/bertweet-base	0	0.2170063555240631	0.9321739130434783	0.915	0.8926829268292683	0.9037037037037038	0.9233684904416611	0.8515216387716864	0.9806	586.395	73.427
+***** Confusion Matrix(predict) *****
+model	outer_cv	confusion_matrix
+vinai/bertweet-base	0	[[353  17]
+ [ 22 183]]
+
+2023-08-17 23:58:21,833 - INFO - ----------------------------------------------------------------------
+2023-08-17 23:58:21,833 - INFO - ----------------------------------------------------------------------
+2023-08-17 23:58:21,833 - INFO - **TRACE** Outer Fold:1
+2023-08-17 23:58:21,834 - INFO - Dataset sizes: Train - 2874 Test - 575
+2023-08-17 23:58:24,279 - INFO - -----------------------------------
+2023-08-17 23:58:24,279 - INFO - -----------------------------------
+2023-08-17 23:58:24,280 - INFO - **TRACE** Inner Fold: 0 for outer fold: 1
+2023-08-17 23:58:24,280 - INFO - **TRACE** Learning rate used: 1e-05
+2023-08-17 23:58:24,280 - INFO - **TRACE** Create dataset...
+2023-08-17 23:58:24,281 - INFO - Dataset sizes: Train - 2155 Dev - 719
+2023-08-17 23:58:24,287 - INFO - **TRACE** Tokenise data...
+2023-08-17 23:58:26,641 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 23:58:26,641 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 1e-05
+2023-08-17 23:58:26,641 - INFO - Setting up training args and starting training...
+2023-08-18 00:00:05,043 - INFO - Training complete...
+2023-08-18 00:00:05,043 - INFO - TrainOutput(global_step=1080, training_loss=0.25618226881380435, metrics={'train_runtime': 97.2926, 'train_samples_per_second': 88.599, 'train_steps_per_second': 11.101, 'total_flos': 221486064180000.0, 'train_loss': 0.25618226881380435, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 00:00:05,043 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 00:00:05,872 - INFO - **TRACE** Report evaluation results...
+2023-08-18 00:00:05,873 - INFO - 
+
+Results as of 202308-17_23-5126 for vinai/bertweet-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	1	0	1e-05	0.35669198632240295	0.874826147426982	0.8275862068965517	0.8571428571428571	0.8421052631578947	0.871623820370973	0.7387834706212503	1.1972	600.581	75.177	7.500000000000001e-06	1.0	270
+vinai/bertweet-base	1	0	1e-05	0.39066028594970703	0.885952712100139	0.8413793103448276	0.8714285714285714	0.8561403508771931	0.8833224861698666	0.7620402707690909	1.2173	590.643	73.933	5e-06	2.0	540
+vinai/bertweet-base	1	0	1e-05	0.42772647738456726	0.8845618915159944	0.8146964856230032	0.9107142857142857	0.8600337268128162	0.8892979173446143	0.7657520466658788	1.2208	588.958	73.722	2.5e-06	3.0	810
+vinai/bertweet-base	1	0	1e-05	0.42310911417007446	0.8956884561891516	0.8546712802768166	0.8821428571428571	0.8681898066783831	0.8932354376830458	0.7821873194895889	1.1957	601.314	75.269	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	1	0	1e-05	97.2926	88.599	11.101	221486064180000.0	0.25618226881380435	0.0	4.0	1080
+
+2023-08-18 00:00:05,873 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-18 00:00:05,873 - INFO - **TRACE** Appending...0.35669198632240295
+2023-08-18 00:00:05,873 - INFO - **TRACE** Appending...0.39066028594970703
+2023-08-18 00:00:05,873 - INFO - **TRACE** Appending...0.42772647738456726
+2023-08-18 00:00:05,873 - INFO - **TRACE** Appending...0.42310911417007446
+2023-08-18 00:00:05,873 - INFO - **TRACE** Current innr cross fold(0) has lower loss, saving model...0.35669198632240295 < 1000 LR: 1e-05
+2023-08-18 00:00:06,683 - INFO - **TRACE** End of inner cv fold 0*----*-----*
+
+2023-08-18 00:00:06,683 - INFO - -----------------------------------
+2023-08-18 00:00:06,683 - INFO - -----------------------------------
+2023-08-18 00:00:06,683 - INFO - **TRACE** Inner Fold: 1 for outer fold: 1
+2023-08-18 00:00:06,683 - INFO - **TRACE** Learning rate used: 5e-06
+2023-08-18 00:00:06,683 - INFO - **TRACE** Create dataset...
+2023-08-18 00:00:06,684 - INFO - Dataset sizes: Train - 2155 Dev - 719
+2023-08-18 00:00:06,688 - INFO - **TRACE** Tokenise data...
+2023-08-18 00:00:09,380 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-18 00:00:09,380 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 5e-06
+2023-08-18 00:00:09,380 - INFO - Setting up training args and starting training...
+2023-08-18 00:01:48,166 - INFO - Training complete...
+2023-08-18 00:01:48,610 - INFO - TrainOutput(global_step=1080, training_loss=0.3025660444189001, metrics={'train_runtime': 97.149, 'train_samples_per_second': 88.73, 'train_steps_per_second': 11.117, 'total_flos': 221486064180000.0, 'train_loss': 0.3025660444189001, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 00:01:48,611 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 00:01:49,489 - INFO - **TRACE** Report evaluation results...
+2023-08-18 00:01:49,489 - INFO - 
+
+Results as of 202308-17_23-5126 for vinai/bertweet-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	1	1	5e-06	0.31475427746772766	0.8803894297635605	0.8058823529411765	0.9319727891156463	0.8643533123028391	0.8883393357342937	0.7648045197111736	1.1882	605.126	75.746	3.7500000000000005e-06	1.0	270
+vinai/bertweet-base	1	1	5e-06	0.2829147279262543	0.9109874826147427	0.8993055555555556	0.8809523809523809	0.8900343642611683	0.9063585434173669	0.8154036325660071	1.1993	599.534	75.046	2.5e-06	2.0	540
+vinai/bertweet-base	1	1	5e-06	0.3111402094364166	0.9109874826147427	0.8709677419354839	0.9183673469387755	0.8940397350993378	0.9121248499399759	0.8182470099793456	1.2097	594.37	74.4	1.25e-06	3.0	810
+vinai/bertweet-base	1	1	5e-06	0.3072173595428467	0.9095966620305981	0.8705501618122977	0.9149659863945578	0.8922056384742952	0.9104241696678672	0.8151919569180027	1.2226	588.077	73.612	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	1	1	5e-06	97.149	88.73	11.117	221486064180000.0	0.3025660444189001	0.0	4.0	1080
+
+2023-08-18 00:01:49,490 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-18 00:01:49,490 - INFO - **TRACE** Appending...0.31475427746772766
+2023-08-18 00:01:49,490 - INFO - **TRACE** Appending...0.2829147279262543
+2023-08-18 00:01:49,490 - INFO - **TRACE** Appending...0.3111402094364166
+2023-08-18 00:01:49,490 - INFO - **TRACE** Appending...0.3072173595428467
+2023-08-18 00:01:49,490 - INFO - **TRACE** Current innr cross fold(1) has lower loss, saving model...0.2829147279262543 < 0.35669198632240295 LR: 5e-06
+2023-08-18 00:01:50,362 - INFO - **TRACE** End of inner cv fold 1*----*-----*
+
+2023-08-18 00:01:50,362 - INFO - -----------------------------------
+2023-08-18 00:01:50,362 - INFO - -----------------------------------
+2023-08-18 00:01:50,362 - INFO - **TRACE** Inner Fold: 2 for outer fold: 1
+2023-08-18 00:01:50,362 - INFO - **TRACE** Learning rate used: 5e-05
+2023-08-18 00:01:50,362 - INFO - **TRACE** Create dataset...
+2023-08-18 00:01:50,363 - INFO - Dataset sizes: Train - 2156 Dev - 718
+2023-08-18 00:01:50,367 - INFO - **TRACE** Tokenise data...
+2023-08-18 00:01:52,684 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-18 00:01:52,684 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 5e-05
+2023-08-18 00:01:52,684 - INFO - Setting up training args and starting training...
+2023-08-18 00:03:32,017 - INFO - Training complete...
+2023-08-18 00:03:32,020 - INFO - TrainOutput(global_step=1080, training_loss=0.22089384176112986, metrics={'train_runtime': 97.5415, 'train_samples_per_second': 88.414, 'train_steps_per_second': 11.072, 'total_flos': 221588841936000.0, 'train_loss': 0.22089384176112986, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 00:03:32,020 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 00:03:32,860 - INFO - **TRACE** Report evaluation results...
+2023-08-18 00:03:32,860 - INFO - 
+
+Results as of 202308-17_23-5126 for vinai/bertweet-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	1	2	5e-05	0.4575969874858856	0.8189415041782729	0.6711229946524064	0.9728682170542635	0.7943037974683543	0.8527384563532187	0.6775737181016499	1.2048	595.953	74.702	3.7500000000000003e-05	1.0	270
+vinai/bertweet-base	1	2	5e-05	0.35534170269966125	0.9080779944289693	0.8529411764705882	0.8992248062015504	0.8754716981132076	0.90613414223121	0.8034084287507638	1.2119	592.455	74.263	2.5e-05	2.0	540
+vinai/bertweet-base	1	2	5e-05	0.44387340545654297	0.8997214484679665	0.8690476190476191	0.8488372093023255	0.8588235294117648	0.8885490394337714	0.7812164424110442	1.2123	592.286	74.242	1.25e-05	3.0	810
+vinai/bertweet-base	1	2	5e-05	0.5474824905395508	0.8927576601671309	0.8131487889273357	0.9108527131782945	0.8592321755027421	0.8967307044152342	0.7763132709155216	1.2094	593.681	74.417	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	1	2	5e-05	97.5415	88.414	11.072	221588841936000.0	0.22089384176112986	0.0	4.0	1080
+
+2023-08-18 00:03:32,860 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-18 00:03:32,860 - INFO - **TRACE** Appending...0.4575969874858856
+2023-08-18 00:03:32,860 - INFO - **TRACE** Appending...0.35534170269966125
+2023-08-18 00:03:32,860 - INFO - **TRACE** Appending...0.44387340545654297
+2023-08-18 00:03:32,860 - INFO - **TRACE** Appending...0.5474824905395508
+2023-08-18 00:03:32,860 - INFO - **TRACE** Model not saved since current innr cross fold(2) has higher loss...0.35534170269966125 >= 0.2829147279262543 LR: 5e-05
+2023-08-18 00:03:32,860 - INFO - **TRACE** End of inner cv fold 2*----*-----*
+
+2023-08-18 00:03:32,861 - INFO - -----------------------------------
+2023-08-18 00:03:32,861 - INFO - -----------------------------------
+2023-08-18 00:03:32,861 - INFO - **TRACE** Inner Fold: 3 for outer fold: 1
+2023-08-18 00:03:32,861 - INFO - **TRACE** Learning rate used: 3e-05
+2023-08-18 00:03:32,861 - INFO - **TRACE** Create dataset...
+2023-08-18 00:03:32,862 - INFO - Dataset sizes: Train - 2156 Dev - 718
+2023-08-18 00:03:32,867 - INFO - **TRACE** Tokenise data...
+2023-08-18 00:03:35,278 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-18 00:03:35,278 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 3e-05
+2023-08-18 00:03:35,278 - INFO - Setting up training args and starting training...
+2023-08-18 00:05:14,898 - INFO - Training complete...
+2023-08-18 00:05:14,903 - INFO - TrainOutput(global_step=1080, training_loss=0.20506386889351738, metrics={'train_runtime': 97.9724, 'train_samples_per_second': 88.025, 'train_steps_per_second': 11.024, 'total_flos': 221588841936000.0, 'train_loss': 0.20506386889351738, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 00:05:14,903 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 00:05:15,817 - INFO - **TRACE** Report evaluation results...
+2023-08-18 00:05:15,818 - INFO - 
+
+Results as of 202308-17_23-5126 for vinai/bertweet-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	1	3	3e-05	0.26616886258125305	0.8983286908077994	0.8372881355932204	0.9080882352941176	0.8712522045855379	0.9002324584542338	0.789247094800068	1.213	591.914	74.195	2.25e-05	1.0	270
+vinai/bertweet-base	1	3	3e-05	0.3447090983390808	0.9122562674094707	0.9098039215686274	0.8529411764705882	0.8804554079696395	0.9006858348720654	0.8123165110590863	1.2083	594.237	74.487	1.5e-05	2.0	540
+vinai/bertweet-base	1	3	3e-05	0.40645793080329895	0.9136490250696379	0.91015625	0.8566176470588235	0.8825757575757577	0.902524070166183	0.8153287602099806	1.2148	591.04	74.086	7.5e-06	3.0	810
+vinai/bertweet-base	1	3	3e-05	0.4285852909088135	0.9136490250696379	0.8977272727272727	0.8713235294117647	0.8843283582089553	0.9053927064099183	0.815695221299377	1.1929	601.917	75.449	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	1	3	3e-05	97.9724	88.025	11.024	221588841936000.0	0.20506386889351738	0.0	4.0	1080
+
+2023-08-18 00:05:15,818 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-18 00:05:15,818 - INFO - **TRACE** Appending...0.26616886258125305
+2023-08-18 00:05:15,818 - INFO - **TRACE** Appending...0.3447090983390808
+2023-08-18 00:05:15,818 - INFO - **TRACE** Appending...0.40645793080329895
+2023-08-18 00:05:15,818 - INFO - **TRACE** Appending...0.4285852909088135
+2023-08-18 00:05:15,818 - INFO - **TRACE** Current innr cross fold(3) has lower loss, saving model...0.26616886258125305 < 0.35534170269966125 LR: 3e-05
+2023-08-18 00:05:16,632 - INFO - **TRACE** End of inner cv fold 3*----*-----*
+
+2023-08-18 00:05:16,632 - INFO - -----------------------------------
+2023-08-18 00:05:16,632 - INFO - -----------------------------------
+2023-08-18 00:05:16,632 - INFO - **TRACE** All inner CVs complete for outer CV 1
+2023-08-18 00:05:16,632 - INFO - **TRACE** Best model selected from inner cv: 3 with loss: 0.26616886258125305 with learning rate: 3e-05
+2023-08-18 00:05:16,632 - INFO - **TRACE** Moving on to test predictions with the best model from inner cross fold
+2023-08-18 00:05:16,632 - INFO - **TRACE** Loading the best model from inner CV
+2023-08-18 00:05:17,577 - INFO - **TRACE** Running predictions with test data
+2023-08-18 00:05:18,822 - INFO - Metrics from the Predictions...
+2023-08-18 00:05:18,822 - INFO - {'test_loss': 0.2005625218153, 'test_accuracy': 0.9304347826086956, 'test_precision': 0.8733031674208145, 'test_recall': 0.9414634146341463, 'test_f1': 0.9061032863849765, 'test_roc_auc': 0.9328938694792352, 'test_matthews_correlation': 0.852494245043737, 'test_runtime': 0.9698, 'test_samples_per_second': 592.917, 'test_steps_per_second': 74.244}
+2023-08-18 00:05:18,822 - INFO - {'confusion_matrix': array([[342,  28],
+       [ 12, 193]])}
+2023-08-18 00:05:18,823 - INFO - 
+
+Results as of 202308-17_23-5126 for vinai/bertweet-base
+***** Test(predict) metrics *****
+model	outer_cv	test_loss	test_accuracy	test_precision	test_recall	test_f1	test_roc_auc	test_matthews_correlation	test_runtime	test_samples_per_second	test_steps_per_second
+vinai/bertweet-base	1	0.2005625218153	0.9304347826086956	0.8733031674208145	0.9414634146341463	0.9061032863849765	0.9328938694792352	0.852494245043737	0.9698	592.917	74.244
+***** Confusion Matrix(predict) *****
+model	outer_cv	confusion_matrix
+vinai/bertweet-base	1	[[342  28]
+ [ 12 193]]
+
+2023-08-18 00:05:18,823 - INFO - ----------------------------------------------------------------------
+2023-08-18 00:05:18,823 - INFO - ----------------------------------------------------------------------
+2023-08-18 00:05:18,823 - INFO - **TRACE** Outer Fold:2
+2023-08-18 00:05:18,823 - INFO - Dataset sizes: Train - 2874 Test - 575
+2023-08-18 00:05:26,326 - INFO - -----------------------------------
+2023-08-18 00:05:26,326 - INFO - -----------------------------------
+2023-08-18 00:05:26,326 - INFO - **TRACE** Inner Fold: 0 for outer fold: 2
+2023-08-18 00:05:26,326 - INFO - **TRACE** Learning rate used: 1e-05
+2023-08-18 00:05:26,326 - INFO - **TRACE** Create dataset...
+2023-08-18 00:05:26,327 - INFO - Dataset sizes: Train - 2155 Dev - 719
+2023-08-18 00:05:26,331 - INFO - **TRACE** Tokenise data...
+2023-08-18 00:05:28,857 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-18 00:05:28,857 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 1e-05
+2023-08-18 00:05:28,857 - INFO - Setting up training args and starting training...
+2023-08-18 00:07:06,970 - INFO - Training complete...
+2023-08-18 00:07:06,970 - INFO - TrainOutput(global_step=1080, training_loss=0.2536194969106604, metrics={'train_runtime': 96.9897, 'train_samples_per_second': 88.875, 'train_steps_per_second': 11.135, 'total_flos': 221486064180000.0, 'train_loss': 0.2536194969106604, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 00:07:06,970 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 00:07:07,846 - INFO - **TRACE** Report evaluation results...
+2023-08-18 00:07:07,847 - INFO - 
+
+Results as of 202308-17_23-5126 for vinai/bertweet-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	2	0	1e-05	0.28995588421821594	0.9012517385257302	0.8557377049180328	0.90625	0.8802698145025296	0.9020809164733179	0.79731189905653	1.2119	593.288	74.264	7.500000000000001e-06	1.0	270
+vinai/bertweet-base	2	0	1e-05	0.3041786253452301	0.9123783031988874	0.9090909090909091	0.8680555555555556	0.8880994671403197	0.905025457592163	0.8167504153440337	1.2104	594.025	74.356	5e-06	2.0	540
+vinai/bertweet-base	2	0	1e-05	0.3269537687301636	0.9151599443671766	0.8745874587458746	0.9201388888888888	0.8967851099830795	0.9159859177623099	0.825611101275977	1.2297	584.685	73.187	2.5e-06	3.0	810
+vinai/bertweet-base	2	0	1e-05	0.3469361662864685	0.9123783031988874	0.8813559322033898	0.9027777777777778	0.8919382504288165	0.9107856406290281	0.8184387669287404	1.2169	590.838	73.957	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	2	0	1e-05	96.9897	88.875	11.135	221486064180000.0	0.2536194969106604	0.0	4.0	1080
+
+2023-08-18 00:07:07,847 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-18 00:07:07,847 - INFO - **TRACE** Appending...0.28995588421821594
+2023-08-18 00:07:07,847 - INFO - **TRACE** Appending...0.3041786253452301
+2023-08-18 00:07:07,847 - INFO - **TRACE** Appending...0.3269537687301636
+2023-08-18 00:07:07,847 - INFO - **TRACE** Appending...0.3469361662864685
+2023-08-18 00:07:07,847 - INFO - **TRACE** Current innr cross fold(0) has lower loss, saving model...0.28995588421821594 < 1000 LR: 1e-05
+2023-08-18 00:07:08,661 - INFO - **TRACE** End of inner cv fold 0*----*-----*
+
+2023-08-18 00:07:08,661 - INFO - -----------------------------------
+2023-08-18 00:07:08,662 - INFO - -----------------------------------
+2023-08-18 00:07:08,662 - INFO - **TRACE** Inner Fold: 1 for outer fold: 2
+2023-08-18 00:07:08,662 - INFO - **TRACE** Learning rate used: 5e-06
+2023-08-18 00:07:08,662 - INFO - **TRACE** Create dataset...
+2023-08-18 00:07:08,662 - INFO - Dataset sizes: Train - 2155 Dev - 719
+2023-08-18 00:07:08,666 - INFO - **TRACE** Tokenise data...
+2023-08-18 00:07:11,253 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-18 00:07:11,253 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 5e-06
+2023-08-18 00:07:11,253 - INFO - Setting up training args and starting training...
+2023-08-18 00:08:51,782 - INFO - Training complete...
+2023-08-18 00:08:51,784 - INFO - TrainOutput(global_step=1080, training_loss=0.2969343644601327, metrics={'train_runtime': 99.1214, 'train_samples_per_second': 86.964, 'train_steps_per_second': 10.896, 'total_flos': 221486064180000.0, 'train_loss': 0.2969343644601327, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 00:08:51,784 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 00:08:52,781 - INFO - **TRACE** Report evaluation results...
+2023-08-18 00:08:52,781 - INFO - 
+
+Results as of 202308-17_23-5126 for vinai/bertweet-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	2	1	5e-06	0.28308770060539246	0.9054242002781642	0.8996282527881041	0.8551236749116607	0.8768115942028986	0.8965985347035367	0.800820471356455	1.1941	602.135	75.372	3.7500000000000005e-06	1.0	270
+vinai/bertweet-base	2	1	5e-06	0.29049694538116455	0.9082058414464534	0.9157088122605364	0.8445229681978799	0.8786764705882353	0.8970321263007748	0.8067502617828948	1.2307	584.229	73.13	2.5e-06	2.0	540
+vinai/bertweet-base	2	1	5e-06	0.3063385486602783	0.9068150208623088	0.8884892086330936	0.872791519434629	0.8805704099821746	0.9008453010017182	0.804269431078187	1.2295	584.778	73.199	1.25e-06	3.0	810
+vinai/bertweet-base	2	1	5e-06	0.3136235177516937	0.9109874826147427	0.8869257950530035	0.8869257950530035	0.8869257950530035	0.9067656498200798	0.8135312996401595	1.2086	594.879	74.463	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	2	1	5e-06	99.1214	86.964	10.896	221486064180000.0	0.2969343644601327	0.0	4.0	1080
+
+2023-08-18 00:08:52,781 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-18 00:08:52,781 - INFO - **TRACE** Appending...0.28308770060539246
+2023-08-18 00:08:52,781 - INFO - **TRACE** Appending...0.29049694538116455
+2023-08-18 00:08:52,781 - INFO - **TRACE** Appending...0.3063385486602783
+2023-08-18 00:08:52,781 - INFO - **TRACE** Appending...0.3136235177516937
+2023-08-18 00:08:52,781 - INFO - **TRACE** Current innr cross fold(1) has lower loss, saving model...0.28308770060539246 < 0.28995588421821594 LR: 5e-06
+2023-08-18 00:08:53,605 - INFO - **TRACE** End of inner cv fold 1*----*-----*
+
+2023-08-18 00:08:53,605 - INFO - -----------------------------------
+2023-08-18 00:08:53,605 - INFO - -----------------------------------
+2023-08-18 00:08:53,605 - INFO - **TRACE** Inner Fold: 2 for outer fold: 2
+2023-08-18 00:08:53,605 - INFO - **TRACE** Learning rate used: 5e-05
+2023-08-18 00:08:53,605 - INFO - **TRACE** Create dataset...
+2023-08-18 00:08:53,606 - INFO - Dataset sizes: Train - 2156 Dev - 718
+2023-08-18 00:08:53,610 - INFO - **TRACE** Tokenise data...
+2023-08-18 00:09:00,945 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-18 00:09:00,946 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 5e-05
+2023-08-18 00:09:00,946 - INFO - Setting up training args and starting training...
+2023-08-18 00:10:39,747 - INFO - Training complete...
+2023-08-18 00:10:39,747 - INFO - TrainOutput(global_step=1080, training_loss=0.22177807092666627, metrics={'train_runtime': 97.6569, 'train_samples_per_second': 88.309, 'train_steps_per_second': 11.059, 'total_flos': 221588841936000.0, 'train_loss': 0.22177807092666627, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 00:10:39,747 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 00:10:40,701 - INFO - **TRACE** Report evaluation results...
+2023-08-18 00:10:40,702 - INFO - 
+
+Results as of 202308-17_23-5126 for vinai/bertweet-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	2	2	5e-05	0.3887496590614319	0.871866295264624	0.7537993920972644	0.9575289575289575	0.8435374149659864	0.8905291846468316	0.7527780818512058	1.2737	563.694	70.658	3.7500000000000003e-05	1.0	270
+vinai/bertweet-base	2	2	5e-05	0.28398463129997253	0.9052924791086351	0.8576779026217228	0.8841698841698842	0.8707224334600762	0.9006906065729595	0.7962537307794453	1.2128	592.018	74.208	2.5e-05	2.0	540
+vinai/bertweet-base	2	2	5e-05	0.30970513820648193	0.9220055710306406	0.8918918918918919	0.8918918918918919	0.8918918918918919	0.9154448566213272	0.8308897132426544	1.1982	599.235	75.113	1.25e-05	3.0	810
+vinai/bertweet-base	2	2	5e-05	0.4111075699329376	0.9122562674094707	0.8525179856115108	0.915057915057915	0.8826815642458101	0.9128666481607658	0.8140428868409257	1.2689	565.864	70.93	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	2	2	5e-05	97.6569	88.309	11.059	221588841936000.0	0.22177807092666627	0.0	4.0	1080
+
+2023-08-18 00:10:40,702 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-18 00:10:40,702 - INFO - **TRACE** Appending...0.3887496590614319
+2023-08-18 00:10:40,702 - INFO - **TRACE** Appending...0.28398463129997253
+2023-08-18 00:10:40,702 - INFO - **TRACE** Appending...0.30970513820648193
+2023-08-18 00:10:40,702 - INFO - **TRACE** Appending...0.4111075699329376
+2023-08-18 00:10:40,702 - INFO - **TRACE** Model not saved since current innr cross fold(2) has higher loss...0.28398463129997253 >= 0.28308770060539246 LR: 5e-05
+2023-08-18 00:10:40,702 - INFO - **TRACE** End of inner cv fold 2*----*-----*
+
+2023-08-18 00:10:40,702 - INFO - -----------------------------------
+2023-08-18 00:10:40,702 - INFO - -----------------------------------
+2023-08-18 00:10:40,702 - INFO - **TRACE** Inner Fold: 3 for outer fold: 2
+2023-08-18 00:10:40,702 - INFO - **TRACE** Learning rate used: 3e-05
+2023-08-18 00:10:40,702 - INFO - **TRACE** Create dataset...
+2023-08-18 00:10:40,703 - INFO - Dataset sizes: Train - 2156 Dev - 718
+2023-08-18 00:10:40,715 - INFO - **TRACE** Tokenise data...
+2023-08-18 00:10:43,759 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-18 00:10:43,759 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 3e-05
+2023-08-18 00:10:43,759 - INFO - Setting up training args and starting training...
+2023-08-18 00:12:24,479 - INFO - Training complete...
+2023-08-18 00:12:24,481 - INFO - TrainOutput(global_step=1080, training_loss=0.19896513930073492, metrics={'train_runtime': 98.8053, 'train_samples_per_second': 87.283, 'train_steps_per_second': 10.931, 'total_flos': 221588841936000.0, 'train_loss': 0.19896513930073492, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 00:12:24,481 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 00:12:25,431 - INFO - **TRACE** Report evaluation results...
+2023-08-18 00:12:25,432 - INFO - 
+
+Results as of 202308-17_23-5126 for vinai/bertweet-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	2	3	3e-05	0.35191136598587036	0.883008356545961	0.8544776119402985	0.8357664233576643	0.8450184501845018	0.8739642927599132	0.7511959618534194	1.2222	587.487	73.64	2.25e-05	1.0	270
+vinai/bertweet-base	2	3	3e-05	0.48465511202812195	0.8788300835654597	0.8045602605863192	0.9014598540145985	0.8502581755593803	0.8831623594397318	0.7524705414399929	1.2396	579.21	72.603	1.5e-05	2.0	540
+vinai/bertweet-base	2	3	3e-05	0.5463601350784302	0.8885793871866295	0.8464285714285714	0.864963503649635	0.8555956678700362	0.8840583284013941	0.7650289652092975	1.254	572.582	71.772	7.5e-06	3.0	810
+vinai/bertweet-base	2	3	3e-05	0.5870542526245117	0.8871866295264624	0.8409893992932862	0.8686131386861314	0.8545780969479353	0.88363089366739	0.7627329168219134	1.2029	596.903	74.821	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	2	3	3e-05	98.8053	87.283	10.931	221588841936000.0	0.19896513930073492	0.0	4.0	1080
+
+2023-08-18 00:12:25,432 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-18 00:12:25,432 - INFO - **TRACE** Appending...0.35191136598587036
+2023-08-18 00:12:25,432 - INFO - **TRACE** Appending...0.48465511202812195
+2023-08-18 00:12:25,432 - INFO - **TRACE** Appending...0.5463601350784302
+2023-08-18 00:12:25,432 - INFO - **TRACE** Appending...0.5870542526245117
+2023-08-18 00:12:25,432 - INFO - **TRACE** Model not saved since current innr cross fold(3) has higher loss...0.35191136598587036 >= 0.28398463129997253 LR: 3e-05
+2023-08-18 00:12:25,432 - INFO - **TRACE** End of inner cv fold 3*----*-----*
+
+2023-08-18 00:12:25,432 - INFO - -----------------------------------
+2023-08-18 00:12:25,432 - INFO - -----------------------------------
+2023-08-18 00:12:25,432 - INFO - **TRACE** All inner CVs complete for outer CV 2
+2023-08-18 00:12:25,432 - INFO - **TRACE** Best model selected from inner cv: 1 with loss: 0.28308770060539246 with learning rate: 3e-05
+2023-08-18 00:12:25,432 - INFO - **TRACE** Moving on to test predictions with the best model from inner cross fold
+2023-08-18 00:12:25,432 - INFO - **TRACE** Loading the best model from inner CV
+2023-08-18 00:12:27,101 - INFO - **TRACE** Running predictions with test data
+2023-08-18 00:12:28,374 - INFO - Metrics from the Predictions...
+2023-08-18 00:12:28,374 - INFO - {'test_loss': 0.23014669120311737, 'test_accuracy': 0.928695652173913, 'test_precision': 0.8904761904761904, 'test_recall': 0.9121951219512195, 'test_f1': 0.9012048192771084, 'test_roc_auc': 0.9250164798945286, 'test_matthews_correlation': 0.8455854056088761, 'test_runtime': 0.9783, 'test_samples_per_second': 587.739, 'test_steps_per_second': 73.595}
+2023-08-18 00:12:28,374 - INFO - {'confusion_matrix': array([[347,  23],
+       [ 18, 187]])}
+2023-08-18 00:12:28,375 - INFO - 
+
+Results as of 202308-17_23-5126 for vinai/bertweet-base
+***** Test(predict) metrics *****
+model	outer_cv	test_loss	test_accuracy	test_precision	test_recall	test_f1	test_roc_auc	test_matthews_correlation	test_runtime	test_samples_per_second	test_steps_per_second
+vinai/bertweet-base	2	0.23014669120311737	0.928695652173913	0.8904761904761904	0.9121951219512195	0.9012048192771084	0.9250164798945286	0.8455854056088761	0.9783	587.739	73.595
+***** Confusion Matrix(predict) *****
+model	outer_cv	confusion_matrix
+vinai/bertweet-base	2	[[347  23]
+ [ 18 187]]
+
+2023-08-18 00:12:28,375 - INFO - ----------------------------------------------------------------------
+2023-08-18 00:12:28,375 - INFO - ----------------------------------------------------------------------
+2023-08-18 00:12:28,375 - INFO - **TRACE** Outer Fold:3
+2023-08-18 00:12:28,376 - INFO - Dataset sizes: Train - 2874 Test - 575
+2023-08-18 00:12:30,768 - INFO - -----------------------------------
+2023-08-18 00:12:30,769 - INFO - -----------------------------------
+2023-08-18 00:12:30,769 - INFO - **TRACE** Inner Fold: 0 for outer fold: 3
+2023-08-18 00:12:30,769 - INFO - **TRACE** Learning rate used: 1e-05
+2023-08-18 00:12:30,769 - INFO - **TRACE** Create dataset...
+2023-08-18 00:12:30,769 - INFO - Dataset sizes: Train - 2155 Dev - 719
+2023-08-18 00:12:30,773 - INFO - **TRACE** Tokenise data...
+2023-08-18 00:12:38,306 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-18 00:12:38,307 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 1e-05
+2023-08-18 00:12:38,307 - INFO - Setting up training args and starting training...
+2023-08-18 00:14:19,674 - INFO - Training complete...
+2023-08-18 00:14:19,674 - INFO - TrainOutput(global_step=1080, training_loss=0.2661556491145381, metrics={'train_runtime': 100.1361, 'train_samples_per_second': 86.083, 'train_steps_per_second': 10.785, 'total_flos': 221486064180000.0, 'train_loss': 0.2661556491145381, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 00:14:19,674 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 00:14:20,602 - INFO - **TRACE** Report evaluation results...
+2023-08-18 00:14:20,602 - INFO - 
+
+Results as of 202308-17_23-5126 for vinai/bertweet-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	3	0	1e-05	0.4047384560108185	0.8595271210013908	0.7522935779816514	0.924812030075188	0.8296795952782462	0.8730020415276601	0.7232929199305514	1.1893	604.56	75.675	7.500000000000001e-06	1.0	270
+vinai/bertweet-base	3	0	1e-05	0.32726097106933594	0.8998609179415855	0.8299319727891157	0.9172932330827067	0.8714285714285713	0.9034589785722584	0.7924122294166951	1.2735	564.581	70.671	5e-06	2.0	540
+vinai/bertweet-base	3	0	1e-05	0.3799026906490326	0.9054242002781642	0.839041095890411	0.9210526315789473	0.8781362007168458	0.9086499360985245	0.8034631944012636	1.2214	588.68	73.687	2.5e-06	3.0	810
+vinai/bertweet-base	3	0	1e-05	0.4071043133735657	0.9026425591098748	0.831081081081081	0.924812030075188	0.8754448398576512	0.9072183770684991	0.7989714201087565	1.2439	578.03	72.354	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	3	0	1e-05	100.1361	86.083	10.785	221486064180000.0	0.2661556491145381	0.0	4.0	1080
+
+2023-08-18 00:14:20,602 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-18 00:14:20,602 - INFO - **TRACE** Appending...0.4047384560108185
+2023-08-18 00:14:20,602 - INFO - **TRACE** Appending...0.32726097106933594
+2023-08-18 00:14:20,602 - INFO - **TRACE** Appending...0.3799026906490326
+2023-08-18 00:14:20,603 - INFO - **TRACE** Appending...0.4071043133735657
+2023-08-18 00:14:20,603 - INFO - **TRACE** Current innr cross fold(0) has lower loss, saving model...0.32726097106933594 < 1000 LR: 1e-05
+2023-08-18 00:14:21,503 - INFO - **TRACE** End of inner cv fold 0*----*-----*
+
+2023-08-18 00:14:21,503 - INFO - -----------------------------------
+2023-08-18 00:14:21,503 - INFO - -----------------------------------
+2023-08-18 00:14:21,503 - INFO - **TRACE** Inner Fold: 1 for outer fold: 3
+2023-08-18 00:14:21,503 - INFO - **TRACE** Learning rate used: 5e-06
+2023-08-18 00:14:21,503 - INFO - **TRACE** Create dataset...
+2023-08-18 00:14:21,504 - INFO - Dataset sizes: Train - 2155 Dev - 719
+2023-08-18 00:14:21,509 - INFO - **TRACE** Tokenise data...
+2023-08-18 00:14:23,915 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-18 00:14:23,915 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 5e-06
+2023-08-18 00:14:23,915 - INFO - Setting up training args and starting training...
+2023-08-18 00:16:02,885 - INFO - Training complete...
+2023-08-18 00:16:02,888 - INFO - TrainOutput(global_step=1080, training_loss=0.2966174885078713, metrics={'train_runtime': 97.9015, 'train_samples_per_second': 88.048, 'train_steps_per_second': 11.031, 'total_flos': 221486064180000.0, 'train_loss': 0.2966174885078713, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 00:16:02,888 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 00:16:03,795 - INFO - **TRACE** Report evaluation results...
+2023-08-18 00:16:03,795 - INFO - 
+
+Results as of 202308-17_23-5126 for vinai/bertweet-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	3	1	5e-06	0.28977084159851074	0.9026425591098748	0.9135338345864662	0.8379310344827586	0.8741007194244604	0.8921589904348526	0.7969478388520451	1.2011	598.627	74.932	3.7500000000000005e-06	1.0	270
+vinai/bertweet-base	3	1	5e-06	0.29228755831718445	0.9082058414464534	0.8888888888888888	0.8827586206896552	0.8858131487889273	0.9040832730487903	0.8090840412339616	1.2006	598.883	74.964	2.5e-06	2.0	540
+vinai/bertweet-base	3	1	5e-06	0.31671154499053955	0.9068150208623088	0.8831615120274914	0.8862068965517241	0.8846815834767643	0.9034764086488224	0.8065056388899269	1.2065	595.92	74.594	1.25e-06	3.0	810
+vinai/bertweet-base	3	1	5e-06	0.3247824013233185	0.9109874826147427	0.8843537414965986	0.896551724137931	0.8904109589041096	0.9086488224419259	0.8155296632906759	1.2152	591.684	74.063	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	3	1	5e-06	97.9015	88.048	11.031	221486064180000.0	0.2966174885078713	0.0	4.0	1080
+
+2023-08-18 00:16:03,795 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-18 00:16:03,795 - INFO - **TRACE** Appending...0.28977084159851074
+2023-08-18 00:16:03,795 - INFO - **TRACE** Appending...0.29228755831718445
+2023-08-18 00:16:03,795 - INFO - **TRACE** Appending...0.31671154499053955
+2023-08-18 00:16:03,795 - INFO - **TRACE** Appending...0.3247824013233185
+2023-08-18 00:16:03,795 - INFO - **TRACE** Current innr cross fold(1) has lower loss, saving model...0.28977084159851074 < 0.32726097106933594 LR: 5e-06
+2023-08-18 00:16:04,622 - INFO - **TRACE** End of inner cv fold 1*----*-----*
+
+2023-08-18 00:16:04,623 - INFO - -----------------------------------
+2023-08-18 00:16:04,623 - INFO - -----------------------------------
+2023-08-18 00:16:04,623 - INFO - **TRACE** Inner Fold: 2 for outer fold: 3
+2023-08-18 00:16:04,623 - INFO - **TRACE** Learning rate used: 5e-05
+2023-08-18 00:16:04,623 - INFO - **TRACE** Create dataset...
+2023-08-18 00:16:04,623 - INFO - Dataset sizes: Train - 2156 Dev - 718
+2023-08-18 00:16:04,628 - INFO - **TRACE** Tokenise data...
+2023-08-18 00:16:07,016 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-18 00:16:07,016 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 5e-05
+2023-08-18 00:16:07,017 - INFO - Setting up training args and starting training...
+2023-08-18 00:17:45,800 - INFO - Training complete...
+2023-08-18 00:17:45,835 - INFO - TrainOutput(global_step=1080, training_loss=0.2049876149053927, metrics={'train_runtime': 97.5227, 'train_samples_per_second': 88.431, 'train_steps_per_second': 11.074, 'total_flos': 221588841936000.0, 'train_loss': 0.2049876149053927, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 00:17:45,836 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 00:17:46,726 - INFO - **TRACE** Report evaluation results...
+2023-08-18 00:17:46,727 - INFO - 
+
+Results as of 202308-17_23-5126 for vinai/bertweet-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	3	2	5e-05	0.4199613928794861	0.8593314763231198	0.7546583850931677	0.9169811320754717	0.82793867120954	0.8712940980465659	0.7205175286347582	1.1827	607.09	76.098	3.7500000000000003e-05	1.0	270
+vinai/bertweet-base	3	2	5e-05	0.39500316977500916	0.8885793871866295	0.8156996587030717	0.9018867924528302	0.85663082437276	0.8913407472197926	0.7684733804518152	1.2163	590.3	73.993	2.5e-05	2.0	540
+vinai/bertweet-base	3	2	5e-05	0.4568091630935669	0.9052924791086351	0.855595667870036	0.8943396226415095	0.8745387453874539	0.9030197009454788	0.7990411225390672	1.21	593.412	74.383	1.25e-05	3.0	810
+vinai/bertweet-base	3	2	5e-05	0.521412193775177	0.8983286908077994	0.8503649635036497	0.879245283018868	0.8645640074211502	0.8943687783747761	0.7834978197948524	1.2036	596.561	74.778	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	3	2	5e-05	97.5227	88.431	11.074	221588841936000.0	0.2049876149053927	0.0	4.0	1080
+
+2023-08-18 00:17:46,727 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-18 00:17:46,727 - INFO - **TRACE** Appending...0.4199613928794861
+2023-08-18 00:17:46,727 - INFO - **TRACE** Appending...0.39500316977500916
+2023-08-18 00:17:46,727 - INFO - **TRACE** Appending...0.4568091630935669
+2023-08-18 00:17:46,727 - INFO - **TRACE** Appending...0.521412193775177
+2023-08-18 00:17:46,727 - INFO - **TRACE** Model not saved since current innr cross fold(2) has higher loss...0.39500316977500916 >= 0.28977084159851074 LR: 5e-05
+2023-08-18 00:17:46,727 - INFO - **TRACE** End of inner cv fold 2*----*-----*
+
+2023-08-18 00:17:46,727 - INFO - -----------------------------------
+2023-08-18 00:17:46,727 - INFO - -----------------------------------
+2023-08-18 00:17:46,727 - INFO - **TRACE** Inner Fold: 3 for outer fold: 3
+2023-08-18 00:17:46,727 - INFO - **TRACE** Learning rate used: 3e-05
+2023-08-18 00:17:46,727 - INFO - **TRACE** Create dataset...
+2023-08-18 00:17:46,728 - INFO - Dataset sizes: Train - 2156 Dev - 718
+2023-08-18 00:17:46,733 - INFO - **TRACE** Tokenise data...
+2023-08-18 00:17:49,168 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-18 00:17:49,168 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 3e-05
+2023-08-18 00:17:49,168 - INFO - Setting up training args and starting training...
+2023-08-18 00:19:27,704 - INFO - Training complete...
+2023-08-18 00:19:27,705 - INFO - TrainOutput(global_step=1080, training_loss=0.2199905408753289, metrics={'train_runtime': 96.7392, 'train_samples_per_second': 89.147, 'train_steps_per_second': 11.164, 'total_flos': 221588841936000.0, 'train_loss': 0.2199905408753289, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 00:19:27,705 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 00:19:28,573 - INFO - **TRACE** Report evaluation results...
+2023-08-18 00:19:28,574 - INFO - 
+
+Results as of 202308-17_23-5126 for vinai/bertweet-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	3	3	3e-05	0.3203653395175934	0.9025069637883009	0.8710801393728222	0.8833922261484098	0.8771929824561403	0.899167377442021	0.796422093292701	1.2049	595.907	74.696	2.25e-05	1.0	270
+vinai/bertweet-base	3	3	3e-05	0.33732545375823975	0.8997214484679665	0.8650519031141869	0.8833922261484098	0.8741258741258742	0.8968685268673084	0.790927969200896	1.2094	593.66	74.414	1.5e-05	2.0	540
+vinai/bertweet-base	3	3	3e-05	0.37150272727012634	0.9136490250696379	0.8695652173913043	0.9187279151943463	0.8934707903780068	0.9145363713902765	0.82184114047765	1.1877	604.555	75.78	7.5e-06	3.0	810
+vinai/bertweet-base	3	3	3e-05	0.48430562019348145	0.9011142061281338	0.9045801526717557	0.8374558303886925	0.8697247706422019	0.8899922830104382	0.7917549521303623	1.1856	605.622	75.914	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	3	3	3e-05	96.7392	89.147	11.164	221588841936000.0	0.2199905408753289	0.0	4.0	1080
+
+2023-08-18 00:19:28,574 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-18 00:19:28,574 - INFO - **TRACE** Appending...0.3203653395175934
+2023-08-18 00:19:28,574 - INFO - **TRACE** Appending...0.33732545375823975
+2023-08-18 00:19:28,574 - INFO - **TRACE** Appending...0.37150272727012634
+2023-08-18 00:19:28,574 - INFO - **TRACE** Appending...0.48430562019348145
+2023-08-18 00:19:28,574 - INFO - **TRACE** Current innr cross fold(3) has lower loss, saving model...0.3203653395175934 < 0.39500316977500916 LR: 3e-05
+2023-08-18 00:19:29,392 - INFO - **TRACE** End of inner cv fold 3*----*-----*
+
+2023-08-18 00:19:29,393 - INFO - -----------------------------------
+2023-08-18 00:19:29,393 - INFO - -----------------------------------
+2023-08-18 00:19:29,393 - INFO - **TRACE** All inner CVs complete for outer CV 3
+2023-08-18 00:19:29,393 - INFO - **TRACE** Best model selected from inner cv: 3 with loss: 0.3203653395175934 with learning rate: 3e-05
+2023-08-18 00:19:29,393 - INFO - **TRACE** Moving on to test predictions with the best model from inner cross fold
+2023-08-18 00:19:29,393 - INFO - **TRACE** Loading the best model from inner CV
+2023-08-18 00:19:30,334 - INFO - **TRACE** Running predictions with test data
+2023-08-18 00:19:31,567 - INFO - Metrics from the Predictions...
+2023-08-18 00:19:31,568 - INFO - {'test_loss': 0.23572345077991486, 'test_accuracy': 0.9339130434782609, 'test_precision': 0.8818181818181818, 'test_recall': 0.941747572815534, 'test_f1': 0.9107981220657277, 'test_roc_auc': 0.935643434104244, 'test_matthews_correlation': 0.859572365476586, 'test_runtime': 0.9722, 'test_samples_per_second': 591.466, 'test_steps_per_second': 74.062}
+2023-08-18 00:19:31,568 - INFO - {'confusion_matrix': array([[343,  26],
+       [ 12, 194]])}
+2023-08-18 00:19:31,568 - INFO - 
+
+Results as of 202308-17_23-5126 for vinai/bertweet-base
+***** Test(predict) metrics *****
+model	outer_cv	test_loss	test_accuracy	test_precision	test_recall	test_f1	test_roc_auc	test_matthews_correlation	test_runtime	test_samples_per_second	test_steps_per_second
+vinai/bertweet-base	3	0.23572345077991486	0.9339130434782609	0.8818181818181818	0.941747572815534	0.9107981220657277	0.935643434104244	0.859572365476586	0.9722	591.466	74.062
+***** Confusion Matrix(predict) *****
+model	outer_cv	confusion_matrix
+vinai/bertweet-base	3	[[343  26]
+ [ 12 194]]
+
+2023-08-18 00:19:31,568 - INFO - ----------------------------------------------------------------------
+2023-08-18 00:19:31,568 - INFO - ----------------------------------------------------------------------
+2023-08-18 00:19:31,568 - INFO - **TRACE** Outer Fold:4
+2023-08-18 00:19:31,569 - INFO - Dataset sizes: Train - 2874 Test - 575
+2023-08-18 00:19:34,077 - INFO - -----------------------------------
+2023-08-18 00:19:34,077 - INFO - -----------------------------------
+2023-08-18 00:19:34,077 - INFO - **TRACE** Inner Fold: 0 for outer fold: 4
+2023-08-18 00:19:34,077 - INFO - **TRACE** Learning rate used: 1e-05
+2023-08-18 00:19:34,077 - INFO - **TRACE** Create dataset...
+2023-08-18 00:19:34,078 - INFO - Dataset sizes: Train - 2155 Dev - 719
+2023-08-18 00:19:34,081 - INFO - **TRACE** Tokenise data...
+2023-08-18 00:19:36,448 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-18 00:19:36,448 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 1e-05
+2023-08-18 00:19:36,448 - INFO - Setting up training args and starting training...
+2023-08-18 00:21:14,575 - INFO - Training complete...
+2023-08-18 00:21:14,576 - INFO - TrainOutput(global_step=1080, training_loss=0.2669903137065746, metrics={'train_runtime': 97.0192, 'train_samples_per_second': 88.848, 'train_steps_per_second': 11.132, 'total_flos': 221486064180000.0, 'train_loss': 0.2669903137065746, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 00:21:14,576 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 00:21:15,479 - INFO - **TRACE** Report evaluation results...
+2023-08-18 00:21:15,480 - INFO - 
+
+Results as of 202308-17_23-5126 for vinai/bertweet-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	4	0	1e-05	0.30269014835357666	0.9012517385257302	0.8772563176895307	0.8678571428571429	0.8725314183123879	0.8952041978522616	0.7919755993693505	1.1814	608.582	76.179	7.500000000000001e-06	1.0	270
+vinai/bertweet-base	4	0	1e-05	0.2718830704689026	0.9095966620305981	0.8771929824561403	0.8928571428571429	0.8849557522123894	0.9065652456882525	0.8105955736576179	1.2098	594.323	74.394	5e-06	2.0	540
+vinai/bertweet-base	4	0	1e-05	0.3369658589363098	0.9012517385257302	0.8448844884488449	0.9142857142857143	0.8782161234991424	0.9036121054344288	0.7971452734058774	1.2075	595.442	74.534	2.5e-06	3.0	810
+vinai/bertweet-base	4	0	1e-05	0.34011057019233704	0.9054242002781642	0.8655172413793103	0.8964285714285715	0.8807017543859649	0.9037951513179303	0.8027396710278119	1.2046	596.882	74.714	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	4	0	1e-05	97.0192	88.848	11.132	221486064180000.0	0.2669903137065746	0.0	4.0	1080
+
+2023-08-18 00:21:15,480 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-18 00:21:15,480 - INFO - **TRACE** Appending...0.30269014835357666
+2023-08-18 00:21:15,480 - INFO - **TRACE** Appending...0.2718830704689026
+2023-08-18 00:21:15,480 - INFO - **TRACE** Appending...0.3369658589363098
+2023-08-18 00:21:15,480 - INFO - **TRACE** Appending...0.34011057019233704
+2023-08-18 00:21:15,480 - INFO - **TRACE** Current innr cross fold(0) has lower loss, saving model...0.2718830704689026 < 1000 LR: 1e-05
+2023-08-18 00:21:16,282 - INFO - **TRACE** End of inner cv fold 0*----*-----*
+
+2023-08-18 00:21:16,283 - INFO - -----------------------------------
+2023-08-18 00:21:16,283 - INFO - -----------------------------------
+2023-08-18 00:21:16,283 - INFO - **TRACE** Inner Fold: 1 for outer fold: 4
+2023-08-18 00:21:16,283 - INFO - **TRACE** Learning rate used: 5e-06
+2023-08-18 00:21:16,283 - INFO - **TRACE** Create dataset...
+2023-08-18 00:21:16,283 - INFO - Dataset sizes: Train - 2155 Dev - 719
+2023-08-18 00:21:16,287 - INFO - **TRACE** Tokenise data...
+2023-08-18 00:21:18,710 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-18 00:21:18,710 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 5e-06
+2023-08-18 00:21:18,710 - INFO - Setting up training args and starting training...
+2023-08-18 00:22:57,255 - INFO - Training complete...
+2023-08-18 00:22:57,265 - INFO - TrainOutput(global_step=1080, training_loss=0.29111149840884737, metrics={'train_runtime': 96.7832, 'train_samples_per_second': 89.065, 'train_steps_per_second': 11.159, 'total_flos': 221486064180000.0, 'train_loss': 0.29111149840884737, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 00:22:57,265 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 00:22:58,173 - INFO - **TRACE** Report evaluation results...
+2023-08-18 00:22:58,174 - INFO - 
+
+Results as of 202308-17_23-5126 for vinai/bertweet-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	4	1	5e-06	0.28147152066230774	0.9040333796940194	0.9061371841155235	0.8537414965986394	0.8791593695271454	0.8962825130052021	0.8006671584048428	1.1907	603.848	75.586	3.7500000000000005e-06	1.0	270
+vinai/bertweet-base	4	1	5e-06	0.2824850380420685	0.9095966620305981	0.8907849829351536	0.8877551020408163	0.889267461669506	0.9062304921968787	0.8128904757772081	1.2092	594.63	74.432	2.5e-06	2.0	540
+vinai/bertweet-base	4	1	5e-06	0.31745755672454834	0.9082058414464534	0.9130434782608695	0.8571428571428571	0.8842105263157894	0.9003361344537815	0.8094061747146146	1.1875	605.458	75.788	1.25e-06	3.0	810
+vinai/bertweet-base	4	1	5e-06	0.32178762555122375	0.9095966620305981	0.910394265232975	0.8639455782312925	0.8865619546247819	0.9025610244097638	0.8122718649127725	1.2054	596.499	74.666	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	4	1	5e-06	96.7832	89.065	11.159	221486064180000.0	0.29111149840884737	0.0	4.0	1080
+
+2023-08-18 00:22:58,174 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-18 00:22:58,174 - INFO - **TRACE** Appending...0.28147152066230774
+2023-08-18 00:22:58,174 - INFO - **TRACE** Appending...0.2824850380420685
+2023-08-18 00:22:58,174 - INFO - **TRACE** Appending...0.31745755672454834
+2023-08-18 00:22:58,174 - INFO - **TRACE** Appending...0.32178762555122375
+2023-08-18 00:22:58,174 - INFO - **TRACE** Model not saved since current innr cross fold(1) has higher loss...0.28147152066230774 >= 0.2718830704689026 LR: 5e-06
+2023-08-18 00:22:58,174 - INFO - **TRACE** End of inner cv fold 1*----*-----*
+
+2023-08-18 00:22:58,174 - INFO - -----------------------------------
+2023-08-18 00:22:58,174 - INFO - -----------------------------------
+2023-08-18 00:22:58,174 - INFO - **TRACE** Inner Fold: 2 for outer fold: 4
+2023-08-18 00:22:58,174 - INFO - **TRACE** Learning rate used: 5e-05
+2023-08-18 00:22:58,174 - INFO - **TRACE** Create dataset...
+2023-08-18 00:22:58,175 - INFO - Dataset sizes: Train - 2156 Dev - 718
+2023-08-18 00:22:58,179 - INFO - **TRACE** Tokenise data...
+2023-08-18 00:23:00,599 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-18 00:23:00,599 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 5e-05
+2023-08-18 00:23:00,599 - INFO - Setting up training args and starting training...
+2023-08-18 00:24:39,560 - INFO - Training complete...
+2023-08-18 00:24:39,566 - INFO - TrainOutput(global_step=1080, training_loss=0.21835546096165975, metrics={'train_runtime': 97.8405, 'train_samples_per_second': 88.143, 'train_steps_per_second': 11.038, 'total_flos': 221588841936000.0, 'train_loss': 0.21835546096165975, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 00:24:39,566 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 00:24:40,445 - INFO - **TRACE** Report evaluation results...
+2023-08-18 00:24:40,445 - INFO - 
+
+Results as of 202308-17_23-5126 for vinai/bertweet-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	4	2	5e-05	0.3902731239795685	0.8732590529247911	0.8096885813148789	0.8666666666666667	0.8372093023255813	0.8719494047619049	0.7347797607447321	1.1833	606.771	76.058	3.7500000000000003e-05	1.0	270
+vinai/bertweet-base	4	2	5e-05	0.47723278403282166	0.8662952646239555	0.7668711656441718	0.9259259259259259	0.8389261744966443	0.8781415343915343	0.7357892413309292	1.1954	600.612	75.286	2.5e-05	2.0	540
+vinai/bertweet-base	4	2	5e-05	0.43854787945747375	0.8871866295264624	0.8181818181818182	0.9	0.8571428571428572	0.8897321428571427	0.7666512313285477	1.1913	602.693	75.547	1.25e-05	3.0	810
+vinai/bertweet-base	4	2	5e-05	0.5291836261749268	0.8885793871866295	0.8275862068965517	0.8888888888888888	0.8571428571428572	0.888640873015873	0.7673234562505467	1.1983	599.183	75.107	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	4	2	5e-05	97.8405	88.143	11.038	221588841936000.0	0.21835546096165975	0.0	4.0	1080
+
+2023-08-18 00:24:40,445 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-18 00:24:40,445 - INFO - **TRACE** Appending...0.3902731239795685
+2023-08-18 00:24:40,445 - INFO - **TRACE** Appending...0.47723278403282166
+2023-08-18 00:24:40,445 - INFO - **TRACE** Appending...0.43854787945747375
+2023-08-18 00:24:40,445 - INFO - **TRACE** Appending...0.5291836261749268
+2023-08-18 00:24:40,445 - INFO - **TRACE** Model not saved since current innr cross fold(2) has higher loss...0.3902731239795685 >= 0.28147152066230774 LR: 5e-05
+2023-08-18 00:24:40,445 - INFO - **TRACE** End of inner cv fold 2*----*-----*
+
+2023-08-18 00:24:40,446 - INFO - -----------------------------------
+2023-08-18 00:24:40,446 - INFO - -----------------------------------
+2023-08-18 00:24:40,446 - INFO - **TRACE** Inner Fold: 3 for outer fold: 4
+2023-08-18 00:24:40,446 - INFO - **TRACE** Learning rate used: 3e-05
+2023-08-18 00:24:40,446 - INFO - **TRACE** Create dataset...
+2023-08-18 00:24:40,446 - INFO - Dataset sizes: Train - 2156 Dev - 718
+2023-08-18 00:24:40,450 - INFO - **TRACE** Tokenise data...
+2023-08-18 00:24:42,805 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-18 00:24:42,805 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 3e-05
+2023-08-18 00:24:42,805 - INFO - Setting up training args and starting training...
+2023-08-18 00:26:22,064 - INFO - Training complete...
+2023-08-18 00:26:22,064 - INFO - TrainOutput(global_step=1080, training_loss=0.24928226603402032, metrics={'train_runtime': 98.1334, 'train_samples_per_second': 87.88, 'train_steps_per_second': 11.005, 'total_flos': 221588841936000.0, 'train_loss': 0.24928226603402032, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 00:26:22,064 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 00:26:22,991 - INFO - **TRACE** Report evaluation results...
+2023-08-18 00:26:22,992 - INFO - 
+
+Results as of 202308-17_23-5126 for vinai/bertweet-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	4	3	3e-05	0.44212082028388977	0.8593314763231198	0.7523809523809524	0.9115384615384615	0.8243478260869566	0.8706163923412831	0.7179037682145485	1.2033	596.704	74.796	2.25e-05	1.0	270
+vinai/bertweet-base	4	3	3e-05	0.33704936504364014	0.8941504178272981	0.8739837398373984	0.8269230769230769	0.849802371541502	0.8796187437017131	0.7688798922604706	1.1875	604.655	75.792	1.5e-05	2.0	540
+vinai/bertweet-base	4	3	3e-05	0.4402960538864136	0.8816155988857939	0.7926421404682275	0.9115384615384615	0.8479427549194991	0.8880836412495801	0.756714645608747	1.2156	590.652	74.037	7.5e-06	3.0	810
+vinai/bertweet-base	4	3	3e-05	0.41662684082984924	0.9011142061281338	0.8436363636363636	0.8923076923076924	0.8672897196261682	0.8992106147127981	0.7893748383438424	1.2121	592.341	74.249	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	4	3	3e-05	98.1334	87.88	11.005	221588841936000.0	0.24928226603402032	0.0	4.0	1080
+
+2023-08-18 00:26:22,992 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-18 00:26:22,992 - INFO - **TRACE** Appending...0.44212082028388977
+2023-08-18 00:26:22,992 - INFO - **TRACE** Appending...0.33704936504364014
+2023-08-18 00:26:22,992 - INFO - **TRACE** Appending...0.4402960538864136
+2023-08-18 00:26:22,992 - INFO - **TRACE** Appending...0.41662684082984924
+2023-08-18 00:26:22,992 - INFO - **TRACE** Current innr cross fold(3) has lower loss, saving model...0.33704936504364014 < 0.3902731239795685 LR: 3e-05
+2023-08-18 00:26:23,815 - INFO - **TRACE** End of inner cv fold 3*----*-----*
+
+2023-08-18 00:26:23,815 - INFO - -----------------------------------
+2023-08-18 00:26:23,815 - INFO - -----------------------------------
+2023-08-18 00:26:23,815 - INFO - **TRACE** All inner CVs complete for outer CV 4
+2023-08-18 00:26:23,815 - INFO - **TRACE** Best model selected from inner cv: 3 with loss: 0.33704936504364014 with learning rate: 3e-05
+2023-08-18 00:26:23,815 - INFO - **TRACE** Moving on to test predictions with the best model from inner cross fold
+2023-08-18 00:26:23,816 - INFO - **TRACE** Loading the best model from inner CV
+2023-08-18 00:26:25,026 - INFO - **TRACE** Running predictions with test data
+2023-08-18 00:26:26,342 - INFO - Metrics from the Predictions...
+2023-08-18 00:26:26,342 - INFO - {'test_loss': 0.25254544615745544, 'test_accuracy': 0.9217391304347826, 'test_precision': 0.896551724137931, 'test_recall': 0.883495145631068, 'test_f1': 0.8899755501222495, 'test_roc_auc': 0.9132922882626885, 'test_matthews_correlation': 0.8293056071403729, 'test_runtime': 1.0506, 'test_samples_per_second': 547.297, 'test_steps_per_second': 68.531}
+2023-08-18 00:26:26,342 - INFO - {'confusion_matrix': array([[348,  21],
+       [ 24, 182]])}
+2023-08-18 00:26:26,342 - INFO - 
+
+Results as of 202308-17_23-5126 for vinai/bertweet-base
+***** Test(predict) metrics *****
+model	outer_cv	test_loss	test_accuracy	test_precision	test_recall	test_f1	test_roc_auc	test_matthews_correlation	test_runtime	test_samples_per_second	test_steps_per_second
+vinai/bertweet-base	4	0.25254544615745544	0.9217391304347826	0.896551724137931	0.883495145631068	0.8899755501222495	0.9132922882626885	0.8293056071403729	1.0506	547.297	68.531
+***** Confusion Matrix(predict) *****
+model	outer_cv	confusion_matrix
+vinai/bertweet-base	4	[[348  21]
+ [ 24 182]]
+
+2023-08-18 00:26:26,342 - INFO - ----------------------------------------------------------------------
+2023-08-18 00:26:26,342 - INFO - ----------------------------------------------------------------------
+2023-08-18 00:26:26,342 - INFO - **TRACE** Outer Fold:5
+2023-08-18 00:26:26,343 - INFO - Dataset sizes: Train - 2875 Test - 574
+2023-08-18 00:26:33,853 - INFO - -----------------------------------
+2023-08-18 00:26:33,853 - INFO - -----------------------------------
+2023-08-18 00:26:33,853 - INFO - **TRACE** Inner Fold: 0 for outer fold: 5
+2023-08-18 00:26:33,853 - INFO - **TRACE** Learning rate used: 1e-05
+2023-08-18 00:26:33,853 - INFO - **TRACE** Create dataset...
+2023-08-18 00:26:33,854 - INFO - Dataset sizes: Train - 2156 Dev - 719
+2023-08-18 00:26:33,858 - INFO - **TRACE** Tokenise data...
+2023-08-18 00:26:36,552 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-18 00:26:36,552 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 1e-05
+2023-08-18 00:26:36,552 - INFO - Setting up training args and starting training...
+2023-08-18 00:28:15,015 - INFO - Training complete...
+2023-08-18 00:28:15,022 - INFO - TrainOutput(global_step=1080, training_loss=0.2602153698603312, metrics={'train_runtime': 97.338, 'train_samples_per_second': 88.598, 'train_steps_per_second': 11.095, 'total_flos': 221588841936000.0, 'train_loss': 0.2602153698603312, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 00:28:15,022 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 00:28:15,953 - INFO - **TRACE** Report evaluation results...
+2023-08-18 00:28:15,953 - INFO - 
+
+Results as of 202308-17_23-5126 for vinai/bertweet-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	5	0	1e-05	0.31595930457115173	0.8929068150208623	0.8754716981132076	0.8405797101449275	0.8576709796672828	0.8830438054110642	0.7722963454339933	1.1936	602.373	75.401	7.500000000000001e-06	1.0	270
+vinai/bertweet-base	5	0	1e-05	0.38834911584854126	0.885952712100139	0.803125	0.9311594202898551	0.8624161073825504	0.894473615336801	0.7720455484544774	1.1957	601.322	75.27	5e-06	2.0	540
+vinai/bertweet-base	5	0	1e-05	0.35824596881866455	0.9068150208623088	0.8471760797342193	0.9239130434782609	0.8838821490467937	0.9100377858474825	0.8084234280384471	1.4095	510.109	63.852	2.5e-06	3.0	810
+vinai/bertweet-base	5	0	1e-05	0.3643072247505188	0.9054242002781642	0.8489932885906041	0.9166666666666666	0.8815331010452961	0.9075432656132429	0.8046572727908067	1.2036	597.358	74.774	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	5	0	1e-05	97.338	88.598	11.095	221588841936000.0	0.2602153698603312	0.0	4.0	1080
+
+2023-08-18 00:28:15,953 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-18 00:28:15,953 - INFO - **TRACE** Appending...0.31595930457115173
+2023-08-18 00:28:15,953 - INFO - **TRACE** Appending...0.38834911584854126
+2023-08-18 00:28:15,953 - INFO - **TRACE** Appending...0.35824596881866455
+2023-08-18 00:28:15,953 - INFO - **TRACE** Appending...0.3643072247505188
+2023-08-18 00:28:15,953 - INFO - **TRACE** Current innr cross fold(0) has lower loss, saving model...0.31595930457115173 < 1000 LR: 1e-05
+2023-08-18 00:28:16,807 - INFO - **TRACE** End of inner cv fold 0*----*-----*
+
+2023-08-18 00:28:16,808 - INFO - -----------------------------------
+2023-08-18 00:28:16,808 - INFO - -----------------------------------
+2023-08-18 00:28:16,808 - INFO - **TRACE** Inner Fold: 1 for outer fold: 5
+2023-08-18 00:28:16,808 - INFO - **TRACE** Learning rate used: 5e-06
+2023-08-18 00:28:16,808 - INFO - **TRACE** Create dataset...
+2023-08-18 00:28:16,808 - INFO - Dataset sizes: Train - 2156 Dev - 719
+2023-08-18 00:28:16,813 - INFO - **TRACE** Tokenise data...
+2023-08-18 00:28:19,119 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-18 00:28:19,119 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 5e-06
+2023-08-18 00:28:19,119 - INFO - Setting up training args and starting training...
+2023-08-18 00:29:58,966 - INFO - Training complete...
+2023-08-18 00:29:58,968 - INFO - TrainOutput(global_step=1080, training_loss=0.3058582076319942, metrics={'train_runtime': 98.0912, 'train_samples_per_second': 87.918, 'train_steps_per_second': 11.01, 'total_flos': 221588841936000.0, 'train_loss': 0.3058582076319942, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 00:29:58,968 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 00:29:59,859 - INFO - **TRACE** Report evaluation results...
+2023-08-18 00:29:59,860 - INFO - 
+
+Results as of 202308-17_23-5126 for vinai/bertweet-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	5	1	5e-06	0.3284737169742584	0.8789986091794159	0.8602150537634409	0.8333333333333334	0.8465608465608465	0.8714230471771076	0.746973652309866	1.2183	590.17	73.874	3.7500000000000005e-06	1.0	270
+vinai/bertweet-base	5	1	5e-06	0.32152071595191956	0.9012517385257302	0.872852233676976	0.8819444444444444	0.8773747841105354	0.8980487883475122	0.7947541454837266	1.2097	594.353	74.397	2.5e-06	2.0	540
+vinai/bertweet-base	5	1	5e-06	0.3512609004974365	0.8929068150208623	0.867595818815331	0.8645833333333334	0.8660869565217392	0.8882081399845322	0.7768670296615873	1.2094	594.527	74.419	1.25e-06	3.0	810
+vinai/bertweet-base	5	1	5e-06	0.36607804894447327	0.8929068150208623	0.872791519434629	0.8576388888888888	0.8651488616462346	0.887056103377159	0.7764300444493922	1.2253	586.793	73.451	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	5	1	5e-06	98.0912	87.918	11.01	221588841936000.0	0.3058582076319942	0.0	4.0	1080
+
+2023-08-18 00:29:59,860 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-18 00:29:59,860 - INFO - **TRACE** Appending...0.3284737169742584
+2023-08-18 00:29:59,860 - INFO - **TRACE** Appending...0.32152071595191956
+2023-08-18 00:29:59,860 - INFO - **TRACE** Appending...0.3512609004974365
+2023-08-18 00:29:59,860 - INFO - **TRACE** Appending...0.36607804894447327
+2023-08-18 00:29:59,860 - INFO - **TRACE** Model not saved since current innr cross fold(1) has higher loss...0.32152071595191956 >= 0.31595930457115173 LR: 5e-06
+2023-08-18 00:29:59,860 - INFO - **TRACE** End of inner cv fold 1*----*-----*
+
+2023-08-18 00:29:59,860 - INFO - -----------------------------------
+2023-08-18 00:29:59,860 - INFO - -----------------------------------
+2023-08-18 00:29:59,860 - INFO - **TRACE** Inner Fold: 2 for outer fold: 5
+2023-08-18 00:29:59,860 - INFO - **TRACE** Learning rate used: 5e-05
+2023-08-18 00:29:59,860 - INFO - **TRACE** Create dataset...
+2023-08-18 00:29:59,861 - INFO - Dataset sizes: Train - 2156 Dev - 719
+2023-08-18 00:29:59,865 - INFO - **TRACE** Tokenise data...
+2023-08-18 00:30:02,252 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-18 00:30:02,252 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 5e-05
+2023-08-18 00:30:02,252 - INFO - Setting up training args and starting training...
+2023-08-18 00:31:40,755 - INFO - Training complete...
+2023-08-18 00:31:40,756 - INFO - TrainOutput(global_step=1080, training_loss=0.2143022859538043, metrics={'train_runtime': 97.3679, 'train_samples_per_second': 88.571, 'train_steps_per_second': 11.092, 'total_flos': 221588841936000.0, 'train_loss': 0.2143022859538043, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 00:31:40,756 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 00:31:41,607 - INFO - **TRACE** Report evaluation results...
+2023-08-18 00:31:41,607 - INFO - 
+
+Results as of 202308-17_23-5126 for vinai/bertweet-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	5	2	5e-05	0.26583006978034973	0.9040333796940194	0.8411552346570397	0.9031007751937985	0.8710280373831776	0.9038280448637106	0.7960416083027865	1.2127	592.912	74.217	3.7500000000000003e-05	1.0	270
+vinai/bertweet-base	5	2	5e-05	0.4063045084476471	0.894297635605007	0.8888888888888888	0.8062015503875969	0.8455284552845528	0.874901209033278	0.7675883140877054	1.1911	603.653	75.562	2.5e-05	2.0	540
+vinai/bertweet-base	5	2	5e-05	0.42209869623184204	0.9095966620305981	0.8339100346020761	0.9341085271317829	0.8811700182815356	0.9149935260387764	0.8119858925643374	1.2305	584.303	73.139	1.25e-05	3.0	810
+vinai/bertweet-base	5	2	5e-05	0.4443855881690979	0.9109874826147427	0.8702290076335878	0.8837209302325582	0.8769230769230768	0.904984109367906	0.8072713663829858	1.2072	595.576	74.551	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	5	2	5e-05	97.3679	88.571	11.092	221588841936000.0	0.2143022859538043	0.0	4.0	1080
+
+2023-08-18 00:31:41,607 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-18 00:31:41,607 - INFO - **TRACE** Appending...0.26583006978034973
+2023-08-18 00:31:41,607 - INFO - **TRACE** Appending...0.4063045084476471
+2023-08-18 00:31:41,607 - INFO - **TRACE** Appending...0.42209869623184204
+2023-08-18 00:31:41,607 - INFO - **TRACE** Appending...0.4443855881690979
+2023-08-18 00:31:41,607 - INFO - **TRACE** Current innr cross fold(2) has lower loss, saving model...0.26583006978034973 < 0.32152071595191956 LR: 5e-05
+2023-08-18 00:31:42,793 - INFO - **TRACE** End of inner cv fold 2*----*-----*
+
+2023-08-18 00:31:42,794 - INFO - -----------------------------------
+2023-08-18 00:31:42,794 - INFO - -----------------------------------
+2023-08-18 00:31:42,794 - INFO - **TRACE** Inner Fold: 3 for outer fold: 5
+2023-08-18 00:31:42,794 - INFO - **TRACE** Learning rate used: 3e-05
+2023-08-18 00:31:42,794 - INFO - **TRACE** Create dataset...
+2023-08-18 00:31:42,794 - INFO - Dataset sizes: Train - 2157 Dev - 718
+2023-08-18 00:31:42,799 - INFO - **TRACE** Tokenise data...
+2023-08-18 00:31:45,968 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-18 00:31:45,968 - INFO - Function finetune_and_evaluate() received model: vinai/bertweet-base, lr: 3e-05
+2023-08-18 00:31:45,968 - INFO - Setting up training args and starting training...
+2023-08-18 00:33:25,266 - INFO - Training complete...
+2023-08-18 00:33:25,268 - INFO - TrainOutput(global_step=1080, training_loss=0.1924425847000546, metrics={'train_runtime': 97.701, 'train_samples_per_second': 88.31, 'train_steps_per_second': 11.054, 'total_flos': 221691619692000.0, 'train_loss': 0.1924425847000546, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-18 00:33:25,268 - INFO - Saving model at /notebooks/complaints/outputs/ft_vinai-bertweet-base
+2023-08-18 00:33:26,345 - INFO - **TRACE** Report evaluation results...
+2023-08-18 00:33:26,345 - INFO - 
+
+Results as of 202308-17_23-5126 for vinai/bertweet-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+vinai/bertweet-base	5	3	3e-05	0.36750203371047974	0.8955431754874652	0.8581314878892734	0.8794326241134752	0.8686514886164622	0.8926979634328843	0.782129876855402	1.207	594.851	74.564	2.25e-05	1.0	270
+vinai/bertweet-base	5	3	3e-05	0.48132723569869995	0.8760445682451253	0.8063492063492064	0.900709219858156	0.8509212730318259	0.880400481488711	0.7487400299370005	1.2129	591.981	74.204	1.5e-05	2.0	540
+vinai/bertweet-base	5	3	3e-05	0.5387892127037048	0.8844011142061281	0.8262295081967214	0.8936170212765957	0.858603066439523	0.8860286941245364	0.7627679501096881	1.1984	599.136	75.101	7.5e-06	3.0	810
+vinai/bertweet-base	5	3	3e-05	0.5506488680839539	0.8857938718662952	0.8424657534246576	0.8723404255319149	0.8571428571428571	0.8834179191879757	0.7623843543353143	1.2135	591.679	74.166	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+vinai/bertweet-base	5	3	3e-05	97.701	88.31	11.054	221691619692000.0	0.1924425847000546	0.0	4.0	1080
+
+2023-08-18 00:33:26,345 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-18 00:33:26,345 - INFO - **TRACE** Appending...0.36750203371047974
+2023-08-18 00:33:26,345 - INFO - **TRACE** Appending...0.48132723569869995
+2023-08-18 00:33:26,345 - INFO - **TRACE** Appending...0.5387892127037048
+2023-08-18 00:33:26,345 - INFO - **TRACE** Appending...0.5506488680839539
+2023-08-18 00:33:26,345 - INFO - **TRACE** Model not saved since current innr cross fold(3) has higher loss...0.36750203371047974 >= 0.26583006978034973 LR: 3e-05
+2023-08-18 00:33:26,345 - INFO - **TRACE** End of inner cv fold 3*----*-----*
+
+2023-08-18 00:33:26,345 - INFO - -----------------------------------
+2023-08-18 00:33:26,345 - INFO - -----------------------------------
+2023-08-18 00:33:26,345 - INFO - **TRACE** All inner CVs complete for outer CV 5
+2023-08-18 00:33:26,345 - INFO - **TRACE** Best model selected from inner cv: 2 with loss: 0.26583006978034973 with learning rate: 3e-05
+2023-08-18 00:33:26,345 - INFO - **TRACE** Moving on to test predictions with the best model from inner cross fold
+2023-08-18 00:33:26,345 - INFO - **TRACE** Loading the best model from inner CV
+2023-08-18 00:33:27,749 - INFO - **TRACE** Running predictions with test data
+2023-08-18 00:33:28,970 - INFO - Metrics from the Predictions...
+2023-08-18 00:33:28,970 - INFO - {'test_loss': 0.17506276071071625, 'test_accuracy': 0.9547038327526133, 'test_precision': 0.9241706161137441, 'test_recall': 0.9512195121951219, 'test_f1': 0.9374999999999999, 'test_roc_auc': 0.9539295392953929, 'test_matthews_correlation': 0.9022232495527394, 'test_runtime': 0.9676, 'test_samples_per_second': 593.208, 'test_steps_per_second': 74.409}
+2023-08-18 00:33:28,971 - INFO - {'confusion_matrix': array([[353,  16],
+       [ 10, 195]])}
+2023-08-18 00:33:28,971 - INFO - 
+
+Results as of 202308-17_23-5126 for vinai/bertweet-base
+***** Test(predict) metrics *****
+model	outer_cv	test_loss	test_accuracy	test_precision	test_recall	test_f1	test_roc_auc	test_matthews_correlation	test_runtime	test_samples_per_second	test_steps_per_second
+vinai/bertweet-base	5	0.17506276071071625	0.9547038327526133	0.9241706161137441	0.9512195121951219	0.9374999999999999	0.9539295392953929	0.9022232495527394	0.9676	593.208	74.409
+***** Confusion Matrix(predict) *****
+model	outer_cv	confusion_matrix
+vinai/bertweet-base	5	[[353  16]
+ [ 10 195]]
+
+2023-08-18 00:33:28,971 - INFO - ----------------------------------------------------------------------
+2023-08-18 00:33:28,971 - INFO - ----------------------------------------------------------------------
+2023-08-18 00:33:28,971 - INFO - **TRACE** All CVs complete, calculating mean of test metrics
+2023-08-18 00:33:28,971 - INFO - 
+
+Results as of 202308-17_23-5126 for vinai/bertweet-base
+***** Mean Test(predict) metrics *****
+model	mean_test_loss	mean_test_accuracy	mean_test_precision	mean_test_recall	mean_test_f1	mean_test_roc_auc	mean_test_matthews_correlation	mean_test_runtime	mean_test_samples_per_second	mean_test_steps_per_second
+vinai/bertweet-base	0.21850787103176117	0.9336100590819573	0.8968866466611437	0.9204672823427263	0.9082142469256277	0.930690683579625	0.856783751932333	0.9865166666666667	583.1703333333334	73.04466666666666
+***** Mean Confusion Matrix(predict) *****
+model	mean_true_negative	mean_false_positive	mean_false_negative	mean_true_positive
+vinai/bertweet-base	347.6666666666667	21.833333333333332	16.333333333333332	189.0
+
+2023-08-18 00:33:28,972 - INFO - Attempting to delete checkpoints from /notebooks/train_trainer
+2023-08-18 00:33:29,163 - INFO - Completed deleting checkpoints from /notebooks/train_trainer
+2023-08-18 00:33:29,163 - INFO - Attempting to delete checkpoints from /notebooks/test_trainer
+2023-08-18 00:33:29,164 - INFO - The path /notebooks/test_trainer does not exist.

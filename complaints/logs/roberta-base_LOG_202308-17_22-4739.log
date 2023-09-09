@@ -1,0 +1,1040 @@
+2023-08-17 22:47:39,617 - INFO - Training Params - NO_OF_EPOCHS: 4 OUTER_CV_NO: 6 INNER_CV_NO: 4 MAX_LENGTH: 50 LR_SPACE: [1e-05, 5e-06, 5e-05, 3e-05] SEED: 2023
+
+2023-08-17 22:47:39,617 - INFO - Total no. of tweets: 3449
+2023-08-17 22:47:39,618 - INFO - ----------------------------------------------------------------------
+2023-08-17 22:47:39,618 - INFO - ----------------------------------------------------------------------
+2023-08-17 22:47:39,618 - INFO - **TRACE** Outer Fold:0
+2023-08-17 22:47:39,618 - INFO - Dataset sizes: Train - 2874 Test - 575
+2023-08-17 22:47:42,449 - INFO - -----------------------------------
+2023-08-17 22:47:42,449 - INFO - -----------------------------------
+2023-08-17 22:47:42,449 - INFO - **TRACE** Inner Fold: 0 for outer fold: 0
+2023-08-17 22:47:42,449 - INFO - **TRACE** Learning rate used: 1e-05
+2023-08-17 22:47:42,449 - INFO - **TRACE** Create dataset...
+2023-08-17 22:47:42,449 - INFO - Dataset sizes: Train - 2155 Dev - 719
+2023-08-17 22:47:42,453 - INFO - **TRACE** Tokenise data...
+2023-08-17 22:47:43,234 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 22:47:43,234 - INFO - Function finetune_and_evaluate() received model: roberta-base, lr: 1e-05
+2023-08-17 22:47:43,234 - INFO - Setting up training args and starting training...
+2023-08-17 22:49:17,591 - INFO - Training complete...
+2023-08-17 22:49:17,600 - INFO - TrainOutput(global_step=1080, training_loss=0.30625715962162725, metrics={'train_runtime': 93.3263, 'train_samples_per_second': 92.364, 'train_steps_per_second': 11.572, 'total_flos': 221486064180000.0, 'train_loss': 0.30625715962162725, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 22:49:17,600 - INFO - Saving model at /notebooks/complaints/outputs/ft_roberta-base
+2023-08-17 22:49:18,362 - INFO - **TRACE** Report evaluation results...
+2023-08-17 22:49:18,362 - INFO - 
+
+Results as of 202308-17_22-4739 for roberta-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+roberta-base	0	0	1e-05	0.4194353222846985	0.8609179415855355	0.7857142857142857	0.8908450704225352	0.8349834983498349	0.8661121903836814	0.7198214676046749	1.2014	598.45	74.91	7.500000000000001e-06	1.0	270
+roberta-base	0	0	1e-05	0.32886719703674316	0.8887343532684284	0.8207547169811321	0.9190140845070423	0.867109634551495	0.8939898008742108	0.775591475915745	1.2614	569.994	71.348	5e-06	2.0	540
+roberta-base	0	0	1e-05	0.44451361894607544	0.9026425591098748	0.8496732026143791	0.9154929577464789	0.8813559322033898	0.9048729156548486	0.8006022020755756	1.2173	590.635	73.932	2.5e-06	3.0	810
+roberta-base	0	0	1e-05	0.4584408402442932	0.9082058414464534	0.8707482993197279	0.9014084507042254	0.8858131487889274	0.9070260644325725	0.8094460062910431	1.1814	608.622	76.184	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+roberta-base	0	0	1e-05	93.3263	92.364	11.572	221486064180000.0	0.30625715962162725	0.0	4.0	1080
+
+2023-08-17 22:49:18,362 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 22:49:18,362 - INFO - **TRACE** Appending...0.4194353222846985
+2023-08-17 22:49:18,362 - INFO - **TRACE** Appending...0.32886719703674316
+2023-08-17 22:49:18,363 - INFO - **TRACE** Appending...0.44451361894607544
+2023-08-17 22:49:18,363 - INFO - **TRACE** Appending...0.4584408402442932
+2023-08-17 22:49:18,363 - INFO - **TRACE** Current innr cross fold(0) has lower loss, saving model...0.32886719703674316 < 1000 LR: 1e-05
+2023-08-17 22:49:19,238 - INFO - **TRACE** End of inner cv fold 0*----*-----*
+
+2023-08-17 22:49:19,238 - INFO - -----------------------------------
+2023-08-17 22:49:19,238 - INFO - -----------------------------------
+2023-08-17 22:49:19,238 - INFO - **TRACE** Inner Fold: 1 for outer fold: 0
+2023-08-17 22:49:19,238 - INFO - **TRACE** Learning rate used: 5e-06
+2023-08-17 22:49:19,238 - INFO - **TRACE** Create dataset...
+2023-08-17 22:49:19,239 - INFO - Dataset sizes: Train - 2155 Dev - 719
+2023-08-17 22:49:19,243 - INFO - **TRACE** Tokenise data...
+2023-08-17 22:49:20,056 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 22:49:20,056 - INFO - Function finetune_and_evaluate() received model: roberta-base, lr: 5e-06
+2023-08-17 22:49:20,056 - INFO - Setting up training args and starting training...
+2023-08-17 22:50:53,677 - INFO - Training complete...
+2023-08-17 22:50:53,679 - INFO - TrainOutput(global_step=1080, training_loss=0.3419332928127713, metrics={'train_runtime': 92.4366, 'train_samples_per_second': 93.253, 'train_steps_per_second': 11.684, 'total_flos': 221486064180000.0, 'train_loss': 0.3419332928127713, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 22:50:53,679 - INFO - Saving model at /notebooks/complaints/outputs/ft_roberta-base
+2023-08-17 22:50:54,499 - INFO - **TRACE** Report evaluation results...
+2023-08-17 22:50:54,500 - INFO - 
+
+Results as of 202308-17_22-4739 for roberta-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+roberta-base	0	1	5e-06	0.35453319549560547	0.8609179415855355	0.807843137254902	0.8015564202334631	0.8046875	0.8477479070864286	0.6967115166593296	1.1976	600.359	75.149	3.7500000000000005e-06	1.0	270
+roberta-base	0	1	5e-06	0.3916608691215515	0.8776077885952712	0.8237547892720306	0.8365758754863813	0.8301158301158301	0.868504387959641	0.7345260725678654	1.1905	603.939	75.597	2.5e-06	2.0	540
+roberta-base	0	1	5e-06	0.4763820171356201	0.8789986091794159	0.8244274809160306	0.8404669260700389	0.8323699421965317	0.8704499132514697	0.7377993985089073	1.1937	602.325	75.395	1.25e-06	3.0	810
+roberta-base	0	1	5e-06	0.5034226179122925	0.8789986091794159	0.8373015873015873	0.8210116731517509	0.8290766208251474	0.866133542203581	0.7355265462761009	1.1799	609.379	76.278	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+roberta-base	0	1	5e-06	92.4366	93.253	11.684	221486064180000.0	0.3419332928127713	0.0	4.0	1080
+
+2023-08-17 22:50:54,500 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 22:50:54,500 - INFO - **TRACE** Appending...0.35453319549560547
+2023-08-17 22:50:54,500 - INFO - **TRACE** Appending...0.3916608691215515
+2023-08-17 22:50:54,500 - INFO - **TRACE** Appending...0.4763820171356201
+2023-08-17 22:50:54,500 - INFO - **TRACE** Appending...0.5034226179122925
+2023-08-17 22:50:54,500 - INFO - **TRACE** Model not saved since current innr cross fold(1) has higher loss...0.35453319549560547 >= 0.32886719703674316 LR: 5e-06
+2023-08-17 22:50:54,500 - INFO - **TRACE** End of inner cv fold 1*----*-----*
+
+2023-08-17 22:50:54,500 - INFO - -----------------------------------
+2023-08-17 22:50:54,500 - INFO - -----------------------------------
+2023-08-17 22:50:54,500 - INFO - **TRACE** Inner Fold: 2 for outer fold: 0
+2023-08-17 22:50:54,500 - INFO - **TRACE** Learning rate used: 5e-05
+2023-08-17 22:50:54,500 - INFO - **TRACE** Create dataset...
+2023-08-17 22:50:54,501 - INFO - Dataset sizes: Train - 2156 Dev - 718
+2023-08-17 22:50:54,507 - INFO - **TRACE** Tokenise data...
+2023-08-17 22:50:55,253 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 22:50:55,253 - INFO - Function finetune_and_evaluate() received model: roberta-base, lr: 5e-05
+2023-08-17 22:50:55,253 - INFO - Setting up training args and starting training...
+2023-08-17 22:52:30,069 - INFO - Training complete...
+2023-08-17 22:52:30,071 - INFO - TrainOutput(global_step=1080, training_loss=0.3279686119821337, metrics={'train_runtime': 93.5023, 'train_samples_per_second': 92.233, 'train_steps_per_second': 11.551, 'total_flos': 221588841936000.0, 'train_loss': 0.3279686119821337, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 22:52:30,071 - INFO - Saving model at /notebooks/complaints/outputs/ft_roberta-base
+2023-08-17 22:52:30,914 - INFO - **TRACE** Report evaluation results...
+2023-08-17 22:52:30,915 - INFO - 
+
+Results as of 202308-17_22-4739 for roberta-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+roberta-base	0	2	5e-05	0.8704038262367249	0.7813370473537604	0.6457765667574932	0.8977272727272727	0.7511885895404119	0.8056918301962355	0.5897353040491952	1.1834	606.719	76.051	3.7500000000000003e-05	1.0	270
+roberta-base	0	2	5e-05	0.4108811914920807	0.8649025069637883	0.8493723849372385	0.7689393939393939	0.8071570576540755	0.844822119877186	0.7056482938324122	1.1994	598.614	75.035	2.5e-05	2.0	540
+roberta-base	0	2	5e-05	0.5080429315567017	0.8788300835654597	0.8314606741573034	0.8409090909090909	0.8361581920903954	0.8708950740889067	0.7400602010366565	1.2246	586.325	73.495	1.25e-05	3.0	810
+roberta-base	0	2	5e-05	0.7212702631950378	0.8607242339832869	0.7847222222222222	0.8560606060606061	0.8188405797101449	0.8597483647043118	0.7078288214546854	1.1827	607.071	76.095	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+roberta-base	0	2	5e-05	93.5023	92.233	11.551	221588841936000.0	0.3279686119821337	0.0	4.0	1080
+
+2023-08-17 22:52:30,915 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 22:52:30,915 - INFO - **TRACE** Appending...0.8704038262367249
+2023-08-17 22:52:30,915 - INFO - **TRACE** Appending...0.4108811914920807
+2023-08-17 22:52:30,915 - INFO - **TRACE** Appending...0.5080429315567017
+2023-08-17 22:52:30,915 - INFO - **TRACE** Appending...0.7212702631950378
+2023-08-17 22:52:30,915 - INFO - **TRACE** Model not saved since current innr cross fold(2) has higher loss...0.4108811914920807 >= 0.35453319549560547 LR: 5e-05
+2023-08-17 22:52:30,916 - INFO - **TRACE** End of inner cv fold 2*----*-----*
+
+2023-08-17 22:52:30,916 - INFO - -----------------------------------
+2023-08-17 22:52:30,916 - INFO - -----------------------------------
+2023-08-17 22:52:30,916 - INFO - **TRACE** Inner Fold: 3 for outer fold: 0
+2023-08-17 22:52:30,916 - INFO - **TRACE** Learning rate used: 3e-05
+2023-08-17 22:52:30,916 - INFO - **TRACE** Create dataset...
+2023-08-17 22:52:30,917 - INFO - Dataset sizes: Train - 2156 Dev - 718
+2023-08-17 22:52:30,923 - INFO - **TRACE** Tokenise data...
+2023-08-17 22:52:32,762 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 22:52:32,762 - INFO - Function finetune_and_evaluate() received model: roberta-base, lr: 3e-05
+2023-08-17 22:52:32,762 - INFO - Setting up training args and starting training...
+2023-08-17 22:54:06,215 - INFO - Training complete...
+2023-08-17 22:54:06,215 - INFO - TrainOutput(global_step=1080, training_loss=0.3027911654225102, metrics={'train_runtime': 92.4313, 'train_samples_per_second': 93.302, 'train_steps_per_second': 11.684, 'total_flos': 221588841936000.0, 'train_loss': 0.3027911654225102, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 22:54:06,215 - INFO - Saving model at /notebooks/complaints/outputs/ft_roberta-base
+2023-08-17 22:54:07,089 - INFO - **TRACE** Report evaluation results...
+2023-08-17 22:54:07,089 - INFO - 
+
+Results as of 202308-17_22-4739 for roberta-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+roberta-base	0	3	3e-05	0.696553647518158	0.8119777158774373	0.8980582524271845	0.6187290969899666	0.7326732673267328	0.7843048826238614	0.6197097498409747	1.1924	602.134	75.476	2.25e-05	1.0	270
+roberta-base	0	3	3e-05	0.5658729076385498	0.862116991643454	0.7840909090909091	0.9230769230769231	0.847926267281106	0.8708463374334496	0.7313996043090925	1.1863	605.256	75.868	1.5e-05	2.0	540
+roberta-base	0	3	3e-05	0.5487666726112366	0.871866295264624	0.8204334365325078	0.8862876254180602	0.8520900321543408	0.8739314022078368	0.7410793815747253	1.1799	608.55	76.281	7.5e-06	3.0	810
+roberta-base	0	3	3e-05	0.5935747027397156	0.8844011142061281	0.8624161073825504	0.8595317725752508	0.8609715242881073	0.8808398719678164	0.7620478367160048	1.1955	600.585	75.282	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+roberta-base	0	3	3e-05	92.4313	93.302	11.684	221588841936000.0	0.3027911654225102	0.0	4.0	1080
+
+2023-08-17 22:54:07,089 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 22:54:07,089 - INFO - **TRACE** Appending...0.696553647518158
+2023-08-17 22:54:07,090 - INFO - **TRACE** Appending...0.5658729076385498
+2023-08-17 22:54:07,090 - INFO - **TRACE** Appending...0.5487666726112366
+2023-08-17 22:54:07,090 - INFO - **TRACE** Appending...0.5935747027397156
+2023-08-17 22:54:07,090 - INFO - **TRACE** Model not saved since current innr cross fold(3) has higher loss...0.5487666726112366 >= 0.4108811914920807 LR: 3e-05
+2023-08-17 22:54:07,090 - INFO - **TRACE** End of inner cv fold 3*----*-----*
+
+2023-08-17 22:54:07,090 - INFO - -----------------------------------
+2023-08-17 22:54:07,090 - INFO - -----------------------------------
+2023-08-17 22:54:07,090 - INFO - **TRACE** All inner CVs complete for outer CV 0
+2023-08-17 22:54:07,090 - INFO - **TRACE** Best model selected from inner cv: 0 with loss: 0.32886719703674316 with learning rate: 3e-05
+2023-08-17 22:54:07,090 - INFO - **TRACE** Moving on to test predictions with the best model from inner cross fold
+2023-08-17 22:54:07,090 - INFO - **TRACE** Loading the best model from inner CV
+2023-08-17 22:54:08,619 - INFO - **TRACE** Running predictions with test data
+2023-08-17 22:54:09,852 - INFO - Metrics from the Predictions...
+2023-08-17 22:54:09,852 - INFO - {'test_loss': 0.24412713944911957, 'test_accuracy': 0.9391304347826087, 'test_precision': 0.897196261682243, 'test_recall': 0.9365853658536586, 'test_f1': 0.9164677804295943, 'test_roc_auc': 0.9385629531970994, 'test_matthews_correlation': 0.8691189980461392, 'test_runtime': 0.9605, 'test_samples_per_second': 598.637, 'test_steps_per_second': 74.96}
+2023-08-17 22:54:09,852 - INFO - {'confusion_matrix': array([[348,  22],
+       [ 13, 192]])}
+2023-08-17 22:54:09,852 - INFO - 
+
+Results as of 202308-17_22-4739 for roberta-base
+***** Test(predict) metrics *****
+model	outer_cv	test_loss	test_accuracy	test_precision	test_recall	test_f1	test_roc_auc	test_matthews_correlation	test_runtime	test_samples_per_second	test_steps_per_second
+roberta-base	0	0.24412713944911957	0.9391304347826087	0.897196261682243	0.9365853658536586	0.9164677804295943	0.9385629531970994	0.8691189980461392	0.9605	598.637	74.96
+***** Confusion Matrix(predict) *****
+model	outer_cv	confusion_matrix
+roberta-base	0	[[348  22]
+ [ 13 192]]
+
+2023-08-17 22:54:09,852 - INFO - ----------------------------------------------------------------------
+2023-08-17 22:54:09,852 - INFO - ----------------------------------------------------------------------
+2023-08-17 22:54:09,852 - INFO - **TRACE** Outer Fold:1
+2023-08-17 22:54:09,853 - INFO - Dataset sizes: Train - 2874 Test - 575
+2023-08-17 22:54:10,800 - INFO - -----------------------------------
+2023-08-17 22:54:10,800 - INFO - -----------------------------------
+2023-08-17 22:54:10,800 - INFO - **TRACE** Inner Fold: 0 for outer fold: 1
+2023-08-17 22:54:10,800 - INFO - **TRACE** Learning rate used: 1e-05
+2023-08-17 22:54:10,800 - INFO - **TRACE** Create dataset...
+2023-08-17 22:54:10,801 - INFO - Dataset sizes: Train - 2155 Dev - 719
+2023-08-17 22:54:10,805 - INFO - **TRACE** Tokenise data...
+2023-08-17 22:54:11,449 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 22:54:11,449 - INFO - Function finetune_and_evaluate() received model: roberta-base, lr: 1e-05
+2023-08-17 22:54:11,449 - INFO - Setting up training args and starting training...
+2023-08-17 22:55:45,843 - INFO - Training complete...
+2023-08-17 22:55:45,845 - INFO - TrainOutput(global_step=1080, training_loss=0.3078928488272208, metrics={'train_runtime': 93.3368, 'train_samples_per_second': 92.354, 'train_steps_per_second': 11.571, 'total_flos': 221486064180000.0, 'train_loss': 0.3078928488272208, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 22:55:45,845 - INFO - Saving model at /notebooks/complaints/outputs/ft_roberta-base
+2023-08-17 22:55:46,846 - INFO - **TRACE** Report evaluation results...
+2023-08-17 22:55:46,847 - INFO - 
+
+Results as of 202308-17_22-4739 for roberta-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+roberta-base	1	0	1e-05	0.41977882385253906	0.8650904033379694	0.8426966292134831	0.8035714285714286	0.8226691042047533	0.8539497233973316	0.7144272325537974	1.2005	598.94	74.972	7.500000000000001e-06	1.0	270
+roberta-base	1	0	1e-05	0.4925161898136139	0.874826147426982	0.8231292517006803	0.8642857142857143	0.8432055749128919	0.8729173446143833	0.7397512784000287	1.1993	599.53	75.045	5e-06	2.0	540
+roberta-base	1	0	1e-05	0.567647397518158	0.8706536856745479	0.8148148148148148	0.8642857142857143	0.8388214904679375	0.869500488122356	0.7318495965714733	1.2681	566.985	70.972	2.5e-06	3.0	810
+roberta-base	1	0	1e-05	0.6099808216094971	0.8706536856745479	0.8006430868167203	0.8892857142857142	0.8426395939086294	0.8740278229742923	0.7362662698702295	1.1833	607.619	76.058	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+roberta-base	1	0	1e-05	93.3368	92.354	11.571	221486064180000.0	0.3078928488272208	0.0	4.0	1080
+
+2023-08-17 22:55:46,847 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 22:55:46,847 - INFO - **TRACE** Appending...0.41977882385253906
+2023-08-17 22:55:46,847 - INFO - **TRACE** Appending...0.4925161898136139
+2023-08-17 22:55:46,847 - INFO - **TRACE** Appending...0.567647397518158
+2023-08-17 22:55:46,847 - INFO - **TRACE** Appending...0.6099808216094971
+2023-08-17 22:55:46,847 - INFO - **TRACE** Current innr cross fold(0) has lower loss, saving model...0.41977882385253906 < 1000 LR: 1e-05
+2023-08-17 22:55:47,586 - INFO - **TRACE** End of inner cv fold 0*----*-----*
+
+2023-08-17 22:55:47,587 - INFO - -----------------------------------
+2023-08-17 22:55:47,587 - INFO - -----------------------------------
+2023-08-17 22:55:47,587 - INFO - **TRACE** Inner Fold: 1 for outer fold: 1
+2023-08-17 22:55:47,587 - INFO - **TRACE** Learning rate used: 5e-06
+2023-08-17 22:55:47,587 - INFO - **TRACE** Create dataset...
+2023-08-17 22:55:47,588 - INFO - Dataset sizes: Train - 2155 Dev - 719
+2023-08-17 22:55:47,593 - INFO - **TRACE** Tokenise data...
+2023-08-17 22:55:48,360 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 22:55:48,361 - INFO - Function finetune_and_evaluate() received model: roberta-base, lr: 5e-06
+2023-08-17 22:55:48,361 - INFO - Setting up training args and starting training...
+2023-08-17 22:57:23,562 - INFO - Training complete...
+2023-08-17 22:57:23,576 - INFO - TrainOutput(global_step=1080, training_loss=0.3446643281866003, metrics={'train_runtime': 93.7143, 'train_samples_per_second': 91.982, 'train_steps_per_second': 11.524, 'total_flos': 221486064180000.0, 'train_loss': 0.3446643281866003, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 22:57:23,576 - INFO - Saving model at /notebooks/complaints/outputs/ft_roberta-base
+2023-08-17 22:57:24,397 - INFO - **TRACE** Report evaluation results...
+2023-08-17 22:57:24,398 - INFO - 
+
+Results as of 202308-17_22-4739 for roberta-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+roberta-base	1	1	5e-06	0.3502769470214844	0.8734353268428373	0.8440677966101695	0.8469387755102041	0.8455008488964347	0.8693517406962786	0.7383195014686501	1.1861	606.19	75.879	3.7500000000000005e-06	1.0	270
+roberta-base	1	1	5e-06	0.3727256953716278	0.885952712100139	0.8785714285714286	0.8367346938775511	0.8571428571428572	0.8783673469387755	0.7629577693430956	1.2214	588.651	73.684	2.5e-06	2.0	540
+roberta-base	1	1	5e-06	0.4161156713962555	0.8831710709318498	0.8888888888888888	0.8163265306122449	0.851063829787234	0.8728691476590636	0.757093509971134	1.2345	582.426	72.905	1.25e-06	3.0	810
+roberta-base	1	1	5e-06	0.43670833110809326	0.8845618915159944	0.8650519031141869	0.8503401360544217	0.8576329331046312	0.8792877150860343	0.7606480444998379	1.2424	578.712	72.44	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+roberta-base	1	1	5e-06	93.7143	91.982	11.524	221486064180000.0	0.3446643281866003	0.0	4.0	1080
+
+2023-08-17 22:57:24,398 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 22:57:24,398 - INFO - **TRACE** Appending...0.3502769470214844
+2023-08-17 22:57:24,398 - INFO - **TRACE** Appending...0.3727256953716278
+2023-08-17 22:57:24,398 - INFO - **TRACE** Appending...0.4161156713962555
+2023-08-17 22:57:24,398 - INFO - **TRACE** Appending...0.43670833110809326
+2023-08-17 22:57:24,398 - INFO - **TRACE** Current innr cross fold(1) has lower loss, saving model...0.3502769470214844 < 0.41977882385253906 LR: 5e-06
+2023-08-17 22:57:25,150 - INFO - **TRACE** End of inner cv fold 1*----*-----*
+
+2023-08-17 22:57:25,150 - INFO - -----------------------------------
+2023-08-17 22:57:25,150 - INFO - -----------------------------------
+2023-08-17 22:57:25,150 - INFO - **TRACE** Inner Fold: 2 for outer fold: 1
+2023-08-17 22:57:25,150 - INFO - **TRACE** Learning rate used: 5e-05
+2023-08-17 22:57:25,150 - INFO - **TRACE** Create dataset...
+2023-08-17 22:57:25,151 - INFO - Dataset sizes: Train - 2156 Dev - 718
+2023-08-17 22:57:25,155 - INFO - **TRACE** Tokenise data...
+2023-08-17 22:57:27,166 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 22:57:27,166 - INFO - Function finetune_and_evaluate() received model: roberta-base, lr: 5e-05
+2023-08-17 22:57:27,166 - INFO - Setting up training args and starting training...
+2023-08-17 22:59:01,465 - INFO - Training complete...
+2023-08-17 22:59:01,465 - INFO - TrainOutput(global_step=1080, training_loss=0.6321511621828433, metrics={'train_runtime': 92.6152, 'train_samples_per_second': 93.116, 'train_steps_per_second': 11.661, 'total_flos': 221588841936000.0, 'train_loss': 0.6321511621828433, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 22:59:01,465 - INFO - Saving model at /notebooks/complaints/outputs/ft_roberta-base
+2023-08-17 22:59:02,306 - INFO - **TRACE** Report evaluation results...
+2023-08-17 22:59:02,307 - INFO - 
+
+Results as of 202308-17_22-4739 for roberta-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+roberta-base	1	2	5e-05	0.6553629636764526	0.6406685236768802	0.0	0.0	0.0	0.5	0.0	1.1603	618.809	77.567	3.7500000000000003e-05	1.0	270
+roberta-base	1	2	5e-05	0.6852635741233826	0.6406685236768802	0.0	0.0	0.0	0.5	0.0	1.2397	579.163	72.597	2.5e-05	2.0	540
+roberta-base	1	2	5e-05	0.6019933819770813	0.7061281337047354	0.56657223796034	0.7751937984496124	0.6546644844517185	0.7212925513987194	0.42476798431902874	1.1765	610.296	76.499	1.25e-05	3.0	810
+roberta-base	1	2	5e-05	0.43725913763046265	0.7966573816155988	0.7074074074074074	0.7403100775193798	0.7234848484848485	0.7842854735422986	0.5631868995788719	1.1832	606.807	76.062	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+roberta-base	1	2	5e-05	92.6152	93.116	11.661	221588841936000.0	0.6321511621828433	0.0	4.0	1080
+
+2023-08-17 22:59:02,307 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 22:59:02,307 - INFO - **TRACE** Appending...0.6553629636764526
+2023-08-17 22:59:02,307 - INFO - **TRACE** Appending...0.6852635741233826
+2023-08-17 22:59:02,307 - INFO - **TRACE** Appending...0.6019933819770813
+2023-08-17 22:59:02,307 - INFO - **TRACE** Appending...0.43725913763046265
+2023-08-17 22:59:02,307 - INFO - **TRACE** Model not saved since current innr cross fold(2) has higher loss...0.43725913763046265 >= 0.3502769470214844 LR: 5e-05
+2023-08-17 22:59:02,307 - INFO - **TRACE** End of inner cv fold 2*----*-----*
+
+2023-08-17 22:59:02,307 - INFO - -----------------------------------
+2023-08-17 22:59:02,307 - INFO - -----------------------------------
+2023-08-17 22:59:02,307 - INFO - **TRACE** Inner Fold: 3 for outer fold: 1
+2023-08-17 22:59:02,307 - INFO - **TRACE** Learning rate used: 3e-05
+2023-08-17 22:59:02,307 - INFO - **TRACE** Create dataset...
+2023-08-17 22:59:02,308 - INFO - Dataset sizes: Train - 2156 Dev - 718
+2023-08-17 22:59:02,312 - INFO - **TRACE** Tokenise data...
+2023-08-17 22:59:03,045 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 22:59:03,045 - INFO - Function finetune_and_evaluate() received model: roberta-base, lr: 3e-05
+2023-08-17 22:59:03,046 - INFO - Setting up training args and starting training...
+2023-08-17 23:00:37,753 - INFO - Training complete...
+2023-08-17 23:00:37,754 - INFO - TrainOutput(global_step=1080, training_loss=0.3705867255175555, metrics={'train_runtime': 93.717, 'train_samples_per_second': 92.022, 'train_steps_per_second': 11.524, 'total_flos': 221588841936000.0, 'train_loss': 0.3705867255175555, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 23:00:37,754 - INFO - Saving model at /notebooks/complaints/outputs/ft_roberta-base
+2023-08-17 23:00:38,530 - INFO - **TRACE** Report evaluation results...
+2023-08-17 23:00:38,531 - INFO - 
+
+Results as of 202308-17_22-4739 for roberta-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+roberta-base	1	3	3e-05	0.39348745346069336	0.8760445682451253	0.8256227758007118	0.8529411764705882	0.8390596745027125	0.8715378528092852	0.7385689837846755	1.1865	605.144	75.854	2.25e-05	1.0	270
+roberta-base	1	3	3e-05	0.37295135855674744	0.883008356545961	0.8615384615384616	0.8235294117647058	0.8421052631578948	0.8714059614877341	0.7497411265421765	1.1806	608.171	76.233	1.5e-05	2.0	540
+roberta-base	1	3	3e-05	0.3963412344455719	0.8788300835654597	0.8599221789883269	0.8125	0.835538752362949	0.8658912556053812	0.7404860531734347	1.1864	605.214	75.863	7.5e-06	3.0	810
+roberta-base	1	3	3e-05	0.4568190276622772	0.8857938718662952	0.87109375	0.8198529411764706	0.8446969696969696	0.872930954893168	0.755386710095221	1.1945	601.093	75.346	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+roberta-base	1	3	3e-05	93.717	92.022	11.524	221588841936000.0	0.3705867255175555	0.0	4.0	1080
+
+2023-08-17 23:00:38,531 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 23:00:38,531 - INFO - **TRACE** Appending...0.39348745346069336
+2023-08-17 23:00:38,531 - INFO - **TRACE** Appending...0.37295135855674744
+2023-08-17 23:00:38,531 - INFO - **TRACE** Appending...0.3963412344455719
+2023-08-17 23:00:38,532 - INFO - **TRACE** Appending...0.4568190276622772
+2023-08-17 23:00:38,532 - INFO - **TRACE** Current innr cross fold(3) has lower loss, saving model...0.37295135855674744 < 0.43725913763046265 LR: 3e-05
+2023-08-17 23:00:39,281 - INFO - **TRACE** End of inner cv fold 3*----*-----*
+
+2023-08-17 23:00:39,281 - INFO - -----------------------------------
+2023-08-17 23:00:39,281 - INFO - -----------------------------------
+2023-08-17 23:00:39,281 - INFO - **TRACE** All inner CVs complete for outer CV 1
+2023-08-17 23:00:39,281 - INFO - **TRACE** Best model selected from inner cv: 3 with loss: 0.37295135855674744 with learning rate: 3e-05
+2023-08-17 23:00:39,281 - INFO - **TRACE** Moving on to test predictions with the best model from inner cross fold
+2023-08-17 23:00:39,281 - INFO - **TRACE** Loading the best model from inner CV
+2023-08-17 23:00:40,816 - INFO - **TRACE** Running predictions with test data
+2023-08-17 23:00:42,018 - INFO - Metrics from the Predictions...
+2023-08-17 23:00:42,018 - INFO - {'test_loss': 0.24269185960292816, 'test_accuracy': 0.9321739130434783, 'test_precision': 0.9108910891089109, 'test_recall': 0.8975609756097561, 'test_f1': 0.9041769041769042, 'test_roc_auc': 0.9244561634805537, 'test_matthews_correlation': 0.8517468417700395, 'test_runtime': 0.9658, 'test_samples_per_second': 595.378, 'test_steps_per_second': 74.552}
+2023-08-17 23:00:42,018 - INFO - {'confusion_matrix': array([[352,  18],
+       [ 21, 184]])}
+2023-08-17 23:00:42,018 - INFO - 
+
+Results as of 202308-17_22-4739 for roberta-base
+***** Test(predict) metrics *****
+model	outer_cv	test_loss	test_accuracy	test_precision	test_recall	test_f1	test_roc_auc	test_matthews_correlation	test_runtime	test_samples_per_second	test_steps_per_second
+roberta-base	1	0.24269185960292816	0.9321739130434783	0.9108910891089109	0.8975609756097561	0.9041769041769042	0.9244561634805537	0.8517468417700395	0.9658	595.378	74.552
+***** Confusion Matrix(predict) *****
+model	outer_cv	confusion_matrix
+roberta-base	1	[[352  18]
+ [ 21 184]]
+
+2023-08-17 23:00:42,018 - INFO - ----------------------------------------------------------------------
+2023-08-17 23:00:42,018 - INFO - ----------------------------------------------------------------------
+2023-08-17 23:00:42,018 - INFO - **TRACE** Outer Fold:2
+2023-08-17 23:00:42,019 - INFO - Dataset sizes: Train - 2874 Test - 575
+2023-08-17 23:00:42,749 - INFO - -----------------------------------
+2023-08-17 23:00:42,749 - INFO - -----------------------------------
+2023-08-17 23:00:42,749 - INFO - **TRACE** Inner Fold: 0 for outer fold: 2
+2023-08-17 23:00:42,749 - INFO - **TRACE** Learning rate used: 1e-05
+2023-08-17 23:00:42,749 - INFO - **TRACE** Create dataset...
+2023-08-17 23:00:42,750 - INFO - Dataset sizes: Train - 2155 Dev - 719
+2023-08-17 23:00:42,754 - INFO - **TRACE** Tokenise data...
+2023-08-17 23:00:43,478 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 23:00:43,478 - INFO - Function finetune_and_evaluate() received model: roberta-base, lr: 1e-05
+2023-08-17 23:00:43,478 - INFO - Setting up training args and starting training...
+2023-08-17 23:02:17,340 - INFO - Training complete...
+2023-08-17 23:02:17,342 - INFO - TrainOutput(global_step=1080, training_loss=0.3079986466301812, metrics={'train_runtime': 92.2346, 'train_samples_per_second': 93.457, 'train_steps_per_second': 11.709, 'total_flos': 221486064180000.0, 'train_loss': 0.3079986466301812, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 23:02:17,342 - INFO - Saving model at /notebooks/complaints/outputs/ft_roberta-base
+2023-08-17 23:02:18,150 - INFO - **TRACE** Report evaluation results...
+2023-08-17 23:02:18,151 - INFO - 
+
+Results as of 202308-17_22-4739 for roberta-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+roberta-base	2	0	1e-05	0.5349059700965881	0.8331015299026425	0.7198952879581152	0.9548611111111112	0.8208955223880597	0.853300625161124	0.6938452965717249	1.1795	609.576	76.303	7.500000000000001e-06	1.0	270
+roberta-base	2	0	1e-05	0.38923537731170654	0.8929068150208623	0.8836363636363637	0.84375	0.8632326820603907	0.884752030162413	0.7758682190195532	1.1803	609.177	76.253	5e-06	2.0	540
+roberta-base	2	0	1e-05	0.45934581756591797	0.8984700973574409	0.8412698412698413	0.9201388888888888	0.8789386401326699	0.9020648040732147	0.7941727342942465	1.1917	603.351	75.524	2.5e-06	3.0	810
+roberta-base	2	0	1e-05	0.45911848545074463	0.9054242002781642	0.8691275167785235	0.8993055555555556	0.8839590443686007	0.9044091582882186	0.80451968848881	1.1963	601.022	75.232	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+roberta-base	2	0	1e-05	92.2346	93.457	11.709	221486064180000.0	0.3079986466301812	0.0	4.0	1080
+
+2023-08-17 23:02:18,151 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 23:02:18,151 - INFO - **TRACE** Appending...0.5349059700965881
+2023-08-17 23:02:18,151 - INFO - **TRACE** Appending...0.38923537731170654
+2023-08-17 23:02:18,151 - INFO - **TRACE** Appending...0.45934581756591797
+2023-08-17 23:02:18,151 - INFO - **TRACE** Appending...0.45911848545074463
+2023-08-17 23:02:18,151 - INFO - **TRACE** Current innr cross fold(0) has lower loss, saving model...0.38923537731170654 < 1000 LR: 1e-05
+2023-08-17 23:02:18,909 - INFO - **TRACE** End of inner cv fold 0*----*-----*
+
+2023-08-17 23:02:18,909 - INFO - -----------------------------------
+2023-08-17 23:02:18,909 - INFO - -----------------------------------
+2023-08-17 23:02:18,909 - INFO - **TRACE** Inner Fold: 1 for outer fold: 2
+2023-08-17 23:02:18,909 - INFO - **TRACE** Learning rate used: 5e-06
+2023-08-17 23:02:18,909 - INFO - **TRACE** Create dataset...
+2023-08-17 23:02:18,910 - INFO - Dataset sizes: Train - 2155 Dev - 719
+2023-08-17 23:02:18,914 - INFO - **TRACE** Tokenise data...
+2023-08-17 23:02:19,638 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 23:02:19,638 - INFO - Function finetune_and_evaluate() received model: roberta-base, lr: 5e-06
+2023-08-17 23:02:19,638 - INFO - Setting up training args and starting training...
+2023-08-17 23:03:53,727 - INFO - Training complete...
+2023-08-17 23:03:53,727 - INFO - TrainOutput(global_step=1080, training_loss=0.3414909362792969, metrics={'train_runtime': 92.7007, 'train_samples_per_second': 92.987, 'train_steps_per_second': 11.65, 'total_flos': 221486064180000.0, 'train_loss': 0.3414909362792969, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 23:03:53,727 - INFO - Saving model at /notebooks/complaints/outputs/ft_roberta-base
+2023-08-17 23:03:54,496 - INFO - **TRACE** Report evaluation results...
+2023-08-17 23:03:54,496 - INFO - 
+
+Results as of 202308-17_22-4739 for roberta-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+roberta-base	2	1	5e-06	0.33509042859077454	0.8692628650904033	0.8181818181818182	0.8586572438162544	0.8379310344827586	0.86740201640354	0.7290772443392455	1.1914	603.483	75.54	3.7500000000000005e-06	1.0	270
+roberta-base	2	1	5e-06	0.39413172006607056	0.8803894297635605	0.855595667870036	0.8374558303886925	0.8464285714285713	0.8728563555613187	0.7486123528935487	1.2039	597.235	74.758	2.5e-06	2.0	540
+roberta-base	2	1	5e-06	0.45684704184532166	0.874826147426982	0.8697318007662835	0.8021201413427562	0.8345588235294117	0.8620692449833046	0.7357073617577583	1.2136	592.454	74.16	1.25e-06	3.0	810
+roberta-base	2	1	5e-06	0.46023502945899963	0.8817802503477051	0.8613138686131386	0.833922261484099	0.8473967684021545	0.8733831490906734	0.7512178266897266	1.1803	609.182	76.254	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+roberta-base	2	1	5e-06	92.7007	92.987	11.65	221486064180000.0	0.3414909362792969	0.0	4.0	1080
+
+2023-08-17 23:03:54,497 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 23:03:54,497 - INFO - **TRACE** Appending...0.33509042859077454
+2023-08-17 23:03:54,497 - INFO - **TRACE** Appending...0.39413172006607056
+2023-08-17 23:03:54,497 - INFO - **TRACE** Appending...0.45684704184532166
+2023-08-17 23:03:54,497 - INFO - **TRACE** Appending...0.46023502945899963
+2023-08-17 23:03:54,497 - INFO - **TRACE** Current innr cross fold(1) has lower loss, saving model...0.33509042859077454 < 0.38923537731170654 LR: 5e-06
+2023-08-17 23:03:55,261 - INFO - **TRACE** End of inner cv fold 1*----*-----*
+
+2023-08-17 23:03:55,261 - INFO - -----------------------------------
+2023-08-17 23:03:55,261 - INFO - -----------------------------------
+2023-08-17 23:03:55,261 - INFO - **TRACE** Inner Fold: 2 for outer fold: 2
+2023-08-17 23:03:55,261 - INFO - **TRACE** Learning rate used: 5e-05
+2023-08-17 23:03:55,261 - INFO - **TRACE** Create dataset...
+2023-08-17 23:03:55,262 - INFO - Dataset sizes: Train - 2156 Dev - 718
+2023-08-17 23:03:55,266 - INFO - **TRACE** Tokenise data...
+2023-08-17 23:03:55,966 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 23:03:55,966 - INFO - Function finetune_and_evaluate() received model: roberta-base, lr: 5e-05
+2023-08-17 23:03:55,966 - INFO - Setting up training args and starting training...
+2023-08-17 23:05:30,340 - INFO - Training complete...
+2023-08-17 23:05:30,342 - INFO - TrainOutput(global_step=1080, training_loss=0.311911795757435, metrics={'train_runtime': 93.3736, 'train_samples_per_second': 92.36, 'train_steps_per_second': 11.566, 'total_flos': 221588841936000.0, 'train_loss': 0.311911795757435, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 23:05:30,342 - INFO - Saving model at /notebooks/complaints/outputs/ft_roberta-base
+2023-08-17 23:05:31,105 - INFO - **TRACE** Report evaluation results...
+2023-08-17 23:05:31,106 - INFO - 
+
+Results as of 202308-17_22-4739 for roberta-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+roberta-base	2	2	5e-05	0.34868428111076355	0.8565459610027855	0.776595744680851	0.8455598455598455	0.8096118299445472	0.8541524717995306	0.696480078837935	1.1732	611.993	76.712	3.7500000000000003e-05	1.0	270
+roberta-base	2	2	5e-05	0.4481002986431122	0.8844011142061281	0.8165467625899281	0.8764478764478765	0.8454376163873372	0.8826683826683827	0.7545014263511551	1.1847	606.076	75.971	2.5e-05	2.0	540
+roberta-base	2	2	5e-05	0.4367172122001648	0.8788300835654597	0.8282442748091603	0.8378378378378378	0.8330134357005757	0.8698993110757817	0.7379665483825265	1.2094	593.681	74.417	1.25e-05	3.0	810
+roberta-base	2	2	5e-05	0.5983198285102844	0.8816155988857939	0.8041958041958042	0.888030888030888	0.8440366972477064	0.8830132653662066	0.7514068436094643	1.1967	599.994	75.208	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+roberta-base	2	2	5e-05	93.3736	92.36	11.566	221588841936000.0	0.311911795757435	0.0	4.0	1080
+
+2023-08-17 23:05:31,106 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 23:05:31,106 - INFO - **TRACE** Appending...0.34868428111076355
+2023-08-17 23:05:31,106 - INFO - **TRACE** Appending...0.4481002986431122
+2023-08-17 23:05:31,106 - INFO - **TRACE** Appending...0.4367172122001648
+2023-08-17 23:05:31,106 - INFO - **TRACE** Appending...0.5983198285102844
+2023-08-17 23:05:31,106 - INFO - **TRACE** Model not saved since current innr cross fold(2) has higher loss...0.34868428111076355 >= 0.33509042859077454 LR: 5e-05
+2023-08-17 23:05:31,106 - INFO - **TRACE** End of inner cv fold 2*----*-----*
+
+2023-08-17 23:05:31,106 - INFO - -----------------------------------
+2023-08-17 23:05:31,106 - INFO - -----------------------------------
+2023-08-17 23:05:31,106 - INFO - **TRACE** Inner Fold: 3 for outer fold: 2
+2023-08-17 23:05:31,106 - INFO - **TRACE** Learning rate used: 3e-05
+2023-08-17 23:05:31,106 - INFO - **TRACE** Create dataset...
+2023-08-17 23:05:31,107 - INFO - Dataset sizes: Train - 2156 Dev - 718
+2023-08-17 23:05:31,112 - INFO - **TRACE** Tokenise data...
+2023-08-17 23:05:31,891 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 23:05:31,891 - INFO - Function finetune_and_evaluate() received model: roberta-base, lr: 3e-05
+2023-08-17 23:05:31,891 - INFO - Setting up training args and starting training...
+2023-08-17 23:07:05,608 - INFO - Training complete...
+2023-08-17 23:07:05,612 - INFO - TrainOutput(global_step=1080, training_loss=0.27185764842563204, metrics={'train_runtime': 92.384, 'train_samples_per_second': 93.349, 'train_steps_per_second': 11.69, 'total_flos': 221588841936000.0, 'train_loss': 0.27185764842563204, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 23:07:05,612 - INFO - Saving model at /notebooks/complaints/outputs/ft_roberta-base
+2023-08-17 23:07:06,395 - INFO - **TRACE** Report evaluation results...
+2023-08-17 23:07:06,396 - INFO - 
+
+Results as of 202308-17_22-4739 for roberta-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+roberta-base	2	3	3e-05	0.39285558462142944	0.8732590529247911	0.8560311284046692	0.8029197080291971	0.8286252354048964	0.859793187347932	0.7291765164951378	1.1801	608.402	76.262	2.25e-05	1.0	270
+roberta-base	2	3	3e-05	0.6182685494422913	0.8551532033426184	0.8035714285714286	0.8211678832116789	0.812274368231047	0.8486470046689025	0.6944910121214896	1.2023	597.212	74.86	1.5e-05	2.0	540
+roberta-base	2	3	3e-05	0.644945502281189	0.8690807799442897	0.8333333333333334	0.8211678832116789	0.8272058823529411	0.8599082659301638	0.7218844621623206	1.2121	592.358	74.251	7.5e-06	3.0	810
+roberta-base	2	3	3e-05	0.6827987432479858	0.8760445682451253	0.8200692041522492	0.864963503649635	0.841918294849023	0.873923193266259	0.7408010658962467	1.1927	602.016	75.462	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+roberta-base	2	3	3e-05	92.384	93.349	11.69	221588841936000.0	0.27185764842563204	0.0	4.0	1080
+
+2023-08-17 23:07:06,396 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 23:07:06,396 - INFO - **TRACE** Appending...0.39285558462142944
+2023-08-17 23:07:06,396 - INFO - **TRACE** Appending...0.6182685494422913
+2023-08-17 23:07:06,396 - INFO - **TRACE** Appending...0.644945502281189
+2023-08-17 23:07:06,396 - INFO - **TRACE** Appending...0.6827987432479858
+2023-08-17 23:07:06,396 - INFO - **TRACE** Model not saved since current innr cross fold(3) has higher loss...0.39285558462142944 >= 0.34868428111076355 LR: 3e-05
+2023-08-17 23:07:06,396 - INFO - **TRACE** End of inner cv fold 3*----*-----*
+
+2023-08-17 23:07:06,396 - INFO - -----------------------------------
+2023-08-17 23:07:06,396 - INFO - -----------------------------------
+2023-08-17 23:07:06,396 - INFO - **TRACE** All inner CVs complete for outer CV 2
+2023-08-17 23:07:06,396 - INFO - **TRACE** Best model selected from inner cv: 1 with loss: 0.33509042859077454 with learning rate: 3e-05
+2023-08-17 23:07:06,396 - INFO - **TRACE** Moving on to test predictions with the best model from inner cross fold
+2023-08-17 23:07:06,396 - INFO - **TRACE** Loading the best model from inner CV
+2023-08-17 23:07:07,362 - INFO - **TRACE** Running predictions with test data
+2023-08-17 23:07:08,567 - INFO - Metrics from the Predictions...
+2023-08-17 23:07:08,567 - INFO - {'test_loss': 0.3101421594619751, 'test_accuracy': 0.8956521739130435, 'test_precision': 0.8835978835978836, 'test_recall': 0.8146341463414634, 'test_f1': 0.8477157360406091, 'test_roc_auc': 0.8775873434410019, 'test_matthews_correlation': 0.770017618662703, 'test_runtime': 0.9499, 'test_samples_per_second': 605.315, 'test_steps_per_second': 75.796}
+2023-08-17 23:07:08,567 - INFO - {'confusion_matrix': array([[348,  22],
+       [ 38, 167]])}
+2023-08-17 23:07:08,567 - INFO - 
+
+Results as of 202308-17_22-4739 for roberta-base
+***** Test(predict) metrics *****
+model	outer_cv	test_loss	test_accuracy	test_precision	test_recall	test_f1	test_roc_auc	test_matthews_correlation	test_runtime	test_samples_per_second	test_steps_per_second
+roberta-base	2	0.3101421594619751	0.8956521739130435	0.8835978835978836	0.8146341463414634	0.8477157360406091	0.8775873434410019	0.770017618662703	0.9499	605.315	75.796
+***** Confusion Matrix(predict) *****
+model	outer_cv	confusion_matrix
+roberta-base	2	[[348  22]
+ [ 38 167]]
+
+2023-08-17 23:07:08,567 - INFO - ----------------------------------------------------------------------
+2023-08-17 23:07:08,567 - INFO - ----------------------------------------------------------------------
+2023-08-17 23:07:08,567 - INFO - **TRACE** Outer Fold:3
+2023-08-17 23:07:08,568 - INFO - Dataset sizes: Train - 2874 Test - 575
+2023-08-17 23:07:10,315 - INFO - -----------------------------------
+2023-08-17 23:07:10,315 - INFO - -----------------------------------
+2023-08-17 23:07:10,315 - INFO - **TRACE** Inner Fold: 0 for outer fold: 3
+2023-08-17 23:07:10,315 - INFO - **TRACE** Learning rate used: 1e-05
+2023-08-17 23:07:10,315 - INFO - **TRACE** Create dataset...
+2023-08-17 23:07:10,316 - INFO - Dataset sizes: Train - 2155 Dev - 719
+2023-08-17 23:07:10,320 - INFO - **TRACE** Tokenise data...
+2023-08-17 23:07:10,980 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 23:07:10,980 - INFO - Function finetune_and_evaluate() received model: roberta-base, lr: 1e-05
+2023-08-17 23:07:10,980 - INFO - Setting up training args and starting training...
+2023-08-17 23:08:45,486 - INFO - Training complete...
+2023-08-17 23:08:45,507 - INFO - TrainOutput(global_step=1080, training_loss=0.3010622342427572, metrics={'train_runtime': 93.4103, 'train_samples_per_second': 92.281, 'train_steps_per_second': 11.562, 'total_flos': 221486064180000.0, 'train_loss': 0.3010622342427572, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 23:08:45,508 - INFO - Saving model at /notebooks/complaints/outputs/ft_roberta-base
+2023-08-17 23:08:46,498 - INFO - **TRACE** Report evaluation results...
+2023-08-17 23:08:46,498 - INFO - 
+
+Results as of 202308-17_22-4739 for roberta-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+roberta-base	3	0	1e-05	0.3949584662914276	0.8539638386648123	0.8084291187739464	0.793233082706767	0.8007590132827325	0.8414289033842887	0.6855943114737769	1.1713	613.825	76.835	7.500000000000001e-06	1.0	270
+roberta-base	3	0	1e-05	0.5481309294700623	0.8734353268428373	0.8301886792452831	0.8270676691729323	0.8286252354048963	0.8638649604142807	0.7282982851362911	1.1771	610.83	76.46	5e-06	2.0	540
+roberta-base	3	0	1e-05	0.5881073474884033	0.874826147426982	0.8120567375886525	0.8609022556390977	0.8357664233576642	0.8719522315723082	0.7356001531676358	1.2282	585.425	73.28	2.5e-06	3.0	810
+roberta-base	3	0	1e-05	0.6078605651855469	0.8734353268428373	0.8070175438596491	0.8646616541353384	0.8348457350272233	0.8716244253016648	0.7335958584257047	1.1769	610.919	76.471	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+roberta-base	3	0	1e-05	93.4103	92.281	11.562	221486064180000.0	0.3010622342427572	0.0	4.0	1080
+
+2023-08-17 23:08:46,499 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 23:08:46,499 - INFO - **TRACE** Appending...0.3949584662914276
+2023-08-17 23:08:46,499 - INFO - **TRACE** Appending...0.5481309294700623
+2023-08-17 23:08:46,499 - INFO - **TRACE** Appending...0.5881073474884033
+2023-08-17 23:08:46,499 - INFO - **TRACE** Appending...0.6078605651855469
+2023-08-17 23:08:46,499 - INFO - **TRACE** Current innr cross fold(0) has lower loss, saving model...0.3949584662914276 < 1000 LR: 1e-05
+2023-08-17 23:08:47,505 - INFO - **TRACE** End of inner cv fold 0*----*-----*
+
+2023-08-17 23:08:47,505 - INFO - -----------------------------------
+2023-08-17 23:08:47,505 - INFO - -----------------------------------
+2023-08-17 23:08:47,506 - INFO - **TRACE** Inner Fold: 1 for outer fold: 3
+2023-08-17 23:08:47,506 - INFO - **TRACE** Learning rate used: 5e-06
+2023-08-17 23:08:47,506 - INFO - **TRACE** Create dataset...
+2023-08-17 23:08:47,507 - INFO - Dataset sizes: Train - 2155 Dev - 719
+2023-08-17 23:08:47,515 - INFO - **TRACE** Tokenise data...
+2023-08-17 23:08:48,396 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 23:08:48,396 - INFO - Function finetune_and_evaluate() received model: roberta-base, lr: 5e-06
+2023-08-17 23:08:48,396 - INFO - Setting up training args and starting training...
+2023-08-17 23:10:25,188 - INFO - Training complete...
+2023-08-17 23:10:25,190 - INFO - TrainOutput(global_step=1080, training_loss=0.34417358504401313, metrics={'train_runtime': 94.2106, 'train_samples_per_second': 91.497, 'train_steps_per_second': 11.464, 'total_flos': 221486064180000.0, 'train_loss': 0.34417358504401313, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 23:10:25,190 - INFO - Saving model at /notebooks/complaints/outputs/ft_roberta-base
+2023-08-17 23:10:25,967 - INFO - **TRACE** Report evaluation results...
+2023-08-17 23:10:25,968 - INFO - 
+
+Results as of 202308-17_22-4739 for roberta-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+roberta-base	3	1	5e-06	0.3454575836658478	0.8650904033379694	0.9106382978723404	0.7379310344827587	0.8152380952380952	0.8444899927658548	0.7205724262111518	1.2005	598.901	74.967	3.7500000000000005e-06	1.0	270
+roberta-base	3	1	5e-06	0.31164130568504333	0.8887343532684284	0.8547297297297297	0.8724137931034482	0.863481228668942	0.8860903464351739	0.7697160534065969	1.194	602.156	75.374	2.5e-06	2.0	540
+roberta-base	3	1	5e-06	0.4105643033981323	0.8915159944367177	0.875886524822695	0.8517241379310345	0.8636363636363636	0.8850695281729763	0.7738049808667518	1.2587	571.228	71.503	1.25e-06	3.0	810
+roberta-base	3	1	5e-06	0.427272230386734	0.8970792767732962	0.86	0.8896551724137931	0.8745762711864407	0.8958765372558476	0.7876799025256946	1.1945	601.931	75.346	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+roberta-base	3	1	5e-06	94.2106	91.497	11.464	221486064180000.0	0.34417358504401313	0.0	4.0	1080
+
+2023-08-17 23:10:25,968 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 23:10:25,968 - INFO - **TRACE** Appending...0.3454575836658478
+2023-08-17 23:10:25,968 - INFO - **TRACE** Appending...0.31164130568504333
+2023-08-17 23:10:25,968 - INFO - **TRACE** Appending...0.4105643033981323
+2023-08-17 23:10:25,968 - INFO - **TRACE** Appending...0.427272230386734
+2023-08-17 23:10:25,968 - INFO - **TRACE** Current innr cross fold(1) has lower loss, saving model...0.31164130568504333 < 0.3949584662914276 LR: 5e-06
+2023-08-17 23:10:26,747 - INFO - **TRACE** End of inner cv fold 1*----*-----*
+
+2023-08-17 23:10:26,747 - INFO - -----------------------------------
+2023-08-17 23:10:26,747 - INFO - -----------------------------------
+2023-08-17 23:10:26,747 - INFO - **TRACE** Inner Fold: 2 for outer fold: 3
+2023-08-17 23:10:26,747 - INFO - **TRACE** Learning rate used: 5e-05
+2023-08-17 23:10:26,747 - INFO - **TRACE** Create dataset...
+2023-08-17 23:10:26,748 - INFO - Dataset sizes: Train - 2156 Dev - 718
+2023-08-17 23:10:26,752 - INFO - **TRACE** Tokenise data...
+2023-08-17 23:10:32,827 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 23:10:32,827 - INFO - Function finetune_and_evaluate() received model: roberta-base, lr: 5e-05
+2023-08-17 23:10:32,827 - INFO - Setting up training args and starting training...
+2023-08-17 23:12:07,195 - INFO - Training complete...
+2023-08-17 23:12:07,195 - INFO - TrainOutput(global_step=1080, training_loss=0.40098833861174404, metrics={'train_runtime': 93.3579, 'train_samples_per_second': 92.376, 'train_steps_per_second': 11.568, 'total_flos': 221588841936000.0, 'train_loss': 0.40098833861174404, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 23:12:07,196 - INFO - Saving model at /notebooks/complaints/outputs/ft_roberta-base
+2023-08-17 23:12:07,931 - INFO - **TRACE** Report evaluation results...
+2023-08-17 23:12:07,931 - INFO - 
+
+Results as of 202308-17_22-4739 for roberta-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+roberta-base	3	2	5e-05	0.44078442454338074	0.8175487465181058	0.7248322147651006	0.8150943396226416	0.7673179396092362	0.8170394435420051	0.6209870641978721	1.1837	606.575	76.033	3.7500000000000003e-05	1.0	270
+roberta-base	3	2	5e-05	0.650951087474823	0.775766016713092	0.6428571428571429	0.8830188679245283	0.7440381558028617	0.7980215752426174	0.5753040306048787	1.1745	611.343	76.631	2.5e-05	2.0	540
+roberta-base	3	2	5e-05	0.4996317923069	0.8440111420612814	0.749185667752443	0.8679245283018868	0.8041958041958042	0.8489733016785372	0.6807758441341677	1.1845	606.178	75.983	1.25e-05	3.0	810
+roberta-base	3	2	5e-05	0.5625967383384705	0.8593314763231198	0.8037037037037037	0.8188679245283019	0.811214953271028	0.8509350660169103	0.6992104499685707	1.1888	603.953	75.704	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+roberta-base	3	2	5e-05	93.3579	92.376	11.568	221588841936000.0	0.40098833861174404	0.0	4.0	1080
+
+2023-08-17 23:12:07,931 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 23:12:07,931 - INFO - **TRACE** Appending...0.44078442454338074
+2023-08-17 23:12:07,931 - INFO - **TRACE** Appending...0.650951087474823
+2023-08-17 23:12:07,931 - INFO - **TRACE** Appending...0.4996317923069
+2023-08-17 23:12:07,931 - INFO - **TRACE** Appending...0.5625967383384705
+2023-08-17 23:12:07,931 - INFO - **TRACE** Model not saved since current innr cross fold(2) has higher loss...0.44078442454338074 >= 0.31164130568504333 LR: 5e-05
+2023-08-17 23:12:07,932 - INFO - **TRACE** End of inner cv fold 2*----*-----*
+
+2023-08-17 23:12:07,932 - INFO - -----------------------------------
+2023-08-17 23:12:07,932 - INFO - -----------------------------------
+2023-08-17 23:12:07,932 - INFO - **TRACE** Inner Fold: 3 for outer fold: 3
+2023-08-17 23:12:07,932 - INFO - **TRACE** Learning rate used: 3e-05
+2023-08-17 23:12:07,932 - INFO - **TRACE** Create dataset...
+2023-08-17 23:12:07,932 - INFO - Dataset sizes: Train - 2156 Dev - 718
+2023-08-17 23:12:07,937 - INFO - **TRACE** Tokenise data...
+2023-08-17 23:12:10,121 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 23:12:10,121 - INFO - Function finetune_and_evaluate() received model: roberta-base, lr: 3e-05
+2023-08-17 23:12:10,121 - INFO - Setting up training args and starting training...
+2023-08-17 23:13:44,703 - INFO - Training complete...
+2023-08-17 23:13:44,705 - INFO - TrainOutput(global_step=1080, training_loss=0.27699685670711377, metrics={'train_runtime': 93.5954, 'train_samples_per_second': 92.141, 'train_steps_per_second': 11.539, 'total_flos': 221588841936000.0, 'train_loss': 0.27699685670711377, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 23:13:44,705 - INFO - Saving model at /notebooks/complaints/outputs/ft_roberta-base
+2023-08-17 23:13:45,720 - INFO - **TRACE** Report evaluation results...
+2023-08-17 23:13:45,720 - INFO - 
+
+Results as of 202308-17_22-4739 for roberta-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+roberta-base	3	3	3e-05	0.4170908033847809	0.8607242339832869	0.8828451882845189	0.7455830388692579	0.8084291187739464	0.8406076113886518	0.7064077958346833	1.1818	607.544	76.155	2.25e-05	1.0	270
+roberta-base	3	3	3e-05	0.398397296667099	0.8676880222841226	0.8700787401574803	0.7809187279151943	0.8230912476722533	0.8525283294748386	0.7205863255320281	1.1853	605.754	75.93	1.5e-05	2.0	540
+roberta-base	3	3	3e-05	0.4967055320739746	0.8816155988857939	0.8461538461538461	0.8551236749116607	0.8506151142355008	0.8769871248121521	0.75260910832701	1.1935	601.614	75.411	7.5e-06	3.0	810
+roberta-base	3	3	3e-05	0.594264566898346	0.8899721448467967	0.875	0.8409893992932862	0.8576576576576577	0.8814142398765281	0.768445131877157	1.202	597.318	74.873	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+roberta-base	3	3	3e-05	93.5954	92.141	11.539	221588841936000.0	0.27699685670711377	0.0	4.0	1080
+
+2023-08-17 23:13:45,720 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 23:13:45,720 - INFO - **TRACE** Appending...0.4170908033847809
+2023-08-17 23:13:45,720 - INFO - **TRACE** Appending...0.398397296667099
+2023-08-17 23:13:45,720 - INFO - **TRACE** Appending...0.4967055320739746
+2023-08-17 23:13:45,720 - INFO - **TRACE** Appending...0.594264566898346
+2023-08-17 23:13:45,720 - INFO - **TRACE** Current innr cross fold(3) has lower loss, saving model...0.398397296667099 < 0.44078442454338074 LR: 3e-05
+2023-08-17 23:13:46,468 - INFO - **TRACE** End of inner cv fold 3*----*-----*
+
+2023-08-17 23:13:46,468 - INFO - -----------------------------------
+2023-08-17 23:13:46,468 - INFO - -----------------------------------
+2023-08-17 23:13:46,469 - INFO - **TRACE** All inner CVs complete for outer CV 3
+2023-08-17 23:13:46,469 - INFO - **TRACE** Best model selected from inner cv: 3 with loss: 0.398397296667099 with learning rate: 3e-05
+2023-08-17 23:13:46,469 - INFO - **TRACE** Moving on to test predictions with the best model from inner cross fold
+2023-08-17 23:13:46,469 - INFO - **TRACE** Loading the best model from inner CV
+2023-08-17 23:13:47,355 - INFO - **TRACE** Running predictions with test data
+2023-08-17 23:13:53,561 - INFO - Metrics from the Predictions...
+2023-08-17 23:13:53,562 - INFO - {'test_loss': 0.20847555994987488, 'test_accuracy': 0.9321739130434783, 'test_precision': 0.9195979899497487, 'test_recall': 0.8883495145631068, 'test_f1': 0.9037037037037038, 'test_roc_auc': 0.9224945404793854, 'test_matthews_correlation': 0.8516819233211494, 'test_runtime': 0.9544, 'test_samples_per_second': 602.45, 'test_steps_per_second': 75.437}
+2023-08-17 23:13:53,562 - INFO - {'confusion_matrix': array([[353,  16],
+       [ 23, 183]])}
+2023-08-17 23:13:53,562 - INFO - 
+
+Results as of 202308-17_22-4739 for roberta-base
+***** Test(predict) metrics *****
+model	outer_cv	test_loss	test_accuracy	test_precision	test_recall	test_f1	test_roc_auc	test_matthews_correlation	test_runtime	test_samples_per_second	test_steps_per_second
+roberta-base	3	0.20847555994987488	0.9321739130434783	0.9195979899497487	0.8883495145631068	0.9037037037037038	0.9224945404793854	0.8516819233211494	0.9544	602.45	75.437
+***** Confusion Matrix(predict) *****
+model	outer_cv	confusion_matrix
+roberta-base	3	[[353  16]
+ [ 23 183]]
+
+2023-08-17 23:13:53,562 - INFO - ----------------------------------------------------------------------
+2023-08-17 23:13:53,562 - INFO - ----------------------------------------------------------------------
+2023-08-17 23:13:53,562 - INFO - **TRACE** Outer Fold:4
+2023-08-17 23:13:53,563 - INFO - Dataset sizes: Train - 2874 Test - 575
+2023-08-17 23:13:54,560 - INFO - -----------------------------------
+2023-08-17 23:13:54,560 - INFO - -----------------------------------
+2023-08-17 23:13:54,560 - INFO - **TRACE** Inner Fold: 0 for outer fold: 4
+2023-08-17 23:13:54,560 - INFO - **TRACE** Learning rate used: 1e-05
+2023-08-17 23:13:54,560 - INFO - **TRACE** Create dataset...
+2023-08-17 23:13:54,561 - INFO - Dataset sizes: Train - 2155 Dev - 719
+2023-08-17 23:13:54,565 - INFO - **TRACE** Tokenise data...
+2023-08-17 23:13:55,264 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 23:13:55,264 - INFO - Function finetune_and_evaluate() received model: roberta-base, lr: 1e-05
+2023-08-17 23:13:55,264 - INFO - Setting up training args and starting training...
+2023-08-17 23:15:29,760 - INFO - Training complete...
+2023-08-17 23:15:29,764 - INFO - TrainOutput(global_step=1080, training_loss=0.31861656153643575, metrics={'train_runtime': 93.4928, 'train_samples_per_second': 92.2, 'train_steps_per_second': 11.552, 'total_flos': 221486064180000.0, 'train_loss': 0.31861656153643575, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 23:15:29,764 - INFO - Saving model at /notebooks/complaints/outputs/ft_roberta-base
+2023-08-17 23:15:30,572 - INFO - **TRACE** Report evaluation results...
+2023-08-17 23:15:30,573 - INFO - 
+
+Results as of 202308-17_22-4739 for roberta-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+roberta-base	4	0	1e-05	0.35382023453712463	0.866481223922114	0.8898305084745762	0.75	0.8139534883720931	0.845387243735763	0.7173283549860289	1.207	595.685	74.564	7.500000000000001e-06	1.0	270
+roberta-base	4	0	1e-05	0.3564894199371338	0.8887343532684284	0.8424657534246576	0.8785714285714286	0.8601398601398601	0.8868939147412951	0.7682946468085302	1.2005	598.917	74.969	5e-06	2.0	540
+roberta-base	4	0	1e-05	0.44775283336639404	0.8873435326842837	0.8178913738019169	0.9142857142857143	0.8634064080944351	0.8922225837943377	0.7715048884354078	1.3215	544.073	68.104	2.5e-06	3.0	810
+roberta-base	4	0	1e-05	0.45062825083732605	0.8984700973574409	0.8606271777003485	0.8821428571428571	0.871252204585538	0.8955133420110641	0.7876251729609186	1.2323	583.453	73.033	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+roberta-base	4	0	1e-05	93.4928	92.2	11.552	221486064180000.0	0.31861656153643575	0.0	4.0	1080
+
+2023-08-17 23:15:30,573 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 23:15:30,573 - INFO - **TRACE** Appending...0.35382023453712463
+2023-08-17 23:15:30,573 - INFO - **TRACE** Appending...0.3564894199371338
+2023-08-17 23:15:30,573 - INFO - **TRACE** Appending...0.44775283336639404
+2023-08-17 23:15:30,573 - INFO - **TRACE** Appending...0.45062825083732605
+2023-08-17 23:15:30,573 - INFO - **TRACE** Current innr cross fold(0) has lower loss, saving model...0.35382023453712463 < 1000 LR: 1e-05
+2023-08-17 23:15:31,307 - INFO - **TRACE** End of inner cv fold 0*----*-----*
+
+2023-08-17 23:15:31,307 - INFO - -----------------------------------
+2023-08-17 23:15:31,307 - INFO - -----------------------------------
+2023-08-17 23:15:31,307 - INFO - **TRACE** Inner Fold: 1 for outer fold: 4
+2023-08-17 23:15:31,307 - INFO - **TRACE** Learning rate used: 5e-06
+2023-08-17 23:15:31,307 - INFO - **TRACE** Create dataset...
+2023-08-17 23:15:31,308 - INFO - Dataset sizes: Train - 2155 Dev - 719
+2023-08-17 23:15:31,312 - INFO - **TRACE** Tokenise data...
+2023-08-17 23:15:32,147 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 23:15:32,148 - INFO - Function finetune_and_evaluate() received model: roberta-base, lr: 5e-06
+2023-08-17 23:15:32,148 - INFO - Setting up training args and starting training...
+2023-08-17 23:17:06,458 - INFO - Training complete...
+2023-08-17 23:17:06,460 - INFO - TrainOutput(global_step=1080, training_loss=0.3547931989034017, metrics={'train_runtime': 93.0712, 'train_samples_per_second': 92.617, 'train_steps_per_second': 11.604, 'total_flos': 221486064180000.0, 'train_loss': 0.3547931989034017, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 23:17:06,460 - INFO - Saving model at /notebooks/complaints/outputs/ft_roberta-base
+2023-08-17 23:17:07,211 - INFO - **TRACE** Report evaluation results...
+2023-08-17 23:17:07,212 - INFO - 
+
+Results as of 202308-17_22-4739 for roberta-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+roberta-base	4	1	5e-06	0.3165671229362488	0.894297635605007	0.8892857142857142	0.8469387755102041	0.867595818815331	0.886998799519808	0.7803626375503957	1.1911	603.64	75.56	3.7500000000000005e-06	1.0	270
+roberta-base	4	1	5e-06	0.3738058805465698	0.8998609179415855	0.8801369863013698	0.8741496598639455	0.8771331058020476	0.8958983593437374	0.7926408755725681	1.2095	594.477	74.413	2.5e-06	2.0	540
+roberta-base	4	1	5e-06	0.38229501247406006	0.9012517385257302	0.9025270758122743	0.8503401360544217	0.8756567425569177	0.8934053621448579	0.7948540323443862	1.2571	571.952	71.593	1.25e-06	3.0	810
+roberta-base	4	1	5e-06	0.3905741572380066	0.8984700973574409	0.8850174216027874	0.8639455782312925	0.8743545611015491	0.8931492597038815	0.7893557308290515	1.2237	587.57	73.548	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+roberta-base	4	1	5e-06	93.0712	92.617	11.604	221486064180000.0	0.3547931989034017	0.0	4.0	1080
+
+2023-08-17 23:17:07,212 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 23:17:07,212 - INFO - **TRACE** Appending...0.3165671229362488
+2023-08-17 23:17:07,212 - INFO - **TRACE** Appending...0.3738058805465698
+2023-08-17 23:17:07,212 - INFO - **TRACE** Appending...0.38229501247406006
+2023-08-17 23:17:07,212 - INFO - **TRACE** Appending...0.3905741572380066
+2023-08-17 23:17:07,212 - INFO - **TRACE** Current innr cross fold(1) has lower loss, saving model...0.3165671229362488 < 0.35382023453712463 LR: 5e-06
+2023-08-17 23:17:07,983 - INFO - **TRACE** End of inner cv fold 1*----*-----*
+
+2023-08-17 23:17:07,983 - INFO - -----------------------------------
+2023-08-17 23:17:07,983 - INFO - -----------------------------------
+2023-08-17 23:17:07,983 - INFO - **TRACE** Inner Fold: 2 for outer fold: 4
+2023-08-17 23:17:07,983 - INFO - **TRACE** Learning rate used: 5e-05
+2023-08-17 23:17:07,983 - INFO - **TRACE** Create dataset...
+2023-08-17 23:17:07,984 - INFO - Dataset sizes: Train - 2156 Dev - 718
+2023-08-17 23:17:07,988 - INFO - **TRACE** Tokenise data...
+2023-08-17 23:17:14,751 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 23:17:14,751 - INFO - Function finetune_and_evaluate() received model: roberta-base, lr: 5e-05
+2023-08-17 23:17:14,751 - INFO - Setting up training args and starting training...
+2023-08-17 23:18:49,282 - INFO - Training complete...
+2023-08-17 23:18:49,286 - INFO - TrainOutput(global_step=1080, training_loss=0.44547584145157426, metrics={'train_runtime': 93.5111, 'train_samples_per_second': 92.224, 'train_steps_per_second': 11.549, 'total_flos': 221588841936000.0, 'train_loss': 0.44547584145157426, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 23:18:49,286 - INFO - Saving model at /notebooks/complaints/outputs/ft_roberta-base
+2023-08-17 23:18:50,170 - INFO - **TRACE** Report evaluation results...
+2023-08-17 23:18:50,171 - INFO - 
+
+Results as of 202308-17_22-4739 for roberta-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+roberta-base	4	2	5e-05	0.6070233583450317	0.7743732590529248	0.6413612565445026	0.9074074074074074	0.7515337423312883	0.8008019179894181	0.584023288926377	1.1928	601.945	75.453	3.7500000000000003e-05	1.0	270
+roberta-base	4	2	5e-05	0.5694341659545898	0.7715877437325905	0.8840579710144928	0.45185185185185184	0.5980392156862745	0.7080687830687831	0.5115690619663938	1.1991	598.784	75.057	2.5e-05	2.0	540
+roberta-base	4	2	5e-05	0.47928258776664734	0.8342618384401114	0.7745454545454545	0.7888888888888889	0.781651376146789	0.8252480158730158	0.6481825434077446	1.1911	602.801	75.56	1.25e-05	3.0	810
+roberta-base	4	2	5e-05	0.5770646333694458	0.8440111420612814	0.7821428571428571	0.8111111111111111	0.7963636363636363	0.8374751984126985	0.670311507512644	1.1938	601.461	75.392	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+roberta-base	4	2	5e-05	93.5111	92.224	11.549	221588841936000.0	0.44547584145157426	0.0	4.0	1080
+
+2023-08-17 23:18:50,171 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 23:18:50,171 - INFO - **TRACE** Appending...0.6070233583450317
+2023-08-17 23:18:50,171 - INFO - **TRACE** Appending...0.5694341659545898
+2023-08-17 23:18:50,171 - INFO - **TRACE** Appending...0.47928258776664734
+2023-08-17 23:18:50,171 - INFO - **TRACE** Appending...0.5770646333694458
+2023-08-17 23:18:50,171 - INFO - **TRACE** Model not saved since current innr cross fold(2) has higher loss...0.47928258776664734 >= 0.3165671229362488 LR: 5e-05
+2023-08-17 23:18:50,171 - INFO - **TRACE** End of inner cv fold 2*----*-----*
+
+2023-08-17 23:18:50,171 - INFO - -----------------------------------
+2023-08-17 23:18:50,171 - INFO - -----------------------------------
+2023-08-17 23:18:50,171 - INFO - **TRACE** Inner Fold: 3 for outer fold: 4
+2023-08-17 23:18:50,171 - INFO - **TRACE** Learning rate used: 3e-05
+2023-08-17 23:18:50,172 - INFO - **TRACE** Create dataset...
+2023-08-17 23:18:50,172 - INFO - Dataset sizes: Train - 2156 Dev - 718
+2023-08-17 23:18:50,177 - INFO - **TRACE** Tokenise data...
+2023-08-17 23:18:50,966 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 23:18:50,967 - INFO - Function finetune_and_evaluate() received model: roberta-base, lr: 3e-05
+2023-08-17 23:18:50,967 - INFO - Setting up training args and starting training...
+2023-08-17 23:20:25,354 - INFO - Training complete...
+2023-08-17 23:20:25,356 - INFO - TrainOutput(global_step=1080, training_loss=0.30418384693287037, metrics={'train_runtime': 93.3159, 'train_samples_per_second': 92.417, 'train_steps_per_second': 11.574, 'total_flos': 221588841936000.0, 'train_loss': 0.30418384693287037, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 23:20:25,357 - INFO - Saving model at /notebooks/complaints/outputs/ft_roberta-base
+2023-08-17 23:20:26,175 - INFO - **TRACE** Report evaluation results...
+2023-08-17 23:20:26,176 - INFO - 
+
+Results as of 202308-17_22-4739 for roberta-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+roberta-base	4	3	3e-05	0.4098812937736511	0.8746518105849582	0.8294573643410853	0.823076923076923	0.8262548262548264	0.8635035270406449	0.7282311786290907	1.1876	604.601	75.786	2.25e-05	1.0	270
+roberta-base	4	3	3e-05	0.46908262372016907	0.871866295264624	0.7837837837837838	0.8923076923076924	0.8345323741007195	0.8762848505206584	0.7347913943269516	1.1877	604.525	75.776	1.5e-05	2.0	540
+roberta-base	4	3	3e-05	0.5722051858901978	0.871866295264624	0.8157894736842105	0.8346153846153846	0.8250950570342205	0.863814242526033	0.7241342174806545	1.1993	598.664	75.042	7.5e-06	3.0	810
+roberta-base	4	3	3e-05	0.6700283885002136	0.8690807799442897	0.7902097902097902	0.8692307692307693	0.8278388278388279	0.8691132012092712	0.7247431121026845	1.1882	604.268	75.744	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+roberta-base	4	3	3e-05	93.3159	92.417	11.574	221588841936000.0	0.30418384693287037	0.0	4.0	1080
+
+2023-08-17 23:20:26,176 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 23:20:26,176 - INFO - **TRACE** Appending...0.4098812937736511
+2023-08-17 23:20:26,176 - INFO - **TRACE** Appending...0.46908262372016907
+2023-08-17 23:20:26,176 - INFO - **TRACE** Appending...0.5722051858901978
+2023-08-17 23:20:26,176 - INFO - **TRACE** Appending...0.6700283885002136
+2023-08-17 23:20:26,176 - INFO - **TRACE** Current innr cross fold(3) has lower loss, saving model...0.4098812937736511 < 0.47928258776664734 LR: 3e-05
+2023-08-17 23:20:26,974 - INFO - **TRACE** End of inner cv fold 3*----*-----*
+
+2023-08-17 23:20:26,974 - INFO - -----------------------------------
+2023-08-17 23:20:26,975 - INFO - -----------------------------------
+2023-08-17 23:20:26,975 - INFO - **TRACE** All inner CVs complete for outer CV 4
+2023-08-17 23:20:26,975 - INFO - **TRACE** Best model selected from inner cv: 3 with loss: 0.4098812937736511 with learning rate: 3e-05
+2023-08-17 23:20:26,975 - INFO - **TRACE** Moving on to test predictions with the best model from inner cross fold
+2023-08-17 23:20:26,975 - INFO - **TRACE** Loading the best model from inner CV
+2023-08-17 23:20:27,836 - INFO - **TRACE** Running predictions with test data
+2023-08-17 23:20:29,081 - INFO - Metrics from the Predictions...
+2023-08-17 23:20:29,081 - INFO - {'test_loss': 0.32758304476737976, 'test_accuracy': 0.888695652173913, 'test_precision': 0.8413461538461539, 'test_recall': 0.8495145631067961, 'test_f1': 0.8454106280193237, 'test_roc_auc': 0.8800418343989265, 'test_matthews_correlation': 0.758478884786254, 'test_runtime': 0.9501, 'test_samples_per_second': 605.208, 'test_steps_per_second': 75.783}
+2023-08-17 23:20:29,081 - INFO - {'confusion_matrix': array([[336,  33],
+       [ 31, 175]])}
+2023-08-17 23:20:29,081 - INFO - 
+
+Results as of 202308-17_22-4739 for roberta-base
+***** Test(predict) metrics *****
+model	outer_cv	test_loss	test_accuracy	test_precision	test_recall	test_f1	test_roc_auc	test_matthews_correlation	test_runtime	test_samples_per_second	test_steps_per_second
+roberta-base	4	0.32758304476737976	0.888695652173913	0.8413461538461539	0.8495145631067961	0.8454106280193237	0.8800418343989265	0.758478884786254	0.9501	605.208	75.783
+***** Confusion Matrix(predict) *****
+model	outer_cv	confusion_matrix
+roberta-base	4	[[336  33]
+ [ 31 175]]
+
+2023-08-17 23:20:29,081 - INFO - ----------------------------------------------------------------------
+2023-08-17 23:20:29,081 - INFO - ----------------------------------------------------------------------
+2023-08-17 23:20:29,081 - INFO - **TRACE** Outer Fold:5
+2023-08-17 23:20:29,082 - INFO - Dataset sizes: Train - 2875 Test - 574
+2023-08-17 23:20:29,915 - INFO - -----------------------------------
+2023-08-17 23:20:29,915 - INFO - -----------------------------------
+2023-08-17 23:20:29,915 - INFO - **TRACE** Inner Fold: 0 for outer fold: 5
+2023-08-17 23:20:29,915 - INFO - **TRACE** Learning rate used: 1e-05
+2023-08-17 23:20:29,915 - INFO - **TRACE** Create dataset...
+2023-08-17 23:20:29,916 - INFO - Dataset sizes: Train - 2156 Dev - 719
+2023-08-17 23:20:29,920 - INFO - **TRACE** Tokenise data...
+2023-08-17 23:20:30,578 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 23:20:30,579 - INFO - Function finetune_and_evaluate() received model: roberta-base, lr: 1e-05
+2023-08-17 23:20:30,579 - INFO - Setting up training args and starting training...
+2023-08-17 23:22:04,982 - INFO - Training complete...
+2023-08-17 23:22:04,982 - INFO - TrainOutput(global_step=1080, training_loss=0.31422342635967115, metrics={'train_runtime': 92.6473, 'train_samples_per_second': 93.084, 'train_steps_per_second': 11.657, 'total_flos': 221588841936000.0, 'train_loss': 0.31422342635967115, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 23:22:04,982 - INFO - Saving model at /notebooks/complaints/outputs/ft_roberta-base
+2023-08-17 23:22:05,738 - INFO - **TRACE** Report evaluation results...
+2023-08-17 23:22:05,739 - INFO - 
+
+Results as of 202308-17_22-4739 for roberta-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+roberta-base	5	0	1e-05	0.36918094754219055	0.866481223922114	0.7830188679245284	0.9021739130434783	0.8383838383838385	0.8732088526842673	0.730890960008539	1.192	603.199	75.505	7.500000000000001e-06	1.0	270
+roberta-base	5	0	1e-05	0.4644228219985962	0.8831710709318498	0.8096774193548387	0.9094202898550725	0.856655290102389	0.8881187228056401	0.7622694111287209	1.2013	598.529	74.92	5e-06	2.0	540
+roberta-base	5	0	1e-05	0.4660954475402832	0.885952712100139	0.8211920529801324	0.8985507246376812	0.8581314878892733	0.8883272810547322	0.7652666772536885	1.1895	604.452	75.662	2.5e-06	3.0	810
+roberta-base	5	0	1e-05	0.5141878724098206	0.8845618915159944	0.8316151202749141	0.8768115942028986	0.8536155202821869	0.8831010566951287	0.7591565975841899	1.2036	597.387	74.777	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+roberta-base	5	0	1e-05	92.6473	93.084	11.657	221588841936000.0	0.31422342635967115	0.0	4.0	1080
+
+2023-08-17 23:22:05,739 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 23:22:05,739 - INFO - **TRACE** Appending...0.36918094754219055
+2023-08-17 23:22:05,739 - INFO - **TRACE** Appending...0.4644228219985962
+2023-08-17 23:22:05,739 - INFO - **TRACE** Appending...0.4660954475402832
+2023-08-17 23:22:05,739 - INFO - **TRACE** Appending...0.5141878724098206
+2023-08-17 23:22:05,739 - INFO - **TRACE** Current innr cross fold(0) has lower loss, saving model...0.36918094754219055 < 1000 LR: 1e-05
+2023-08-17 23:22:06,500 - INFO - **TRACE** End of inner cv fold 0*----*-----*
+
+2023-08-17 23:22:06,500 - INFO - -----------------------------------
+2023-08-17 23:22:06,500 - INFO - -----------------------------------
+2023-08-17 23:22:06,500 - INFO - **TRACE** Inner Fold: 1 for outer fold: 5
+2023-08-17 23:22:06,500 - INFO - **TRACE** Learning rate used: 5e-06
+2023-08-17 23:22:06,500 - INFO - **TRACE** Create dataset...
+2023-08-17 23:22:06,501 - INFO - Dataset sizes: Train - 2156 Dev - 719
+2023-08-17 23:22:06,505 - INFO - **TRACE** Tokenise data...
+2023-08-17 23:22:12,296 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 23:22:12,296 - INFO - Function finetune_and_evaluate() received model: roberta-base, lr: 5e-06
+2023-08-17 23:22:12,296 - INFO - Setting up training args and starting training...
+2023-08-17 23:23:46,696 - INFO - Training complete...
+2023-08-17 23:23:46,698 - INFO - TrainOutput(global_step=1080, training_loss=0.35194512473212347, metrics={'train_runtime': 93.4088, 'train_samples_per_second': 92.325, 'train_steps_per_second': 11.562, 'total_flos': 221588841936000.0, 'train_loss': 0.35194512473212347, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 23:23:46,698 - INFO - Saving model at /notebooks/complaints/outputs/ft_roberta-base
+2023-08-17 23:23:47,565 - INFO - **TRACE** Report evaluation results...
+2023-08-17 23:23:47,566 - INFO - 
+
+Results as of 202308-17_22-4739 for roberta-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+roberta-base	5	1	5e-06	0.33313578367233276	0.8609179415855355	0.8175675675675675	0.8402777777777778	0.8287671232876712	0.8574938772879608	0.7118974602336183	1.1923	603.017	75.482	3.7500000000000005e-06	1.0	270
+roberta-base	5	1	5e-06	0.4484736919403076	0.866481223922114	0.8582089552238806	0.7986111111111112	0.827338129496403	0.855222028873421	0.7199612082245176	1.2093	594.548	74.422	2.5e-06	2.0	540
+roberta-base	5	1	5e-06	0.5238916873931885	0.8650904033379694	0.8215488215488216	0.8472222222222222	0.8341880341880342	0.8621261923176077	0.7207594789224454	1.1805	609.084	76.241	1.25e-06	3.0	810
+roberta-base	5	1	5e-06	0.5289127230644226	0.866481223922114	0.8404255319148937	0.8229166666666666	0.8315789473684212	0.8592541569992266	0.721109810602973	1.2029	597.724	74.819	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+roberta-base	5	1	5e-06	93.4088	92.325	11.562	221588841936000.0	0.35194512473212347	0.0	4.0	1080
+
+2023-08-17 23:23:47,566 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 23:23:47,566 - INFO - **TRACE** Appending...0.33313578367233276
+2023-08-17 23:23:47,566 - INFO - **TRACE** Appending...0.4484736919403076
+2023-08-17 23:23:47,566 - INFO - **TRACE** Appending...0.5238916873931885
+2023-08-17 23:23:47,566 - INFO - **TRACE** Appending...0.5289127230644226
+2023-08-17 23:23:47,566 - INFO - **TRACE** Current innr cross fold(1) has lower loss, saving model...0.33313578367233276 < 0.36918094754219055 LR: 5e-06
+2023-08-17 23:23:48,310 - INFO - **TRACE** End of inner cv fold 1*----*-----*
+
+2023-08-17 23:23:48,310 - INFO - -----------------------------------
+2023-08-17 23:23:48,310 - INFO - -----------------------------------
+2023-08-17 23:23:48,310 - INFO - **TRACE** Inner Fold: 2 for outer fold: 5
+2023-08-17 23:23:48,310 - INFO - **TRACE** Learning rate used: 5e-05
+2023-08-17 23:23:48,310 - INFO - **TRACE** Create dataset...
+2023-08-17 23:23:48,311 - INFO - Dataset sizes: Train - 2156 Dev - 719
+2023-08-17 23:23:48,315 - INFO - **TRACE** Tokenise data...
+2023-08-17 23:23:54,277 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 23:23:54,277 - INFO - Function finetune_and_evaluate() received model: roberta-base, lr: 5e-05
+2023-08-17 23:23:54,277 - INFO - Setting up training args and starting training...
+2023-08-17 23:25:28,921 - INFO - Training complete...
+2023-08-17 23:25:28,923 - INFO - TrainOutput(global_step=1080, training_loss=0.38383069391603825, metrics={'train_runtime': 93.505, 'train_samples_per_second': 92.23, 'train_steps_per_second': 11.55, 'total_flos': 221588841936000.0, 'train_loss': 0.38383069391603825, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 23:25:28,923 - INFO - Saving model at /notebooks/complaints/outputs/ft_roberta-base
+2023-08-17 23:25:29,742 - INFO - **TRACE** Report evaluation results...
+2023-08-17 23:25:29,742 - INFO - 
+
+Results as of 202308-17_22-4739 for roberta-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+roberta-base	5	2	5e-05	0.4194828271865845	0.8636995827538247	0.8361344537815126	0.7713178294573644	0.8024193548387097	0.8433595654879013	0.6999684178028357	1.2011	598.624	74.932	3.7500000000000003e-05	1.0	270
+roberta-base	5	2	5e-05	0.41076478362083435	0.8567454798331016	0.863849765258216	0.7131782945736435	0.7813163481953292	0.8251357850308565	0.6831090241202912	1.1999	599.226	75.007	2.5e-05	2.0	540
+roberta-base	5	2	5e-05	0.5057095289230347	0.8734353268428373	0.7950530035335689	0.872093023255814	0.831792975970425	0.8731397871159764	0.732698678708776	1.2093	594.568	74.424	1.25e-05	3.0	810
+roberta-base	5	2	5e-05	0.5288810133934021	0.8789986091794159	0.8131868131868132	0.8604651162790697	0.8361581920903955	0.8749180245169751	0.7411018177314403	1.1858	606.353	75.9	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+roberta-base	5	2	5e-05	93.505	92.23	11.55	221588841936000.0	0.38383069391603825	0.0	4.0	1080
+
+2023-08-17 23:25:29,742 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 23:25:29,742 - INFO - **TRACE** Appending...0.4194828271865845
+2023-08-17 23:25:29,743 - INFO - **TRACE** Appending...0.41076478362083435
+2023-08-17 23:25:29,743 - INFO - **TRACE** Appending...0.5057095289230347
+2023-08-17 23:25:29,743 - INFO - **TRACE** Appending...0.5288810133934021
+2023-08-17 23:25:29,743 - INFO - **TRACE** Model not saved since current innr cross fold(2) has higher loss...0.41076478362083435 >= 0.33313578367233276 LR: 5e-05
+2023-08-17 23:25:29,743 - INFO - **TRACE** End of inner cv fold 2*----*-----*
+
+2023-08-17 23:25:29,743 - INFO - -----------------------------------
+2023-08-17 23:25:29,743 - INFO - -----------------------------------
+2023-08-17 23:25:29,743 - INFO - **TRACE** Inner Fold: 3 for outer fold: 5
+2023-08-17 23:25:29,743 - INFO - **TRACE** Learning rate used: 3e-05
+2023-08-17 23:25:29,743 - INFO - **TRACE** Create dataset...
+2023-08-17 23:25:29,744 - INFO - Dataset sizes: Train - 2157 Dev - 718
+2023-08-17 23:25:29,749 - INFO - **TRACE** Tokenise data...
+2023-08-17 23:25:30,524 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 23:25:30,524 - INFO - Function finetune_and_evaluate() received model: roberta-base, lr: 3e-05
+2023-08-17 23:25:30,524 - INFO - Setting up training args and starting training...
+2023-08-17 23:27:04,760 - INFO - Training complete...
+2023-08-17 23:27:04,763 - INFO - TrainOutput(global_step=1080, training_loss=0.3061053735238534, metrics={'train_runtime': 93.1938, 'train_samples_per_second': 92.581, 'train_steps_per_second': 11.589, 'total_flos': 221691619692000.0, 'train_loss': 0.3061053735238534, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 23:27:04,764 - INFO - Saving model at /notebooks/complaints/outputs/ft_roberta-base
+2023-08-17 23:27:05,661 - INFO - **TRACE** Report evaluation results...
+2023-08-17 23:27:05,661 - INFO - 
+
+Results as of 202308-17_22-4739 for roberta-base
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+roberta-base	5	3	3e-05	0.4188591241836548	0.8690807799442897	0.843065693430657	0.8191489361702128	0.8309352517985611	0.8602625414796018	0.7243527886419214	1.1916	602.569	75.531	2.25e-05	1.0	270
+roberta-base	5	3	3e-05	0.581280529499054	0.8857938718662952	0.890625	0.8085106382978723	0.8475836431226765	0.8721452274058168	0.758873308327467	1.1968	599.955	75.203	1.5e-05	2.0	540
+roberta-base	5	3	3e-05	0.5597659349441528	0.8662952646239555	0.8780487804878049	0.7659574468085106	0.8181818181818182	0.8485750536794847	0.7173903732197521	1.2232	586.985	73.578	7.5e-06	3.0	810
+roberta-base	5	3	3e-05	0.7227543592453003	0.871866295264624	0.8598484848484849	0.8049645390070922	0.8315018315018314	0.8600510768429958	0.729343335290702	1.2037	596.476	74.767	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+roberta-base	5	3	3e-05	93.1938	92.581	11.589	221691619692000.0	0.3061053735238534	0.0	4.0	1080
+
+2023-08-17 23:27:05,661 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 23:27:05,661 - INFO - **TRACE** Appending...0.4188591241836548
+2023-08-17 23:27:05,661 - INFO - **TRACE** Appending...0.581280529499054
+2023-08-17 23:27:05,661 - INFO - **TRACE** Appending...0.5597659349441528
+2023-08-17 23:27:05,661 - INFO - **TRACE** Appending...0.7227543592453003
+2023-08-17 23:27:05,661 - INFO - **TRACE** Model not saved since current innr cross fold(3) has higher loss...0.4188591241836548 >= 0.41076478362083435 LR: 3e-05
+2023-08-17 23:27:05,661 - INFO - **TRACE** End of inner cv fold 3*----*-----*
+
+2023-08-17 23:27:05,661 - INFO - -----------------------------------
+2023-08-17 23:27:05,661 - INFO - -----------------------------------
+2023-08-17 23:27:05,661 - INFO - **TRACE** All inner CVs complete for outer CV 5
+2023-08-17 23:27:05,661 - INFO - **TRACE** Best model selected from inner cv: 1 with loss: 0.33313578367233276 with learning rate: 3e-05
+2023-08-17 23:27:05,661 - INFO - **TRACE** Moving on to test predictions with the best model from inner cross fold
+2023-08-17 23:27:05,661 - INFO - **TRACE** Loading the best model from inner CV
+2023-08-17 23:27:07,197 - INFO - **TRACE** Running predictions with test data
+2023-08-17 23:27:08,487 - INFO - Metrics from the Predictions...
+2023-08-17 23:27:08,487 - INFO - {'test_loss': 0.33448734879493713, 'test_accuracy': 0.8972125435540069, 'test_precision': 0.8613861386138614, 'test_recall': 0.848780487804878, 'test_f1': 0.855036855036855, 'test_roc_auc': 0.8864498644986449, 'test_matthews_correlation': 0.7754719868228004, 'test_runtime': 1.0457, 'test_samples_per_second': 548.912, 'test_steps_per_second': 68.853}
+2023-08-17 23:27:08,487 - INFO - {'confusion_matrix': array([[341,  28],
+       [ 31, 174]])}
+2023-08-17 23:27:08,487 - INFO - 
+
+Results as of 202308-17_22-4739 for roberta-base
+***** Test(predict) metrics *****
+model	outer_cv	test_loss	test_accuracy	test_precision	test_recall	test_f1	test_roc_auc	test_matthews_correlation	test_runtime	test_samples_per_second	test_steps_per_second
+roberta-base	5	0.33448734879493713	0.8972125435540069	0.8613861386138614	0.848780487804878	0.855036855036855	0.8864498644986449	0.7754719868228004	1.0457	548.912	68.853
+***** Confusion Matrix(predict) *****
+model	outer_cv	confusion_matrix
+roberta-base	5	[[341  28]
+ [ 31 174]]
+
+2023-08-17 23:27:08,487 - INFO - ----------------------------------------------------------------------
+2023-08-17 23:27:08,487 - INFO - ----------------------------------------------------------------------
+2023-08-17 23:27:08,487 - INFO - **TRACE** All CVs complete, calculating mean of test metrics
+2023-08-17 23:27:08,487 - INFO - 
+
+Results as of 202308-17_22-4739 for roberta-base
+***** Mean Test(predict) metrics *****
+model	mean_test_loss	mean_test_accuracy	mean_test_precision	mean_test_recall	mean_test_f1	mean_test_roc_auc	mean_test_matthews_correlation	mean_test_runtime	mean_test_samples_per_second	mean_test_steps_per_second
+roberta-base	0.2779178520043691	0.9141731050850881	0.8856692527998002	0.8725708422132765	0.8787519345678317	0.9049321165826019	0.8127527089015144	0.9710666666666666	592.65	74.23016666666668
+***** Mean Confusion Matrix(predict) *****
+model	mean_true_negative	mean_false_positive	mean_false_negative	mean_true_positive
+roberta-base	346.3333333333333	23.166666666666668	26.166666666666668	179.16666666666666
+
+2023-08-17 23:27:08,488 - INFO - Attempting to delete checkpoints from /notebooks/train_trainer
+2023-08-17 23:27:08,595 - INFO - Completed deleting checkpoints from /notebooks/train_trainer
+2023-08-17 23:27:08,595 - INFO - Attempting to delete checkpoints from /notebooks/test_trainer
+2023-08-17 23:27:08,596 - INFO - The path /notebooks/test_trainer does not exist.

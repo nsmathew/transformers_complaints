@@ -1,0 +1,1040 @@
+2023-08-17 23:27:13,809 - INFO - Training Params - NO_OF_EPOCHS: 4 OUTER_CV_NO: 6 INNER_CV_NO: 4 MAX_LENGTH: 50 LR_SPACE: [1e-05, 5e-06, 5e-05, 3e-05] SEED: 2023
+
+2023-08-17 23:27:13,809 - INFO - Total no. of tweets: 3449
+2023-08-17 23:27:13,810 - INFO - ----------------------------------------------------------------------
+2023-08-17 23:27:13,810 - INFO - ----------------------------------------------------------------------
+2023-08-17 23:27:13,810 - INFO - **TRACE** Outer Fold:0
+2023-08-17 23:27:13,811 - INFO - Dataset sizes: Train - 2874 Test - 575
+2023-08-17 23:27:14,442 - INFO - -----------------------------------
+2023-08-17 23:27:14,442 - INFO - -----------------------------------
+2023-08-17 23:27:14,442 - INFO - **TRACE** Inner Fold: 0 for outer fold: 0
+2023-08-17 23:27:14,442 - INFO - **TRACE** Learning rate used: 1e-05
+2023-08-17 23:27:14,442 - INFO - **TRACE** Create dataset...
+2023-08-17 23:27:14,442 - INFO - Dataset sizes: Train - 2155 Dev - 719
+2023-08-17 23:27:14,446 - INFO - **TRACE** Tokenise data...
+2023-08-17 23:27:15,466 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 23:27:15,466 - INFO - Function finetune_and_evaluate() received model: albert-base-v2, lr: 1e-05
+2023-08-17 23:27:15,466 - INFO - Setting up training args and starting training...
+2023-08-17 23:28:13,185 - INFO - Training complete...
+2023-08-17 23:28:13,186 - INFO - TrainOutput(global_step=1080, training_loss=0.31863660635771573, metrics={'train_runtime': 57.5412, 'train_samples_per_second': 149.806, 'train_steps_per_second': 18.769, 'total_flos': 20117347380000.0, 'train_loss': 0.31863660635771573, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 23:28:13,186 - INFO - Saving model at /notebooks/complaints/outputs/ft_albert-base-v2
+2023-08-17 23:28:13,243 - INFO - **TRACE** Report evaluation results...
+2023-08-17 23:28:13,243 - INFO - 
+
+Results as of 202308-17_23-2708 for albert-base-v2
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+albert-base-v2	0	0	1e-05	0.47731155157089233	0.8052851182197497	0.9044943820224719	0.5669014084507042	0.6969696969696971	0.7639104743402946	0.5978356204081503	1.4203	506.242	63.368	7.500000000000001e-06	1.0	270
+albert-base-v2	0	0	1e-05	0.41661739349365234	0.8692628650904033	0.8044871794871795	0.8838028169014085	0.8422818791946309	0.8717864659219687	0.7334202025480389	1.4147	508.247	63.619	5e-06	2.0	540
+albert-base-v2	0	0	1e-05	0.5222138166427612	0.8776077885952712	0.8629629629629629	0.8204225352112676	0.8411552346570396	0.8676825319734499	0.7423380799857845	1.4285	503.334	63.004	2.5e-06	3.0	810
+albert-base-v2	0	0	1e-05	0.5647482872009277	0.8762169680111266	0.8217821782178217	0.8767605633802817	0.8483816013628619	0.8763113161728995	0.7450974771685857	1.4813	485.384	60.757	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+albert-base-v2	0	0	1e-05	57.5412	149.806	18.769	20117347380000.0	0.31863660635771573	0.0	4.0	1080
+
+2023-08-17 23:28:13,243 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 23:28:13,243 - INFO - **TRACE** Appending...0.47731155157089233
+2023-08-17 23:28:13,243 - INFO - **TRACE** Appending...0.41661739349365234
+2023-08-17 23:28:13,243 - INFO - **TRACE** Appending...0.5222138166427612
+2023-08-17 23:28:13,243 - INFO - **TRACE** Appending...0.5647482872009277
+2023-08-17 23:28:13,243 - INFO - **TRACE** Current innr cross fold(0) has lower loss, saving model...0.41661739349365234 < 1000 LR: 1e-05
+2023-08-17 23:28:13,303 - INFO - **TRACE** End of inner cv fold 0*----*-----*
+
+2023-08-17 23:28:13,303 - INFO - -----------------------------------
+2023-08-17 23:28:13,303 - INFO - -----------------------------------
+2023-08-17 23:28:13,303 - INFO - **TRACE** Inner Fold: 1 for outer fold: 0
+2023-08-17 23:28:13,303 - INFO - **TRACE** Learning rate used: 5e-06
+2023-08-17 23:28:13,303 - INFO - **TRACE** Create dataset...
+2023-08-17 23:28:13,304 - INFO - Dataset sizes: Train - 2155 Dev - 719
+2023-08-17 23:28:13,308 - INFO - **TRACE** Tokenise data...
+2023-08-17 23:28:13,981 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 23:28:13,981 - INFO - Function finetune_and_evaluate() received model: albert-base-v2, lr: 5e-06
+2023-08-17 23:28:13,982 - INFO - Setting up training args and starting training...
+2023-08-17 23:29:11,945 - INFO - Training complete...
+2023-08-17 23:29:11,946 - INFO - TrainOutput(global_step=1080, training_loss=0.3349875564928408, metrics={'train_runtime': 57.7595, 'train_samples_per_second': 149.24, 'train_steps_per_second': 18.698, 'total_flos': 20117347380000.0, 'train_loss': 0.3349875564928408, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 23:29:11,946 - INFO - Saving model at /notebooks/complaints/outputs/ft_albert-base-v2
+2023-08-17 23:29:12,008 - INFO - **TRACE** Report evaluation results...
+2023-08-17 23:29:12,009 - INFO - 
+
+Results as of 202308-17_23-2708 for albert-base-v2
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+albert-base-v2	0	1	5e-06	0.3600248694419861	0.8595271210013908	0.8223140495867769	0.77431906614786	0.7975951903807617	0.8406227365371333	0.6909144986181487	1.438	499.991	62.586	3.7500000000000005e-06	1.0	270
+albert-base-v2	0	1	5e-06	0.3705246150493622	0.8678720445062587	0.8715596330275229	0.7392996108949417	0.8000000000000002	0.8393467751444406	0.7076429132741	1.4735	487.954	61.079	2.5e-06	2.0	540
+albert-base-v2	0	1	5e-06	0.4467872381210327	0.8706536856745479	0.8504273504273504	0.77431906614786	0.8105906313645621	0.849280745195142	0.7145183588476448	1.4322	502.037	62.842	1.25e-06	3.0	810
+albert-base-v2	0	1	5e-06	0.4929061830043793	0.8720445062586927	0.8340080971659919	0.8015564202334631	0.8174603174603176	0.8564059157444371	0.7193545139548688	1.4326	501.887	62.823	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+albert-base-v2	0	1	5e-06	57.7595	149.24	18.698	20117347380000.0	0.3349875564928408	0.0	4.0	1080
+
+2023-08-17 23:29:12,009 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 23:29:12,009 - INFO - **TRACE** Appending...0.3600248694419861
+2023-08-17 23:29:12,009 - INFO - **TRACE** Appending...0.3705246150493622
+2023-08-17 23:29:12,009 - INFO - **TRACE** Appending...0.4467872381210327
+2023-08-17 23:29:12,009 - INFO - **TRACE** Appending...0.4929061830043793
+2023-08-17 23:29:12,009 - INFO - **TRACE** Current innr cross fold(1) has lower loss, saving model...0.3600248694419861 < 0.41661739349365234 LR: 5e-06
+2023-08-17 23:29:12,071 - INFO - **TRACE** End of inner cv fold 1*----*-----*
+
+2023-08-17 23:29:12,071 - INFO - -----------------------------------
+2023-08-17 23:29:12,071 - INFO - -----------------------------------
+2023-08-17 23:29:12,071 - INFO - **TRACE** Inner Fold: 2 for outer fold: 0
+2023-08-17 23:29:12,071 - INFO - **TRACE** Learning rate used: 5e-05
+2023-08-17 23:29:12,071 - INFO - **TRACE** Create dataset...
+2023-08-17 23:29:12,072 - INFO - Dataset sizes: Train - 2156 Dev - 718
+2023-08-17 23:29:12,076 - INFO - **TRACE** Tokenise data...
+2023-08-17 23:29:12,745 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 23:29:12,746 - INFO - Function finetune_and_evaluate() received model: albert-base-v2, lr: 5e-05
+2023-08-17 23:29:12,746 - INFO - Setting up training args and starting training...
+2023-08-17 23:30:11,201 - INFO - Training complete...
+2023-08-17 23:30:11,201 - INFO - TrainOutput(global_step=1080, training_loss=0.46357812175044305, metrics={'train_runtime': 58.2895, 'train_samples_per_second': 147.951, 'train_steps_per_second': 18.528, 'total_flos': 20126682576000.0, 'train_loss': 0.46357812175044305, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 23:30:11,201 - INFO - Saving model at /notebooks/complaints/outputs/ft_albert-base-v2
+2023-08-17 23:30:11,269 - INFO - **TRACE** Report evaluation results...
+2023-08-17 23:30:11,269 - INFO - 
+
+Results as of 202308-17_23-2708 for albert-base-v2
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+albert-base-v2	0	2	5e-05	0.5726391077041626	0.7228412256267409	0.581453634085213	0.8787878787878788	0.6998491704374056	0.7554732345481243	0.49581938552508237	1.4404	498.487	62.484	3.7500000000000003e-05	1.0	270
+albert-base-v2	0	2	5e-05	0.41982734203338623	0.8203342618384402	0.7800829875518672	0.7121212121212122	0.7445544554455445	0.7976905620077427	0.6079351307645978	1.4472	496.141	62.19	2.5e-05	2.0	540
+albert-base-v2	0	2	5e-05	0.4322337210178375	0.83008356545961	0.7414965986394558	0.8257575757575758	0.7813620071684588	0.8291783473501535	0.6455569373409468	1.4449	496.919	62.288	1.25e-05	3.0	810
+albert-base-v2	0	2	5e-05	0.5731945037841797	0.8467966573816156	0.8318965517241379	0.7310606060606061	0.778225806451613	0.8225787611800828	0.6651713392673454	1.445	496.882	62.283	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+albert-base-v2	0	2	5e-05	58.2895	147.951	18.528	20126682576000.0	0.46357812175044305	0.0	4.0	1080
+
+2023-08-17 23:30:11,269 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 23:30:11,269 - INFO - **TRACE** Appending...0.5726391077041626
+2023-08-17 23:30:11,269 - INFO - **TRACE** Appending...0.41982734203338623
+2023-08-17 23:30:11,269 - INFO - **TRACE** Appending...0.4322337210178375
+2023-08-17 23:30:11,269 - INFO - **TRACE** Appending...0.5731945037841797
+2023-08-17 23:30:11,269 - INFO - **TRACE** Model not saved since current innr cross fold(2) has higher loss...0.41982734203338623 >= 0.3600248694419861 LR: 5e-05
+2023-08-17 23:30:11,269 - INFO - **TRACE** End of inner cv fold 2*----*-----*
+
+2023-08-17 23:30:11,269 - INFO - -----------------------------------
+2023-08-17 23:30:11,269 - INFO - -----------------------------------
+2023-08-17 23:30:11,270 - INFO - **TRACE** Inner Fold: 3 for outer fold: 0
+2023-08-17 23:30:11,270 - INFO - **TRACE** Learning rate used: 3e-05
+2023-08-17 23:30:11,270 - INFO - **TRACE** Create dataset...
+2023-08-17 23:30:11,270 - INFO - Dataset sizes: Train - 2156 Dev - 718
+2023-08-17 23:30:11,275 - INFO - **TRACE** Tokenise data...
+2023-08-17 23:30:11,906 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 23:30:11,907 - INFO - Function finetune_and_evaluate() received model: albert-base-v2, lr: 3e-05
+2023-08-17 23:30:11,907 - INFO - Setting up training args and starting training...
+2023-08-17 23:31:11,125 - INFO - Training complete...
+2023-08-17 23:31:11,125 - INFO - TrainOutput(global_step=1080, training_loss=0.4472057130601671, metrics={'train_runtime': 58.8046, 'train_samples_per_second': 146.655, 'train_steps_per_second': 18.366, 'total_flos': 20126682576000.0, 'train_loss': 0.4472057130601671, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 23:31:11,125 - INFO - Saving model at /notebooks/complaints/outputs/ft_albert-base-v2
+2023-08-17 23:31:11,189 - INFO - **TRACE** Report evaluation results...
+2023-08-17 23:31:11,190 - INFO - 
+
+Results as of 202308-17_23-2708 for albert-base-v2
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+albert-base-v2	0	3	3e-05	0.5895108580589294	0.7506963788300836	0.9166666666666666	0.4414715719063545	0.5959367945823927	0.7064159768839648	0.5082515576642576	1.4716	487.92	61.16	2.25e-05	1.0	270
+albert-base-v2	0	3	3e-05	0.5040966868400574	0.8008356545961003	0.8046875	0.6889632107023411	0.7423423423423423	0.7848157342294522	0.5862672150614215	1.4336	500.822	62.777	1.5e-05	2.0	540
+albert-base-v2	0	3	3e-05	0.7033102512359619	0.8356545961002786	0.7967213114754098	0.8127090301003345	0.8046357615894039	0.8323688348592365	0.6629304237153779	1.4356	500.123	62.689	7.5e-06	3.0	810
+albert-base-v2	0	3	3e-05	0.6797449588775635	0.8370473537604457	0.8345588235294118	0.7591973244147158	0.7950963222416814	0.8258993781978115	0.662375486934004	1.4562	493.057	61.804	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+albert-base-v2	0	3	3e-05	58.8046	146.655	18.366	20126682576000.0	0.4472057130601671	0.0	4.0	1080
+
+2023-08-17 23:31:11,190 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 23:31:11,190 - INFO - **TRACE** Appending...0.5895108580589294
+2023-08-17 23:31:11,190 - INFO - **TRACE** Appending...0.5040966868400574
+2023-08-17 23:31:11,190 - INFO - **TRACE** Appending...0.7033102512359619
+2023-08-17 23:31:11,190 - INFO - **TRACE** Appending...0.6797449588775635
+2023-08-17 23:31:11,190 - INFO - **TRACE** Model not saved since current innr cross fold(3) has higher loss...0.5040966868400574 >= 0.41982734203338623 LR: 3e-05
+2023-08-17 23:31:11,190 - INFO - **TRACE** End of inner cv fold 3*----*-----*
+
+2023-08-17 23:31:11,190 - INFO - -----------------------------------
+2023-08-17 23:31:11,190 - INFO - -----------------------------------
+2023-08-17 23:31:11,190 - INFO - **TRACE** All inner CVs complete for outer CV 0
+2023-08-17 23:31:11,190 - INFO - **TRACE** Best model selected from inner cv: 1 with loss: 0.3600248694419861 with learning rate: 3e-05
+2023-08-17 23:31:11,190 - INFO - **TRACE** Moving on to test predictions with the best model from inner cross fold
+2023-08-17 23:31:11,190 - INFO - **TRACE** Loading the best model from inner CV
+2023-08-17 23:31:11,340 - INFO - **TRACE** Running predictions with test data
+2023-08-17 23:31:12,727 - INFO - Metrics from the Predictions...
+2023-08-17 23:31:12,727 - INFO - {'test_loss': 0.3759072422981262, 'test_accuracy': 0.8556521739130435, 'test_precision': 0.8351648351648352, 'test_recall': 0.7414634146341463, 'test_f1': 0.7855297157622739, 'test_roc_auc': 0.8301911667765326, 'test_matthews_correlation': 0.6800506654929507, 'test_runtime': 1.1894, 'test_samples_per_second': 483.435, 'test_steps_per_second': 60.535}
+2023-08-17 23:31:12,727 - INFO - {'confusion_matrix': array([[340,  30],
+       [ 53, 152]])}
+2023-08-17 23:31:12,727 - INFO - 
+
+Results as of 202308-17_23-2708 for albert-base-v2
+***** Test(predict) metrics *****
+model	outer_cv	test_loss	test_accuracy	test_precision	test_recall	test_f1	test_roc_auc	test_matthews_correlation	test_runtime	test_samples_per_second	test_steps_per_second
+albert-base-v2	0	0.3759072422981262	0.8556521739130435	0.8351648351648352	0.7414634146341463	0.7855297157622739	0.8301911667765326	0.6800506654929507	1.1894	483.435	60.535
+***** Confusion Matrix(predict) *****
+model	outer_cv	confusion_matrix
+albert-base-v2	0	[[340  30]
+ [ 53 152]]
+
+2023-08-17 23:31:12,727 - INFO - ----------------------------------------------------------------------
+2023-08-17 23:31:12,728 - INFO - ----------------------------------------------------------------------
+2023-08-17 23:31:12,728 - INFO - **TRACE** Outer Fold:1
+2023-08-17 23:31:12,728 - INFO - Dataset sizes: Train - 2874 Test - 575
+2023-08-17 23:31:13,739 - INFO - -----------------------------------
+2023-08-17 23:31:13,739 - INFO - -----------------------------------
+2023-08-17 23:31:13,739 - INFO - **TRACE** Inner Fold: 0 for outer fold: 1
+2023-08-17 23:31:13,739 - INFO - **TRACE** Learning rate used: 1e-05
+2023-08-17 23:31:13,739 - INFO - **TRACE** Create dataset...
+2023-08-17 23:31:13,740 - INFO - Dataset sizes: Train - 2155 Dev - 719
+2023-08-17 23:31:13,744 - INFO - **TRACE** Tokenise data...
+2023-08-17 23:31:14,417 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 23:31:14,418 - INFO - Function finetune_and_evaluate() received model: albert-base-v2, lr: 1e-05
+2023-08-17 23:31:14,418 - INFO - Setting up training args and starting training...
+2023-08-17 23:32:13,179 - INFO - Training complete...
+2023-08-17 23:32:13,179 - INFO - TrainOutput(global_step=1080, training_loss=0.39099287810149014, metrics={'train_runtime': 58.5092, 'train_samples_per_second': 147.327, 'train_steps_per_second': 18.459, 'total_flos': 20117347380000.0, 'train_loss': 0.39099287810149014, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 23:32:13,179 - INFO - Saving model at /notebooks/complaints/outputs/ft_albert-base-v2
+2023-08-17 23:32:13,240 - INFO - **TRACE** Report evaluation results...
+2023-08-17 23:32:13,240 - INFO - 
+
+Results as of 202308-17_23-2708 for albert-base-v2
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+albert-base-v2	1	0	1e-05	0.4851103127002716	0.7955493741307371	0.8556149732620321	0.5714285714285714	0.6852248394004282	0.7549625772860395	0.566814683946363	1.4426	498.403	62.387	7.500000000000001e-06	1.0	270
+albert-base-v2	1	0	1e-05	0.6271037459373474	0.7649513212795549	0.8323353293413174	0.49642857142857144	0.621923937360179	0.7163236251220305	0.4995942705918116	1.4177	507.173	63.485	5e-06	2.0	540
+albert-base-v2	1	0	1e-05	0.5767114758491516	0.8456189151599444	0.7699680511182109	0.8607142857142858	0.8128161888701518	0.8483525870484867	0.6852122618924738	1.4441	497.889	62.323	2.5e-06	3.0	810
+albert-base-v2	1	0	1e-05	0.648874819278717	0.847009735744089	0.7796052631578947	0.8464285714285714	0.8116438356164383	0.8469044907256753	0.6848419468126242	1.4444	497.791	62.31	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+albert-base-v2	1	0	1e-05	58.5092	147.327	18.459	20117347380000.0	0.39099287810149014	0.0	4.0	1080
+
+2023-08-17 23:32:13,240 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 23:32:13,240 - INFO - **TRACE** Appending...0.4851103127002716
+2023-08-17 23:32:13,240 - INFO - **TRACE** Appending...0.6271037459373474
+2023-08-17 23:32:13,240 - INFO - **TRACE** Appending...0.5767114758491516
+2023-08-17 23:32:13,240 - INFO - **TRACE** Appending...0.648874819278717
+2023-08-17 23:32:13,240 - INFO - **TRACE** Current innr cross fold(0) has lower loss, saving model...0.4851103127002716 < 1000 LR: 1e-05
+2023-08-17 23:32:13,311 - INFO - **TRACE** End of inner cv fold 0*----*-----*
+
+2023-08-17 23:32:13,311 - INFO - -----------------------------------
+2023-08-17 23:32:13,311 - INFO - -----------------------------------
+2023-08-17 23:32:13,311 - INFO - **TRACE** Inner Fold: 1 for outer fold: 1
+2023-08-17 23:32:13,311 - INFO - **TRACE** Learning rate used: 5e-06
+2023-08-17 23:32:13,311 - INFO - **TRACE** Create dataset...
+2023-08-17 23:32:13,312 - INFO - Dataset sizes: Train - 2155 Dev - 719
+2023-08-17 23:32:13,316 - INFO - **TRACE** Tokenise data...
+2023-08-17 23:32:13,923 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 23:32:13,924 - INFO - Function finetune_and_evaluate() received model: albert-base-v2, lr: 5e-06
+2023-08-17 23:32:13,924 - INFO - Setting up training args and starting training...
+2023-08-17 23:33:12,464 - INFO - Training complete...
+2023-08-17 23:33:12,465 - INFO - TrainOutput(global_step=1080, training_loss=0.3474493556552463, metrics={'train_runtime': 58.299, 'train_samples_per_second': 147.858, 'train_steps_per_second': 18.525, 'total_flos': 20117347380000.0, 'train_loss': 0.3474493556552463, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 23:33:12,465 - INFO - Saving model at /notebooks/complaints/outputs/ft_albert-base-v2
+2023-08-17 23:33:12,531 - INFO - **TRACE** Report evaluation results...
+2023-08-17 23:33:12,532 - INFO - 
+
+Results as of 202308-17_23-2708 for albert-base-v2
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+albert-base-v2	1	1	5e-06	0.41893792152404785	0.8289290681502086	0.7785016286644951	0.8129251700680272	0.7953410981697172	0.8264625850340135	0.6489537484517526	1.4359	500.739	62.679	3.7500000000000005e-06	1.0	270
+albert-base-v2	1	1	5e-06	0.38815465569496155	0.8553546592489569	0.87109375	0.7585034013605442	0.8109090909090909	0.8404281712685073	0.6990578864174709	1.4182	506.965	63.459	2.5e-06	2.0	540
+albert-base-v2	1	1	5e-06	0.46980032324790955	0.8650904033379694	0.8530465949820788	0.8095238095238095	0.8307155322862128	0.8565266106442577	0.7193854281935227	1.4314	502.299	62.875	1.25e-06	3.0	810
+albert-base-v2	1	1	5e-06	0.5198902487754822	0.8623087621696801	0.8350515463917526	0.826530612244898	0.8307692307692307	0.8567947178871549	0.7147401240678366	1.4455	497.406	62.262	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+albert-base-v2	1	1	5e-06	58.299	147.858	18.525	20117347380000.0	0.3474493556552463	0.0	4.0	1080
+
+2023-08-17 23:33:12,532 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 23:33:12,532 - INFO - **TRACE** Appending...0.41893792152404785
+2023-08-17 23:33:12,532 - INFO - **TRACE** Appending...0.38815465569496155
+2023-08-17 23:33:12,532 - INFO - **TRACE** Appending...0.46980032324790955
+2023-08-17 23:33:12,532 - INFO - **TRACE** Appending...0.5198902487754822
+2023-08-17 23:33:12,532 - INFO - **TRACE** Current innr cross fold(1) has lower loss, saving model...0.38815465569496155 < 0.4851103127002716 LR: 5e-06
+2023-08-17 23:33:12,592 - INFO - **TRACE** End of inner cv fold 1*----*-----*
+
+2023-08-17 23:33:12,592 - INFO - -----------------------------------
+2023-08-17 23:33:12,593 - INFO - -----------------------------------
+2023-08-17 23:33:12,593 - INFO - **TRACE** Inner Fold: 2 for outer fold: 1
+2023-08-17 23:33:12,593 - INFO - **TRACE** Learning rate used: 5e-05
+2023-08-17 23:33:12,593 - INFO - **TRACE** Create dataset...
+2023-08-17 23:33:12,593 - INFO - Dataset sizes: Train - 2156 Dev - 718
+2023-08-17 23:33:12,597 - INFO - **TRACE** Tokenise data...
+2023-08-17 23:33:13,399 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 23:33:13,399 - INFO - Function finetune_and_evaluate() received model: albert-base-v2, lr: 5e-05
+2023-08-17 23:33:13,399 - INFO - Setting up training args and starting training...
+2023-08-17 23:34:11,403 - INFO - Training complete...
+2023-08-17 23:34:11,403 - INFO - TrainOutput(global_step=1080, training_loss=0.41316213254575374, metrics={'train_runtime': 57.8085, 'train_samples_per_second': 149.182, 'train_steps_per_second': 18.682, 'total_flos': 20126682576000.0, 'train_loss': 0.41316213254575374, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 23:34:11,403 - INFO - Saving model at /notebooks/complaints/outputs/ft_albert-base-v2
+2023-08-17 23:34:11,490 - INFO - **TRACE** Report evaluation results...
+2023-08-17 23:34:11,490 - INFO - 
+
+Results as of 202308-17_23-2708 for albert-base-v2
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+albert-base-v2	1	2	5e-05	0.44283828139305115	0.8022284122562674	0.6801242236024845	0.8488372093023255	0.7551724137931034	0.8124620829120324	0.6028934410870788	1.4233	504.478	63.235	3.7500000000000003e-05	1.0	270
+albert-base-v2	1	2	5e-05	0.4721026122570038	0.8231197771587744	0.8465608465608465	0.6201550387596899	0.7158836689038031	0.7785557802494102	0.606976953075409	1.4318	501.48	62.86	2.5e-05	2.0	540
+albert-base-v2	1	2	5e-05	0.6521825194358826	0.8231197771587744	0.7147540983606557	0.8449612403100775	0.7744227353463587	0.8279154027637343	0.6365838782100468	1.4432	497.507	62.362	1.25e-05	3.0	810
+albert-base-v2	1	2	5e-05	0.7332556843757629	0.8328690807799443	0.7464285714285714	0.810077519379845	0.7769516728624535	0.8278648466464442	0.6450561914635496	1.4234	504.434	63.23	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+albert-base-v2	1	2	5e-05	57.8085	149.182	18.682	20126682576000.0	0.41316213254575374	0.0	4.0	1080
+
+2023-08-17 23:34:11,490 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 23:34:11,490 - INFO - **TRACE** Appending...0.44283828139305115
+2023-08-17 23:34:11,490 - INFO - **TRACE** Appending...0.4721026122570038
+2023-08-17 23:34:11,490 - INFO - **TRACE** Appending...0.6521825194358826
+2023-08-17 23:34:11,490 - INFO - **TRACE** Appending...0.7332556843757629
+2023-08-17 23:34:11,490 - INFO - **TRACE** Model not saved since current innr cross fold(2) has higher loss...0.44283828139305115 >= 0.38815465569496155 LR: 5e-05
+2023-08-17 23:34:11,490 - INFO - **TRACE** End of inner cv fold 2*----*-----*
+
+2023-08-17 23:34:11,490 - INFO - -----------------------------------
+2023-08-17 23:34:11,490 - INFO - -----------------------------------
+2023-08-17 23:34:11,490 - INFO - **TRACE** Inner Fold: 3 for outer fold: 1
+2023-08-17 23:34:11,490 - INFO - **TRACE** Learning rate used: 3e-05
+2023-08-17 23:34:11,490 - INFO - **TRACE** Create dataset...
+2023-08-17 23:34:11,491 - INFO - Dataset sizes: Train - 2156 Dev - 718
+2023-08-17 23:34:11,495 - INFO - **TRACE** Tokenise data...
+2023-08-17 23:34:12,186 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 23:34:12,186 - INFO - Function finetune_and_evaluate() received model: albert-base-v2, lr: 3e-05
+2023-08-17 23:34:12,186 - INFO - Setting up training args and starting training...
+2023-08-17 23:35:09,772 - INFO - Training complete...
+2023-08-17 23:35:09,772 - INFO - TrainOutput(global_step=1080, training_loss=0.3621638924987228, metrics={'train_runtime': 57.3965, 'train_samples_per_second': 150.253, 'train_steps_per_second': 18.816, 'total_flos': 20126682576000.0, 'train_loss': 0.3621638924987228, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 23:35:09,772 - INFO - Saving model at /notebooks/complaints/outputs/ft_albert-base-v2
+2023-08-17 23:35:09,836 - INFO - **TRACE** Report evaluation results...
+2023-08-17 23:35:09,836 - INFO - 
+
+Results as of 202308-17_23-2708 for albert-base-v2
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+albert-base-v2	1	3	3e-05	0.41569381952285767	0.862116991643454	0.8100358422939068	0.8308823529411765	0.8203266787658802	0.8560241361118439	0.7086421108401962	1.4142	507.721	63.642	2.25e-05	1.0	270
+albert-base-v2	1	3	3e-05	0.36104685068130493	0.8565459610027855	0.8237547892720306	0.7904411764705882	0.8067542213883677	0.8436510815088368	0.6931404410497319	1.4327	501.169	62.821	1.5e-05	2.0	540
+albert-base-v2	1	3	3e-05	0.535809338092804	0.8760445682451253	0.8256227758007118	0.8529411764705882	0.8390596745027125	0.8715378528092852	0.7385689837846755	1.4125	508.321	63.717	7.5e-06	3.0	810
+albert-base-v2	1	3	3e-05	0.6533914804458618	0.8746518105849582	0.837037037037037	0.8308823529411765	0.8339483394833948	0.8661138222104986	0.7332922810401761	1.4303	501.993	62.924	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+albert-base-v2	1	3	3e-05	57.3965	150.253	18.816	20126682576000.0	0.3621638924987228	0.0	4.0	1080
+
+2023-08-17 23:35:09,836 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 23:35:09,836 - INFO - **TRACE** Appending...0.41569381952285767
+2023-08-17 23:35:09,836 - INFO - **TRACE** Appending...0.36104685068130493
+2023-08-17 23:35:09,836 - INFO - **TRACE** Appending...0.535809338092804
+2023-08-17 23:35:09,836 - INFO - **TRACE** Appending...0.6533914804458618
+2023-08-17 23:35:09,836 - INFO - **TRACE** Current innr cross fold(3) has lower loss, saving model...0.36104685068130493 < 0.44283828139305115 LR: 3e-05
+2023-08-17 23:35:09,901 - INFO - **TRACE** End of inner cv fold 3*----*-----*
+
+2023-08-17 23:35:09,901 - INFO - -----------------------------------
+2023-08-17 23:35:09,901 - INFO - -----------------------------------
+2023-08-17 23:35:09,901 - INFO - **TRACE** All inner CVs complete for outer CV 1
+2023-08-17 23:35:09,901 - INFO - **TRACE** Best model selected from inner cv: 3 with loss: 0.36104685068130493 with learning rate: 3e-05
+2023-08-17 23:35:09,901 - INFO - **TRACE** Moving on to test predictions with the best model from inner cross fold
+2023-08-17 23:35:09,901 - INFO - **TRACE** Loading the best model from inner CV
+2023-08-17 23:35:10,058 - INFO - **TRACE** Running predictions with test data
+2023-08-17 23:35:11,429 - INFO - Metrics from the Predictions...
+2023-08-17 23:35:11,429 - INFO - {'test_loss': 0.2203800231218338, 'test_accuracy': 0.928695652173913, 'test_precision': 0.91, 'test_recall': 0.8878048780487805, 'test_f1': 0.8987654320987655, 'test_roc_auc': 0.9195781147000659, 'test_matthews_correlation': 0.8438980507250734, 'test_runtime': 1.1747, 'test_samples_per_second': 489.467, 'test_steps_per_second': 61.29}
+2023-08-17 23:35:11,429 - INFO - {'confusion_matrix': array([[352,  18],
+       [ 23, 182]])}
+2023-08-17 23:35:11,430 - INFO - 
+
+Results as of 202308-17_23-2708 for albert-base-v2
+***** Test(predict) metrics *****
+model	outer_cv	test_loss	test_accuracy	test_precision	test_recall	test_f1	test_roc_auc	test_matthews_correlation	test_runtime	test_samples_per_second	test_steps_per_second
+albert-base-v2	1	0.2203800231218338	0.928695652173913	0.91	0.8878048780487805	0.8987654320987655	0.9195781147000659	0.8438980507250734	1.1747	489.467	61.29
+***** Confusion Matrix(predict) *****
+model	outer_cv	confusion_matrix
+albert-base-v2	1	[[352  18]
+ [ 23 182]]
+
+2023-08-17 23:35:11,430 - INFO - ----------------------------------------------------------------------
+2023-08-17 23:35:11,430 - INFO - ----------------------------------------------------------------------
+2023-08-17 23:35:11,430 - INFO - **TRACE** Outer Fold:2
+2023-08-17 23:35:11,430 - INFO - Dataset sizes: Train - 2874 Test - 575
+2023-08-17 23:35:12,383 - INFO - -----------------------------------
+2023-08-17 23:35:12,383 - INFO - -----------------------------------
+2023-08-17 23:35:12,383 - INFO - **TRACE** Inner Fold: 0 for outer fold: 2
+2023-08-17 23:35:12,383 - INFO - **TRACE** Learning rate used: 1e-05
+2023-08-17 23:35:12,383 - INFO - **TRACE** Create dataset...
+2023-08-17 23:35:12,384 - INFO - Dataset sizes: Train - 2155 Dev - 719
+2023-08-17 23:35:12,387 - INFO - **TRACE** Tokenise data...
+2023-08-17 23:35:13,020 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 23:35:13,020 - INFO - Function finetune_and_evaluate() received model: albert-base-v2, lr: 1e-05
+2023-08-17 23:35:13,020 - INFO - Setting up training args and starting training...
+2023-08-17 23:36:11,064 - INFO - Training complete...
+2023-08-17 23:36:11,064 - INFO - TrainOutput(global_step=1080, training_loss=0.3103126605351766, metrics={'train_runtime': 57.8125, 'train_samples_per_second': 149.103, 'train_steps_per_second': 18.681, 'total_flos': 20117347380000.0, 'train_loss': 0.3103126605351766, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 23:36:11,064 - INFO - Saving model at /notebooks/complaints/outputs/ft_albert-base-v2
+2023-08-17 23:36:11,123 - INFO - **TRACE** Report evaluation results...
+2023-08-17 23:36:11,123 - INFO - 
+
+Results as of 202308-17_23-2708 for albert-base-v2
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+albert-base-v2	2	0	1e-05	0.40841755270957947	0.8331015299026425	0.7530120481927711	0.8680555555555556	0.8064516129032259	0.838900167568961	0.66621151337424	1.4899	482.57	60.405	7.500000000000001e-06	1.0	270
+albert-base-v2	2	0	1e-05	0.6686670184135437	0.8094575799721836	0.9081081081081082	0.5833333333333334	0.7103594080338266	0.7719450889404487	0.609662667850555	1.4192	506.613	63.415	5e-06	2.0	540
+albert-base-v2	2	0	1e-05	0.5464967489242554	0.8650904033379694	0.8215488215488216	0.8472222222222222	0.8341880341880342	0.8621261923176077	0.7207594789224454	1.4194	506.567	63.409	2.5e-06	3.0	810
+albert-base-v2	2	0	1e-05	0.6379566788673401	0.8567454798331016	0.8363636363636363	0.7986111111111112	0.8170515097690941	0.8471013792214489	0.6999441401312321	1.4205	506.162	63.358	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+albert-base-v2	2	0	1e-05	57.8125	149.103	18.681	20117347380000.0	0.3103126605351766	0.0	4.0	1080
+
+2023-08-17 23:36:11,123 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 23:36:11,123 - INFO - **TRACE** Appending...0.40841755270957947
+2023-08-17 23:36:11,123 - INFO - **TRACE** Appending...0.6686670184135437
+2023-08-17 23:36:11,123 - INFO - **TRACE** Appending...0.5464967489242554
+2023-08-17 23:36:11,123 - INFO - **TRACE** Appending...0.6379566788673401
+2023-08-17 23:36:11,123 - INFO - **TRACE** Current innr cross fold(0) has lower loss, saving model...0.40841755270957947 < 1000 LR: 1e-05
+2023-08-17 23:36:11,184 - INFO - **TRACE** End of inner cv fold 0*----*-----*
+
+2023-08-17 23:36:11,184 - INFO - -----------------------------------
+2023-08-17 23:36:11,184 - INFO - -----------------------------------
+2023-08-17 23:36:11,184 - INFO - **TRACE** Inner Fold: 1 for outer fold: 2
+2023-08-17 23:36:11,184 - INFO - **TRACE** Learning rate used: 5e-06
+2023-08-17 23:36:11,184 - INFO - **TRACE** Create dataset...
+2023-08-17 23:36:11,184 - INFO - Dataset sizes: Train - 2155 Dev - 719
+2023-08-17 23:36:11,189 - INFO - **TRACE** Tokenise data...
+2023-08-17 23:36:11,898 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 23:36:11,898 - INFO - Function finetune_and_evaluate() received model: albert-base-v2, lr: 5e-06
+2023-08-17 23:36:11,898 - INFO - Setting up training args and starting training...
+2023-08-17 23:37:11,796 - INFO - Training complete...
+2023-08-17 23:37:11,796 - INFO - TrainOutput(global_step=1080, training_loss=0.36172314573217323, metrics={'train_runtime': 59.7232, 'train_samples_per_second': 144.333, 'train_steps_per_second': 18.083, 'total_flos': 20117347380000.0, 'train_loss': 0.36172314573217323, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 23:37:11,796 - INFO - Saving model at /notebooks/complaints/outputs/ft_albert-base-v2
+2023-08-17 23:37:11,862 - INFO - **TRACE** Report evaluation results...
+2023-08-17 23:37:11,862 - INFO - 
+
+Results as of 202308-17_23-2708 for albert-base-v2
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+albert-base-v2	2	1	5e-06	0.40950125455856323	0.8247566063977747	0.7476340694006309	0.8374558303886925	0.79	0.8269847959282912	0.6435041614995843	1.444	497.935	62.328	3.7500000000000005e-06	1.0	270
+albert-base-v2	2	1	5e-06	0.4580990672111511	0.8414464534075105	0.8755555555555555	0.696113074204947	0.7755905511811023	0.8159464453593542	0.6657714968680257	1.4421	498.569	62.408	2.5e-06	2.0	540
+albert-base-v2	2	1	5e-06	0.5095919370651245	0.8511821974965229	0.8760683760683761	0.7243816254416962	0.793036750483559	0.8289339319869031	0.6859561222039567	1.4238	504.98	63.21	1.25e-06	3.0	810
+albert-base-v2	2	1	5e-06	0.5102993845939636	0.8636995827538247	0.8599221789883269	0.7809187279151943	0.8185185185185185	0.8491749602878724	0.7119049309342648	1.4413	498.854	62.443	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+albert-base-v2	2	1	5e-06	59.7232	144.333	18.083	20117347380000.0	0.36172314573217323	0.0	4.0	1080
+
+2023-08-17 23:37:11,862 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 23:37:11,862 - INFO - **TRACE** Appending...0.40950125455856323
+2023-08-17 23:37:11,862 - INFO - **TRACE** Appending...0.4580990672111511
+2023-08-17 23:37:11,862 - INFO - **TRACE** Appending...0.5095919370651245
+2023-08-17 23:37:11,862 - INFO - **TRACE** Appending...0.5102993845939636
+2023-08-17 23:37:11,862 - INFO - **TRACE** Model not saved since current innr cross fold(1) has higher loss...0.40950125455856323 >= 0.40841755270957947 LR: 5e-06
+2023-08-17 23:37:11,862 - INFO - **TRACE** End of inner cv fold 1*----*-----*
+
+2023-08-17 23:37:11,862 - INFO - -----------------------------------
+2023-08-17 23:37:11,862 - INFO - -----------------------------------
+2023-08-17 23:37:11,862 - INFO - **TRACE** Inner Fold: 2 for outer fold: 2
+2023-08-17 23:37:11,862 - INFO - **TRACE** Learning rate used: 5e-05
+2023-08-17 23:37:11,862 - INFO - **TRACE** Create dataset...
+2023-08-17 23:37:11,863 - INFO - Dataset sizes: Train - 2156 Dev - 718
+2023-08-17 23:37:11,867 - INFO - **TRACE** Tokenise data...
+2023-08-17 23:37:12,574 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 23:37:12,574 - INFO - Function finetune_and_evaluate() received model: albert-base-v2, lr: 5e-05
+2023-08-17 23:37:12,574 - INFO - Setting up training args and starting training...
+2023-08-17 23:38:11,786 - INFO - Training complete...
+2023-08-17 23:38:11,787 - INFO - TrainOutput(global_step=1080, training_loss=0.4928847948710124, metrics={'train_runtime': 59.0229, 'train_samples_per_second': 146.113, 'train_steps_per_second': 18.298, 'total_flos': 20126682576000.0, 'train_loss': 0.4928847948710124, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 23:38:11,787 - INFO - Saving model at /notebooks/complaints/outputs/ft_albert-base-v2
+2023-08-17 23:38:11,849 - INFO - **TRACE** Report evaluation results...
+2023-08-17 23:38:11,850 - INFO - 
+
+Results as of 202308-17_23-2708 for albert-base-v2
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+albert-base-v2	2	2	5e-05	0.7193820476531982	0.5125348189415042	0.42454394693200664	0.9884169884169884	0.5939675174013921	0.6162128515069691	0.3043216162498558	1.4396	498.741	62.516	3.7500000000000003e-05	1.0	270
+albert-base-v2	2	2	5e-05	0.5013294219970703	0.8161559888579387	0.7529880478087649	0.7297297297297297	0.7411764705882354	0.7973267385032091	0.5988594214159275	1.4818	484.531	60.735	2.5e-05	2.0	540
+albert-base-v2	2	2	5e-05	0.4285930395126343	0.8342618384401114	0.7991452991452992	0.722007722007722	0.7586206896551724	0.809805603923251	0.6348116381564503	1.6557	433.663	54.359	1.25e-05	3.0	810
+albert-base-v2	2	2	5e-05	0.5058149099349976	0.8426183844011143	0.7570422535211268	0.8301158301158301	0.7918968692449354	0.8398945163651045	0.6676153963757314	1.4333	500.939	62.792	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+albert-base-v2	2	2	5e-05	59.0229	146.113	18.298	20126682576000.0	0.4928847948710124	0.0	4.0	1080
+
+2023-08-17 23:38:11,850 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 23:38:11,850 - INFO - **TRACE** Appending...0.7193820476531982
+2023-08-17 23:38:11,850 - INFO - **TRACE** Appending...0.5013294219970703
+2023-08-17 23:38:11,850 - INFO - **TRACE** Appending...0.4285930395126343
+2023-08-17 23:38:11,850 - INFO - **TRACE** Appending...0.5058149099349976
+2023-08-17 23:38:11,850 - INFO - **TRACE** Model not saved since current innr cross fold(2) has higher loss...0.4285930395126343 >= 0.40950125455856323 LR: 5e-05
+2023-08-17 23:38:11,850 - INFO - **TRACE** End of inner cv fold 2*----*-----*
+
+2023-08-17 23:38:11,850 - INFO - -----------------------------------
+2023-08-17 23:38:11,850 - INFO - -----------------------------------
+2023-08-17 23:38:11,850 - INFO - **TRACE** Inner Fold: 3 for outer fold: 2
+2023-08-17 23:38:11,850 - INFO - **TRACE** Learning rate used: 3e-05
+2023-08-17 23:38:11,850 - INFO - **TRACE** Create dataset...
+2023-08-17 23:38:11,851 - INFO - Dataset sizes: Train - 2156 Dev - 718
+2023-08-17 23:38:11,855 - INFO - **TRACE** Tokenise data...
+2023-08-17 23:38:12,737 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 23:38:12,737 - INFO - Function finetune_and_evaluate() received model: albert-base-v2, lr: 3e-05
+2023-08-17 23:38:12,737 - INFO - Setting up training args and starting training...
+2023-08-17 23:39:16,680 - INFO - Training complete...
+2023-08-17 23:39:16,681 - INFO - TrainOutput(global_step=1080, training_loss=0.339324121122007, metrics={'train_runtime': 58.7544, 'train_samples_per_second': 146.78, 'train_steps_per_second': 18.382, 'total_flos': 20126682576000.0, 'train_loss': 0.339324121122007, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 23:39:16,681 - INFO - Saving model at /notebooks/complaints/outputs/ft_albert-base-v2
+2023-08-17 23:39:16,742 - INFO - **TRACE** Report evaluation results...
+2023-08-17 23:39:16,742 - INFO - 
+
+Results as of 202308-17_23-2708 for albert-base-v2
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+albert-base-v2	2	3	3e-05	0.4180110692977905	0.8356545961002786	0.793233082706767	0.7700729927007299	0.7814814814814814	0.823099559413428	0.6500145712003385	1.4474	496.063	62.181	2.25e-05	1.0	270
+albert-base-v2	2	3	3e-05	0.6194009780883789	0.8565459610027855	0.8	0.8321167883211679	0.815742397137746	0.8518692049713947	0.6987336257722179	1.4382	499.226	62.577	1.5e-05	2.0	540
+albert-base-v2	2	3	3e-05	0.7109695672988892	0.8565459610027855	0.7697160883280757	0.8905109489051095	0.8257191201353637	0.8630482672453476	0.7103286195706789	1.4195	505.798	63.401	7.5e-06	3.0	810
+albert-base-v2	2	3	3e-05	0.8073346018791199	0.8523676880222841	0.7876712328767124	0.8394160583941606	0.8127208480565371	0.8498882093772605	0.6920378442783675	1.4451	496.851	62.279	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+albert-base-v2	2	3	3e-05	58.7544	146.78	18.382	20126682576000.0	0.339324121122007	0.0	4.0	1080
+
+2023-08-17 23:39:16,742 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 23:39:16,742 - INFO - **TRACE** Appending...0.4180110692977905
+2023-08-17 23:39:16,742 - INFO - **TRACE** Appending...0.6194009780883789
+2023-08-17 23:39:16,742 - INFO - **TRACE** Appending...0.7109695672988892
+2023-08-17 23:39:16,742 - INFO - **TRACE** Appending...0.8073346018791199
+2023-08-17 23:39:16,742 - INFO - **TRACE** Current innr cross fold(3) has lower loss, saving model...0.4180110692977905 < 0.4285930395126343 LR: 3e-05
+2023-08-17 23:39:16,802 - INFO - **TRACE** End of inner cv fold 3*----*-----*
+
+2023-08-17 23:39:16,802 - INFO - -----------------------------------
+2023-08-17 23:39:16,802 - INFO - -----------------------------------
+2023-08-17 23:39:16,802 - INFO - **TRACE** All inner CVs complete for outer CV 2
+2023-08-17 23:39:16,803 - INFO - **TRACE** Best model selected from inner cv: 3 with loss: 0.4180110692977905 with learning rate: 3e-05
+2023-08-17 23:39:16,803 - INFO - **TRACE** Moving on to test predictions with the best model from inner cross fold
+2023-08-17 23:39:16,803 - INFO - **TRACE** Loading the best model from inner CV
+2023-08-17 23:39:16,889 - INFO - **TRACE** Running predictions with test data
+2023-08-17 23:39:18,246 - INFO - Metrics from the Predictions...
+2023-08-17 23:39:18,246 - INFO - {'test_loss': 0.331815242767334, 'test_accuracy': 0.8556521739130435, 'test_precision': 0.8112244897959183, 'test_recall': 0.775609756097561, 'test_f1': 0.7930174563591023, 'test_roc_auc': 0.8378048780487806, 'test_matthews_correlation': 0.6826939658316731, 'test_runtime': 1.1679, 'test_samples_per_second': 492.343, 'test_steps_per_second': 61.65}
+2023-08-17 23:39:18,246 - INFO - {'confusion_matrix': array([[333,  37],
+       [ 46, 159]])}
+2023-08-17 23:39:18,246 - INFO - 
+
+Results as of 202308-17_23-2708 for albert-base-v2
+***** Test(predict) metrics *****
+model	outer_cv	test_loss	test_accuracy	test_precision	test_recall	test_f1	test_roc_auc	test_matthews_correlation	test_runtime	test_samples_per_second	test_steps_per_second
+albert-base-v2	2	0.331815242767334	0.8556521739130435	0.8112244897959183	0.775609756097561	0.7930174563591023	0.8378048780487806	0.6826939658316731	1.1679	492.343	61.65
+***** Confusion Matrix(predict) *****
+model	outer_cv	confusion_matrix
+albert-base-v2	2	[[333  37]
+ [ 46 159]]
+
+2023-08-17 23:39:18,246 - INFO - ----------------------------------------------------------------------
+2023-08-17 23:39:18,246 - INFO - ----------------------------------------------------------------------
+2023-08-17 23:39:18,246 - INFO - **TRACE** Outer Fold:3
+2023-08-17 23:39:18,247 - INFO - Dataset sizes: Train - 2874 Test - 575
+2023-08-17 23:39:18,942 - INFO - -----------------------------------
+2023-08-17 23:39:18,943 - INFO - -----------------------------------
+2023-08-17 23:39:18,943 - INFO - **TRACE** Inner Fold: 0 for outer fold: 3
+2023-08-17 23:39:18,943 - INFO - **TRACE** Learning rate used: 1e-05
+2023-08-17 23:39:18,943 - INFO - **TRACE** Create dataset...
+2023-08-17 23:39:18,943 - INFO - Dataset sizes: Train - 2155 Dev - 719
+2023-08-17 23:39:18,947 - INFO - **TRACE** Tokenise data...
+2023-08-17 23:39:19,566 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 23:39:19,566 - INFO - Function finetune_and_evaluate() received model: albert-base-v2, lr: 1e-05
+2023-08-17 23:39:19,566 - INFO - Setting up training args and starting training...
+2023-08-17 23:40:18,210 - INFO - Training complete...
+2023-08-17 23:40:18,210 - INFO - TrainOutput(global_step=1080, training_loss=0.31482314533657496, metrics={'train_runtime': 58.1902, 'train_samples_per_second': 148.135, 'train_steps_per_second': 18.56, 'total_flos': 20117347380000.0, 'train_loss': 0.31482314533657496, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 23:40:18,210 - INFO - Saving model at /notebooks/complaints/outputs/ft_albert-base-v2
+2023-08-17 23:40:18,271 - INFO - **TRACE** Report evaluation results...
+2023-08-17 23:40:18,271 - INFO - 
+
+Results as of 202308-17_23-2708 for albert-base-v2
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+albert-base-v2	3	0	1e-05	0.4030176103115082	0.8511821974965229	0.7750865051903114	0.8421052631578947	0.8072072072072073	0.8493087022191239	0.6879330444640464	1.4364	500.551	62.656	7.500000000000001e-06	1.0	270
+albert-base-v2	3	0	1e-05	0.5770070552825928	0.8456189151599444	0.8780487804878049	0.6766917293233082	0.7643312101910829	0.8107520456771068	0.6646230838702072	1.4619	491.842	61.566	5e-06	2.0	540
+albert-base-v2	3	0	1e-05	0.6086791753768921	0.8567454798331016	0.8075471698113208	0.8045112781954887	0.8060263653483992	0.8459642483692675	0.6924688997778927	1.4498	495.918	62.076	2.5e-06	3.0	810
+albert-base-v2	3	0	1e-05	0.653166651725769	0.8553546592489569	0.7934782608695652	0.8233082706766918	0.8081180811808117	0.8487402280535776	0.6924135499394899	1.4358	500.769	62.683	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+albert-base-v2	3	0	1e-05	58.1902	148.135	18.56	20117347380000.0	0.31482314533657496	0.0	4.0	1080
+
+2023-08-17 23:40:18,271 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 23:40:18,271 - INFO - **TRACE** Appending...0.4030176103115082
+2023-08-17 23:40:18,272 - INFO - **TRACE** Appending...0.5770070552825928
+2023-08-17 23:40:18,272 - INFO - **TRACE** Appending...0.6086791753768921
+2023-08-17 23:40:18,272 - INFO - **TRACE** Appending...0.653166651725769
+2023-08-17 23:40:18,272 - INFO - **TRACE** Current innr cross fold(0) has lower loss, saving model...0.4030176103115082 < 1000 LR: 1e-05
+2023-08-17 23:40:18,336 - INFO - **TRACE** End of inner cv fold 0*----*-----*
+
+2023-08-17 23:40:18,336 - INFO - -----------------------------------
+2023-08-17 23:40:18,336 - INFO - -----------------------------------
+2023-08-17 23:40:18,336 - INFO - **TRACE** Inner Fold: 1 for outer fold: 3
+2023-08-17 23:40:18,336 - INFO - **TRACE** Learning rate used: 5e-06
+2023-08-17 23:40:18,336 - INFO - **TRACE** Create dataset...
+2023-08-17 23:40:18,337 - INFO - Dataset sizes: Train - 2155 Dev - 719
+2023-08-17 23:40:18,341 - INFO - **TRACE** Tokenise data...
+2023-08-17 23:40:19,184 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 23:40:19,185 - INFO - Function finetune_and_evaluate() received model: albert-base-v2, lr: 5e-06
+2023-08-17 23:40:19,185 - INFO - Setting up training args and starting training...
+2023-08-17 23:41:17,080 - INFO - Training complete...
+2023-08-17 23:41:17,080 - INFO - TrainOutput(global_step=1080, training_loss=0.3465418303454364, metrics={'train_runtime': 57.7227, 'train_samples_per_second': 149.335, 'train_steps_per_second': 18.71, 'total_flos': 20117347380000.0, 'train_loss': 0.3465418303454364, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 23:41:17,081 - INFO - Saving model at /notebooks/complaints/outputs/ft_albert-base-v2
+2023-08-17 23:41:17,142 - INFO - **TRACE** Report evaluation results...
+2023-08-17 23:41:17,142 - INFO - 
+
+Results as of 202308-17_23-2708 for albert-base-v2
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+albert-base-v2	3	1	5e-06	0.3761560320854187	0.8386648122392212	0.8686440677966102	0.7068965517241379	0.7794676806083649	0.8173177397315328	0.6630135832877682	1.4407	499.079	62.472	3.7500000000000005e-06	1.0	270
+albert-base-v2	3	1	5e-06	0.3426280915737152	0.8734353268428373	0.8698884758364313	0.8068965517241379	0.8372093023255813	0.8626557350695282	0.7353088509703298	1.418	507.043	63.469	2.5e-06	2.0	540
+albert-base-v2	3	1	5e-06	0.38603082299232483	0.8692628650904033	0.8712121212121212	0.7931034482758621	0.8303249097472925	0.8569246845108914	0.7264848520673053	1.4123	509.11	63.727	1.25e-06	3.0	810
+albert-base-v2	3	1	5e-06	0.4220520257949829	0.885952712100139	0.8611111111111112	0.8551724137931035	0.8581314878892734	0.8809661602765051	0.7627973269081167	1.422	505.634	63.292	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+albert-base-v2	3	1	5e-06	57.7227	149.335	18.71	20117347380000.0	0.3465418303454364	0.0	4.0	1080
+
+2023-08-17 23:41:17,142 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 23:41:17,142 - INFO - **TRACE** Appending...0.3761560320854187
+2023-08-17 23:41:17,142 - INFO - **TRACE** Appending...0.3426280915737152
+2023-08-17 23:41:17,142 - INFO - **TRACE** Appending...0.38603082299232483
+2023-08-17 23:41:17,142 - INFO - **TRACE** Appending...0.4220520257949829
+2023-08-17 23:41:17,142 - INFO - **TRACE** Current innr cross fold(1) has lower loss, saving model...0.3426280915737152 < 0.4030176103115082 LR: 5e-06
+2023-08-17 23:41:17,206 - INFO - **TRACE** End of inner cv fold 1*----*-----*
+
+2023-08-17 23:41:17,206 - INFO - -----------------------------------
+2023-08-17 23:41:17,206 - INFO - -----------------------------------
+2023-08-17 23:41:17,206 - INFO - **TRACE** Inner Fold: 2 for outer fold: 3
+2023-08-17 23:41:17,206 - INFO - **TRACE** Learning rate used: 5e-05
+2023-08-17 23:41:17,206 - INFO - **TRACE** Create dataset...
+2023-08-17 23:41:17,207 - INFO - Dataset sizes: Train - 2156 Dev - 718
+2023-08-17 23:41:17,211 - INFO - **TRACE** Tokenise data...
+2023-08-17 23:41:17,866 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 23:41:17,867 - INFO - Function finetune_and_evaluate() received model: albert-base-v2, lr: 5e-05
+2023-08-17 23:41:17,867 - INFO - Setting up training args and starting training...
+2023-08-17 23:42:15,847 - INFO - Training complete...
+2023-08-17 23:42:15,847 - INFO - TrainOutput(global_step=1080, training_loss=0.43344083891974555, metrics={'train_runtime': 57.7189, 'train_samples_per_second': 149.414, 'train_steps_per_second': 18.711, 'total_flos': 20126682576000.0, 'train_loss': 0.43344083891974555, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 23:42:15,847 - INFO - Saving model at /notebooks/complaints/outputs/ft_albert-base-v2
+2023-08-17 23:42:15,912 - INFO - **TRACE** Report evaluation results...
+2023-08-17 23:42:15,912 - INFO - 
+
+Results as of 202308-17_23-2708 for albert-base-v2
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+albert-base-v2	3	2	5e-05	0.5196171998977661	0.745125348189415	0.6102150537634409	0.8566037735849057	0.7127158555729984	0.7682577366820775	0.5181371958459381	1.4304	501.947	62.918	3.7500000000000003e-05	1.0	270
+albert-base-v2	3	2	5e-05	0.5656682252883911	0.6754874651810585	0.5338983050847458	0.9509433962264151	0.6838534599728628	0.7326460910491899	0.47310685488841364	1.4261	503.455	63.107	2.5e-05	2.0	540
+albert-base-v2	3	2	5e-05	0.6852529048919678	0.8384401114206128	0.7854406130268199	0.7735849056603774	0.779467680608365	0.8249822983048025	0.6520537331111295	1.4354	500.215	62.701	1.25e-05	3.0	810
+albert-base-v2	3	2	5e-05	0.7696188688278198	0.8398328690807799	0.7640845070422535	0.8188679245283019	0.7905282331511839	0.8354825273855638	0.6621675667538097	1.4205	505.449	63.357	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+albert-base-v2	3	2	5e-05	57.7189	149.414	18.711	20126682576000.0	0.43344083891974555	0.0	4.0	1080
+
+2023-08-17 23:42:15,912 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 23:42:15,912 - INFO - **TRACE** Appending...0.5196171998977661
+2023-08-17 23:42:15,912 - INFO - **TRACE** Appending...0.5656682252883911
+2023-08-17 23:42:15,912 - INFO - **TRACE** Appending...0.6852529048919678
+2023-08-17 23:42:15,912 - INFO - **TRACE** Appending...0.7696188688278198
+2023-08-17 23:42:15,912 - INFO - **TRACE** Model not saved since current innr cross fold(2) has higher loss...0.5196171998977661 >= 0.3426280915737152 LR: 5e-05
+2023-08-17 23:42:15,912 - INFO - **TRACE** End of inner cv fold 2*----*-----*
+
+2023-08-17 23:42:15,912 - INFO - -----------------------------------
+2023-08-17 23:42:15,912 - INFO - -----------------------------------
+2023-08-17 23:42:15,912 - INFO - **TRACE** Inner Fold: 3 for outer fold: 3
+2023-08-17 23:42:15,912 - INFO - **TRACE** Learning rate used: 3e-05
+2023-08-17 23:42:15,912 - INFO - **TRACE** Create dataset...
+2023-08-17 23:42:15,913 - INFO - Dataset sizes: Train - 2156 Dev - 718
+2023-08-17 23:42:15,917 - INFO - **TRACE** Tokenise data...
+2023-08-17 23:42:16,503 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 23:42:16,504 - INFO - Function finetune_and_evaluate() received model: albert-base-v2, lr: 3e-05
+2023-08-17 23:42:16,504 - INFO - Setting up training args and starting training...
+2023-08-17 23:43:15,806 - INFO - Training complete...
+2023-08-17 23:43:15,807 - INFO - TrainOutput(global_step=1080, training_loss=0.3630745181330928, metrics={'train_runtime': 59.1302, 'train_samples_per_second': 145.848, 'train_steps_per_second': 18.265, 'total_flos': 20126682576000.0, 'train_loss': 0.3630745181330928, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 23:43:15,807 - INFO - Saving model at /notebooks/complaints/outputs/ft_albert-base-v2
+2023-08-17 23:43:15,888 - INFO - **TRACE** Report evaluation results...
+2023-08-17 23:43:15,888 - INFO - 
+
+Results as of 202308-17_23-2708 for albert-base-v2
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+albert-base-v2	3	3	3e-05	0.419207900762558	0.8203342618384402	0.7251461988304093	0.8763250883392226	0.7936	0.8301165671581171	0.6459935573563487	1.4356	500.147	62.692	2.25e-05	1.0	270
+albert-base-v2	3	3	3e-05	0.36855119466781616	0.8704735376044568	0.8467153284671532	0.8197879858657244	0.8330341113105925	0.8616181308638967	0.7275306134036365	1.4425	497.74	62.391	1.5e-05	2.0	540
+albert-base-v2	3	3	3e-05	0.5326159596443176	0.8649025069637883	0.8	0.8763250883392226	0.836424957841484	0.8668981763535194	0.7239398218321671	1.4237	504.33	63.217	7.5e-06	3.0	810
+albert-base-v2	3	3	3e-05	0.5853809714317322	0.8676880222841226	0.8263888888888888	0.8409893992932862	0.8336252189141855	0.863023435278827	0.7238890919173938	1.4391	498.914	62.538	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+albert-base-v2	3	3	3e-05	59.1302	145.848	18.265	20126682576000.0	0.3630745181330928	0.0	4.0	1080
+
+2023-08-17 23:43:15,888 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 23:43:15,888 - INFO - **TRACE** Appending...0.419207900762558
+2023-08-17 23:43:15,888 - INFO - **TRACE** Appending...0.36855119466781616
+2023-08-17 23:43:15,888 - INFO - **TRACE** Appending...0.5326159596443176
+2023-08-17 23:43:15,888 - INFO - **TRACE** Appending...0.5853809714317322
+2023-08-17 23:43:15,889 - INFO - **TRACE** Current innr cross fold(3) has lower loss, saving model...0.36855119466781616 < 0.5196171998977661 LR: 3e-05
+2023-08-17 23:43:15,964 - INFO - **TRACE** End of inner cv fold 3*----*-----*
+
+2023-08-17 23:43:15,964 - INFO - -----------------------------------
+2023-08-17 23:43:15,964 - INFO - -----------------------------------
+2023-08-17 23:43:15,964 - INFO - **TRACE** All inner CVs complete for outer CV 3
+2023-08-17 23:43:15,964 - INFO - **TRACE** Best model selected from inner cv: 3 with loss: 0.36855119466781616 with learning rate: 3e-05
+2023-08-17 23:43:15,964 - INFO - **TRACE** Moving on to test predictions with the best model from inner cross fold
+2023-08-17 23:43:15,964 - INFO - **TRACE** Loading the best model from inner CV
+2023-08-17 23:43:16,123 - INFO - **TRACE** Running predictions with test data
+2023-08-17 23:43:22,533 - INFO - Metrics from the Predictions...
+2023-08-17 23:43:22,534 - INFO - {'test_loss': 0.25135889649391174, 'test_accuracy': 0.9130434782608695, 'test_precision': 0.8679245283018868, 'test_recall': 0.8932038834951457, 'test_f1': 0.8803827751196173, 'test_roc_auc': 0.9086615623437788, 'test_matthews_correlation': 0.8123053937006227, 'test_runtime': 1.1745, 'test_samples_per_second': 489.554, 'test_steps_per_second': 61.301}
+2023-08-17 23:43:22,534 - INFO - {'confusion_matrix': array([[341,  28],
+       [ 22, 184]])}
+2023-08-17 23:43:22,534 - INFO - 
+
+Results as of 202308-17_23-2708 for albert-base-v2
+***** Test(predict) metrics *****
+model	outer_cv	test_loss	test_accuracy	test_precision	test_recall	test_f1	test_roc_auc	test_matthews_correlation	test_runtime	test_samples_per_second	test_steps_per_second
+albert-base-v2	3	0.25135889649391174	0.9130434782608695	0.8679245283018868	0.8932038834951457	0.8803827751196173	0.9086615623437788	0.8123053937006227	1.1745	489.554	61.301
+***** Confusion Matrix(predict) *****
+model	outer_cv	confusion_matrix
+albert-base-v2	3	[[341  28]
+ [ 22 184]]
+
+2023-08-17 23:43:22,534 - INFO - ----------------------------------------------------------------------
+2023-08-17 23:43:22,534 - INFO - ----------------------------------------------------------------------
+2023-08-17 23:43:22,534 - INFO - **TRACE** Outer Fold:4
+2023-08-17 23:43:22,535 - INFO - Dataset sizes: Train - 2874 Test - 575
+2023-08-17 23:43:23,359 - INFO - -----------------------------------
+2023-08-17 23:43:23,359 - INFO - -----------------------------------
+2023-08-17 23:43:23,359 - INFO - **TRACE** Inner Fold: 0 for outer fold: 4
+2023-08-17 23:43:23,359 - INFO - **TRACE** Learning rate used: 1e-05
+2023-08-17 23:43:23,359 - INFO - **TRACE** Create dataset...
+2023-08-17 23:43:23,360 - INFO - Dataset sizes: Train - 2155 Dev - 719
+2023-08-17 23:43:23,363 - INFO - **TRACE** Tokenise data...
+2023-08-17 23:43:24,005 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 23:43:24,005 - INFO - Function finetune_and_evaluate() received model: albert-base-v2, lr: 1e-05
+2023-08-17 23:43:24,005 - INFO - Setting up training args and starting training...
+2023-08-17 23:44:22,844 - INFO - Training complete...
+2023-08-17 23:44:22,844 - INFO - TrainOutput(global_step=1080, training_loss=0.3350277759410717, metrics={'train_runtime': 58.5748, 'train_samples_per_second': 147.162, 'train_steps_per_second': 18.438, 'total_flos': 20117347380000.0, 'train_loss': 0.3350277759410717, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 23:44:22,844 - INFO - Saving model at /notebooks/complaints/outputs/ft_albert-base-v2
+2023-08-17 23:44:22,922 - INFO - **TRACE** Report evaluation results...
+2023-08-17 23:44:22,922 - INFO - 
+
+Results as of 202308-17_23-2708 for albert-base-v2
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+albert-base-v2	4	0	1e-05	0.375584214925766	0.8497913769123783	0.8909090909090909	0.7	0.7839999999999999	0.8226651480637813	0.6828600678024385	1.4293	503.059	62.97	7.500000000000001e-06	1.0	270
+albert-base-v2	4	0	1e-05	0.3529704511165619	0.8678720445062587	0.8544061302681992	0.7964285714285714	0.8243992606284658	0.8549341034819393	0.7198400547952793	1.4239	504.968	63.209	5e-06	2.0	540
+albert-base-v2	4	0	1e-05	0.4206511974334717	0.8762169680111266	0.8804780876494024	0.7892857142857143	0.832391713747646	0.8604742922225838	0.7374893990126421	1.4384	499.854	62.569	2.5e-06	3.0	810
+albert-base-v2	4	0	1e-05	0.4965812563896179	0.8831710709318498	0.8740458015267175	0.8178571428571428	0.845018450184502	0.8713431500162707	0.7525024926684205	1.4271	503.803	63.063	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+albert-base-v2	4	0	1e-05	58.5748	147.162	18.438	20117347380000.0	0.3350277759410717	0.0	4.0	1080
+
+2023-08-17 23:44:22,922 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 23:44:22,922 - INFO - **TRACE** Appending...0.375584214925766
+2023-08-17 23:44:22,922 - INFO - **TRACE** Appending...0.3529704511165619
+2023-08-17 23:44:22,922 - INFO - **TRACE** Appending...0.4206511974334717
+2023-08-17 23:44:22,922 - INFO - **TRACE** Appending...0.4965812563896179
+2023-08-17 23:44:22,922 - INFO - **TRACE** Current innr cross fold(0) has lower loss, saving model...0.3529704511165619 < 1000 LR: 1e-05
+2023-08-17 23:44:22,984 - INFO - **TRACE** End of inner cv fold 0*----*-----*
+
+2023-08-17 23:44:22,984 - INFO - -----------------------------------
+2023-08-17 23:44:22,984 - INFO - -----------------------------------
+2023-08-17 23:44:22,984 - INFO - **TRACE** Inner Fold: 1 for outer fold: 4
+2023-08-17 23:44:22,985 - INFO - **TRACE** Learning rate used: 5e-06
+2023-08-17 23:44:22,985 - INFO - **TRACE** Create dataset...
+2023-08-17 23:44:22,985 - INFO - Dataset sizes: Train - 2155 Dev - 719
+2023-08-17 23:44:22,989 - INFO - **TRACE** Tokenise data...
+2023-08-17 23:44:23,790 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 23:44:23,790 - INFO - Function finetune_and_evaluate() received model: albert-base-v2, lr: 5e-06
+2023-08-17 23:44:23,790 - INFO - Setting up training args and starting training...
+2023-08-17 23:45:22,998 - INFO - Training complete...
+2023-08-17 23:45:22,998 - INFO - TrainOutput(global_step=1080, training_loss=0.3394235752246998, metrics={'train_runtime': 59.0241, 'train_samples_per_second': 146.042, 'train_steps_per_second': 18.298, 'total_flos': 20117347380000.0, 'train_loss': 0.3394235752246998, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 23:45:22,998 - INFO - Saving model at /notebooks/complaints/outputs/ft_albert-base-v2
+2023-08-17 23:45:23,060 - INFO - **TRACE** Report evaluation results...
+2023-08-17 23:45:23,060 - INFO - 
+
+Results as of 202308-17_23-2708 for albert-base-v2
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+albert-base-v2	4	1	5e-06	0.3603948950767517	0.8428372739916551	0.8067796610169492	0.8095238095238095	0.8081494057724958	0.8377030812324929	0.6750550846463452	1.4355	500.878	62.697	3.7500000000000005e-06	1.0	270
+albert-base-v2	4	1	5e-06	0.35066208243370056	0.8650904033379694	0.8187702265372169	0.8605442176870748	0.8391376451077943	0.8643897559023609	0.7237575663131697	1.4193	506.593	63.412	2.5e-06	2.0	540
+albert-base-v2	4	1	5e-06	0.434982031583786	0.866481223922114	0.8778625954198473	0.782312925170068	0.8273381294964028	0.8535094037615046	0.7222546577125339	1.4434	498.113	62.351	1.25e-06	3.0	810
+albert-base-v2	4	1	5e-06	0.43835151195526123	0.8776077885952712	0.8652482269503546	0.8299319727891157	0.8472222222222222	0.8702601040416167	0.7456581552357553	1.4417	498.719	62.427	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+albert-base-v2	4	1	5e-06	59.0241	146.042	18.298	20117347380000.0	0.3394235752246998	0.0	4.0	1080
+
+2023-08-17 23:45:23,060 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 23:45:23,060 - INFO - **TRACE** Appending...0.3603948950767517
+2023-08-17 23:45:23,060 - INFO - **TRACE** Appending...0.35066208243370056
+2023-08-17 23:45:23,060 - INFO - **TRACE** Appending...0.434982031583786
+2023-08-17 23:45:23,060 - INFO - **TRACE** Appending...0.43835151195526123
+2023-08-17 23:45:23,060 - INFO - **TRACE** Current innr cross fold(1) has lower loss, saving model...0.35066208243370056 < 0.3529704511165619 LR: 5e-06
+2023-08-17 23:45:23,124 - INFO - **TRACE** End of inner cv fold 1*----*-----*
+
+2023-08-17 23:45:23,125 - INFO - -----------------------------------
+2023-08-17 23:45:23,125 - INFO - -----------------------------------
+2023-08-17 23:45:23,125 - INFO - **TRACE** Inner Fold: 2 for outer fold: 4
+2023-08-17 23:45:23,125 - INFO - **TRACE** Learning rate used: 5e-05
+2023-08-17 23:45:23,125 - INFO - **TRACE** Create dataset...
+2023-08-17 23:45:23,125 - INFO - Dataset sizes: Train - 2156 Dev - 718
+2023-08-17 23:45:23,129 - INFO - **TRACE** Tokenise data...
+2023-08-17 23:45:29,009 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 23:45:29,009 - INFO - Function finetune_and_evaluate() received model: albert-base-v2, lr: 5e-05
+2023-08-17 23:45:29,009 - INFO - Setting up training args and starting training...
+2023-08-17 23:46:27,194 - INFO - Training complete...
+2023-08-17 23:46:27,194 - INFO - TrainOutput(global_step=1080, training_loss=0.5636220455169678, metrics={'train_runtime': 57.9257, 'train_samples_per_second': 148.88, 'train_steps_per_second': 18.645, 'total_flos': 20126682576000.0, 'train_loss': 0.5636220455169678, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 23:46:27,195 - INFO - Saving model at /notebooks/complaints/outputs/ft_albert-base-v2
+2023-08-17 23:46:27,256 - INFO - **TRACE** Report evaluation results...
+2023-08-17 23:46:27,257 - INFO - 
+
+Results as of 202308-17_23-2708 for albert-base-v2
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+albert-base-v2	4	2	5e-05	0.748296856880188	0.42618384401114207	0.39497041420118345	0.9888888888888889	0.5644820295983087	0.5379712301587302	0.15675000336777373	1.443	497.566	62.369	3.7500000000000003e-05	1.0	270
+albert-base-v2	4	2	5e-05	0.5683875679969788	0.6239554317548747	0.0	0.0	0.0	0.5	0.0	1.4379	499.341	62.591	2.5e-05	2.0	540
+albert-base-v2	4	2	5e-05	0.4393863081932068	0.8231197771587744	0.7942386831275721	0.7148148148148148	0.7524366471734892	0.8016038359788359	0.6175011972673011	1.4147	507.519	63.617	1.25e-05	3.0	810
+albert-base-v2	4	2	5e-05	0.6036606431007385	0.8091922005571031	0.7317073170731707	0.7777777777777778	0.7540394973070017	0.8029513888888888	0.5991619826016412	1.4185	506.156	63.446	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+albert-base-v2	4	2	5e-05	57.9257	148.88	18.645	20126682576000.0	0.5636220455169678	0.0	4.0	1080
+
+2023-08-17 23:46:27,257 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 23:46:27,257 - INFO - **TRACE** Appending...0.748296856880188
+2023-08-17 23:46:27,257 - INFO - **TRACE** Appending...0.5683875679969788
+2023-08-17 23:46:27,257 - INFO - **TRACE** Appending...0.4393863081932068
+2023-08-17 23:46:27,257 - INFO - **TRACE** Appending...0.6036606431007385
+2023-08-17 23:46:27,257 - INFO - **TRACE** Model not saved since current innr cross fold(2) has higher loss...0.4393863081932068 >= 0.35066208243370056 LR: 5e-05
+2023-08-17 23:46:27,257 - INFO - **TRACE** End of inner cv fold 2*----*-----*
+
+2023-08-17 23:46:27,257 - INFO - -----------------------------------
+2023-08-17 23:46:27,257 - INFO - -----------------------------------
+2023-08-17 23:46:27,257 - INFO - **TRACE** Inner Fold: 3 for outer fold: 4
+2023-08-17 23:46:27,257 - INFO - **TRACE** Learning rate used: 3e-05
+2023-08-17 23:46:27,257 - INFO - **TRACE** Create dataset...
+2023-08-17 23:46:27,258 - INFO - Dataset sizes: Train - 2156 Dev - 718
+2023-08-17 23:46:27,262 - INFO - **TRACE** Tokenise data...
+2023-08-17 23:46:27,934 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 23:46:27,934 - INFO - Function finetune_and_evaluate() received model: albert-base-v2, lr: 3e-05
+2023-08-17 23:46:27,934 - INFO - Setting up training args and starting training...
+2023-08-17 23:47:25,801 - INFO - Training complete...
+2023-08-17 23:47:25,801 - INFO - TrainOutput(global_step=1080, training_loss=0.3471332179175483, metrics={'train_runtime': 57.6877, 'train_samples_per_second': 149.495, 'train_steps_per_second': 18.722, 'total_flos': 20126682576000.0, 'train_loss': 0.3471332179175483, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 23:47:25,801 - INFO - Saving model at /notebooks/complaints/outputs/ft_albert-base-v2
+2023-08-17 23:47:25,864 - INFO - **TRACE** Report evaluation results...
+2023-08-17 23:47:25,864 - INFO - 
+
+Results as of 202308-17_23-2708 for albert-base-v2
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+albert-base-v2	4	3	3e-05	0.37429988384246826	0.8398328690807799	0.7756653992395437	0.7846153846153846	0.780114722753346	0.8278972119583473	0.6541894861427685	1.4342	500.632	62.753	2.25e-05	1.0	270
+albert-base-v2	4	3	3e-05	0.5754185318946838	0.8398328690807799	0.7799227799227799	0.7769230769230769	0.7784200385356455	0.8262344642257305	0.6530147979573395	1.442	497.937	62.415	1.5e-05	2.0	540
+albert-base-v2	4	3	3e-05	0.7313633561134338	0.8593314763231198	0.8244897959183674	0.7769230769230769	0.7999999999999999	0.8415183070204904	0.692388402779255	1.4309	501.785	62.898	7.5e-06	3.0	810
+albert-base-v2	4	3	3e-05	0.7974322438240051	0.8635097493036211	0.8319672131147541	0.7807692307692308	0.8055555555555556	0.8456247900571043	0.7014071836151649	1.433	501.053	62.806	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+albert-base-v2	4	3	3e-05	57.6877	149.495	18.722	20126682576000.0	0.3471332179175483	0.0	4.0	1080
+
+2023-08-17 23:47:25,864 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 23:47:25,864 - INFO - **TRACE** Appending...0.37429988384246826
+2023-08-17 23:47:25,864 - INFO - **TRACE** Appending...0.5754185318946838
+2023-08-17 23:47:25,864 - INFO - **TRACE** Appending...0.7313633561134338
+2023-08-17 23:47:25,864 - INFO - **TRACE** Appending...0.7974322438240051
+2023-08-17 23:47:25,864 - INFO - **TRACE** Current innr cross fold(3) has lower loss, saving model...0.37429988384246826 < 0.4393863081932068 LR: 3e-05
+2023-08-17 23:47:25,929 - INFO - **TRACE** End of inner cv fold 3*----*-----*
+
+2023-08-17 23:47:25,929 - INFO - -----------------------------------
+2023-08-17 23:47:25,929 - INFO - -----------------------------------
+2023-08-17 23:47:25,929 - INFO - **TRACE** All inner CVs complete for outer CV 4
+2023-08-17 23:47:25,929 - INFO - **TRACE** Best model selected from inner cv: 3 with loss: 0.37429988384246826 with learning rate: 3e-05
+2023-08-17 23:47:25,929 - INFO - **TRACE** Moving on to test predictions with the best model from inner cross fold
+2023-08-17 23:47:25,929 - INFO - **TRACE** Loading the best model from inner CV
+2023-08-17 23:47:26,023 - INFO - **TRACE** Running predictions with test data
+2023-08-17 23:47:27,584 - INFO - Metrics from the Predictions...
+2023-08-17 23:47:27,584 - INFO - {'test_loss': 0.370291531085968, 'test_accuracy': 0.8469565217391304, 'test_precision': 0.7836538461538461, 'test_recall': 0.7912621359223301, 'test_f1': 0.78743961352657, 'test_roc_auc': 0.8346554582050675, 'test_matthews_correlation': 0.667897783222913, 'test_runtime': 1.3791, 'test_samples_per_second': 416.943, 'test_steps_per_second': 52.209}
+2023-08-17 23:47:27,584 - INFO - {'confusion_matrix': array([[324,  45],
+       [ 43, 163]])}
+2023-08-17 23:47:27,584 - INFO - 
+
+Results as of 202308-17_23-2708 for albert-base-v2
+***** Test(predict) metrics *****
+model	outer_cv	test_loss	test_accuracy	test_precision	test_recall	test_f1	test_roc_auc	test_matthews_correlation	test_runtime	test_samples_per_second	test_steps_per_second
+albert-base-v2	4	0.370291531085968	0.8469565217391304	0.7836538461538461	0.7912621359223301	0.78743961352657	0.8346554582050675	0.667897783222913	1.3791	416.943	52.209
+***** Confusion Matrix(predict) *****
+model	outer_cv	confusion_matrix
+albert-base-v2	4	[[324  45]
+ [ 43 163]]
+
+2023-08-17 23:47:27,584 - INFO - ----------------------------------------------------------------------
+2023-08-17 23:47:27,585 - INFO - ----------------------------------------------------------------------
+2023-08-17 23:47:27,585 - INFO - **TRACE** Outer Fold:5
+2023-08-17 23:47:27,585 - INFO - Dataset sizes: Train - 2875 Test - 574
+2023-08-17 23:47:28,294 - INFO - -----------------------------------
+2023-08-17 23:47:28,294 - INFO - -----------------------------------
+2023-08-17 23:47:28,294 - INFO - **TRACE** Inner Fold: 0 for outer fold: 5
+2023-08-17 23:47:28,294 - INFO - **TRACE** Learning rate used: 1e-05
+2023-08-17 23:47:28,294 - INFO - **TRACE** Create dataset...
+2023-08-17 23:47:28,295 - INFO - Dataset sizes: Train - 2156 Dev - 719
+2023-08-17 23:47:28,299 - INFO - **TRACE** Tokenise data...
+2023-08-17 23:47:29,435 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 23:47:29,435 - INFO - Function finetune_and_evaluate() received model: albert-base-v2, lr: 1e-05
+2023-08-17 23:47:29,435 - INFO - Setting up training args and starting training...
+2023-08-17 23:48:27,368 - INFO - Training complete...
+2023-08-17 23:48:27,368 - INFO - TrainOutput(global_step=1080, training_loss=0.34320322849132395, metrics={'train_runtime': 57.7342, 'train_samples_per_second': 149.374, 'train_steps_per_second': 18.706, 'total_flos': 20126682576000.0, 'train_loss': 0.34320322849132395, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 23:48:27,368 - INFO - Saving model at /notebooks/complaints/outputs/ft_albert-base-v2
+2023-08-17 23:48:27,431 - INFO - **TRACE** Report evaluation results...
+2023-08-17 23:48:27,431 - INFO - 
+
+Results as of 202308-17_23-2708 for albert-base-v2
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+albert-base-v2	5	0	1e-05	0.44033440947532654	0.8400556328233658	0.7319884726224783	0.9202898550724637	0.8154093097913322	0.8551787875813787	0.6913487992534149	1.4241	504.874	63.197	7.500000000000001e-06	1.0	270
+albert-base-v2	5	0	1e-05	0.4873031973838806	0.8497913769123783	0.7608695652173914	0.8876811594202898	0.8193979933110368	0.8569331305002127	0.698152136795293	1.416	507.775	63.56	5e-06	2.0	540
+albert-base-v2	5	0	1e-05	0.5116873383522034	0.8678720445062587	0.8006644518272426	0.8731884057971014	0.8353552859618717	0.8688741126050971	0.7272658396847684	1.4316	502.24	62.867	2.5e-06	3.0	810
+albert-base-v2	5	0	1e-05	0.5830596089363098	0.8734353268428373	0.8135593220338984	0.8695652173913043	0.840630472854641	0.8727058592599862	0.7369850596459008	1.4292	503.089	62.974	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+albert-base-v2	5	0	1e-05	57.7342	149.374	18.706	20126682576000.0	0.34320322849132395	0.0	4.0	1080
+
+2023-08-17 23:48:27,431 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 23:48:27,431 - INFO - **TRACE** Appending...0.44033440947532654
+2023-08-17 23:48:27,431 - INFO - **TRACE** Appending...0.4873031973838806
+2023-08-17 23:48:27,431 - INFO - **TRACE** Appending...0.5116873383522034
+2023-08-17 23:48:27,431 - INFO - **TRACE** Appending...0.5830596089363098
+2023-08-17 23:48:27,431 - INFO - **TRACE** Current innr cross fold(0) has lower loss, saving model...0.44033440947532654 < 1000 LR: 1e-05
+2023-08-17 23:48:27,495 - INFO - **TRACE** End of inner cv fold 0*----*-----*
+
+2023-08-17 23:48:27,495 - INFO - -----------------------------------
+2023-08-17 23:48:27,495 - INFO - -----------------------------------
+2023-08-17 23:48:27,495 - INFO - **TRACE** Inner Fold: 1 for outer fold: 5
+2023-08-17 23:48:27,495 - INFO - **TRACE** Learning rate used: 5e-06
+2023-08-17 23:48:27,495 - INFO - **TRACE** Create dataset...
+2023-08-17 23:48:27,496 - INFO - Dataset sizes: Train - 2156 Dev - 719
+2023-08-17 23:48:27,500 - INFO - **TRACE** Tokenise data...
+2023-08-17 23:48:28,187 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 23:48:28,188 - INFO - Function finetune_and_evaluate() received model: albert-base-v2, lr: 5e-06
+2023-08-17 23:48:28,188 - INFO - Setting up training args and starting training...
+2023-08-17 23:49:26,477 - INFO - Training complete...
+2023-08-17 23:49:26,477 - INFO - TrainOutput(global_step=1080, training_loss=0.3558493596536142, metrics={'train_runtime': 58.0962, 'train_samples_per_second': 148.443, 'train_steps_per_second': 18.59, 'total_flos': 20126682576000.0, 'train_loss': 0.3558493596536142, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 23:49:26,477 - INFO - Saving model at /notebooks/complaints/outputs/ft_albert-base-v2
+2023-08-17 23:49:26,544 - INFO - **TRACE** Report evaluation results...
+2023-08-17 23:49:26,544 - INFO - 
+
+Results as of 202308-17_23-2708 for albert-base-v2
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+albert-base-v2	5	1	5e-06	0.3829582631587982	0.8372739916550765	0.8	0.7916666666666666	0.7958115183246073	0.8297080433101314	0.6605825875822882	1.4338	501.461	62.77	3.7500000000000005e-06	1.0	270
+albert-base-v2	5	1	5e-06	0.41915565729141235	0.8525730180806675	0.8345588235294118	0.7881944444444444	0.8107142857142856	0.8418930458881154	0.6909027612294629	1.4464	497.088	62.222	2.5e-06	2.0	540
+albert-base-v2	5	1	5e-06	0.5032523274421692	0.8636995827538247	0.8625954198473282	0.7847222222222222	0.8218181818181818	0.8505977700438258	0.7139458580617405	1.4396	499.456	62.519	1.25e-06	3.0	810
+albert-base-v2	5	1	5e-06	0.5487515330314636	0.8623087621696801	0.8487084870848709	0.7986111111111112	0.8228980322003578	0.8517417504511472	0.7113202013044857	1.4326	501.874	62.822	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+albert-base-v2	5	1	5e-06	58.0962	148.443	18.59	20126682576000.0	0.3558493596536142	0.0	4.0	1080
+
+2023-08-17 23:49:26,544 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 23:49:26,544 - INFO - **TRACE** Appending...0.3829582631587982
+2023-08-17 23:49:26,544 - INFO - **TRACE** Appending...0.41915565729141235
+2023-08-17 23:49:26,544 - INFO - **TRACE** Appending...0.5032523274421692
+2023-08-17 23:49:26,544 - INFO - **TRACE** Appending...0.5487515330314636
+2023-08-17 23:49:26,545 - INFO - **TRACE** Current innr cross fold(1) has lower loss, saving model...0.3829582631587982 < 0.44033440947532654 LR: 5e-06
+2023-08-17 23:49:26,608 - INFO - **TRACE** End of inner cv fold 1*----*-----*
+
+2023-08-17 23:49:26,608 - INFO - -----------------------------------
+2023-08-17 23:49:26,608 - INFO - -----------------------------------
+2023-08-17 23:49:26,608 - INFO - **TRACE** Inner Fold: 2 for outer fold: 5
+2023-08-17 23:49:26,608 - INFO - **TRACE** Learning rate used: 5e-05
+2023-08-17 23:49:26,608 - INFO - **TRACE** Create dataset...
+2023-08-17 23:49:26,609 - INFO - Dataset sizes: Train - 2156 Dev - 719
+2023-08-17 23:49:26,613 - INFO - **TRACE** Tokenise data...
+2023-08-17 23:49:27,375 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 23:49:27,375 - INFO - Function finetune_and_evaluate() received model: albert-base-v2, lr: 5e-05
+2023-08-17 23:49:27,375 - INFO - Setting up training args and starting training...
+2023-08-17 23:50:26,076 - INFO - Training complete...
+2023-08-17 23:50:26,076 - INFO - TrainOutput(global_step=1080, training_loss=0.44045532721060293, metrics={'train_runtime': 58.4164, 'train_samples_per_second': 147.63, 'train_steps_per_second': 18.488, 'total_flos': 20126682576000.0, 'train_loss': 0.44045532721060293, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 23:50:26,076 - INFO - Saving model at /notebooks/complaints/outputs/ft_albert-base-v2
+2023-08-17 23:50:26,141 - INFO - **TRACE** Report evaluation results...
+2023-08-17 23:50:26,141 - INFO - 
+
+Results as of 202308-17_23-2708 for albert-base-v2
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+albert-base-v2	5	2	5e-05	0.41579851508140564	0.8247566063977747	0.7101910828025477	0.8643410852713178	0.7797202797202798	0.8334720610738368	0.6449966061293734	1.4651	490.751	61.429	3.7500000000000003e-05	1.0	270
+albert-base-v2	5	2	5e-05	0.4607861340045929	0.8358831710709318	0.75	0.813953488372093	0.7806691449814126	0.8310548352923373	0.6512968399237198	1.4314	502.315	62.877	2.5e-05	2.0	540
+albert-base-v2	5	2	5e-05	0.5504446029663086	0.8331015299026425	0.7518248175182481	0.7984496124031008	0.7744360902255639	0.8254720947048042	0.6429079311939232	1.4251	504.539	63.155	1.25e-05	3.0	810
+albert-base-v2	5	2	5e-05	0.66800856590271	0.8581363004172462	0.8223140495867769	0.7713178294573644	0.796	0.839021170693975	0.6882563992605977	1.4293	503.038	62.967	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+albert-base-v2	5	2	5e-05	58.4164	147.63	18.488	20126682576000.0	0.44045532721060293	0.0	4.0	1080
+
+2023-08-17 23:50:26,141 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 23:50:26,141 - INFO - **TRACE** Appending...0.41579851508140564
+2023-08-17 23:50:26,141 - INFO - **TRACE** Appending...0.4607861340045929
+2023-08-17 23:50:26,141 - INFO - **TRACE** Appending...0.5504446029663086
+2023-08-17 23:50:26,141 - INFO - **TRACE** Appending...0.66800856590271
+2023-08-17 23:50:26,141 - INFO - **TRACE** Model not saved since current innr cross fold(2) has higher loss...0.41579851508140564 >= 0.3829582631587982 LR: 5e-05
+2023-08-17 23:50:26,141 - INFO - **TRACE** End of inner cv fold 2*----*-----*
+
+2023-08-17 23:50:26,141 - INFO - -----------------------------------
+2023-08-17 23:50:26,141 - INFO - -----------------------------------
+2023-08-17 23:50:26,141 - INFO - **TRACE** Inner Fold: 3 for outer fold: 5
+2023-08-17 23:50:26,141 - INFO - **TRACE** Learning rate used: 3e-05
+2023-08-17 23:50:26,141 - INFO - **TRACE** Create dataset...
+2023-08-17 23:50:26,142 - INFO - Dataset sizes: Train - 2157 Dev - 718
+2023-08-17 23:50:26,146 - INFO - **TRACE** Tokenise data...
+2023-08-17 23:50:26,845 - INFO - **TRACE** Finetune and perform evaluation...
+2023-08-17 23:50:26,845 - INFO - Function finetune_and_evaluate() received model: albert-base-v2, lr: 3e-05
+2023-08-17 23:50:26,845 - INFO - Setting up training args and starting training...
+2023-08-17 23:51:24,882 - INFO - Training complete...
+2023-08-17 23:51:24,882 - INFO - TrainOutput(global_step=1080, training_loss=0.34019124772813586, metrics={'train_runtime': 57.8566, 'train_samples_per_second': 149.127, 'train_steps_per_second': 18.667, 'total_flos': 20136017772000.0, 'train_loss': 0.34019124772813586, 'lr_from_scheduler': 0.0, 'epoch': 4.0})
+2023-08-17 23:51:24,882 - INFO - Saving model at /notebooks/complaints/outputs/ft_albert-base-v2
+2023-08-17 23:51:24,944 - INFO - **TRACE** Report evaluation results...
+2023-08-17 23:51:24,945 - INFO - 
+
+Results as of 202308-17_23-2708 for albert-base-v2
+***** Eval metrics *****
+model	outer_cv	inner_cv	hp_set_lr	eval_loss	eval_accuracy	eval_precision	eval_recall	eval_f1	eval_roc_auc	eval_matthews_correlation	eval_runtime	eval_samples_per_second	eval_steps_per_second	lr_from_scheduler	epoch	step
+albert-base-v2	5	3	3e-05	0.4283044636249542	0.8203342618384402	0.7908745247148289	0.7375886524822695	0.763302752293578	0.8057209317457219	0.6197826240668757	1.4374	499.523	62.614	2.25e-05	1.0	270
+albert-base-v2	5	3	3e-05	0.6024820804595947	0.8523676880222841	0.8333333333333334	0.7801418439716312	0.8058608058608059	0.8396122063894853	0.6879410040524646	1.4239	504.246	63.206	1.5e-05	2.0	540
+albert-base-v2	5	3	3e-05	0.7071132659912109	0.8426183844011143	0.8595744680851064	0.7163120567375887	0.781431334622824	0.8203119916715467	0.6667507237788294	1.4356	500.133	62.691	7.5e-06	3.0	810
+albert-base-v2	5	3	3e-05	0.8226766586303711	0.8495821727019499	0.8346153846153846	0.7695035460992907	0.8007380073800738	0.8354398464441407	0.6816995888381426	1.4555	493.294	61.833	0.0	4.0	1080
+--*--*--
+***** Train metrics *****
+model	outer_cv	inner_cv	hp_set_lrtrain_runtime	train_samples_per_second	train_steps_per_second	total_flos	train_loss	lr_from_scheduler	epoch	step
+albert-base-v2	5	3	3e-05	57.8566	149.127	18.667	20136017772000.0	0.34019124772813586	0.0	4.0	1080
+
+2023-08-17 23:51:24,945 - INFO - **TRACE** Collecting validation losses from each epoch to check intermediate best model
+2023-08-17 23:51:24,945 - INFO - **TRACE** Appending...0.4283044636249542
+2023-08-17 23:51:24,945 - INFO - **TRACE** Appending...0.6024820804595947
+2023-08-17 23:51:24,945 - INFO - **TRACE** Appending...0.7071132659912109
+2023-08-17 23:51:24,945 - INFO - **TRACE** Appending...0.8226766586303711
+2023-08-17 23:51:24,945 - INFO - **TRACE** Model not saved since current innr cross fold(3) has higher loss...0.4283044636249542 >= 0.41579851508140564 LR: 3e-05
+2023-08-17 23:51:24,945 - INFO - **TRACE** End of inner cv fold 3*----*-----*
+
+2023-08-17 23:51:24,945 - INFO - -----------------------------------
+2023-08-17 23:51:24,945 - INFO - -----------------------------------
+2023-08-17 23:51:24,945 - INFO - **TRACE** All inner CVs complete for outer CV 5
+2023-08-17 23:51:24,945 - INFO - **TRACE** Best model selected from inner cv: 1 with loss: 0.3829582631587982 with learning rate: 3e-05
+2023-08-17 23:51:24,945 - INFO - **TRACE** Moving on to test predictions with the best model from inner cross fold
+2023-08-17 23:51:24,945 - INFO - **TRACE** Loading the best model from inner CV
+2023-08-17 23:51:25,083 - INFO - **TRACE** Running predictions with test data
+2023-08-17 23:51:26,478 - INFO - Metrics from the Predictions...
+2023-08-17 23:51:26,478 - INFO - {'test_loss': 0.33359190821647644, 'test_accuracy': 0.8745644599303136, 'test_precision': 0.8594594594594595, 'test_recall': 0.775609756097561, 'test_f1': 0.8153846153846155, 'test_roc_auc': 0.8525745257452575, 'test_matthews_correlation': 0.7229535170062886, 'test_runtime': 1.1801, 'test_samples_per_second': 486.397, 'test_steps_per_second': 61.011}
+2023-08-17 23:51:26,478 - INFO - {'confusion_matrix': array([[343,  26],
+       [ 46, 159]])}
+2023-08-17 23:51:26,478 - INFO - 
+
+Results as of 202308-17_23-2708 for albert-base-v2
+***** Test(predict) metrics *****
+model	outer_cv	test_loss	test_accuracy	test_precision	test_recall	test_f1	test_roc_auc	test_matthews_correlation	test_runtime	test_samples_per_second	test_steps_per_second
+albert-base-v2	5	0.33359190821647644	0.8745644599303136	0.8594594594594595	0.775609756097561	0.8153846153846155	0.8525745257452575	0.7229535170062886	1.1801	486.397	61.011
+***** Confusion Matrix(predict) *****
+model	outer_cv	confusion_matrix
+albert-base-v2	5	[[343  26]
+ [ 46 159]]
+
+2023-08-17 23:51:26,478 - INFO - ----------------------------------------------------------------------
+2023-08-17 23:51:26,478 - INFO - ----------------------------------------------------------------------
+2023-08-17 23:51:26,478 - INFO - **TRACE** All CVs complete, calculating mean of test metrics
+2023-08-17 23:51:26,478 - INFO - 
+
+Results as of 202308-17_23-2708 for albert-base-v2
+***** Mean Test(predict) metrics *****
+model	mean_test_loss	mean_test_accuracy	mean_test_precision	mean_test_recall	mean_test_f1	mean_test_roc_auc	mean_test_matthews_correlation	mean_test_runtime	mean_test_samples_per_second	mean_test_steps_per_second
+albert-base-v2	0.31389080733060837	0.8790940766550523	0.8445711931459909	0.8108256373825875	0.826753268041824	0.8639109509699138	0.7349665626632537	1.2109500000000002	476.35650000000004	59.666000000000004
+***** Mean Confusion Matrix(predict) *****
+model	mean_true_negative	mean_false_positive	mean_false_negative	mean_true_positive
+albert-base-v2	338.8333333333333	30.666666666666668	38.833333333333336	166.5
+
+2023-08-17 23:51:26,478 - INFO - Attempting to delete checkpoints from /notebooks/train_trainer
+2023-08-17 23:51:26,509 - INFO - Completed deleting checkpoints from /notebooks/train_trainer
+2023-08-17 23:51:26,509 - INFO - Attempting to delete checkpoints from /notebooks/test_trainer
+2023-08-17 23:51:26,510 - INFO - The path /notebooks/test_trainer does not exist.
